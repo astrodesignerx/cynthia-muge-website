@@ -56,9 +56,8 @@ export default function RecordPage() {
           Where Nandi County money goes
         </h2>
         <p className="mt-3 max-w-[58ch] leading-relaxed text-[var(--color-soft)]">
-          The county spent {countyFinance.total} in {countyFinance.year}, at{" "}
-          {countyFinance.absorption} absorption. Two thirds of it ran the county.
-          One third built anything.
+          {countyFinance.total} in {countyFinance.year}, at{" "}
+          {countyFinance.absorption} absorption.
         </p>
 
         <div className="mt-7 flex h-24 overflow-hidden rounded">

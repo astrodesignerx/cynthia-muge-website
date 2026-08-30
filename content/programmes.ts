@@ -110,11 +110,11 @@ export const programmes: Programme[] = [
       { area: "Tinderet", value: null, display: "—" },
     ],
     coverageNote:
-      "Only the Nandi Hills figure is published. The remaining sub-counties show a dash rather than an estimate, and will carry counted numbers from the beneficiary register once compiled.",
+      "Counted figures for the remaining sub-counties are being compiled from the beneficiary register.",
     distinctive: {
       title: "The trees are registered in both spouses' names.",
       body:
-        "The programme includes a charter requiring joint registration of coffee bushes between husband and wife. A woman who does the work on the farm is named on the asset, and on the payment that follows from it. That is a change in who owns something, not a gift — and it is the part of this programme almost nobody knows about.",
+        "The programme includes a charter requiring joint registration of coffee bushes between husband and wife. A woman who does the work on the farm is named on the asset, and on the payment that follows from it.",
     },
     partners: [
       { name: "NGAAF", role: "National Government Affirmative Action Fund — programme funding" },
@@ -126,7 +126,7 @@ export const programmes: Programme[] = [
       {
         title: "Seedling survival rate",
         body:
-          "No count of how many distributed trees are alive. A figure of 90% circulates publicly; it comes from a supporter's estimate, not a survey, and is not published here.",
+          "No count of how many distributed trees are alive. A figure of 90% circulates publicly. It is an estimate, not a survey.",
         tag: "Not measured",
       },
       {
@@ -138,7 +138,7 @@ export const programmes: Programme[] = [
       {
         title: "Joint registrations completed",
         body:
-          "The charter exists. The number of households that have actually signed is not yet recorded.",
+          "The number of households that have signed is not yet recorded.",
         tag: "Not measured",
       },
       {
@@ -178,7 +178,7 @@ export const programmes: Programme[] = [
         label: "Students on full scholarship, across all six sub-counties",
         source: NGAAF_GRAPHIC,
         note:
-          "The sub-county figures below sum to exactly this total. Later totals of 449 also circulate; if the number has grown since this graphic, the office should publish the newer breakdown.",
+          "The sub-county figures below sum to this total.",
       },
       {
         status: "unconfirmed",
@@ -212,11 +212,11 @@ export const programmes: Programme[] = [
       { area: "Chesumei", value: 63, display: "63" },
     ],
     coverageNote:
-      "Counted per sub-county, and the six add to 411. Spread is deliberately even — no sub-county carries fewer than 63 or more than 74.",
+      "Counted per sub-county. The six add to 411.",
     distinctive: {
       title: "It is not only school fees.",
       body:
-        "In her own words: the programme is about \"walking alongside our students, tracking their academic growth, and giving them the peace of mind required to excel.\" The commitment is to the cohort across four years, not to a one-off payment.",
+        "The commitment runs across four years: walking alongside students, tracking academic growth, and giving them the peace of mind required to excel.",
     },
     partners: [
       { name: "NGAAF", role: "National Government Affirmative Action Fund — scholarship funding" },
@@ -225,7 +225,7 @@ export const programmes: Programme[] = [
       {
         title: "Whether 411 is still current",
         body:
-          "411 comes from the programme's own published breakdown and the six sub-county figures sum to it exactly. Totals of 409 and 449 also circulate. If the cohort has grown, the office should publish an updated breakdown rather than a bare number.",
+          "411 is the total on the programme's own published breakdown. Totals of 409 and 449 also circulate, and the graphic is undated.",
         tag: "Unconfirmed",
       },
       {
@@ -325,14 +325,14 @@ export const programmes: Programme[] = [
     distinctive: {
       title: "Thirty wards, in three months, for men and women.",
       body:
-        "Reaching every ward of a county with a structured competition requires named organisers, fields and teams in each one. That is an organising network as much as a sports programme.",
+        "Thirty wards, 83 playing fields and 499 registered teams, in men's and women's competitions running to the same rules and the same prize structure.",
     },
     partners: [],
     gaps: [
       {
         title: "Livelihoods after the whistle",
         body:
-          "A fair public criticism asks how many young people gain sustainable income after the tournament ends. No follow-on data exists yet.",
+          "No data yet on how many players find sustained income after the tournament.",
         tag: "Open question",
       },
       {
@@ -396,7 +396,7 @@ export const programmes: Programme[] = [
         status: "unmeasured",
         label: "Patients carried by the ambulance",
         note:
-          "The facility keeps a log. It has not yet been compiled or published here.",
+          "The facility keeps a log. It has not yet been compiled.",
       },
     ],
     phases: [],
@@ -404,7 +404,7 @@ export const programmes: Programme[] = [
     distinctive: {
       title: "Each item sits in a named place.",
       body:
-        "An ambulance at a named dispensary, boreholes at two named schools, shades at two named centres. Every one can be visited, photographed and confirmed by the facility in charge — which is the standard the rest of this site is held to.",
+        "An ambulance at Kabiemit, boreholes at Tulwo Girls High and Kabolebo Primary, boda boda shades at Ndalat Centre and Kapkilel.",
     },
     partners: [
       { name: "NGAAF", role: "National Government Affirmative Action Fund" },

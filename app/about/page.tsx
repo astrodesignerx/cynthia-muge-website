@@ -17,7 +17,7 @@ const timeline = [
   {
     year: "2017",
     title: "Elected at 24, as an independent",
-    body: "Won the Kilibwoni Ward seat in the County Assembly running with no party behind her, against the pre-election favourite. One of the youngest elected representatives in the county.",
+    body: "Won the Kilibwoni Ward seat in the County Assembly, running as an independent against the pre-election favourite.",
     pivot: true,
   },
   {
@@ -71,11 +71,6 @@ export default function About() {
             </li>
           ))}
         </ol>
-        <p className="mt-6 max-w-[62ch] text-[0.9375rem] leading-relaxed text-[var(--color-faint)]">
-          The 2017 run matters more than it is usually given credit for. An
-          independent candidate, at 24, beating the favourite, is not a
-          candidate anyone installed.
-        </p>
       </section>
 
       <section className="pt-14">
@@ -111,17 +106,12 @@ export default function About() {
             </tbody>
           </table>
         </div>
-        <p className="mt-5 max-w-[62ch] text-[0.9375rem] leading-relaxed text-[var(--color-faint)]">
-          A planning degree and a project management master&rsquo;s are
-          qualifications for the work of county government, which is
-          substantially planning and delivery.
-        </p>
       </section>
 
       <section className="pt-14">
         <h2 className="display text-[2.125rem]">Family</h2>
         <p className="mt-4 max-w-[60ch] leading-relaxed text-[var(--color-soft)]">
-          Married to Mr Mathew Rotich. They have two sons.
+          Married to Mr Mathew Rotich. With two sons.
         </p>
       </section>
     </div>

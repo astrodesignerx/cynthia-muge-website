@@ -13,15 +13,15 @@ const routes = [
   },
   {
     k: "BOSO registration",
-    v: "Team registration runs through your ward coordinator. Contact the office and you will be put in touch.",
+    v: "Team registration runs through the ward coordinator.",
   },
   {
     k: "Programme enquiries",
-    v: "For Kahawa na Mama, Elimu Ni Mwangaza or empowerment groups, contact the office with your ward and group name.",
+    v: "Kahawa na Mama, Elimu Ni Mwangaza, and women's and youth group empowerment.",
   },
   {
     k: "Press",
-    v: "Journalists checking a figure published on this site should quote the source listed beside it. For anything further, contact the office directly.",
+    v: "Media enquiries go to the office.",
   },
 ];
 
@@ -32,7 +32,7 @@ export default function Contact() {
         <p className="eyebrow">Get in touch</p>
         <h1 className="display mt-4 text-[3rem] sm:text-[4rem]">Contact</h1>
         <p className="mt-4 max-w-[54ch] text-[1.1875rem] leading-relaxed text-[var(--color-soft)]">
-          The office covers all six sub-counties and thirty wards of Nandi.
+          Six sub-counties. Thirty wards.
         </p>
       </header>
 
@@ -50,10 +50,6 @@ export default function Contact() {
         ))}
       </dl>
 
-      <p className="meta mt-8 max-w-[58ch]">
-        Contact numbers and email are held by the office and should be added
-        here before this page goes live.
-      </p>
     </div>
   );
 }

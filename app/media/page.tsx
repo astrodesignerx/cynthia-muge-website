@@ -12,8 +12,7 @@ export default function Media() {
         <p className="eyebrow">Archive</p>
         <h1 className="display mt-4 text-[3rem] sm:text-[4rem]">Media</h1>
         <p className="mt-4 max-w-[54ch] text-[1.1875rem] leading-relaxed text-[var(--color-soft)]">
-          Full speeches, programme footage and press, published here so the
-          complete version is always available.
+          Full speeches, programme footage and press.
         </p>
       </header>
 
@@ -26,14 +25,9 @@ export default function Media() {
             The archive is in production
           </h2>
           <p className="mt-3 max-w-[58ch] leading-relaxed text-[var(--color-soft)]">
-            Full-length recordings of public appearances are being captured and
-            will be published here with the date and location of each. Until
-            then, clips circulating elsewhere are edited by third parties and
-            may not carry the full context.
-          </p>
-          <p className="mt-4 max-w-[58ch] leading-relaxed text-[var(--color-soft)]">
-            Farmer and beneficiary interviews from the programmes will be
-            archived alongside them.
+            Full-length recordings of public appearances, with the date and
+            location of each, alongside farmer and beneficiary interviews from
+            the programmes.
           </p>
         </div>
       </section>
