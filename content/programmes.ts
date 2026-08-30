@@ -54,6 +54,12 @@ const HER_PAGE_DELIVERY: Source = {
   url: "https://www.facebook.com/profile.php?id=100083334182719",
 };
 
+const LEGACY_PAGE: Source = {
+  label: "Kabiemit Health Centre equipment delivery, posted by the office",
+  publisher: "Cynthia Muge, Facebook, 2024 archive",
+  date: "July to September 2024",
+};
+
 const NGAAF_GRAPHIC: Source = {
   label: "Elimu Ni Mwangaza: students on full scholarship, by sub-county",
   publisher: "Office of the Woman Representative / NGAAF, published graphic",
@@ -389,7 +395,7 @@ export const programmes: Programme[] = [
       {
         status: "verified",
         value: "1",
-        label: "Fully kitted ambulance, Kabyemit Dispensary, Mosop",
+        label: "Fully kitted ambulance, Kabiemit Health Centre, Ndalat Ward",
         source: {
           label: "Constituency delivery record",
           publisher: "Office of the Woman Representative",
@@ -423,6 +429,14 @@ export const programmes: Programme[] = [
           "Chebirir in Aldai, then Kipkaren Salient in Mosop. Funding secured, not buildings opened.",
       },
       {
+        status: "verified",
+        value: "8",
+        label: "Units of diagnostic and maternity equipment, Kabiemit",
+        source: LEGACY_PAGE,
+        note:
+          "A bedside X-ray machine, three protection screens, three aprons and an ultrasound, delivered July 2024.",
+      },
+      {
         status: "unmeasured",
         label: "Patients carried by the ambulance",
         note:
@@ -432,12 +446,20 @@ export const programmes: Programme[] = [
     phases: [],
     coverage: [],
     distinctive: {
-      title: "Each item sits in a named place.",
+      title: "The equipment came from a proposal, not a request.",
       body:
-        "An ambulance at Kabiemit, boreholes at Tulwo Girls High and Kabolebo Primary, boda boda shades at Lelmokwo, Lessos, Chebarbar and Soy-Sitet.",
+        "The diagnostic and maternity equipment at Kabiemit was funded by the Government of Japan after the office wrote a proposal for it. An Embassy Second Secretary visited the facility to verify delivery.",
     },
     partners: [
       { name: "NGAAF", role: "National Government Affirmative Action Fund" },
+      {
+        name: "Embassy of Japan in Kenya",
+        role: "Funded the Kabiemit diagnostic and maternity equipment, on a proposal from the office",
+      },
+      {
+        name: "Lake Basin Development Authority",
+        role: "Partner on the Kabolebo Primary borehole, which also serves Maraba Market",
+      },
     ],
     gaps: [
       {
@@ -461,6 +483,7 @@ export const programmes: Programme[] = [
     ],
     sources: [
       HER_PAGE_DELIVERY,
+      LEGACY_PAGE,
       {
         label: "Empowerment Programs",
         publisher: "cynthiamuge.com",
@@ -580,11 +603,11 @@ export const programmes: Programme[] = [
       },
       {
         status: "verified",
-        value: "8",
+        value: "18",
         label: "Groups named publicly to date",
         source: HER_PAGE_DELIVERY,
         note:
-          "Across three handovers, in Tindiret Ward and Ol'lessos Ward.",
+          "Across five handovers since 2024, in Tindiret, Ol'lessos, Kaptumo/Kaboi and Songhor/Soba wards.",
       },
       {
         status: "unconfirmed",
@@ -624,12 +647,28 @@ export const programmes: Programme[] = [
         detail:
           "Ol'lessos Soko Women Group, Chomyet Women Group and Ilen Nee Inyee Self-Help Group. Ol'lessos Ward, Nandi Hills.",
       },
+      {
+        name: "Kaptumo/Kaboi Ward",
+        period: "2024",
+        quantity: "KSh 900,000",
+        beneficiaries: "8 groups",
+        detail:
+          "Kapkeruge Youth, Kogilgei Youth, Aldai Kaptumo Kaboi CBO, Ebenezer Women, Kapkonuch Women, Ogilgei Sinendet Women, Zion Women, and Kaptumo Siriat Disability Group.",
+      },
+      {
+        name: "Sokosik Primary School",
+        period: "2024",
+        quantity: "2 cheques",
+        beneficiaries: "2 groups",
+        detail:
+          "Sokosik CBO and Sokosik General Grocery, with civic education on how the grants work. Songhor/Soba Ward, Tinderet.",
+      },
     ],
     coverage: [],
     distinctive: {
       title: "It is paid to the group, not the individual.",
       body:
-        "The cheque goes to a registered group with its own officials and account. A woman or a young person reaches it through a body that has to keep records and answer to its own members.",
+        "The cheque goes to a registered group with its own officials and account. Women, young people and persons with disability reach it through a body that has to keep records and answer to its own members.",
     },
     partners: [
       { name: "NGAAF", role: "National Government Affirmative Action Fund" },
@@ -638,7 +677,7 @@ export const programmes: Programme[] = [
       {
         title: "How many groups, and where",
         body:
-          "Eight groups in two wards are on the public record. The total, and the spread across the thirty wards, is not published.",
+          "Eighteen groups in four wards are on the public record. The total, and the spread across the thirty wards, is not published.",
         tag: "Unconfirmed",
       },
       {
@@ -648,7 +687,7 @@ export const programmes: Programme[] = [
         tag: "Not measured",
       },
     ],
-    sources: [HER_PAGE_DELIVERY],
+    sources: [HER_PAGE_DELIVERY, LEGACY_PAGE],
   },
 ];
 
