@@ -65,9 +65,9 @@ export default function RootLayout({
         </a>
 
         <header className="night sticky top-0 z-40 border-b border-[var(--color-night-rule)]/70 backdrop-blur-sm">
-          <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-6 py-4">
-            <Link href="/" className="group flex flex-col gap-1.5">
-              <span className="display text-[1.375rem] leading-none text-[var(--color-on-night)]">
+          <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 py-4">
+            <Link href="/" className="group flex shrink-0 flex-col gap-1.5">
+              <span className="display whitespace-nowrap text-[1.25rem] leading-none text-[var(--color-on-night)] sm:text-[1.375rem]">
                 Cynthia Muge
               </span>
               <span
@@ -75,13 +75,13 @@ export default function RootLayout({
                 className="h-[2px] w-14 bg-[var(--color-gold)] transition-[width] duration-200 ease-out group-hover:w-20"
               />
             </Link>
-            <nav aria-label="Main">
-              <ul className="flex flex-wrap items-center gap-x-7 gap-y-2">
+            <nav aria-label="Main" className="-mx-2 overflow-x-auto px-2">
+              <ul className="flex items-center gap-x-6 whitespace-nowrap">
                 {nav.map((item) => (
                   <li key={item.href}>
                     <Link
                       href={item.href}
-                      className="text-[0.9375rem] font-medium text-[var(--color-on-night-soft)] transition-colors duration-150 hover:text-[var(--color-gold)]"
+                      className="text-[0.875rem] font-medium text-[var(--color-on-night-soft)] transition-colors duration-150 hover:text-[var(--color-gold)] lg:text-[0.9375rem]"
                     >
                       {item.label}
                     </Link>

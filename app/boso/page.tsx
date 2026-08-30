@@ -34,10 +34,9 @@ const prizes = [
 ];
 
 const strip = [
-  { src: "/img/boso-prize-a.jpg", alt: "A ward champion collecting prize money", pos: "50% 40%" },
-  { src: "/img/boso-terraces.jpg", alt: "Spectators at a ward final", pos: "50% 45%" },
+  { src: "/img/boso-action.jpg", alt: "A ward match in play", pos: "50% 45%" },
+  { src: "/img/boso-prize-b.jpg", alt: "Prize money settled at the close of a ward round", pos: "50% 40%" },
   { src: "/img/boso-crowd.jpg", alt: "A crowd gathered for the ward stage", pos: "50% 45%" },
-  { src: "/img/boso-prize-b.jpg", alt: "Prize money handed over at the close of a ward round", pos: "50% 40%" },
 ];
 
 export default function Boso() {

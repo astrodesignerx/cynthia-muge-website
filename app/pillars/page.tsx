@@ -13,11 +13,11 @@ export const metadata: Metadata = {
 /** A photograph for each pillar, drawn from work already on the record. */
 const art: Record<string, { img: string; pos: string }> = {
   "Road Network": { img: "/img/boda-shade-lelmokwo.jpg", pos: "50% 55%" },
-  Education: { img: "/img/scholars-walk.jpg", pos: "50% 30%" },
-  Health: { img: "/img/ambulance-team.jpg", pos: "50% 40%" },
+  Education: { img: "/img/compositions.jpg", pos: "50% 50%" },
+  Health: { img: "/img/health-scanner.jpg", pos: "50% 40%" },
   Water: { img: "/img/water-a.jpg", pos: "50% 45%" },
   "Wealth Creation": { img: "/img/coffee-spouses.jpg", pos: "50% 45%" },
-  Governance: { img: "/img/baraza-a.jpg", pos: "50% 40%" },
+  Governance: { img: "/img/elders.jpg", pos: "50% 45%" },
 };
 
 export default function Pillars() {
@@ -25,7 +25,7 @@ export default function Pillars() {
     <>
       <section className="night relative isolate flex min-h-[30rem] items-end overflow-hidden lg:min-h-[36rem]">
         <Image
-          src="/img/listening.jpg"
+          src="/img/baraza-a.jpg"
           alt=""
           fill
           priority
@@ -98,12 +98,12 @@ export default function Pillars() {
       {/* Declaration */}
       <section className="night relative isolate overflow-hidden">
         <Image
-          src="/img/portrait.jpg"
+          src="/img/listening.jpg"
           alt=""
           fill
           sizes="100vw"
           className="-z-10 object-cover"
-          style={{ objectPosition: "50% 22%" }}
+          style={{ objectPosition: "50% 45%" }}
         />
         <div aria-hidden className="absolute inset-0 -z-10 bg-[#0C1420]/84" />
         <div className="mx-auto max-w-4xl px-6 py-24 lg:py-28">

@@ -28,7 +28,7 @@ export default function Media() {
         eyebrow="Archive"
         title="Media"
         lead="Full speeches, programme footage and press."
-        img="/img/ambulance-team.jpg"
+        img="/img/ambulance-speech.jpg"
         alt="A public appearance in Nandi County"
         pos="50% 35%"
       />
@@ -109,8 +109,8 @@ export default function Media() {
       </section>
 
       <ImageBand
-        img="/img/ambulance-speech.jpg"
-        pos="50% 40%"
+        img="/img/boso-match.jpg"
+        pos="50% 45%"
         eyebrow="On the record"
         title="Every appearance, in full."
       />

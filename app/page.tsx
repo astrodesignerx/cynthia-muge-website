@@ -13,7 +13,6 @@ import {
   EvidencePlate,
   Funnel,
   NightHead,
-  PhotoStrip,
   Stat,
   WardGrid,
 } from "@/components/Viz";
@@ -27,56 +26,61 @@ const cards = [
   { slug: "group-empowerment", img: "/img/empowerment-meeting.jpg", pos: "50% 25%" },
 ];
 
-const strip = [
-  { src: "/img/baraza-a.jpg", alt: "A community meeting at Chemamul", pos: "50% 40%" },
-  { src: "/img/boso-terraces.jpg", alt: "Spectators at a BOSO ward final", pos: "50% 45%" },
-  { src: "/img/coffee-planting-hand.jpg", alt: "Planting a coffee seedling by hand", pos: "50% 45%" },
-  { src: "/img/scholars-walk.jpg", alt: "Scholarship students before the KCSE dedication", pos: "50% 35%" },
-  { src: "/img/boda-shade-lelmokwo.jpg", alt: "The boda boda shade at Lelmokwo Centre", pos: "50% 50%" },
-  { src: "/img/listening.jpg", alt: "A listening session at Himaki", pos: "50% 45%" },
-];
 
 export default function Home() {
   return (
     <>
-      {/* Hero: photograph first, statement over it */}
-      <section className="relative isolate flex min-h-[36rem] items-end overflow-hidden sm:min-h-[42rem] lg:min-h-[46rem]">
-        <Image
-          src="/img/baraza-b.jpg"
-          alt="A community meeting in Nandi County"
-          fill
-          priority
-          sizes="100vw"
-          className="-z-10 object-cover"
-          style={{ objectPosition: "50% 42%" }}
+      {/* Hero: she stands on the field, rather than behind a scrim */}
+      <section className="night relative isolate overflow-hidden">
+        <div
+          aria-hidden
+          className="absolute inset-0 -z-20 bg-[radial-gradient(120%_90%_at_15%_10%,#1B2A3D_0%,#0C1420_55%,#080E17_100%)]"
         />
         <div
           aria-hidden
-          className="absolute inset-0 -z-10 bg-gradient-to-t from-[#0C1420] via-[#0C1420]/88 to-[#0C1420]/40"
+          className="absolute -left-24 top-1/2 -z-20 hidden h-[38rem] w-[38rem] -translate-y-1/2 rounded-full bg-[var(--color-murram)]/12 blur-3xl lg:block"
         />
-        <div className="mx-auto w-full max-w-6xl px-6 pb-16 pt-28 lg:pb-24">
-          <p className="label rise text-[var(--color-gold)]">
-            Woman Representative, Nandi County
-          </p>
-          <h1 className="display rise mt-6 max-w-[15ch] text-[3.25rem] leading-[0.94] text-white sm:text-[4.5rem] lg:text-[5.75rem]">
-            For the women and young people of Nandi.
-          </h1>
-          <p className="rise mt-8 text-[1.125rem] text-[var(--color-on-night-soft)]">
-            Six sub-counties. Thirty wards. One office.
-          </p>
-          <div className="mt-10 flex flex-wrap gap-3">
-            <Link
-              href="/record"
-              className="rounded-sm bg-[var(--color-gold)] px-7 py-3.5 text-[0.9375rem] font-bold text-[#1A1206] transition-colors duration-200 hover:bg-[var(--color-gold-soft)]"
-            >
-              The record
-            </Link>
-            <Link
-              href="/pillars"
-              className="rounded-sm border border-white/35 px-7 py-3.5 text-[0.9375rem] font-bold text-white transition-colors duration-200 hover:border-white hover:bg-white/10"
-            >
-              The six pillars
-            </Link>
+        <div className="mx-auto grid max-w-7xl items-end gap-4 px-6 pt-20 sm:gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:pt-28">
+          <div className="pb-8 sm:pb-12 lg:pb-24">
+            <p className="label rise text-[var(--color-gold)]">
+              Woman Representative, Nandi County
+            </p>
+            <h1 className="display rise mt-6 max-w-[14ch] text-[2.5rem] leading-[0.98] text-white sm:text-[4rem] sm:leading-[0.94] lg:text-[5.5rem]">
+              For the women and young people of Nandi.
+            </h1>
+            <p className="rise mt-8 text-[1.125rem] text-[var(--color-on-night-soft)]">
+              Six sub-counties. Thirty wards. One office.
+            </p>
+            <div className="mt-10 flex flex-wrap gap-3">
+              <Link
+                href="/record"
+                className="rounded-sm bg-[var(--color-gold)] px-7 py-3.5 text-[0.9375rem] font-bold text-[#1A1206] transition-colors duration-200 hover:bg-[var(--color-gold-soft)]"
+              >
+                The record
+              </Link>
+              <Link
+                href="/pillars"
+                className="rounded-sm border border-white/35 px-7 py-3.5 text-[0.9375rem] font-bold text-white transition-colors duration-200 hover:border-white hover:bg-white/10"
+              >
+                The six pillars
+              </Link>
+            </div>
+          </div>
+
+          <div className="relative min-h-[17rem] sm:min-h-[24rem] lg:min-h-[34rem]">
+            {/* The murram disc sits behind her, so the cutout reads as standing on it. */}
+            <div
+              aria-hidden
+              className="absolute bottom-0 left-1/2 h-[15rem] w-[15rem] -translate-x-1/2 rounded-full bg-[var(--color-murram)] sm:h-[21rem] sm:w-[21rem] lg:h-[30rem] lg:w-[30rem]"
+            />
+            <Image
+              src="/img/portrait-cutout.png"
+              alt="Cynthia Muge speaking"
+              fill
+              priority
+              sizes="(max-width: 1024px) 100vw, 46vw"
+              className="rise object-contain object-bottom"
+            />
           </div>
         </div>
       </section>
@@ -196,16 +200,6 @@ export default function Home() {
               caption="All thirty wards, in the order the office listed them"
             />
           </div>
-        </div>
-      </section>
-
-      {/* Photograph strip */}
-      <section className="py-20 lg:py-24">
-        <div className="mx-auto max-w-7xl px-6">
-          <p className="eyebrow">Across the county</p>
-        </div>
-        <div className="mx-auto mt-8 max-w-7xl px-6">
-          <PhotoStrip images={strip} height="20rem" />
         </div>
       </section>
 

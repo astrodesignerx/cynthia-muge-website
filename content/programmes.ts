@@ -73,14 +73,14 @@ export const programmes: Programme[] = [
     heroAlt: "Cynthia Muge planting a coffee seedling by hand in Nandi County",
     gallery: [
       {
-        src: "/img/coffee-spouses.jpg",
-        alt: "Men collecting seedlings as beneficiaries through their wives",
-        pos: "50% 40%",
+        src: "/img/coffee-seedling-wide.jpg",
+        alt: "Seedlings ready for collection",
+        pos: "50% 50%",
       },
       {
-        src: "/img/coffee-handover-a.jpg",
-        alt: "A seedling distribution day",
-        pos: "50% 45%",
+        src: "/img/coffee-portrait.jpg",
+        alt: "Cynthia Muge with a coffee seedling",
+        pos: "50% 30%",
       },
       {
         src: "/img/coffee-loading.jpg",
@@ -440,8 +440,8 @@ export const programmes: Programme[] = [
 
   {
     slug: "health-and-infrastructure",
-    hero: "/img/ambulance-speech.jpg",
-    heroAlt: "The ambulance handed over at Kabiemit Health Centre, Mosop",
+    hero: "/img/ambulance-team.jpg",
+    heroAlt: "Staff at Kabiemit Health Centre with the ambulance",
     name: "Health and Infrastructure",
     oneLine:
       "Equipment, water and workspaces delivered to named facilities and centres.",
@@ -647,7 +647,7 @@ export const programmes: Programme[] = [
   },
   {
     slug: "group-empowerment",
-    hero: "/img/empowerment-meeting.jpg",
+    hero: "/img/empowerment-group.jpg",
     heroAlt: "A group member addressing the empowerment meeting at Chepkemel",
     name: "Group Empowerment",
     oneLine:

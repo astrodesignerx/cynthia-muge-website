@@ -23,13 +23,13 @@ export default function Parliament() {
     <>
       <section className="night relative isolate flex min-h-[28rem] items-end overflow-hidden lg:min-h-[34rem]">
         <Image
-          src="/img/ambulance-speech.jpg"
+          src="/img/state-house.jpg"
           alt=""
           fill
           priority
           sizes="100vw"
           className="-z-10 object-cover"
-          style={{ objectPosition: "50% 35%" }}
+          style={{ objectPosition: "50% 55%" }}
         />
         <div
           aria-hidden
