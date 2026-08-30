@@ -50,10 +50,10 @@ export const metadata: Metadata = {
 };
 
 const nav = [
+  { href: "/about", label: "About" },
   { href: "/pillars", label: "The six pillars" },
   { href: "/record", label: "The record" },
   { href: "/parliament", label: "In Parliament" },
-  { href: "/about", label: "About" },
   { href: "/boso", label: "BOSO Supercup" },
   { href: "/media", label: "Media" },
   { href: "/contact", label: "Contact" },
@@ -109,6 +109,9 @@ export default function RootLayout({
                 <p className="mt-6 text-[0.9375rem] leading-relaxed text-[var(--color-on-night-soft)]">
                   Woman Representative, Nandi County. Serving the six
                   sub-counties and thirty wards.
+                </p>
+                <p className="label mt-5 text-[var(--color-gold)]">
+                  #FormNiMama
                 </p>
               </div>
               <nav aria-label="Footer">

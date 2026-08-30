@@ -208,57 +208,67 @@ export function Counter({ value, ms = 1100 }: { value: string; ms?: number }) {
 }
 
 /**
- * Six pillar chips drifting around the hero portrait, some in front of her and
- * some behind, to give the composition depth. Positions are fixed rather than
- * random so the layout is the same on every render and does not jump on
- * hydration. Decorative, so hidden from assistive technology and from small
- * screens where there is no room for it.
+ * Six pillar chips arranged around the inside of the hero disc, three passing
+ * in front of her and three behind, which is what gives the composition depth.
+ * Positions are polar: an angle and a radius as a fraction of the disc, so
+ * every chip lands inside the circle whatever size the disc renders at.
+ * Decorative, so hidden from assistive technology and from small screens.
  */
 export function FloatingPillars({
   pillars,
+  className = "",
 }: {
   pillars: { n: string; name: string }[];
+  className?: string;
 }) {
-  // top / left as percentages of the hero box, whether it sits in front, and
-  // the drift cycle length so they do not move in lockstep.
+  // deg clockwise from twelve o'clock, and how far out as a share of the radius
   const spots = [
-    { top: "6%", left: "-6%", front: false, dur: "7.5s", delay: "0s", rot: -5 },
-    { top: "20%", left: "72%", front: true, dur: "9s", delay: "-2s", rot: 4 },
-    { top: "42%", left: "-16%", front: true, dur: "8.2s", delay: "-4s", rot: 3 },
-    { top: "58%", left: "78%", front: false, dur: "10s", delay: "-1s", rot: -4 },
-    { top: "72%", left: "-14%", front: false, dur: "8.8s", delay: "-3s", rot: 5 },
-    { top: "88%", left: "62%", front: true, dur: "7.8s", delay: "-5s", rot: -3 },
+    { deg: 322, r: 0.86, front: false, dur: "7.5s", delay: "0s", rot: -5 },
+    { deg: 38, r: 0.88, front: true, dur: "9s", delay: "-2s", rot: 4 },
+    { deg: 300, r: 0.80, front: true, dur: "8.2s", delay: "-4s", rot: 3 },
+    { deg: 88, r: 0.90, front: false, dur: "10s", delay: "-1s", rot: -4 },
+    { deg: 254, r: 0.74, front: true, dur: "8.8s", delay: "-3s", rot: 5 },
+    { deg: 128, r: 0.86, front: true, dur: "7.8s", delay: "-5s", rot: -3 },
   ];
 
   return (
-    <div aria-hidden className="pointer-events-none absolute inset-0 hidden lg:block">
+    <div
+      aria-hidden
+      className={`pointer-events-none absolute hidden lg:block ${className}`}
+    >
       {pillars.slice(0, 6).map((p, i) => {
         const s = spots[i];
+        const rad = (s.deg * Math.PI) / 180;
+        // 50% is the disc centre; sin/cos put the chip on the chord
+        const left = 50 + Math.sin(rad) * s.r * 50;
+        const top = 50 - Math.cos(rad) * s.r * 50;
         return (
           <span
             key={p.n}
-            className={`drift absolute ${s.front ? "z-20" : "z-0"}`}
+            className={`drift absolute -translate-x-1/2 -translate-y-1/2 ${
+              s.front ? "z-20" : "z-0"
+            }`}
             style={{
-              top: s.top,
-              left: s.left,
+              top: `${top}%`,
+              left: `${left}%`,
               animationDuration: s.dur,
               animationDelay: s.delay,
               ["--rot" as string]: `${s.rot}deg`,
             }}
           >
             <span
-              className={`flex items-center gap-2 rounded-sm border px-3 py-2 backdrop-blur-sm ${
+              className={`flex items-center gap-2 rounded-sm border px-2.5 py-1.5 backdrop-blur-sm ${
                 s.front
-                  ? "border-white/20 bg-[#0C1420]/72 shadow-lg shadow-black/30"
-                  : "border-white/10 bg-[#0C1420]/45"
+                  ? "border-white/25 bg-[#0C1420]/78 shadow-lg shadow-black/40"
+                  : "border-white/12 bg-[#0C1420]/55"
               }`}
             >
               <span className="label text-[0.5625rem] text-[var(--color-gold)]">
                 {p.n}
               </span>
               <span
-                className={`whitespace-nowrap text-[0.8125rem] font-semibold ${
-                  s.front ? "text-white" : "text-white/65"
+                className={`whitespace-nowrap text-[0.75rem] font-semibold ${
+                  s.front ? "text-white" : "text-white/70"
                 }`}
               >
                 {p.name}

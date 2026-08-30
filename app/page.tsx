@@ -99,12 +99,12 @@ export default function Home() {
           aria-hidden
           className="absolute -left-24 top-1/2 -z-20 hidden h-[38rem] w-[38rem] -translate-y-1/2 rounded-full bg-[var(--color-murram)]/12 blur-3xl lg:block"
         />
-        <div className="mx-auto grid max-w-7xl items-end gap-4 px-6 pt-24 sm:gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:pt-36">
-          <div className="pb-10 sm:pb-16 lg:pb-32">
+        <div className="mx-auto grid max-w-7xl items-center gap-6 px-6 pt-24 sm:gap-10 lg:grid-cols-[1.12fr_0.88fr] lg:pt-32">
+          <div className="pb-10 sm:pb-16 lg:pb-24">
             <p className="label rise text-[var(--color-gold)]">
               Woman Representative, Nandi County
             </p>
-            <h1 className="display rise mt-6 max-w-[14ch] text-[2.5rem] leading-[0.98] text-white sm:text-[4rem] sm:leading-[0.94] lg:text-[5.5rem]">
+            <h1 className="display rise mt-6 max-w-[15ch] text-[2.5rem] leading-[0.98] text-white sm:text-[3.75rem] sm:leading-[0.94] lg:text-[4.75rem]">
               For the women and young people of Nandi.
             </h1>
             <p className="rise mt-8 text-[1.125rem] text-[var(--color-on-night-soft)]">
@@ -126,22 +126,25 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative isolate min-h-[22rem] sm:min-h-[33rem] lg:min-h-[47rem]">
-            {/* The murram disc sits behind her, so the cutout reads as standing on it. */}
-            <div
-              aria-hidden
-              className="absolute bottom-0 left-1/2 z-0 h-[19rem] w-[19rem] -translate-x-1/2 rounded-full bg-[var(--color-murram)] sm:h-[28rem] sm:w-[28rem] lg:h-[40rem] lg:w-[40rem]"
-            />
-            {/* chips marked front carry z-20, so they pass in front of her */}
-            <FloatingPillars pillars={pillars} />
-            <Image
-              src="/img/speaking-beaded-cutout.png"
-              alt="Cynthia Muge speaking"
-              fill
-              priority
-              sizes="(max-width: 1024px) 100vw, 46vw"
-              className="rise z-10 object-contain object-bottom"
-            />
+          <div className="relative isolate flex min-h-[22rem] items-end justify-center sm:min-h-[33rem] lg:min-h-[47rem]">
+            {/* Disc, chips and portrait share this square, so the chips land
+                inside the circle and she can break its top edge. */}
+            <div className="relative h-[19rem] w-[19rem] sm:h-[28rem] sm:w-[28rem] lg:h-[40rem] lg:w-[40rem]">
+              <div
+                aria-hidden
+                className="absolute inset-0 z-0 rounded-full bg-[var(--color-murram)]"
+              />
+              {/* chips marked front carry z-20, so they pass in front of her */}
+              <FloatingPillars pillars={pillars} className="inset-0" />
+              <Image
+                src="/img/speaking-beaded-cutout.png"
+                alt="Cynthia Muge speaking"
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 46vw"
+                className="rise z-10 origin-bottom scale-[1.16] object-contain object-bottom"
+              />
+            </div>
           </div>
         </div>
       </section>

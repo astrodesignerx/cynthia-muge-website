@@ -259,6 +259,11 @@ export const programmes: Programme[] = [
         alt: "Scholarship students in their school uniforms",
         pos: "50% 30%",
       },
+      {
+        src: "/img/elimu-banner.jpg",
+        alt: "The Elimu Ni Mwangaza commitment service",
+        pos: "50% 45%",
+      },
     ],
     name: "Elimu Ni Mwangaza",
     oneLine:
@@ -378,11 +383,6 @@ export const programmes: Programme[] = [
         src: "/img/boso-fixtures.jpg",
         alt: "Ward fixtures, men's and women's competitions",
         pos: "50% 25%",
-      },
-      {
-        src: "/img/boso-qualifiers.jpg",
-        alt: "The two teams qualifying from Kabwareng Ward",
-        pos: "50% 30%",
       },
       {
         src: "/img/boso-speaking.jpg",
@@ -557,6 +557,11 @@ export const programmes: Programme[] = [
         src: "/img/health-scanner.jpg",
         alt: "Diagnostic equipment at Kabiemit Health Centre",
         pos: "50% 40%",
+      },
+      {
+        src: "/img/ambulance-speech.jpg",
+        alt: "The ambulance handover at Kabiemit Health Centre",
+        pos: "50% 35%",
       },
       {
         src: "/img/ambulance-inside.jpg",

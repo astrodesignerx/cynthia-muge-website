@@ -41,9 +41,9 @@ export default function About() {
         eyebrow="Woman Representative, Nandi County"
         title={<>Hon. Cynthia<br />Jepkosgei Muge</>}
         lead="Born in 1993 in Kipsirichoi village, Kilibwoni Ward, Emgwen Constituency. The eldest of six."
-        img="/img/speaking-beaded.jpg"
-        alt="Cynthia Muge speaking at the handover of an ambulance at Kabiemit Health Centre"
-        pos="50% 35%"
+        img="/img/coffee-seedling-wide.jpg"
+        alt="Coffee seedlings ready for distribution in Nandi County"
+        pos="50% 0%"
       />
 
       {/* Timeline */}
@@ -94,8 +94,8 @@ export default function About() {
             <h2 className="display text-[2.5rem]">Education</h2>
             <div className="mt-8">
               <Plate
-                img="/img/elimu-banner.jpg"
-                alt="The Elimu Ni Mwangaza commitment service"
+                img="/img/mhesh-cutout.png"
+                alt="Cynthia Muge"
                 ratio="4/3"
               />
             </div>

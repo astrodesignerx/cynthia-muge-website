@@ -28,9 +28,9 @@ export default function Media() {
         eyebrow="Archive"
         title="Media"
         lead="Full speeches, programme footage and press."
-        img="/img/ambulance-speech.jpg"
-        alt="A public appearance in Nandi County"
-        pos="50% 35%"
+        img="/img/speaking-beaded.jpg"
+        alt="Cynthia Muge speaking at a public gathering"
+        pos="50% 0%"
       />
 
       <section className="mx-auto max-w-6xl px-6 py-20">
