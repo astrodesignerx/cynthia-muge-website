@@ -94,8 +94,8 @@ export default function About() {
             <h2 className="display text-[2.5rem]">Education</h2>
             <div className="mt-8">
               <Plate
-                img="/img/education.jpg"
-                alt="Elimu Ni Mwangaza scholarship distribution across the six sub-counties"
+                img="/img/elimu-banner.jpg"
+                alt="The Elimu Ni Mwangaza commitment service"
                 ratio="4/3"
               />
             </div>

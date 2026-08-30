@@ -689,3 +689,47 @@ export const declaration = {
     url: "https://www.facebook.com/profile.php?id=100083334182719",
   } as Source,
 };
+
+/**
+ * The thirty wards of Nandi, in the order she listed them when reporting
+ * that the BOSO ward series had reached all of them.
+ */
+export const wards = [
+  "Kabiyet", "Kabisaga", "Chepterwai", "Kipkaren", "Kurgung/Surungai",
+  "Ndalat", "Sang'alo/Kebulonik", "Chemundu/Kapng'etuny", "Kosirai",
+  "Lelmokwo/Ngechek", "Kaptel/Kamoiywo", "Kiptuya", "Kilibwoni",
+  "Kapkangani", "Chepkumia", "Kapsabet", "Tinderet", "Songhor/Soba",
+  "Chemelil/Chemase", "Kapsimotwo", "Nandi Hills", "Chepkunyuk",
+  "Ol'lessos", "Kapchorua", "Kabwareng", "Terik", "Kemeloi/Maraba",
+  "Kobujoi", "Kaptumo/Kaboi", "Koyo/Ndurio",
+];
+
+/** The ward stage of the BOSO Supercup, narrowing to the sub-county round. */
+export const bosoFunnel = [
+  { value: 846, display: "846", label: "Matches played" },
+  { value: 499, display: "499", label: "Teams registered" },
+  { value: 120, display: "120", label: "Teams through to sub-county" },
+  { value: 83, display: "83", label: "Playing fields used" },
+  { value: 30, display: "30", label: "Wards reached" },
+  { value: 6, display: "6", label: "Constituencies" },
+];
+
+/**
+ * Health facilities carried in the national development estimates.
+ * Read off the printed vote she published.
+ */
+export const healthVote = {
+  vote: "Vote 1082, State Department for Medical Services",
+  table: "Development Expenditure Estimates 2026/2027",
+  rows: [
+    { k: "Kapsengre Dispensary, approved 2025/26", v: "KSh 20m" },
+    { k: "Salient Kipkaren Health Centre, approved 2025/26", v: "KSh 20m" },
+    { k: "Salient Kipkaren Health Centre, 2026/27", v: "KSh 20m" },
+  ],
+  source: {
+    label: "Vote 1082 development estimates, as published by the office",
+    publisher: "Cynthia Muge, official Facebook page",
+    date: "August 2026",
+    url: "https://www.facebook.com/profile.php?id=100083334182719",
+  } as Source,
+};

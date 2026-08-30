@@ -37,55 +37,52 @@ export default async function ProgrammePage({
 
   return (
     <article>
-      <div className="mx-auto max-w-4xl px-6">
-      <nav aria-label="Breadcrumb" className="pt-10">
-        <Link
-          href="/record"
-          className="meta hover:text-[var(--color-murram)]"
-        >
-          &larr; The record
-        </Link>
-      </nav>
-
-      <header className="border-b-2 border-[var(--color-ink)] pb-8 pt-6">
-        <p className="eyebrow">
-          Programme record <span className="sep" aria-hidden /> Office of the Woman Representative, Nandi
-          County
-        </p>
-        <h1 className="display mt-4 text-[3rem] sm:text-[4rem]">{p.name}</h1>
-        <p className="mt-4 max-w-[56ch] text-[1.1875rem] leading-relaxed text-[var(--color-soft)]">
-          {p.oneLine}
-        </p>
-        <dl className="mt-7 flex flex-wrap gap-x-8 gap-y-2 text-[0.75rem] font-semibold uppercase tracking-[0.08em] text-[var(--color-faint)]">
-          <div className="flex gap-2">
-            <dt>Started</dt>
-            <dd className="text-[var(--color-soft)]">{p.started}</dd>
-          </div>
-          <div className="flex gap-2">
-            <dt>Status</dt>
-            <dd className="text-[var(--color-soft)]">{p.status}</dd>
-          </div>
-          <div className="flex gap-2">
-            <dt>Last updated</dt>
-            <dd className="text-[var(--color-soft)]">{p.lastUpdated}</dd>
-          </div>
-        </dl>
-      </header>
-
-      </div>
-
-      {p.hero && (
-        <figure className="relative mt-10 aspect-[21/9] w-full overflow-hidden bg-[var(--color-sunk)]">
+      <header className="night relative isolate flex min-h-[30rem] items-end overflow-hidden lg:min-h-[36rem]">
+        {p.hero && (
           <Image
             src={p.hero}
             alt={p.heroAlt ?? ""}
             fill
             priority
             sizes="100vw"
-            className="object-cover"
+            className="-z-10 object-cover"
           />
-        </figure>
-      )}
+        )}
+        <div
+          aria-hidden
+          className="absolute inset-0 -z-10 bg-gradient-to-t from-[#0C1420] via-[#0C1420]/85 to-[#0C1420]/45"
+        />
+        <div className="mx-auto w-full max-w-6xl px-6 pb-14 pt-24">
+          <nav aria-label="Breadcrumb">
+            <Link
+              href="/record"
+              className="label text-[var(--color-on-night-soft)] transition-colors duration-200 hover:text-[var(--color-gold)]"
+            >
+              &larr; The record
+            </Link>
+          </nav>
+          <h1 className="display mt-10 max-w-[16ch] text-[3rem] leading-[0.97] text-white sm:text-[4rem] lg:text-[4.75rem]">
+            {p.name}
+          </h1>
+          <p className="mt-5 max-w-[56ch] text-[1.125rem] leading-relaxed text-[var(--color-on-night-soft)]">
+            {p.oneLine}
+          </p>
+          <dl className="label mt-9 flex flex-wrap gap-x-9 gap-y-2 text-[var(--color-on-night-soft)]">
+            <div className="flex gap-2">
+              <dt>Started</dt>
+              <dd className="text-[var(--color-gold)]">{p.started}</dd>
+            </div>
+            <div className="flex gap-2">
+              <dt>Status</dt>
+              <dd className="text-[var(--color-gold)]">{p.status}</dd>
+            </div>
+            <div className="flex gap-2">
+              <dt>Updated</dt>
+              <dd className="text-[var(--color-gold)]">{p.lastUpdated}</dd>
+            </div>
+          </dl>
+        </div>
+      </header>
 
       <div className="mx-auto max-w-4xl px-6">
 

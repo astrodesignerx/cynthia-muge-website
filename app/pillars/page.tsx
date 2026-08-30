@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { declaration, pillars } from "@/content/programmes";
-import { ImageBand } from "@/components/Page";
-import { SourceLine } from "@/components/Figures";
+import { NightHead } from "@/components/Viz";
 
 export const metadata: Metadata = {
   title: "The six pillars",
@@ -10,60 +10,117 @@ export const metadata: Metadata = {
     "Road Network, Education, Health, Water, Wealth Creation, Governance.",
 };
 
+/** A photograph for each pillar, drawn from work already on the record. */
+const art: Record<string, { img: string; pos: string }> = {
+  "Road Network": { img: "/img/boda-shade-lelmokwo.jpg", pos: "50% 55%" },
+  Education: { img: "/img/scholars-walk.jpg", pos: "50% 30%" },
+  Health: { img: "/img/ambulance-team.jpg", pos: "50% 40%" },
+  Water: { img: "/img/water-a.jpg", pos: "50% 45%" },
+  "Wealth Creation": { img: "/img/coffee-planting.jpg", pos: "50% 50%" },
+  Governance: { img: "/img/baraza-a.jpg", pos: "50% 40%" },
+};
+
 export default function Pillars() {
   return (
     <>
-      <section className="border-b border-[var(--color-rule)]">
-        <div className="mx-auto max-w-6xl px-6 pb-14 pt-16 lg:pt-24">
-          <p className="eyebrow">Nandi County, 2027</p>
-          <h1 className="display mt-5 max-w-[12ch] text-[3.5rem] leading-[0.95] sm:text-[4.5rem] lg:text-[5.25rem]">
+      <section className="night relative isolate flex min-h-[30rem] items-end overflow-hidden lg:min-h-[36rem]">
+        <Image
+          src="/img/listening.jpg"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="-z-10 object-cover"
+          style={{ objectPosition: "50% 45%" }}
+        />
+        <div
+          aria-hidden
+          className="absolute inset-0 -z-10 bg-gradient-to-t from-[#0C1420] via-[#0C1420]/86 to-[#0C1420]/45"
+        />
+        <div className="mx-auto w-full max-w-7xl px-6 pb-16 pt-28">
+          <p className="label text-[var(--color-gold)]">Nandi County, 2027</p>
+          <h1 className="display mt-6 max-w-[11ch] text-[3.5rem] leading-[0.94] text-white sm:text-[4.75rem] lg:text-[5.75rem]">
             The six pillars
           </h1>
-          <p className="mt-7 max-w-[46ch] text-[1.1875rem] leading-relaxed text-[var(--color-soft)]">
+          <p className="mt-7 max-w-[50ch] text-[1.125rem] leading-relaxed text-[var(--color-on-night-soft)]">
             Road Network. Education. Health. Water. Wealth Creation.
             Governance.
           </p>
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-6 py-16">
-        <ol className="grid gap-x-12 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
-          {pillars.map((p) => (
-            <li
-              key={p.n}
-              className="border-t-2 border-[var(--color-murram)] pt-5"
-            >
-              <span className="font-mono text-[0.75rem] font-medium tabular-nums text-[var(--color-murram)]">
-                {p.n}
-              </span>
-              <h2 className="display mt-2 text-[1.875rem] leading-tight">
-                {p.name}
-              </h2>
-              <p className="mt-3 leading-relaxed text-[var(--color-soft)]">
-                {p.body}
-              </p>
-            </li>
-          ))}
-        </ol>
-      </section>
+      {/* Each pillar, alternating side */}
+      {pillars.map((p, i) => {
+        const a = art[p.name];
+        const flip = i % 2 === 1;
+        return (
+          <section
+            key={p.n}
+            className={
+              i % 2 === 1
+                ? "bg-[var(--color-sunk)]"
+                : "bg-[var(--color-paper)]"
+            }
+          >
+            <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 py-16 lg:grid-cols-2 lg:gap-16 lg:py-20">
+              <div className={flip ? "lg:order-2" : undefined}>
+                <span className="numeral text-[3.5rem] text-[var(--color-murram)]">
+                  {p.n}
+                </span>
+                <h2 className="display mt-4 text-[2.5rem] leading-tight sm:text-[3rem]">
+                  {p.name}
+                </h2>
+                <p className="mt-5 max-w-[44ch] text-[1.0625rem] leading-relaxed text-[var(--color-soft)]">
+                  {p.body}
+                </p>
+              </div>
+              {a && (
+                <figure
+                  className={`relative aspect-[4/3] overflow-hidden rounded-sm bg-[var(--color-sunk)] ${
+                    flip ? "lg:order-1" : ""
+                  }`}
+                >
+                  <Image
+                    src={a.img}
+                    alt=""
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 46vw"
+                    className="object-cover"
+                    style={{ objectPosition: a.pos }}
+                  />
+                </figure>
+              )}
+            </div>
+          </section>
+        );
+      })}
 
-      <ImageBand
-        img="/img/coffee-crowd.jpg"
-        pos="50% 45%"
-        eyebrow="In her words"
-        title="Fear is a luxury we cannot afford."
-        body={declaration.quote}
-      >
-        <Link
-          href="/record"
-          className="mt-8 inline-block rounded-sm bg-white px-6 py-3 text-[0.9375rem] font-bold text-[var(--color-ink)] transition-colors duration-200 hover:bg-[#F0EFE9]"
-        >
-          The record so far
-        </Link>
-      </ImageBand>
-
-      <section className="mx-auto max-w-6xl px-6 pb-16 pt-8">
-        <SourceLine source={declaration.source} />
+      {/* Declaration */}
+      <section className="night relative isolate overflow-hidden">
+        <Image
+          src="/img/portrait.jpg"
+          alt=""
+          fill
+          sizes="100vw"
+          className="-z-10 object-cover"
+          style={{ objectPosition: "50% 22%" }}
+        />
+        <div aria-hidden className="absolute inset-0 -z-10 bg-[#0C1420]/84" />
+        <div className="mx-auto max-w-4xl px-6 py-24 lg:py-28">
+          <NightHead eyebrow="In her words" title="Fear is a luxury we cannot afford." />
+          <blockquote className="mt-8 max-w-[58ch] text-[1.125rem] leading-relaxed text-[var(--color-on-night-soft)]">
+            <p>&ldquo;{declaration.quote}&rdquo;</p>
+          </blockquote>
+          <p className="label mt-8 border-t border-[var(--color-night-rule)] pt-5 text-[var(--color-on-night-soft)]">
+            {declaration.source.publisher}, {declaration.source.date}
+          </p>
+          <Link
+            href="/record"
+            className="mt-10 inline-block rounded-sm bg-[var(--color-gold)] px-7 py-3.5 text-[0.9375rem] font-bold text-[#1A1206] transition-colors duration-200 hover:bg-[var(--color-gold-soft)]"
+          >
+            The record so far
+          </Link>
+        </div>
       </section>
     </>
   );

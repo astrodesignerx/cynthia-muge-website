@@ -19,37 +19,31 @@ export function SplitHero({
   children?: React.ReactNode;
 }) {
   return (
-    <section className="border-b border-[var(--color-rule)]">
-      <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 py-14 lg:grid-cols-[1.05fr_1fr] lg:py-20">
-        <div>
-          <p className="eyebrow">{eyebrow}</p>
-          <h1 className="display mt-5 text-[3rem] leading-[0.98] sm:text-[3.75rem] lg:text-[4.25rem]">
-            {title}
-          </h1>
-          {lead && (
-            <p className="mt-6 max-w-[46ch] text-[1.1875rem] leading-relaxed text-[var(--color-soft)]">
-              {lead}
-            </p>
-          )}
-          {children}
-        </div>
-        <div className="relative">
-          <div
-            aria-hidden
-            className="absolute -right-3 -top-3 hidden h-full w-full rounded-sm bg-[var(--color-murram-wash)] lg:block"
-          />
-          <div className="relative aspect-[4/5] overflow-hidden rounded-sm bg-[var(--color-sunk)]">
-            <Image
-              src={img}
-              alt={alt}
-              fill
-              priority
-              sizes="(max-width: 1024px) 100vw, 46vw"
-              className="object-cover"
-              style={{ objectPosition: pos }}
-            />
-          </div>
-        </div>
+    <section className="night relative isolate flex min-h-[26rem] items-end overflow-hidden lg:min-h-[32rem]">
+      <Image
+        src={img}
+        alt={alt}
+        fill
+        priority
+        sizes="100vw"
+        className="-z-10 object-cover"
+        style={{ objectPosition: pos }}
+      />
+      <div
+        aria-hidden
+        className="absolute inset-0 -z-10 bg-gradient-to-t from-[#0C1420] via-[#0C1420]/84 to-[#0C1420]/45"
+      />
+      <div className="mx-auto w-full max-w-7xl px-6 pb-14 pt-28">
+        <p className="label text-[var(--color-gold)]">{eyebrow}</p>
+        <h1 className="display mt-6 max-w-[14ch] text-[3rem] leading-[0.96] text-white sm:text-[4rem] lg:text-[4.75rem]">
+          {title}
+        </h1>
+        {lead && (
+          <p className="mt-6 max-w-[46ch] text-[1.125rem] leading-relaxed text-[var(--color-on-night-soft)]">
+            {lead}
+          </p>
+        )}
+        {children}
       </div>
     </section>
   );
