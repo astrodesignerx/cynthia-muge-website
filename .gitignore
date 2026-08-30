@@ -6,3 +6,7 @@ dist/
 .DS_Store
 *.log
 .pnpm-store/
+
+node_modules/
+.next/
+next-env.d.ts

@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+/*
+  Visual identity — see BUILD-BRIEF.md §2.
+  Light mode only. Every colour painted explicitly; no dark-mode blocks.
+*/
+
+@theme {
+  /* Palette: grounded in Nandi, deliberately not party colours */
+  --color-murram: #a8442a;        /* red laterite of Nandi's roads */
+  --color-murram-deep: #7e3220;
+  --color-murram-wash: #f4e7e1;
+  --color-leaf: #2c6049;          /* coffee and tea leaf */
+  --color-leaf-wash: #e3ede7;
+  --color-amber: #8a6410;         /* semantic: unmeasured */
+  --color-amber-wash: #f4eedc;
+
+  --color-ink: #141a16;           /* near-black, green bias */
+  --color-soft: #4a5751;
+  --color-faint: #7e8a84;
+  --color-paper: #ffffff;
+  --color-sunk: #eff1ed;
+  --color-rule: #dbddd5;
+  --color-rule-firm: #c3c9c2;
+
+  /* Type */
+  --font-display: var(--font-instrument), Georgia, serif;
+  --font-body: var(--font-manrope), "Helvetica Neue", Arial, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, Menlo, monospace;
+
+  /* Scale — 12 / 14 / 16 / 18 / 21 / 26 / 34 / 46 / 64 */
+  --text-2xs: 0.75rem;
+  --text-xs: 0.875rem;
+  --text-sm: 1rem;
+  --text-base: 1.125rem;
+  --text-lg: 1.3125rem;
+  --text-xl: 1.625rem;
+  --text-2xl: 2.125rem;
+  --text-3xl: 2.875rem;
+  --text-4xl: 4rem;
+}
+
+:root { color-scheme: light; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Focus: always visible, never removed */
+:focus-visible {
+  outline: 2px solid var(--color-murram);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+::selection {
+  background: var(--color-murram-wash);
+  color: var(--color-ink);
+}
+
+/* Motion: 120–250ms, transform and opacity only. Honour reduced-motion. */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@utility display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+
+@utility eyebrow {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-murram);
+}
+
+@utility meta {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  line-height: 1.5;
+  color: var(--color-faint);
+}
