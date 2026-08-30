@@ -210,3 +210,27 @@ body {
   font-weight: 400;
   text-transform: uppercase;
 }
+
+/* Hero pillar chips: a slow vertical drift with a slight tilt. */
+@keyframes drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(var(--rot, 0deg));
+  }
+  50% {
+    transform: translate3d(0, -14px, 0) rotate(calc(var(--rot, 0deg) * -0.6));
+  }
+}
+
+.drift {
+  animation-name: drift;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .drift {
+    animation: none;
+  }
+}

@@ -46,7 +46,7 @@ export default async function ProgrammePage({
             fill
             priority
             sizes="100vw"
-            className="-z-10 object-cover"
+            className="-z-10 object-cover object-top"
           />
         )}
         <div
@@ -85,7 +85,7 @@ export default async function ProgrammePage({
         </div>
       </header>
 
-      <div className="mx-auto max-w-4xl px-6">
+      <div className="mx-auto max-w-6xl px-6">
 
       <Section title="The figures">
         <FigureGrid figures={p.figures} />
@@ -216,7 +216,7 @@ export default async function ProgrammePage({
         </section>
       )}
 
-      <div className="mx-auto max-w-4xl px-6">
+      <div className="mx-auto max-w-6xl px-6">
 
       <Section title="Still to be counted">
         <GapCards gaps={p.gaps} />

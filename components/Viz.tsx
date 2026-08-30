@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { GrowBar, Reveal } from "@/components/Motion";
+import { Counter, GrowBar, Reveal } from "@/components/Motion";
 import type { Source } from "@/lib/types";
 
 /* ------------------------------------------------------------------ *
@@ -14,12 +14,14 @@ export function Stat({
   note,
   scale = "md",
   tone = "gold",
+  count = false,
 }: {
   value: string;
   label: string;
   note?: string;
   scale?: "sm" | "md" | "lg";
   tone?: "gold" | "ember" | "ink";
+  count?: boolean;
 }) {
   const size =
     scale === "lg"
@@ -38,7 +40,9 @@ export function Stat({
 
   return (
     <Reveal>
-      <p className={`numeral ${size} ${colour}`}>{value}</p>
+      <p className={`numeral ${size} ${colour}`}>
+        {count ? <Counter value={value} /> : value}
+      </p>
       <p className={`label mt-4 ${labelColour}`}>{label}</p>
       {note && (
         <p
@@ -70,16 +74,16 @@ export function WardGrid({
           <li
             key={w}
 
-            className={`flex min-h-[4.5rem] flex-col justify-between p-3 transition-colors duration-200 ${
+            className={`group/ward relative flex min-h-[4.5rem] flex-col justify-between p-3 transition-colors duration-200 ${
               i < reached
-                ? "bg-[var(--color-night-2)]"
+                ? "bg-[var(--color-night-2)] hover:bg-[var(--color-murram)]"
                 : "bg-[var(--color-night)] opacity-60"
             }`}
           >
-            <span className="label text-[0.5625rem] text-[var(--color-gold)]">
+            <span className="label text-[0.5625rem] text-[var(--color-gold)] transition-colors duration-200 group-hover/ward:text-white">
               {String(i + 1).padStart(2, "0")}
             </span>
-            <span className="mt-2 text-[0.8125rem] font-semibold leading-tight text-[var(--color-on-night)]">
+            <span className="mt-2 text-[0.8125rem] font-semibold leading-tight text-[var(--color-on-night)] transition-transform duration-200 ease-out group-hover/ward:translate-x-0.5">
               {w}
             </span>
           </li>
@@ -246,7 +250,7 @@ export function NightHead({
             {title}
           </h2>
         </div>
-        <p className="max-w-[54ch] text-[1.0625rem] leading-relaxed text-[var(--color-on-night-soft)] lg:pb-2">
+        <p className="max-w-[54ch] text-[1.0625rem] leading-relaxed text-[var(--color-on-night-soft)] lg:ml-auto lg:pb-2 lg:text-right">
           {lead}
         </p>
       </Reveal>

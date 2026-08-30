@@ -16,7 +16,7 @@ import {
   Stat,
   WardGrid,
 } from "@/components/Viz";
-import { Reveal } from "@/components/Motion";
+import { FloatingPillars, Reveal } from "@/components/Motion";
 
 const cards = [
   { slug: "kahawa-na-mama", img: "/img/coffee-handover-a.jpg", pos: "50% 45%" },
@@ -99,7 +99,7 @@ export default function Home() {
           aria-hidden
           className="absolute -left-24 top-1/2 -z-20 hidden h-[38rem] w-[38rem] -translate-y-1/2 rounded-full bg-[var(--color-murram)]/12 blur-3xl lg:block"
         />
-        <div className="mx-auto grid max-w-7xl items-end gap-4 px-6 pt-24 sm:gap-8 lg:grid-cols-[1fr_1fr] lg:pt-36">
+        <div className="mx-auto grid max-w-7xl items-end gap-4 px-6 pt-24 sm:gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:pt-36">
           <div className="pb-10 sm:pb-16 lg:pb-32">
             <p className="label rise text-[var(--color-gold)]">
               Woman Representative, Nandi County
@@ -126,19 +126,21 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative min-h-[22rem] sm:min-h-[33rem] lg:min-h-[47rem]">
+          <div className="relative isolate min-h-[22rem] sm:min-h-[33rem] lg:min-h-[47rem]">
             {/* The murram disc sits behind her, so the cutout reads as standing on it. */}
             <div
               aria-hidden
-              className="absolute bottom-0 left-1/2 h-[19rem] w-[19rem] -translate-x-1/2 rounded-full bg-[var(--color-murram)] sm:h-[28rem] sm:w-[28rem] lg:h-[40rem] lg:w-[40rem]"
+              className="absolute bottom-0 left-1/2 z-0 h-[19rem] w-[19rem] -translate-x-1/2 rounded-full bg-[var(--color-murram)] sm:h-[28rem] sm:w-[28rem] lg:h-[40rem] lg:w-[40rem]"
             />
+            {/* chips marked front carry z-20, so they pass in front of her */}
+            <FloatingPillars pillars={pillars} />
             <Image
               src="/img/speaking-beaded-cutout.png"
               alt="Cynthia Muge speaking"
               fill
               priority
               sizes="(max-width: 1024px) 100vw, 46vw"
-              className="rise object-contain object-bottom"
+              className="rise z-10 object-contain object-bottom"
             />
           </div>
         </div>
@@ -156,21 +158,25 @@ export default function Home() {
           <dl className="mt-16 grid gap-y-14 sm:grid-cols-2 lg:grid-cols-4 lg:gap-x-10">
             <Stat
               value="650,000"
+              count
               label="Coffee seedlings"
               note="Distributed to roughly 4,000 women across all six sub-counties."
             />
             <Stat
               value="449"
+              count
               label="Students on scholarship"
               note="All cohorts. 206 sit KCSE this year."
             />
             <Stat
               value="30 / 30"
+              count
               label="Wards reached by BOSO"
               note="846 matches in three months."
             />
             <Stat
               value="KSh 2.7m"
+              count
               label="Prize money paid"
               note="Settled at the close of each ward competition."
             />

@@ -152,3 +152,121 @@ export function GrowBar({
     </div>
   );
 }
+
+/**
+ * Counts a figure up when its section is reached.
+ * The value is a display string, so the digits animate while everything
+ * around them, currency, separators and slashes, stays exactly as written.
+ */
+export function Counter({ value, ms = 1100 }: { value: string; ms?: number }) {
+  const { ref, seen } = useInView<HTMLSpanElement>();
+  const [t, setT] = useState(0);
+
+  useEffect(() => {
+    if (!seen) return;
+    if (
+      typeof matchMedia !== "undefined" &&
+      matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      setT(1);
+      return;
+    }
+    let raf = 0;
+    const start = performance.now();
+    const tick = (now: number) => {
+      const p = Math.min(1, (now - start) / ms);
+      // ease out, so it settles rather than stops
+      setT(1 - Math.pow(1 - p, 3));
+      if (p < 1) raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, [seen, ms]);
+
+  // Split into runs of digits and everything else, and only count the digits.
+  const parts = value.split(/(\d[\d,.]*)/);
+  const shown = parts
+    .map((part) => {
+      if (!/^\d/.test(part)) return part;
+      const decimals = part.includes(".") ? part.split(".")[1].length : 0;
+      const target = Number(part.replace(/,/g, ""));
+      const at = target * t;
+      const out =
+        decimals > 0 ? at.toFixed(decimals) : String(Math.round(at));
+      // put the thousands separators back where the source had them
+      return part.includes(",")
+        ? Number(out).toLocaleString("en-US")
+        : out;
+    })
+    .join("");
+
+  return (
+    <span ref={ref} className="tabular-nums">
+      {shown}
+    </span>
+  );
+}
+
+/**
+ * Six pillar chips drifting around the hero portrait, some in front of her and
+ * some behind, to give the composition depth. Positions are fixed rather than
+ * random so the layout is the same on every render and does not jump on
+ * hydration. Decorative, so hidden from assistive technology and from small
+ * screens where there is no room for it.
+ */
+export function FloatingPillars({
+  pillars,
+}: {
+  pillars: { n: string; name: string }[];
+}) {
+  // top / left as percentages of the hero box, whether it sits in front, and
+  // the drift cycle length so they do not move in lockstep.
+  const spots = [
+    { top: "6%", left: "-6%", front: false, dur: "7.5s", delay: "0s", rot: -5 },
+    { top: "20%", left: "72%", front: true, dur: "9s", delay: "-2s", rot: 4 },
+    { top: "42%", left: "-16%", front: true, dur: "8.2s", delay: "-4s", rot: 3 },
+    { top: "58%", left: "78%", front: false, dur: "10s", delay: "-1s", rot: -4 },
+    { top: "72%", left: "-14%", front: false, dur: "8.8s", delay: "-3s", rot: 5 },
+    { top: "88%", left: "62%", front: true, dur: "7.8s", delay: "-5s", rot: -3 },
+  ];
+
+  return (
+    <div aria-hidden className="pointer-events-none absolute inset-0 hidden lg:block">
+      {pillars.slice(0, 6).map((p, i) => {
+        const s = spots[i];
+        return (
+          <span
+            key={p.n}
+            className={`drift absolute ${s.front ? "z-20" : "z-0"}`}
+            style={{
+              top: s.top,
+              left: s.left,
+              animationDuration: s.dur,
+              animationDelay: s.delay,
+              ["--rot" as string]: `${s.rot}deg`,
+            }}
+          >
+            <span
+              className={`flex items-center gap-2 rounded-sm border px-3 py-2 backdrop-blur-sm ${
+                s.front
+                  ? "border-white/20 bg-[#0C1420]/72 shadow-lg shadow-black/30"
+                  : "border-white/10 bg-[#0C1420]/45"
+              }`}
+            >
+              <span className="label text-[0.5625rem] text-[var(--color-gold)]">
+                {p.n}
+              </span>
+              <span
+                className={`whitespace-nowrap text-[0.8125rem] font-semibold ${
+                  s.front ? "text-white" : "text-white/65"
+                }`}
+              >
+                {p.name}
+              </span>
+            </span>
+          </span>
+        );
+      })}
+    </div>
+  );
+}
