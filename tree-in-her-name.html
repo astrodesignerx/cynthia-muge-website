@@ -1,0 +1,817 @@
+<title>The Tree in Her Name</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Mono:wght@400;500&display=swap">
+
+<style>
+:root {
+  --paper:      #F2F4F1;
+  --raised:     #FBFCFA;
+  --sunk:       #E7EAE5;
+  --ink:        #101A14;
+  --ink-soft:   #3A473F;
+  --ink-faint:  #6C7A72;
+  --rule:       #D3D9D2;
+  --rule-firm:  #B6BFB6;
+
+  --murram:     #B4502A;
+  --murram-wash:#F6E7E0;
+  --leaf:       #29553D;
+  --leaf-wash:  #E3EDE6;
+  --cherry:     #A82E24;
+  --cherry-wash:#F7E4E2;
+
+  --display: "Barlow Condensed", "Helvetica Neue", Arial, sans-serif;
+  --body: "Spectral", Georgia, "Times New Roman", serif;
+  --mono: "DM Mono", ui-monospace, Menlo, monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root[data-theme="__never"] {
+    --paper:      #0E1411;
+    --raised:     #161E19;
+    --sunk:       #090D0B;
+    --ink:        #E6EBE6;
+    --ink-soft:   #AEBBB2;
+    --ink-faint:  #7C8B82;
+    --rule:       #253029;
+    --rule-firm:  #38473D;
+
+    --murram:     #E08556;
+    --murram-wash:#2E1A11;
+    --leaf:       #74C298;
+    --leaf-wash:  #142A1E;
+    --cherry:     #E0776B;
+    --cherry-wash:#2C1512;
+  }
+}
+
+:root[data-theme="__never-dark"] {
+  --paper:      #0E1411;
+  --raised:     #161E19;
+  --sunk:       #090D0B;
+  --ink:        #E6EBE6;
+  --ink-soft:   #AEBBB2;
+  --ink-faint:  #7C8B82;
+  --rule:       #253029;
+  --rule-firm:  #38473D;
+
+  --murram:     #E08556;
+  --murram-wash:#2E1A11;
+  --leaf:       #74C298;
+  --leaf-wash:  #142A1E;
+  --cherry:     #E0776B;
+  --cherry-wash:#2C1512;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 17px;
+  line-height: 1.66;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 30px 130px; }
+.col { max-width: 660px; }
+
+/* ---------- top bar ---------- */
+
+.bar {
+  position: sticky; top: 0; z-index: 20;
+  background: var(--paper);
+  border-bottom: 1px solid var(--rule);
+  padding: 9px 0;
+  margin-bottom: 0;
+}
+.bar-in { max-width: 1080px; margin: 0 auto; padding: 0 30px; display: flex; gap: 8px 22px; flex-wrap: wrap; align-items: baseline; }
+.bar-mark { font-family: var(--mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--murram); margin-right: auto; }
+.bar a { font-family: var(--display); font-size: 13.5px; font-weight: 500; letter-spacing: .02em; color: var(--ink-soft); text-decoration: none; }
+.bar a:hover { color: var(--murram); }
+.bar a:focus-visible { outline: 2px solid var(--murram); outline-offset: 3px; border-radius: 2px; }
+
+/* ---------- masthead ---------- */
+
+.masthead { padding: 52px 0 30px; border-bottom: 3px solid var(--ink); }
+.slate {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  color: var(--murram);
+  margin-bottom: 20px;
+}
+h1 {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(46px, 8.5vw, 104px);
+  line-height: .88;
+  letter-spacing: -.015em;
+  margin: 0 0 4px;
+  text-transform: uppercase;
+}
+.subtitle {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(17px, 2.3vw, 25px);
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--murram);
+  margin: 0 0 26px;
+}
+.standfirst { font-size: 20px; line-height: 1.5; font-weight: 300; color: var(--ink-soft); max-width: 60ch; margin: 0 0 26px; }
+
+.specs { display: grid; grid-template-columns: repeat(auto-fit, minmax(128px, 1fr)); gap: 16px 26px; }
+.spec .k { font-family: var(--mono); font-size: 9px; letter-spacing: .13em; text-transform: uppercase; color: var(--ink-faint); }
+.spec .v { font-family: var(--display); font-size: 16px; font-weight: 600; letter-spacing: .01em; margin-top: 3px; line-height: 1.25; }
+
+/* ---------- sections ---------- */
+
+section { padding-top: 62px; scroll-margin-top: 56px; }
+.sec-head { display: flex; align-items: baseline; gap: 13px; margin-bottom: 20px; }
+.sec-head .n { font-family: var(--mono); font-size: 11px; font-weight: 500; color: var(--murram); flex: none; }
+h2 {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(27px, 4vw, 40px);
+  line-height: 1.02;
+  letter-spacing: -.005em;
+  text-transform: uppercase;
+  margin: 0;
+  text-wrap: balance;
+}
+h3 { font-family: var(--display); font-weight: 600; font-size: 20px; letter-spacing: .01em; margin: 34px 0 10px; }
+h4 { font-family: var(--mono); font-size: 10px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-faint); margin: 26px 0 9px; }
+
+p { margin: 0 0 15px; max-width: 66ch; }
+.wrap ul, .wrap ol { max-width: 66ch; padding-left: 21px; margin: 0 0 16px; }
+.wrap li { margin-bottom: 8px; }
+.wrap li::marker { color: var(--murram); }
+.lede { font-size: 19px; font-weight: 300; line-height: 1.55; color: var(--ink-soft); max-width: 62ch; }
+strong { font-weight: 600; }
+em.q { font-style: italic; color: var(--ink); }
+
+a { color: var(--murram); text-underline-offset: 2px; }
+a:focus-visible { outline: 2px solid var(--murram); outline-offset: 2px; }
+
+/* ---------- act spine ---------- */
+
+.acts { margin: 26px 0 10px; }
+.act {
+  display: grid;
+  grid-template-columns: 78px 1fr;
+  gap: 22px;
+  border-top: 1px solid var(--rule-firm);
+  padding: 18px 0 20px;
+}
+.act .tc { font-family: var(--mono); font-size: 11px; color: var(--leaf); letter-spacing: .02em; padding-top: 3px; }
+.act .tc b { display: block; font-family: var(--display); font-size: 22px; font-weight: 700; color: var(--ink); letter-spacing: .02em; margin-bottom: 3px; }
+.act h3 { margin: 0 0 7px; }
+.act p { margin-bottom: 0; font-size: 16px; }
+
+/* ---------- scene bands + shot tables ---------- */
+
+.scene { margin: 30px 0 0; border: 1px solid var(--rule); border-radius: 3px; overflow: hidden; background: var(--raised); }
+.slug {
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  padding: 9px 15px;
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+.slug .sn { font-family: var(--mono); font-size: 10.5px; font-weight: 500; color: var(--murram); letter-spacing: .05em; }
+.slug .tc { margin-left: auto; font-family: var(--mono); font-size: 10.5px; font-weight: 400; opacity: .72; letter-spacing: .03em; }
+.intent { padding: 11px 15px; background: var(--sunk); border-bottom: 1px solid var(--rule); font-size: 14.5px; line-height: 1.5; color: var(--ink-soft); }
+.intent b { color: var(--ink); font-weight: 600; }
+
+.scroll { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; min-width: 640px; font-family: var(--display); font-size: 14px; }
+th, td { padding: 9px 14px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--rule); line-height: 1.4; }
+thead th {
+  font-family: var(--mono); font-size: 9px; font-weight: 500;
+  letter-spacing: .11em; text-transform: uppercase; color: var(--ink-faint);
+  background: var(--raised); border-bottom: 1px solid var(--rule-firm); white-space: nowrap;
+}
+tbody tr:last-child td { border-bottom: none; }
+td.sh { font-family: var(--mono); font-size: 11px; color: var(--murram); white-space: nowrap; width: 52px; }
+td.fr { font-family: var(--mono); font-size: 10.5px; color: var(--ink-faint); white-space: nowrap; width: 62px; letter-spacing: .02em; }
+td.ev { color: var(--leaf); font-size: 13px; font-weight: 500; }
+tr.key td { background: var(--murram-wash); }
+tr.key td.ev { color: var(--murram); }
+
+/* generic data tables */
+.data { border: 1px solid var(--rule); border-radius: 3px; overflow: hidden; margin: 20px 0 24px; background: var(--raised); }
+.data table { min-width: 520px; }
+.data thead th { background: var(--sunk); }
+.data td.name { font-weight: 600; white-space: nowrap; }
+.data td.num { text-align: right; font-family: var(--mono); font-size: 12px; font-variant-numeric: tabular-nums; }
+
+/* ---------- callouts ---------- */
+
+.note { margin: 24px 0; padding: 16px 20px; border-left: 3px solid var(--leaf); background: var(--sunk); border-radius: 0 3px 3px 0; }
+.note.stop { border-left-color: var(--cherry); background: var(--cherry-wash); }
+.note.care { border-left-color: var(--murram); background: var(--murram-wash); }
+.note h4 { margin-top: 0; color: var(--ink-soft); }
+.note p:last-child, .note ul:last-child, .note ol:last-child { margin-bottom: 0; }
+
+/* ---------- cast cards ---------- */
+
+.cast { display: grid; grid-template-columns: repeat(auto-fit, minmax(238px, 1fr)); gap: 15px; margin: 22px 0; }
+.role { border: 1px solid var(--rule); border-top: 3px solid var(--murram); border-radius: 3px; padding: 15px 17px 5px; background: var(--raised); }
+.role .tag { font-family: var(--mono); font-size: 9px; letter-spacing: .12em; text-transform: uppercase; color: var(--murram); }
+.role h3 { margin: 5px 0 8px; font-size: 18px; }
+.role p { font-size: 14.5px; line-height: 1.5; color: var(--ink-soft); }
+.role.anchor { border-top-color: var(--cherry); }
+.role.anchor .tag { color: var(--cherry); }
+
+/* ---------- schedule ---------- */
+
+.sched { margin: 22px 0; }
+.blk { display: grid; grid-template-columns: 96px 1fr; gap: 20px; border-top: 1px solid var(--rule); padding: 14px 0; }
+.blk .m { font-family: var(--display); font-weight: 700; font-size: 17px; text-transform: uppercase; letter-spacing: .04em; color: var(--murram); padding-top: 1px; }
+.blk .b { font-family: var(--display); font-size: 14.5px; line-height: 1.5; }
+.blk .b b { font-weight: 600; }
+.blk.crit .m { color: var(--cherry); }
+
+/* ---------- deliverables ---------- */
+
+.dels { display: grid; gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: 3px; overflow: hidden; margin: 22px 0; }
+.del { background: var(--raised); padding: 14px 16px; display: grid; grid-template-columns: 44px 1fr 118px; gap: 16px; align-items: start; }
+.del .id { font-family: var(--mono); font-size: 11px; color: var(--murram); padding-top: 2px; }
+.del .d h4 { margin: 0 0 4px; color: var(--ink); font-family: var(--display); font-size: 16px; font-weight: 600; letter-spacing: .01em; text-transform: none; }
+.del .d p { margin: 0; font-family: var(--display); font-size: 13.5px; line-height: 1.45; color: var(--ink-soft); max-width: none; }
+.del .w { font-family: var(--mono); font-size: 10px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-faint); text-align: right; padding-top: 3px; line-height: 1.5; }
+
+.foot {
+  margin-top: 70px; padding-top: 20px; border-top: 3px solid var(--ink);
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: .05em;
+  text-transform: uppercase; color: var(--ink-faint); line-height: 1.75;
+}
+
+@media (max-width: 760px) {
+  .wrap { padding: 0 20px 100px; }
+  .bar-in { padding: 0 20px; }
+  .bar a:nth-child(n+6) { display: none; }
+  .act { grid-template-columns: 1fr; gap: 8px; }
+  .blk { grid-template-columns: 1fr; gap: 4px; }
+  .del { grid-template-columns: 34px 1fr; }
+  .del .w { grid-column: 2; text-align: left; padding-top: 6px; }
+  body { font-size: 16.5px; }
+}
+
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+
+/* locked to light mode */
+:root { color-scheme: light; }
+</style>
+
+<div class="bar">
+  <div class="bar-in">
+    <span class="bar-mark">Treatment · v1 · 27 Aug 2026</span>
+    <a href="#thesis">Thesis</a>
+    <a href="#structure">Structure</a>
+    <a href="#cast">Cast</a>
+    <a href="#grammar">Grammar</a>
+    <a href="#shots">Shot list</a>
+    <a href="#sound">Sound</a>
+    <a href="#ethics">Ethics</a>
+    <a href="#schedule">Schedule</a>
+    <a href="#deliver">Deliverables</a>
+  </div>
+</div>
+
+<div class="wrap">
+
+<header class="masthead">
+  <div class="slate">Documentary treatment &amp; shot list · Kahawa na Mama · Nandi County</div>
+  <h1>The Tree<br>in Her Name</h1>
+  <p class="subtitle">A film about who owns the coffee</p>
+  <p class="standfirst">Not a profile of a politician. A film about a piece of paper that puts a woman's name next to a coffee bush, and what changed in the three years after it was signed.</p>
+  <div class="specs">
+    <div class="spec"><div class="k">Running time</div><div class="v">24 min</div></div>
+    <div class="spec"><div class="k">Language</div><div class="v">Nandi, subtitled</div></div>
+    <div class="spec"><div class="k">Principal shoot</div><div class="v">Oct–Dec 2026</div></div>
+    <div class="spec"><div class="k">Delivery</div><div class="v">Mid-Jan 2027</div></div>
+    <div class="spec"><div class="k">Crew</div><div class="v">1–2 people</div></div>
+    <div class="spec"><div class="k">Subject on screen</div><div class="v">~5 of 24 min</div></div>
+  </div>
+</header>
+
+<!-- THESIS -->
+<section id="thesis">
+  <div class="sec-head"><span class="n">01</span><h2>The thesis</h2></div>
+  <div class="col">
+
+  <p class="lede">The reason to make this film is that Cynthia Muge's strongest asset currently exists only as a press release about things she gave away. A documentary is the instrument that turns distribution into a record.</p>
+
+  <p>Every published number attached to Kahawa na Mama counts inputs. 650,000 seedlings. Roughly 4,000 women. Sixty-three self-help groups. Six sub-counties. Not one of those figures tells you whether a single tree survived, whether any coffee was sold, or whether one shilling reached a woman who did not previously control one.</p>
+
+  <p>That is the gap this film closes, and it is why the film has to be built as an inquiry rather than a commercial. If it is shot as a campaign video it will be dismissed as a campaign video, which is exactly what an opponent needs it to be. If it is shot as an honest account — including the trees that died — it becomes something none of her competitors can produce, because none of them has a three-year programme to account for.</p>
+
+  <h3>The argument in one image</h3>
+  <p>A coffee payment slip. A woman's name printed on it. Her hands holding it.</p>
+  <p>That is the whole film. Everything before it exists to explain why that piece of paper is unusual, and everything after it exists to say what it cost to get there. The programme's real innovation is not the seedlings — anyone can hand out seedlings. It is <strong>the charter mandating joint registration of coffee bushes between spouses</strong>, which is a property-rights reform delivered through an agricultural programme. Almost nobody in Nandi knows it exists.</p>
+
+  <div class="note">
+    <h4>What the film must answer, in order</h4>
+    <ol>
+      <li>Why did Nandi stop growing coffee?</li>
+      <li>Who did the work on the farms, and who collected the money?</li>
+      <li>What did this programme actually do, mechanically?</li>
+      <li>Three years on, what grew, what died, and who got paid?</li>
+      <li>What does the person who built it say it was for?</li>
+    </ol>
+    <p>Question five is last and it is short. A film that answers one through four honestly makes the case for her without ever having to argue it.</p>
+  </div>
+
+  <div class="note stop">
+    <h4>Kill criteria — read before spending anything</h4>
+    <p>This film is only worth making if the outcomes are real. Before principal photography, establish seedling survival rate and whether beneficiaries have sold cherry. <strong>If survival is poor or income change is negligible, do not make this film.</strong> Report the finding privately to the campaign and pivot to Phase 3 delivery coverage instead.</p>
+    <p>Releasing a triumphant film about a programme that did not work is worse than releasing nothing. It hands the "political project" attack its best evidence, and it is done in public.</p>
+  </div>
+
+  </div>
+</section>
+
+<!-- STRUCTURE -->
+<section id="structure">
+  <div class="sec-head"><span class="n">02</span><h2>Structure</h2></div>
+  <div class="col">
+  <p>Three acts. The politician does not appear until minute seven, appears observationally in the middle, and speaks directly only in the last ninety seconds. That ratio is not modesty — it is the mechanism by which the film reads as evidence rather than advertising.</p>
+  </div>
+
+  <div class="acts">
+    <div class="act">
+      <div class="tc"><b>I</b>0:00 – 7:00</div>
+      <div>
+        <h3>The Lost Crop</h3>
+        <p>Nandi is tea country. It was not always. Coffee was uprooted, cooperatives collapsed, pulping stations rusted. And on the farms that remained, a pattern: women did the weeding, the picking, the drying — and a man collected the payment. Establish the structural problem before anyone offers a solution.</p>
+      </div>
+    </div>
+    <div class="act">
+      <div class="tc"><b>II</b>7:00 – 15:00</div>
+      <div>
+        <h3>The Intervention</h3>
+        <p>Not a politician arriving with a lorry. A mechanism: a nursery at Baraka, certified Ruiru 11 and Batian seedlings, agronomists, a self-help group of fifteen women meeting under a tree — and the charter. The signing is the centre of the film. This act shows a system being built, not a gift being given.</p>
+      </div>
+    </div>
+    <div class="act">
+      <div class="tc"><b>III</b>15:00 – 24:00</div>
+      <div>
+        <h3>The Ledger</h3>
+        <p>Three years on. Cherry turning red on trees planted in 2023. Picking, weighing, the docket, the payment. Then the honest column: what failed, who dropped out, what the survival rate really was. Close with ninety seconds of the person who built it, and nothing more.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CAST -->
+<section id="cast">
+  <div class="sec-head"><span class="n">03</span><h2>Cast</h2></div>
+  <div class="col">
+  <p>Four farmers carry the film. Cast them in September, before the harvest, so you have a relationship before you have a camera pointed at anyone. These are casting briefs, not people — find the real ones on the ground.</p>
+  <p><strong>Casting rule:</strong> the woman must be able to tell you what changed in her own words, unprompted, in a pre-interview with no camera present. If she can only say the programme is good, she is not your subject.</p>
+  </div>
+
+  <div class="cast">
+    <div class="role">
+      <div class="tag">Lead · Nandi Hills</div>
+      <h3>The pilot-year farmer</h3>
+      <p>Planted in 2023. Her trees are bearing now. She is the film's spine and the only one who can show a three-year arc on camera. Nandi Hills has over a thousand beneficiaries — the deepest casting pool — and it is where the August backlash originated, which makes an authentic voice from there worth more than one from anywhere else.</p>
+    </div>
+    <div class="role">
+      <div class="tag">Second · Aldai</div>
+      <h3>The Phase 2 farmer</h3>
+      <p>Received seedlings at the Maraba launch in June 2025. Her trees are young. She provides the middle of the timeline and lets the film show the same story at two stages at once, which is what makes three years legible in twenty-four minutes.</p>
+    </div>
+    <div class="role">
+      <div class="tag">Third · Mosop or Tinderet</div>
+      <h3>The group chairwoman</h3>
+      <p>Runs one of the sixty-three self-help groups. She talks about the collective, the training, the record-keeping, the arguments. She is the evidence that this is an organisation and not a mailing list — the single most important open question about the programme.</p>
+    </div>
+    <div class="role anchor">
+      <div class="tag">Anchor · Anywhere</div>
+      <h3>The one it did not work for</h3>
+      <p>Trees died, or she left the group, or the joint registration was refused at home. <strong>Non-negotiable.</strong> She is the reason a sceptical viewer believes the other three. Approach her with real care: she is being asked to say something unflattering about a programme her neighbours value, and about a candidate.</p>
+    </div>
+  </div>
+
+  <div class="col">
+    <h4>Supporting voices</h4>
+    <ul>
+      <li><strong>An agronomist</strong> — Baraka Agricultural College or the county extension service. Technical spine. Says the words survival rate and yield on camera so the film does not have to assert them.</li>
+      <li><strong>A cooperative official</strong> — someone who runs the scale and the ledger. Independent corroboration of who is being paid.</li>
+      <li><strong>An elder or a husband</strong> — one man who supported joint registration and can say why. Crucial: without a male voice the film reads as a case against Nandi men, which is precisely the attack currently running.</li>
+      <li><strong>Hon. Cynthia Muge</strong> — one sit-down, ninety seconds in the cut, plus observational coverage at distribution and the charter signing.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- GRAMMAR -->
+<section id="grammar">
+  <div class="sec-head"><span class="n">04</span><h2>Visual grammar</h2></div>
+  <div class="col">
+
+  <p>Set the rules now and hold them. A consistent grammar is what separates a documentary from assembled footage, and it is also what will make the vertical cuts feel like they came from somewhere.</p>
+
+  <h4>The four rules</h4>
+  <ol>
+    <li><strong>Hands before faces.</strong> This is a film about labour and ownership. Open on hands almost every time — picking, weighing, signing, counting. Cut to the face on the line that matters.</li>
+    <li><strong>The camera sits down.</strong> Interviews at the subject's eye level, seated, on her own ground — her farm, her doorway, never a hotel or an office. No standing-over angles on farmers, ever.</li>
+    <li><strong>Locked off for testimony, handheld for process.</strong> When someone is telling you something, the frame is still and the viewer trusts it. When something is happening, move with it.</li>
+    <li><strong>Available light.</strong> Golden hour at both ends of the day, negative fill rather than a key light. Coffee is grown in highland mist — shoot the mist rather than fighting it.</li>
+  </ol>
+
+  <h4>Palette to shoot for</h4>
+  <p>The subject supplies it: red murram roads, wet dark-green leaf, the red of ripe cherry, the aluminium grey of the weighing scale, the white of a paper docket. Expose for the cherry and let the greens go deep. Grade cool in the mist sequences and warm only at payment — the film should feel like it changes temperature when the money arrives.</p>
+
+  <h4>Two things to avoid</h4>
+  <ul>
+    <li><strong>Drone as decoration.</strong> One aerial earns its place: the tea-to-coffee transition in Act I, showing the monoculture. Any other drone shot is a music video.</li>
+    <li><strong>Slow motion on people's faces.</strong> It converts a person into a symbol. Reserve any speed ramp for cherry falling into a bucket, and use it once.</li>
+  </ul>
+
+  </div>
+</section>
+
+<!-- SHOT LIST -->
+<section id="shots">
+  <div class="sec-head"><span class="n">05</span><h2>Shot list</h2></div>
+  <div class="col">
+    <p>Fifteen scenes. Every shot carries an evidentiary purpose in the right-hand column — if a shot has none, it is decoration and should be cut before it is filmed. Shots highlighted in <span style="color:var(--murram);font-weight:600">murram</span> are the ones the film cannot exist without.</p>
+    <p><strong>Frame key:</strong> <span class="mono">XCU</span> extreme close · <span class="mono">CU</span> close · <span class="mono">MS</span> mid · <span class="mono">WS</span> wide · <span class="mono">OTS</span> over shoulder · <span class="mono">POV</span> point of view · <span class="mono">AER</span> aerial</p>
+  </div>
+
+  <!-- SCENE 1 -->
+  <div class="scene">
+    <div class="slug"><span class="sn">SC 01</span> Cold open — First light, a cherry <span class="tc">0:00–0:50</span></div>
+    <div class="intent"><b>Intent:</b> Establish the object the whole film is about before establishing anything else. No narration, no name, no titles. Sound and hands only.</div>
+    <div class="scroll"><table>
+      <thead><tr><th>Shot</th><th>Frame</th><th>Action</th><th>Audio</th><th>Evidence of</th></tr></thead>
+      <tbody>
+        <tr class="key"><td class="sh">1.1</td><td class="fr">XCU</td><td>Single ripe cherry on the branch, mist beading on the skin. Rack focus from leaf to fruit.</td><td>Wild dawn atmos, no music</td><td class="ev">The crop exists</td></tr>
+        <tr><td class="sh">1.2</td><td class="fr">WS</td><td>Highland ridge at 6am, mist sitting in the valley, no人 in frame.</td><td>Birds, distant cockerel</td><td class="ev">Place</td></tr>
+        <tr class="key"><td class="sh">1.3</td><td class="fr">CU</td><td>A woman's hands enter frame and pick the cherry. Hold on empty stem after.</td><td>Stem snap, close</td><td class="ev">Labour is female</td></tr>
+        <tr><td class="sh">1.4</td><td class="fr">MS</td><td>Her back, walking into the rows, bucket at hip. She does not turn.</td><td>Footfall in wet grass</td><td class="ev">Ordinary work</td></tr>
+        <tr><td class="sh">1.5</td><td class="fr">XCU</td><td>Cherry dropped into an empty plastic bucket. <em>The one permitted speed ramp.</em></td><td>Single hard impact — carry this into the title</td><td class="ev">Title cue</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+
+  <!-- SCENE 2 -->
+  <div class="scene">
+    <div class="slug"><span class="sn">SC 02</span> The stumps — What was here before <span class="tc">0:50–3:00</span></div>
+    <div class="intent"><b>Intent:</b> Prove the crop was abandoned. This scene must be physical evidence, not testimony — find the rusted pulping station and the derelict cooperative building before you write a word of it.</div>
+    <div class="scroll"><table>
+      <thead><tr><th>Shot</th><th>Frame</th><th>Action</th><th>Audio</th><th>Evidence of</th></tr></thead>
+      <tbody>
+        <tr class="key"><td class="sh">2.1</td><td class="fr">MS</td><td>Old coffee stumps in a field now under maize or grazing. Cut low, weathered grey.</td><td>Wind</td><td class="ev">Uprooting happened</td></tr>
+        <tr class="key"><td class="sh">2.2</td><td class="fr">WS→CU</td><td>Abandoned pulping station. Push in on rusted machinery, a seized handle, a collapsed drying table.</td><td>Metal creak, hollow room tone</td><td class="ev">Infrastructure collapse</td></tr>
+        <tr><td class="sh">2.3</td><td class="fr">CU</td><td>Faded cooperative signage. Society name and a year still legible.</td><td>Atmos</td><td class="ev">Datable, nameable</td></tr>
+        <tr><td class="sh">2.4</td><td class="fr">MS</td><td>Elder farmer walking the old rows, seated interview to follow at the same location.</td><td>Lav + boom</td><td class="ev">Living memory</td></tr>
+        <tr class="key"><td class="sh">2.5</td><td class="fr">CU</td><td><strong>Interview, elder:</strong> why they pulled the coffee out. Prices, delayed payment, the society's failure. Locked off, eye level, seated.</td><td>Lav primary, boom safety</td><td class="ev">Causal account</td></tr>
+        <tr><td class="sh">2.6</td><td class="fr">Archive</td><td>Stills or paperwork if any survive — old delivery dockets, society membership cards. Photograph flat, well lit.</td><td>—</td><td class="ev">Documentary record</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+
+  <!-- SCENE 3 -->
+  <div class="scene">
+    <div class="slug"><span class="sn">SC 03</span> The tea line <span class="tc">3:00–4:20</span></div>
+    <div class="intent"><b>Intent:</b> Show the monoculture that replaced it. Brief. This is context, not argument — resist the temptation to make tea the villain.</div>
+    <div class="scroll"><table>
+      <thead><tr><th>Shot</th><th>Frame</th><th>Action</th><th>Audio</th><th>Evidence of</th></tr></thead>
+      <tbody>
+        <tr class="key"><td class="sh">3.1</td><td class="fr">AER</td><td><strong>The one drone shot.</strong> Rise over unbroken tea to the horizon. Hold long enough that it becomes oppressive.</td><td>Score enters here, first time</td><td class="ev">Monoculture</td></tr>
+        <tr><td class="sh">3.2</td><td class="fr">MS</td><td>Tea pluckers at work, baskets on back. Respectful distance, no faces without consent.</td><td>Atmos</td><td class="ev">The alternative</td></tr>
+        <tr><td class="sh">3.3</td><td class="fr">CU</td><td>Green leaf weighed at a collection point. The scale, the tally book.</td><td>Scale mechanism</td><td class="ev">Existing payment system</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+
+  <!-- SCENE 4 -->
+  <div class="scene">
+    <div class="slug"><span class="sn">SC 04</span> Who did the work — the structural problem <span class="tc">4:20–7:00</span></div>
+    <div class="intent"><b>Intent:</b> The most important scene in Act I. Establish that women's exclusion from farm income is a <b>system</b>, not a complaint. If this scene fails, the charter in Act II means nothing.</div>
+    <div class="scroll"><table>
+      <thead><tr><th>Shot</th><th>Frame</th><th>Action</th><th>Audio</th><th>Evidence of</th></tr></thead>
+      <tbody>
+        <tr class="key"><td class="sh">4.1</td><td class="fr">CU</td><td><strong>Interview, lead farmer:</strong> describe a working day before the programme. Who weeded, who picked, who dried, who carried to the society.</td><td>Lav, locked off, her farm</td><td class="ev">Division of labour</td></tr>
+        <tr class="key"><td class="sh">4.2</td><td class="fr">XCU</td><td>An old delivery docket or payment record with a man's name on it. Held in her hands. <em>Find this document.</em></td><td>Paper handling</td><td class="ev">The exclusion, on paper</td></tr>
+        <tr><td class="sh">4.3</td><td class="fr">MS</td><td>Recreation avoided — instead, present-day footage of a woman doing each named task, cut to her voiceover listing them.</td><td>VO from 4.1</td><td class="ev">Labour, visible</td></tr>
+        <tr class="key"><td class="sh">4.4</td><td class="fr">CU</td><td><strong>Interview, group chairwoman:</strong> was this one household or every household? Push for the general claim, on record.</td><td>Lav, locked off</td><td class="ev">Pattern, not anecdote</td></tr>
+        <tr><td class="sh">4.5</td><td class="fr">CU</td><td><strong>Interview, the male voice:</strong> a husband or elder describing the same arrangement from the other side, without defensiveness.</td><td>Lav, locked off</td><td class="ev">Balance; disarms "anti-men"</td></tr>
+        <tr><td class="sh">4.6</td><td class="fr">WS</td><td>Empty farm at dusk, holding. End of act.</td><td>Score out, atmos only</td><td class="ev">Act break</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+
+  <!-- SCENE 5 -->
+  <div class="scene">
+    <div class="slug"><span class="sn">SC 05</span> The listening — origin <span class="tc">7:00–8:30</span></div>
+    <div class="intent"><b>Intent:</b> First appearance of the subject, and it is a story about being told something rather than saying something. Keep it to ninety seconds.</div>
+    <div class="scroll"><table>
+      <thead><tr><th>Shot</th><th>Frame</th><th>Action</th><th>Audio</th><th>Evidence of</th></tr></thead>
+      <tbody>
+        <tr class="key"><td class="sh">5.1</td><td class="fr">MS</td><td><strong>Interview, Muge:</strong> the campaign tours, and what women told her about the money. Her own line: <em class="q">"Most women do the hard labour on farms but have no control over the income."</em></td><td>Lav + boom, locked off</td><td class="ev">Origin, in her words</td></tr>
+        <tr><td class="sh">5.2</td><td class="fr">Archive</td><td>Any 2022 campaign stills or footage of her in a farm setting. Source from her office and from Northrift News.</td><td>—</td><td class="ev">The tours happened</td></tr>
+        <tr class="key"><td class="sh">5.3</td><td class="fr">CU</td><td><strong>Cross-check with a farmer:</strong> a beneficiary independently recalling being asked. Corroboration matters more than the claim.</td><td>Lav</td><td class="ev">Independent verification</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+
+  <!-- SCENE 6 -->
+  <div class="scene">
+    <div class="slug"><span class="sn">SC 06</span> The nursery <span class="tc">8:30–10:30</span></div>
+    <div class="intent"><b>Intent:</b> Show a system, not a handout. Her own claim — <b>"We didn't just give out seedlings. We built nurseries, trained farmers, and involved cooperatives and agronomists"</b> — is testable, and this scene is the test.</div>
+    <div class="scroll"><table>
+      <thead><tr><th>Shot</th><th>Frame</th><th>Action</th><th>Audio</th><th>Evidence of</th></tr></thead>
+      <tbody>
+        <tr class="key"><td class="sh">6.1</td><td class="fr">WS</td><td>The nursery in full: shade netting, seedling beds in rows. Establish scale honestly — count the beds.</td><td>Atmos, water</td><td class="ev">Infrastructure exists</td></tr>
+        <tr><td class="sh">6.2</td><td class="fr">XCU</td><td>A single seedling lifted from the bed, root ball intact. Variety label visible.</td><td>Soil, handling</td><td class="ev">Certified stock</td></tr>
+        <tr class="key"><td class="sh">6.3</td><td class="fr">CU</td><td><strong>Interview, agronomist:</strong> why Ruiru 11 and Batian — disease resistance, early bearing, why they suit a first-time grower. Get the time-to-first-crop figure on record.</td><td>Lav, locked off</td><td class="ev">Technical rationale</td></tr>
+        <tr><td class="sh">6.4</td><td class="fr">MS</td><td>Baraka Agricultural College signage and grounds. Partner institutions named on camera, not in a caption.</td><td>Atmos</td><td class="ev">Named partner</td></tr>
+        <tr><td class="sh">6.5</td><td class="fr">OTS</td><td>Nursery records — batch numbers, dispatch counts, destination wards. Film the ledger pages.</td><td>Paper</td><td class="ev">Auditable trail</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+
+  <!-- SCENE 7 -->
+  <div class="scene">
+    <div class="slug"><span class="sn">SC 07</span> Distribution day — Phase 3 <span class="tc">10:30–12:00</span></div>
+    <div class="intent"><b>Intent:</b> Observational. She is present but the camera stays with the women. Shoot this as news, not as an event — no speeches in the cut unless something real is said.</div>
+    <div class="scroll"><table>
+      <thead><tr><th>Shot</th><th>Frame</th><th>Action</th><th>Audio</th><th>Evidence of</th></tr></thead>
+      <tbody>
+        <tr><td class="sh">7.1</td><td class="fr">WS</td><td>Arrival: lorry, crates of seedlings, women assembling. Wide and unhurried.</td><td>Crowd atmos</td><td class="ev">Scale of turnout</td></tr>
+        <tr class="key"><td class="sh">7.2</td><td class="fr">CU</td><td>The registration table — names written into a book, ID checked, count recorded. <em>This is the shot most people would skip and it is the one that proves the programme is administered.</em></td><td>Pen, voices</td><td class="ev">Named, counted beneficiaries</td></tr>
+        <tr><td class="sh">7.3</td><td class="fr">MS</td><td>Muge in the crowd, handing seedlings, talking. Observational, no eyeline to camera.</td><td>Ambient only</td><td class="ev">Presence, unstaged</td></tr>
+        <tr class="key"><td class="sh">7.4</td><td class="fr">CU</td><td>A woman receiving her seedlings and walking away with them. Follow her out of the crowd and hold.</td><td>Atmos falling away</td><td class="ev">Transfer of an asset</td></tr>
+        <tr><td class="sh">7.5</td><td class="fr">XCU</td><td>Her hands and the count. Number of seedlings clearly readable.</td><td>—</td><td class="ev">Quantity per beneficiary</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+
+  <!-- SCENE 8 -->
+  <div class="scene">
+    <div class="slug"><span class="sn">SC 08</span> The charter — the centre of the film <span class="tc">12:00–14:00</span></div>
+    <div class="intent"><b>Intent:</b> The programme's actual innovation. A document that puts a wife's name beside a husband's on a coffee bush. Shoot this with the weight it deserves — it is the title of the film.</div>
+    <div class="scroll"><table>
+      <thead><tr><th>Shot</th><th>Frame</th><th>Action</th><th>Audio</th><th>Evidence of</th></tr></thead>
+      <tbody>
+        <tr class="key"><td class="sh">8.1</td><td class="fr">XCU</td><td><strong>The charter document itself.</strong> Flat, evenly lit, legible. Slow pan across the clause on joint registration. The audience must be able to read it.</td><td>Silence, then paper</td><td class="ev">The reform, verbatim</td></tr>
+        <tr class="key"><td class="sh">8.2</td><td class="fr">CU</td><td>A signing: two hands, two signatures, one document. Wife's name written. Hold on the completed page.</td><td>Pen on paper, close and dry</td><td class="ev">The act itself</td></tr>
+        <tr><td class="sh">8.3</td><td class="fr">MS</td><td>The couple after signing. Do not direct them. Whatever happens in the ten seconds after is the shot.</td><td>Room tone</td><td class="ev">Human consequence</td></tr>
+        <tr class="key"><td class="sh">8.4</td><td class="fr">CU</td><td><strong>Interview, farmer:</strong> what it meant to see her name on it. Ask once, then wait. Do not fill silence.</td><td>Lav, locked off</td><td class="ev">Meaning, first-person</td></tr>
+        <tr class="key"><td class="sh">8.5</td><td class="fr">CU</td><td><strong>Interview, the male voice:</strong> why he agreed. This shot is what stops the film reading as an attack on Nandi men.</td><td>Lav, locked off</td><td class="ev">Consent, male-voiced</td></tr>
+        <tr><td class="sh">8.6</td><td class="fr">CU</td><td><strong>Interview, cooperative official:</strong> confirming a joint registration is recorded in the society's books.</td><td>Lav</td><td class="ev">Institutional reality</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+
+  <!-- SCENE 9 -->
+  <div class="scene">
+    <div class="slug"><span class="sn">SC 09</span> The group under the tree <span class="tc">14:00–15:00</span></div>
+    <div class="intent"><b>Intent:</b> Answer the open question from the research — are the sixty-three self-help groups still functioning organisations? Film a real meeting, not a convened one.</div>
+    <div class="scroll"><table>
+      <thead><tr><th>Shot</th><th>Frame</th><th>Action</th><th>Audio</th><th>Evidence of</th></tr></thead>
+      <tbody>
+        <tr class="key"><td class="sh">9.1</td><td class="fr">WS</td><td>A group meeting in progress. Count the women in frame. Do not stage attendance.</td><td>Multi-voice, wide capture</td><td class="ev">The network is alive</td></tr>
+        <tr class="key"><td class="sh">9.2</td><td class="fr">CU</td><td>The group's minute book or contribution register. Dates, names, figures. Film the pages.</td><td>Paper</td><td class="ev">Continuity of operation</td></tr>
+        <tr><td class="sh">9.3</td><td class="fr">MS</td><td>Training in progress — agronomist demonstrating pruning or mulching to the group.</td><td>Boom, ambient</td><td class="ev">Training is ongoing</td></tr>
+        <tr><td class="sh">9.4</td><td class="fr">CU</td><td>Disagreement, if it happens. Leave it in. A group that argues is a group that exists.</td><td>—</td><td class="ev">Authenticity</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+
+  <!-- SCENE 10 -->
+  <div class="scene">
+    <div class="slug"><span class="sn">SC 10</span> Three years <span class="tc">15:00–16:30</span></div>
+    <div class="intent"><b>Intent:</b> Act III opens on time passing. The 2023 trees, now bearing. This is the shot that cannot be recreated next year, because by then it will look ordinary.</div>
+    <div class="scroll"><table>
+      <thead><tr><th>Shot</th><th>Frame</th><th>Action</th><th>Audio</th><th>Evidence of</th></tr></thead>
+      <tbody>
+        <tr class="key"><td class="sh">10.1</td><td class="fr">WS</td><td>The lead farmer's plot, now in full canopy. Match the framing of any 2023 photograph that exists — <em>ask her for one before you shoot.</em></td><td>Score returns</td><td class="ev">Before and after</td></tr>
+        <tr class="key"><td class="sh">10.2</td><td class="fr">MS</td><td>Her walking into her own rows, at her own pace. She is taller than the trees were; she is not now.</td><td>Footfall</td><td class="ev">Growth, legible</td></tr>
+        <tr><td class="sh">10.3</td><td class="fr">CU</td><td>Trunk at the base — thickness, age visible in the bark.</td><td>—</td><td class="ev">Maturity</td></tr>
+        <tr class="key"><td class="sh">10.4</td><td class="fr">CU</td><td><strong>Interview, agronomist, on location:</strong> assess these specific trees. Health, expected yield, honest caveats.</td><td>Lav</td><td class="ev">Third-party assessment</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+
+  <!-- SCENE 11 -->
+  <div class="scene">
+    <div class="slug"><span class="sn">SC 11</span> The picking <span class="tc">16:30–18:30</span></div>
+    <div class="intent"><b>Intent:</b> The film's only extended sequence of pure work. Let it run. No interview, no voiceover for at least ninety seconds.</div>
+    <div class="scroll"><table>
+      <thead><tr><th>Shot</th><th>Frame</th><th>Action</th><th>Audio</th><th>Evidence of</th></tr></thead>
+      <tbody>
+        <tr><td class="sh">11.1</td><td class="fr">WS</td><td>First light in the rows, several pickers spread through the plot.</td><td>Dawn atmos</td><td class="ev">Scale of harvest</td></tr>
+        <tr class="key"><td class="sh">11.2</td><td class="fr">XCU</td><td>Hands selecting — taking red, leaving green. The selectivity is the skill; show it explicitly.</td><td>Close picking sound</td><td class="ev">Craft, not just labour</td></tr>
+        <tr><td class="sh">11.3</td><td class="fr">CU</td><td>Face at work, unposed, over a long take. Cut to it on the line that matters.</td><td>Breathing, movement</td><td class="ev">The person</td></tr>
+        <tr class="key"><td class="sh">11.4</td><td class="fr">MS</td><td>Bucket filling over time. Consider a locked-off time-lapse from empty to full.</td><td>Accumulating impacts</td><td class="ev">Volume produced</td></tr>
+        <tr><td class="sh">11.5</td><td class="fr">MS</td><td>Children or neighbours helping, if present. Consent required for every minor, from a guardian, in writing.</td><td>Voices</td><td class="ev">Household economy</td></tr>
+        <tr class="key"><td class="sh">11.6</td><td class="fr">WS</td><td>Carrying the full load out of the plot toward the road. Follow from behind, wide, no cutaway.</td><td>Effort, footfall</td><td class="ev">The journey to market</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+
+  <!-- SCENE 12 -->
+  <div class="scene">
+    <div class="slug"><span class="sn">SC 12</span> The weighing <span class="tc">18:30–20:00</span></div>
+    <div class="intent"><b>Intent:</b> The moment labour becomes a number. Shoot the mechanism precisely — the scale, the reading, the docket, the signature.</div>
+    <div class="scroll"><table>
+      <thead><tr><th>Shot</th><th>Frame</th><th>Action</th><th>Audio</th><th>Evidence of</th></tr></thead>
+      <tbody>
+        <tr><td class="sh">12.1</td><td class="fr">WS</td><td>The collection point. Queue, crates, the society's building.</td><td>Crowd, metal</td><td class="ev">The institution</td></tr>
+        <tr class="key"><td class="sh">12.2</td><td class="fr">XCU</td><td>The scale dial or digital readout at the moment it settles. Number clearly legible.</td><td>Scale mechanism, settling</td><td class="ev">Measured quantity</td></tr>
+        <tr class="key"><td class="sh">12.3</td><td class="fr">XCU</td><td>The docket being filled: <strong>her name, her weight, her member number.</strong> Hold long enough to read all three.</td><td>Pen on carbon paper</td><td class="ev">Named in the record</td></tr>
+        <tr><td class="sh">12.4</td><td class="fr">CU</td><td>Her signature or thumbprint on the receipt.</td><td>—</td><td class="ev">She is the deliverer</td></tr>
+        <tr class="key"><td class="sh">12.5</td><td class="fr">CU</td><td><strong>Interview, cooperative official:</strong> how many women members now versus before the programme. <em>Get a number. Get it twice.</em></td><td>Lav</td><td class="ev">Quantified change</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+
+  <!-- SCENE 13 -->
+  <div class="scene">
+    <div class="slug"><span class="sn">SC 13</span> The payment — the argument in one image <span class="tc">20:00–21:30</span></div>
+    <div class="intent"><b>Intent:</b> Everything in the film has been building to a piece of paper with a woman's name on it. Shoot it plainly and hold. No score under the reveal.</div>
+    <div class="scroll"><table>
+      <thead><tr><th>Shot</th><th>Frame</th><th>Action</th><th>Audio</th><th>Evidence of</th></tr></thead>
+      <tbody>
+        <tr class="key"><td class="sh">13.1</td><td class="fr">XCU</td><td><strong>The payment slip or mobile-money confirmation. Her name. The amount.</strong> Locked off, held for a full five seconds. This is the film.</td><td>Silence, then room tone</td><td class="ev">Income, to her, documented</td></tr>
+        <tr class="key"><td class="sh">13.2</td><td class="fr">CU</td><td>Her face reading it. Do not cut away early.</td><td>—</td><td class="ev">Human meaning</td></tr>
+        <tr class="key"><td class="sh">13.3</td><td class="fr">CU</td><td><strong>Interview:</strong> what this money is for. School fees, iron sheets, a savings group, whatever it truly is. Specificity is everything — refuse the general answer.</td><td>Lav, locked off</td><td class="ev">Concrete outcome</td></tr>
+        <tr><td class="sh">13.4</td><td class="fr">MS</td><td>The thing the money bought, if it already exists. Film it. If it does not yet exist, do not stage it.</td><td>Atmos</td><td class="ev">Verifiable result</td></tr>
+        <tr><td class="sh">13.5</td><td class="fr">CU</td><td><strong>Interview, husband, if he consents:</strong> what changed at home. Optional, and only if freely given.</td><td>Lav</td><td class="ev">Household shift</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+
+  <!-- SCENE 14 -->
+  <div class="scene">
+    <div class="slug"><span class="sn">SC 14</span> The honest column <span class="tc">21:30–22:45</span></div>
+    <div class="intent"><b>Intent:</b> The scene that makes the other thirteen credible. What failed. Do not soften it in the edit, and do not let the campaign cut it.</div>
+    <div class="scroll"><table>
+      <thead><tr><th>Shot</th><th>Frame</th><th>Action</th><th>Audio</th><th>Evidence of</th></tr></thead>
+      <tbody>
+        <tr class="key"><td class="sh">14.1</td><td class="fr">MS</td><td>Dead or failed seedlings on a plot. Do not light them kindly.</td><td>Wind</td><td class="ev">Failure exists</td></tr>
+        <tr class="key"><td class="sh">14.2</td><td class="fr">CU</td><td><strong>Interview, the anchor farmer:</strong> what went wrong. Drought, no water, no follow-up, refusal at home — whatever it was, in her words.</td><td>Lav, locked off</td><td class="ev">Unflattering testimony</td></tr>
+        <tr class="key"><td class="sh">14.3</td><td class="fr">CU</td><td><strong>Interview, agronomist:</strong> the actual survival rate, stated as a number.</td><td>Lav</td><td class="ev">Honest denominator</td></tr>
+        <tr class="key"><td class="sh">14.4</td><td class="fr">MS</td><td><strong>Interview, Muge:</strong> asked directly about the failures. <em>Ask the hard version. If she cannot answer it, the film has a problem worth knowing about now.</em></td><td>Lav + boom</td><td class="ev">Accountability on camera</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+
+  <!-- SCENE 15 -->
+  <div class="scene">
+    <div class="slug"><span class="sn">SC 15</span> What it's for <span class="tc">22:45–24:00</span></div>
+    <div class="intent"><b>Intent:</b> Ninety seconds, and then stop. She has earned the last word by not having taken the first twenty.</div>
+    <div class="scroll"><table>
+      <thead><tr><th>Shot</th><th>Frame</th><th>Action</th><th>Audio</th><th>Evidence of</th></tr></thead>
+      <tbody>
+        <tr class="key"><td class="sh">15.1</td><td class="fr">MS</td><td><strong>Interview, Muge, direct address:</strong> why a tree and not a handout. Her own line is the spine: <em class="q">"This is not just about coffee. It's about dignity, inclusion, and giving rural women the tools to change their own lives."</em></td><td>Lav + boom, locked off</td><td class="ev">Intent, stated once</td></tr>
+        <tr><td class="sh">15.2</td><td class="fr">CU</td><td>Cutaways to the four farmers, silent, on their own land. Held portraits, eyes to camera.</td><td>VO from 15.1</td><td class="ev">Who it was for</td></tr>
+        <tr class="key"><td class="sh">15.3</td><td class="fr">XCU</td><td>Return to the opening cherry — same framing as 1.1, now with a full branch behind it.</td><td>Score resolves</td><td class="ev">Closes the circle</td></tr>
+        <tr class="key"><td class="sh">15.4</td><td class="fr">Card</td><td><strong>End cards, plain type on black:</strong> seedlings distributed, women reached, sub-counties, survival rate, women cooperative members before and after. <em>Every figure with its source named on screen.</em></td><td>Silence</td><td class="ev">The verifiable record</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+
+  <div class="col">
+    <div class="note care">
+      <h4>On shot 15.4</h4>
+      <p>The end cards are the single most valuable forty seconds in the film and the reason it beats a press release. Sourcing each figure on screen — <em>Nandi Coffee Cooperative records, November 2026</em> — is what converts the film from advocacy into a citable document. It is also the direct answer to the round unsourced numbers currently sitting on her website.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SOUND -->
+<section id="sound">
+  <div class="sec-head"><span class="n">06</span><h2>Sound design</h2></div>
+  <div class="col">
+
+  <p>The film has a sound argument as well as a visual one: it moves from <strong>the sound of work</strong> to <strong>the sound of paper</strong>. Labour is loud, physical, wet. Ownership is quiet, dry, precise. Build the whole design on that contrast and the payment scene will land without a single music cue.</p>
+
+  <h4>Capture priorities</h4>
+  <ul>
+    <li><strong>Lav on every interview, boom as safety.</strong> Rural highland means wind and livestock. Never rely on a single source you cannot replace.</li>
+    <li><strong>Record wild sound obsessively.</strong> Stem snap, cherry into bucket, the scale settling, pen on carbon paper, the nursery irrigation. These are the film's vocabulary and none of them can be replaced by library effects convincingly.</li>
+    <li><strong>Five minutes of room tone at every location.</strong> Non-negotiable, and it is the thing crews skip.</li>
+    <li><strong>Interviews in Nandi.</strong> She and the farmers are most themselves in it, and the subtitles let the film travel to national press and diaspora at the same time.</li>
+  </ul>
+
+  <h4>Score</h4>
+  <p>Sparse and late. First entry at the drone shot in Scene 3, out at the act break, back at Scene 10, resolved at 15.3. <strong>No score under Scene 13.</strong> The payment must be silent — scoring it tells the audience how to feel about a fact that speaks for itself, and it is the one place where a music cue would read as manipulation.</p>
+  <p>Source locally if at all possible: a Kalenjin instrument or voice, recorded for this film, is worth more than anything from a library and gives you a signature you can carry into every vertical cut.</p>
+
+  <h4>Audio branding</h4>
+  <p>Take the cherry-into-bucket impact from 1.5 and make it the campaign's audio mark. Two frames, distinctive, and it will appear at the head of every short. It costs nothing and it will make eight seconds of vertical video recognisable as hers before a word is spoken — which is the thing her channels currently lack entirely.</p>
+
+  </div>
+</section>
+
+<!-- ETHICS -->
+<section id="ethics">
+  <div class="sec-head"><span class="n">07</span><h2>Ethics and consent</h2></div>
+  <div class="col">
+
+  <div class="note stop">
+    <h4>Read this before the first day of filming</h4>
+    <p>This film asks rural women to discuss household money on camera, in a village where their husbands and neighbours will watch the result. That is a real risk to real people, and it is not covered by a standard release form. If a subject is harmed because of this film, the film has failed regardless of how it performs.</p>
+  </div>
+
+  <h4>Protocol</h4>
+  <ol>
+    <li><strong>Explain the distribution honestly, in Nandi, before filming.</strong> This will be on Facebook and TikTok. Thousands of people locally will see it. Her husband will see it. Her chief will see it. Say all of that out loud.</li>
+    <li><strong>Written consent in the subject's own language</strong>, read aloud if literacy is a barrier, with a witness. Keep a copy with the subject, not only with you.</li>
+    <li><strong>Consent to be filmed is not consent to be in the final cut.</strong> Offer every subject a viewing of her own sequence before release, and honour a withdrawal without argument.</li>
+    <li><strong>Never film a woman describing a husband's control of income without her explicit, separately-obtained agreement on that specific topic.</strong> If there is any hesitation, use the group chairwoman speaking generally instead.</li>
+    <li><strong>Minors require guardian consent in writing</strong>, and default to not identifying them.</li>
+    <li><strong>The anchor farmer gets extra protection.</strong> She is criticising a programme her community values during a campaign. Offer anonymity — voice and hands only — as a genuine option, not a fallback.</li>
+    <li><strong>No inducement.</strong> Pay transport and time at a fair, documented rate. Never condition anything on what someone says.</li>
+  </ol>
+
+  <div class="note care">
+    <h4>The political line</h4>
+    <p>You will be filming during a campaign, and the campaign will want the film to be more flattering than the evidence supports. Agree in writing, now, that Scene 14 is in the cut and the end-card figures are the measured ones. Get that agreed before you shoot, when it is cheap, rather than in January when it is expensive.</p>
+    <p>If that agreement cannot be obtained, this is a promotional video and should be scoped, budgeted and described as one — which is a legitimate thing to make, but it is not this document.</p>
+  </div>
+
+  </div>
+</section>
+
+<!-- SCHEDULE -->
+<section id="schedule">
+  <div class="sec-head"><span class="n">08</span><h2>Schedule</h2></div>
+  <div class="col">
+
+  <div class="note stop">
+    <h4>Confirm this week</h4>
+    <p><strong>The exact local harvest window.</strong> The entire schedule hangs on it and the answer varies by region and altitude. Call Baraka Agricultural College or the county AFA office today. If the main crop in these sub-counties starts in October, prep time is roughly five weeks and casting must begin immediately.</p>
+  </div>
+
+  <div class="sched">
+    <div class="blk crit"><div class="m">Now</div><div class="b"><b>Verify before committing.</b> Harvest dates. Seedling survival rate from AFA or county extension records. Whether any beneficiary has actually sold cherry. This is the kill-criteria check — do not skip it to get moving.</div></div>
+    <div class="blk"><div class="m">Sept</div><div class="b"><b>Recce and cast.</b> Nandi Hills first. Meet twenty women, cast four. No camera on the first visit. Collect any 2023 photographs of planted plots for the before-and-after. Secure the nursery, cooperative and Baraka access. Locate the abandoned pulping station and the derelict society building.</div></div>
+    <div class="blk"><div class="m">Sept</div><div class="b"><b>Baseline data collection</b> runs in parallel with casting. Survival counts, cooperative membership figures before and after, delivery volumes. The film's end cards depend on this and it is research work, not production work.</div></div>
+    <div class="blk crit"><div class="m">Oct–Dec</div><div class="b"><b>Principal photography.</b> Harvest is the immovable window. Scenes 10 through 13 first — they cannot be rescheduled. Then Scenes 1 to 4 in the same period while the light and the mist are right. Shoot vertical variants of everything as you go.</div></div>
+    <div class="blk"><div class="m">Nov</div><div class="b"><b>Phase 3 distribution coverage</b> whenever it happens — Scene 7 is event-dependent. Nursery, charter signing and group meeting scheduled around it.</div></div>
+    <div class="blk"><div class="m">Dec</div><div class="b"><b>Interviews with Muge</b> (Scenes 5, 14, 15) and partner institutions. Deliberately late, so you can ask her about findings rather than intentions — including the failures.</div></div>
+    <div class="blk"><div class="m">Dec–Jan</div><div class="b"><b>Edit.</b> Assembly, then the honesty pass: strip any shot with no evidentiary purpose. Subtitles, grade, mix. Source every end-card figure.</div></div>
+    <div class="blk crit"><div class="m">Mid-Jan</div><div class="b"><b>Release,</b> ahead of the UDA nomination window. Screening tour of the six sub-counties first — village halls and churches before the internet. The shorts have been running continuously since October and have already built the audience for it.</div></div>
+  </div>
+
+  <div class="note">
+    <h4>Do not sit on the footage</h4>
+    <p>Four months of material held back for one January release wastes the campaign's most valuable asset during its most important stretch. Cut and publish a vertical short every week from October. The film is the destination; the shorts are the road, and each one is also a live test of what her audience responds to.</p>
+  </div>
+
+  </div>
+</section>
+
+<!-- DELIVERABLES -->
+<section id="deliver">
+  <div class="sec-head"><span class="n">09</span><h2>Deliverables</h2></div>
+  <div class="col"><p>One shoot, six outputs. Plan the coverage for all six from day one — particularly the vertical framing, which is impossible to recover in post without ruining the composition.</p></div>
+
+  <div class="dels">
+    <div class="del"><div class="id">D1</div><div class="d"><h4>The Tree in Her Name</h4><p>24 min. Nandi with English and Swahili subtitles. YouTube as the permanent archive, plus a screening-tour master.</p></div><div class="w">Mid-Jan</div></div>
+    <div class="del"><div class="id">D2</div><div class="d"><h4>Hall cut</h4><p>7 min. For rallies, churches and community halls where 24 minutes will not hold. Acts I and III compressed, charter intact.</p></div><div class="w">Mid-Jan</div></div>
+    <div class="del"><div class="id">D3</div><div class="d"><h4>Vertical shorts</h4><p>12–16 × 45–90 sec. One per week from October. Each ends on a single verifiable fact. Captioned in Nandi and English, always — captions are the difference between 80,000 plays and 800.</p></div><div class="w">Weekly, Oct on</div></div>
+    <div class="del"><div class="id">D4</div><div class="d"><h4>Testimony library</h4><p>30+ full interviews, archived and indexed by name, ward, phase and topic. Raw, unedited, retained. This is the asset that outlives the campaign and answers questions nobody has asked yet.</p></div><div class="w">Rolling</div></div>
+    <div class="del"><div class="id">D5</div><div class="d"><h4>Stills essay</h4><p>40–60 frames. Print, press, posters, and the website rebuild. Shoot stills as a discipline of their own, not as video grabs.</p></div><div class="w">Rolling</div></div>
+    <div class="del"><div class="id">D6</div><div class="d"><h4>The data annex</h4><p>The measured figures with sources, published on cynthiamuge.com as a checkable page. <b>This is what makes the film evidence rather than film.</b></p></div><div class="w">With D1</div></div>
+  </div>
+
+  <div class="col">
+    <h4>Kit, for one or two people in rural Nandi</h4>
+    <ul>
+      <li><strong>Camera:</strong> one body you know completely, one backup. Log profile, and shoot 4K so the vertical crop is a reframe rather than a compromise.</li>
+      <li><strong>Glass:</strong> a fast prime for interviews, a mid zoom for process, a macro for the documents and the cherry. The macro matters more than it sounds — Scenes 8, 12 and 13 are all built on legible paper.</li>
+      <li><strong>Audio:</strong> two lavs, a shotgun with proper wind protection, a recorder with timecode. Highland wind will ruin a shoot that skimps here.</li>
+      <li><strong>Support:</strong> tripod for every locked-off interview. Handheld only for process, deliberately.</li>
+      <li><strong>Light:</strong> a reflector and a black flag. One small LED for the document close-ups, and nothing else.</li>
+      <li><strong>Power and weather:</strong> more batteries than you think, a power bank, a rain cover, silica for the humidity. Assume no mains at most locations.</li>
+      <li><strong>Data:</strong> two copies before leaving any location. No exceptions, ever, especially on harvest days you cannot repeat.</li>
+    </ul>
+  </div>
+</section>
+
+<div class="foot">
+  Treatment v1 · 27 August 2026 · Nandi County<br>
+  Built on the evidence base in The Nandi Succession. Every claim the film makes on screen must be traceable to a named source — that discipline is the deliverable, not the film.
+</div>
+
+</div>

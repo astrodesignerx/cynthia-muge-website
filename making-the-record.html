@@ -1,0 +1,388 @@
+<title>Making the Record</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap">
+
+<style>
+:root {
+  --paper:  #FFFFFF;
+  --raised: #FFFFFF;
+  --sunk:   #E7E9E3;
+  --ink:    #141A16;
+  --soft:   #4A5751;
+  --faint:  #7E8A84;
+  --rule:   #DBDDD5;
+  --murram: #A8442A;
+  --leaf:   #2C6049;
+  --barfill: #B7BFB8;
+
+  --display: "Instrument Serif", Georgia, serif;
+  --body: "Manrope", "Helvetica Neue", Arial, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root[data-theme="__never"] {
+    --paper:  #101410;
+    --raised: #181D19;
+    --sunk:   #0A0D0B;
+    --ink:    #ECEFE9;
+    --soft:   #ADB8B1;
+    --faint:  #79857E;
+    --rule:   #262E28;
+    --murram: #E08A69;
+    --leaf:   #6FBF9B;
+    --barfill: #3C463E;
+  }
+}
+:root[data-theme="__never-dark"] {
+  --paper:  #101410;
+  --raised: #181D19;
+  --sunk:   #0A0D0B;
+  --ink:    #ECEFE9;
+  --soft:   #ADB8B1;
+  --faint:  #79857E;
+  --rule:   #262E28;
+  --murram: #E08A69;
+  --leaf:   #6FBF9B;
+  --barfill: #3C463E;
+}
+
+* { box-sizing: border-box; }
+html { scroll-snap-type: y mandatory; scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 17px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* asymmetric slide: narrow label rail + content */
+.slide {
+  min-height: 100vh;
+  scroll-snap-align: start;
+  display: grid;
+  grid-template-columns: 132px minmax(0, 1fr);
+  align-items: center;
+  gap: 0 40px;
+  padding: 8vh 6vw;
+  border-bottom: 1px solid var(--rule);
+}
+.rail {
+  align-self: stretch;
+  display: flex; flex-direction: column; justify-content: center;
+  border-right: 1px solid var(--rule);
+  padding-right: 26px;
+}
+.rail .n {
+  font-family: var(--display); font-size: 42px; line-height: 1;
+  color: var(--rule); font-variant-numeric: tabular-nums;
+}
+.rail .lbl {
+  font-size: 10.5px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase;
+  color: var(--murram); margin-top: 12px; line-height: 1.5;
+}
+.body { max-width: 900px; }
+
+h1 {
+  font-family: var(--display); font-weight: 400;
+  font-size: clamp(44px, 7.4vw, 100px);
+  line-height: 1.0; letter-spacing: -.02em;
+  margin: 0 0 24px; text-wrap: balance;
+}
+h2 {
+  font-family: var(--display); font-weight: 400;
+  font-size: clamp(32px, 5vw, 62px);
+  line-height: 1.07; letter-spacing: -.015em;
+  margin: 0 0 20px; text-wrap: balance; max-width: 19ch;
+}
+h2 em { font-style: italic; color: var(--murram); }
+p { font-size: clamp(15.5px, 1.6vw, 19px); line-height: 1.5; color: var(--soft); max-width: 56ch; margin: 0 0 14px; }
+p.big { font-size: clamp(18px, 2.2vw, 26px); line-height: 1.4; color: var(--ink); max-width: 28ch; font-weight: 500; }
+p b, li b, td b { color: var(--ink); font-weight: 700; }
+.kicker { font-size: 11.5px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--murram); margin-bottom: 20px; }
+.note { font-size: 13.5px; color: var(--faint); max-width: 60ch; margin-top: 26px; }
+
+/* --- three facts --- */
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 30px; margin-top: 40px; }
+.facts .f { border-top: 2px solid var(--murram); padding-top: 16px; }
+.facts .v { font-family: var(--display); font-size: clamp(38px, 5vw, 58px); line-height: 1; font-variant-numeric: tabular-nums; }
+.facts .l { font-size: 14px; color: var(--soft); margin-top: 10px; line-height: 1.45; }
+
+/* --- reach bars --- */
+.bars { margin-top: 34px; display: flex; flex-direction: column; gap: 12px; max-width: 760px; }
+.bar { display: grid; grid-template-columns: minmax(110px, 180px) 1fr 78px; gap: 14px; align-items: center; }
+.bar .who { font-size: 13px; color: var(--soft); text-align: right; }
+.bar .track { height: 24px; background: var(--sunk); border-radius: 2px; overflow: hidden; }
+.bar .fill { display: block; height: 100%; background: var(--barfill); border-radius: 2px; }
+.bar .n { font-size: 13.5px; font-weight: 700; font-variant-numeric: tabular-nums; text-align: right; }
+.bar.mine .who { color: var(--ink); font-weight: 700; }
+.bar.mine .fill { background: var(--murram); }
+.bar.mine .n { color: var(--murram); }
+
+/* --- the map: gap -> capability --- */
+.map { margin-top: 34px; display: flex; flex-direction: column; gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: 4px; overflow: hidden; }
+.map .row { display: grid; grid-template-columns: 1fr 26px 1fr; background: var(--raised); align-items: center; }
+.map .row > div { padding: 15px 18px; }
+.map .gap { color: var(--soft); font-size: 14.5px; line-height: 1.4; }
+.map .arw { padding: 0; text-align: center; color: var(--murram); font-size: 15px; }
+.map .cap { font-size: 14.5px; line-height: 1.4; font-weight: 700; color: var(--ink); }
+.map .cap span { display: block; font-weight: 400; font-size: 12.5px; color: var(--faint); margin-top: 3px; letter-spacing: .04em; text-transform: uppercase; }
+.map .head { background: var(--sunk); }
+.map .head div { font-size: 10.5px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--faint); padding-top: 11px; padding-bottom: 11px; }
+
+/* --- done list --- */
+.done { margin-top: 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(215px, 1fr)); gap: 22px; }
+.done .d { padding-left: 18px; border-left: 2px solid var(--leaf); }
+.done .d b { display: block; font-size: 15.5px; margin-bottom: 5px; }
+.done .d span { font-size: 13.5px; color: var(--soft); line-height: 1.45; display: block; }
+
+/* --- deliverable cards --- */
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(215px, 1fr)); gap: 18px; margin-top: 34px; }
+.card { background: var(--raised); border: 1px solid var(--rule); border-radius: 4px; padding: 22px 20px; }
+.card b { display: block; font-size: 16.5px; margin-bottom: 7px; }
+.card span { font-size: 13.5px; color: var(--soft); line-height: 1.45; }
+
+/* --- rhythm strip --- */
+.rhythm { margin-top: 34px; display: grid; grid-template-columns: repeat(5, 1fr); border-top: 2px solid var(--rule); }
+.rhythm .m { padding: 18px 16px 0 0; border-right: 1px solid var(--rule); position: relative; }
+.rhythm .m:last-child { border-right: none; }
+.rhythm .m::before { content: ""; position: absolute; top: -6px; left: 0; width: 10px; height: 10px; border-radius: 50%; background: var(--rule); }
+.rhythm .m.on::before { background: var(--murram); }
+.rhythm .m.on { border-top: 2px solid var(--murram); margin-top: -2px; }
+.rhythm .mo { font-size: 11.5px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--faint); margin-bottom: 8px; }
+.rhythm .m.on .mo { color: var(--murram); }
+.rhythm .tx { font-size: 13.5px; line-height: 1.45; color: var(--soft); }
+
+/* --- ask --- */
+.ask { margin-top: 34px; display: flex; flex-direction: column; gap: 14px; max-width: 62ch; }
+.ask li { list-style: none; font-size: 16px; line-height: 1.45; color: var(--soft); padding-left: 26px; position: relative; }
+.ask li::before { content: ""; position: absolute; left: 0; top: .58em; width: 12px; height: 2px; background: var(--murram); }
+ul.ask { padding: 0; margin-top: 34px; }
+
+.dots { position: fixed; right: 20px; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 9px; z-index: 40; }
+.dots a { width: 7px; height: 7px; border-radius: 50%; background: var(--rule); display: block; transition: background .18s ease, transform .18s ease; }
+.dots a:hover, .dots a:focus-visible { background: var(--murram); transform: scale(1.4); outline: none; }
+@media (prefers-reduced-motion: reduce) { .dots a { transition: none; } }
+
+@media (max-width: 860px) {
+  .slide { grid-template-columns: 1fr; padding: 8vh 7vw; min-height: 100svh; gap: 22px; }
+  .rail { border-right: none; border-bottom: 1px solid var(--rule); padding: 0 0 14px; flex-direction: row; align-items: baseline; gap: 14px; }
+  .rail .n { font-size: 26px; }
+  .rail .lbl { margin-top: 0; }
+  .map .row { grid-template-columns: 1fr; }
+  .map .arw { display: none; }
+  .map .cap { border-top: 1px solid var(--rule); }
+  .map .head { display: none; }
+  .rhythm { grid-template-columns: 1fr; }
+  .rhythm .m { border-right: none; border-top: 1px solid var(--rule); padding: 16px 0 0; }
+  .rhythm .m.on { border-top: 2px solid var(--murram); }
+  .bar { grid-template-columns: 1fr; gap: 4px; }
+  .bar .who, .bar .n { text-align: left; }
+  .dots { display: none; }
+}
+
+/* locked to light mode */
+:root { color-scheme: light; }
+</style>
+
+<nav class="dots" aria-label="Slides">
+  <a href="#s1" aria-label="1"></a><a href="#s2" aria-label="2"></a><a href="#s3" aria-label="3"></a>
+  <a href="#s4" aria-label="4"></a><a href="#s5" aria-label="5"></a><a href="#s6" aria-label="6"></a>
+  <a href="#s7" aria-label="7"></a><a href="#s8" aria-label="8"></a><a href="#s9" aria-label="9"></a>
+  <a href="#s10" aria-label="10"></a>
+</nav>
+
+<!-- 1 -->
+<section class="slide" id="s1">
+  <div class="rail"><div class="n">&mdash;</div><div class="lbl">Nandi 2027</div></div>
+  <div class="body">
+    <p class="kicker">A proposal</p>
+    <h1>Making<br>the record</h1>
+    <p class="big">Where your campaign stands today, and the part of it I can build.</p>
+  </div>
+</section>
+
+<!-- 2 -->
+<section class="slide" id="s2">
+  <div class="rail"><div class="n">01</div><div class="lbl">Where we are</div></div>
+  <div class="body">
+    <h2>Four years of delivery. Almost none of it on paper.</h2>
+    <div class="facts">
+      <div class="f"><div class="v">5</div><div class="l">Months until UDA nominations decide this race</div></div>
+      <div class="f"><div class="v">54%</div><div class="l">Of Nandi has not chosen a candidate yet</div></div>
+      <div class="f"><div class="v">0</div><div class="l">Of your programmes have published outcome data</div></div>
+    </div>
+    <p class="note">Coffee, scholarships, the tournament, the ambulance, the cheques &mdash; all real, all delivered, none of it in a form a voter, a journalist or a doubter can check.</p>
+  </div>
+</section>
+
+<!-- 3 -->
+<section class="slide" id="s3">
+  <div class="rail"><div class="n">02</div><div class="lbl">The symptom</div></div>
+  <div class="body">
+    <h2>Right now, other people are doing this job for you.</h2>
+    <p>Views on TikTok clips of you speaking. Four of the top five are other people's uploads of your own footage.</p>
+    <div class="bars">
+      <div class="bar"><span class="who">Someone else's account</span><span class="track"><span class="fill" style="width:100%"></span></span><span class="n">216,300</span></div>
+      <div class="bar"><span class="who">Someone else's account</span><span class="track"><span class="fill" style="width:99%"></span></span><span class="n">215,200</span></div>
+      <div class="bar"><span class="who">Someone else's account</span><span class="track"><span class="fill" style="width:86%"></span></span><span class="n">186,300</span></div>
+      <div class="bar"><span class="who">Someone else's account</span><span class="track"><span class="fill" style="width:69%"></span></span><span class="n">149,800</span></div>
+      <div class="bar mine"><span class="who">Your own account</span><span class="track"><span class="fill" style="width:37%"></span></span><span class="n">80,500</span></div>
+    </div>
+    <p class="note">They are doing it without your context, without your framing, and without asking. When something goes wrong, the clip that travels is the one they cut.</p>
+  </div>
+</section>
+
+<!-- 4 -->
+<section class="slide" id="s4">
+  <div class="rail"><div class="n">03</div><div class="lbl">Already started</div></div>
+  <div class="body">
+    <h2>I have done the first part <em>unpaid</em>, so you can judge the work.</h2>
+    <div class="done">
+      <div class="d"><b>14 groups</b><span>Nandi Facebook forums read from the inside, post by post, including the comment threads</span></div>
+      <div class="d"><b>204 comments</b><span>One preference thread tallied by hand to see who people actually name</span></div>
+      <div class="d"><b>28 lines</b><span>Kalenjin comments pulled out verbatim and put to a native speaker for translation</span></div>
+      <div class="d"><b>4 documents</b><span>A full strategic dossier, a film treatment, a content plan and a translation brief</span></div>
+    </div>
+    <p class="note">It turned up things worth knowing: what <b>oripoo</b> actually means, how small the Nandi Hills story really is, a second opinion poll nobody had cited, and the hard question one resident has already published about your programmes.</p>
+  </div>
+</section>
+
+<!-- 5 -->
+<section class="slide" id="s5">
+  <div class="rail"><div class="n">04</div><div class="lbl">The fit</div></div>
+  <div class="body">
+    <h2>Every gap here happens to be something I do.</h2>
+    <div class="map">
+      <div class="row head"><div>What is missing</div><div></div><div>What I bring</div></div>
+      <div class="row">
+        <div class="gap">Other people own the footage of you speaking</div>
+        <div class="arw">&rarr;</div>
+        <div class="cap">Same-day capture and edit<span>Videography &middot; Sound</span></div>
+      </div>
+      <div class="row">
+        <div class="gap">Programmes recorded as giveaways, never as outcomes</div>
+        <div class="arw">&rarr;</div>
+        <div class="cap">Documentary and testimony library<span>Video &middot; Interviewing &middot; Research</span></div>
+      </div>
+      <div class="row">
+        <div class="gap">Nothing you post is recognisable as yours by sight</div>
+        <div class="arw">&rarr;</div>
+        <div class="cap">One visual identity, applied everywhere<span>Graphic design &middot; Brand</span></div>
+      </div>
+      <div class="row">
+        <div class="gap">Posts published with no caption, losing most of their reach</div>
+        <div class="arw">&rarr;</div>
+        <div class="cap">A publishing system with a weekly rhythm<span>Digital &middot; Content planning</span></div>
+      </div>
+      <div class="row">
+        <div class="gap">No single place where a claim can be checked</div>
+        <div class="arw">&rarr;</div>
+        <div class="cap">Evidence site and programme database<span>Web development &middot; Data</span></div>
+      </div>
+      <div class="row">
+        <div class="gap">Strong arguments sitting unused inside county budget documents</div>
+        <div class="arw">&rarr;</div>
+        <div class="cap">Charts and explainers people understand<span>Data visualisation &middot; Design</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6 -->
+<section class="slide" id="s6">
+  <div class="rail"><div class="n">05</div><div class="lbl">First build</div></div>
+  <div class="body">
+    <p class="kicker">The film</p>
+    <h2>A payment slip with a woman's <em>name</em> on it.</h2>
+    <p>A documentary on Kahawa na Mama. Not a profile of you &mdash; a record of what the programme did. Trees planted in 2023 are bearing right now, and that three-year change can be filmed this season and never again.</p>
+    <p>Camera, sound, interviews, edit, subtitles, grade. <b>I do all of it myself.</b></p>
+    <p class="note">Screened across the six sub-counties in January, in halls, before it ever goes online.</p>
+  </div>
+</section>
+
+<!-- 7 -->
+<section class="slide" id="s7">
+  <div class="rail"><div class="n">06</div><div class="lbl">Second build</div></div>
+  <div class="body">
+    <p class="kicker">The rhythm</p>
+    <h2>Something true, every week, until nominations.</h2>
+    <p>One short video a week, each ending on a single fact with its source on screen. Plus same-day clips from every public appearance, so your words travel with your context attached rather than someone else's edit.</p>
+    <p class="big" style="margin-top:26px">Captioned, always. That alone is the difference between 80,500 views and 802.</p>
+    <p class="note">Filming, editing, captioning, scheduling and publishing &mdash; handled, so your job stays the part you are best at: speaking to people.</p>
+  </div>
+</section>
+
+<!-- 8 -->
+<section class="slide" id="s8">
+  <div class="rail"><div class="n">07</div><div class="lbl">Third build</div></div>
+  <div class="body">
+    <p class="kicker">The evidence base</p>
+    <h2>One place that answers the doubters for you.</h2>
+    <div class="cards">
+      <div class="card"><b>Sourced figures</b><span>Beneficiaries by ward, partners, funding, dates &mdash; each with where it came from.</span></div>
+      <div class="card"><b>The archive</b><span>Full speeches and farmer interviews, searchable, so journalists quote your version.</span></div>
+      <div class="card"><b>The system behind it</b><span>A database your office updates, so the site stays true without me in the room.</span></div>
+    </div>
+    <p class="note">Built so it outlasts the campaign and belongs to your office, not to me.</p>
+  </div>
+</section>
+
+<!-- 9 -->
+<section class="slide" id="s9">
+  <div class="rail"><div class="n">08</div><div class="lbl">How it runs</div></div>
+  <div class="body">
+    <h2>Five months, and I know what each one is for.</h2>
+    <div class="rhythm">
+      <div class="m"><div class="mo">September</div><div class="tx">Verify the numbers. Find the farmers. Set the identity.</div></div>
+      <div class="m on"><div class="mo">Oct &ndash; Nov</div><div class="tx">Film the harvest. Weekly shorts begin.</div></div>
+      <div class="m"><div class="mo">December</div><div class="tx">The tournament final, filmed properly. Evidence site live.</div></div>
+      <div class="m"><div class="mo">January</div><div class="tx">Film released. Screening tour of six sub-counties.</div></div>
+      <div class="m"><div class="mo">February</div><div class="tx">Nominations. Everything already in people's hands.</div></div>
+    </div>
+    <p class="note" style="margin-top:32px">One date to confirm this week: when the coffee harvest actually starts locally. The whole schedule follows it.</p>
+  </div>
+</section>
+
+<!-- 10 -->
+<section class="slide" id="s10">
+  <div class="rail"><div class="n">09</div><div class="lbl">The ask</div></div>
+  <div class="body">
+    <h2>What I would need from you.</h2>
+    <ul class="ask">
+      <li>Access &mdash; to your diary, your programme records and the people who ran them</li>
+      <li>An introduction to four or five farmers, and to the cooperative</li>
+      <li>Permission to film freely at public events, including the ones that go badly</li>
+      <li>A decision that the honest numbers get published, even where they are lower than we hoped</li>
+      <li>One person in your office who owns the day-to-day publishing with me</li>
+    </ul>
+    <p class="big" style="margin-top:44px">I am not asking to run your campaign. I am asking to make your record visible &mdash; starting with the film, because the trees are bearing now and that will not wait.</p>
+  </div>
+</section>
+
+<script>
+(function () {
+  var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+  function go(dir) {
+    var y = window.scrollY, best = null, bestD = Infinity;
+    slides.forEach(function (s) {
+      var d = s.offsetTop - y;
+      if (dir > 0 && d > 12 && d < bestD) { bestD = d; best = s; }
+      if (dir < 0 && d < -12 && -d < bestD) { bestD = -d; best = s; }
+    });
+    if (best) best.scrollIntoView();
+  }
+  document.addEventListener('keydown', function (e) {
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    if (e.key === 'ArrowDown' || e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') { e.preventDefault(); go(1); }
+    if (e.key === 'ArrowUp' || e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); go(-1); }
+    if (e.key === 'Home') { e.preventDefault(); slides[0].scrollIntoView(); }
+    if (e.key === 'End') { e.preventDefault(); slides[slides.length - 1].scrollIntoView(); }
+  });
+})();
+</script>

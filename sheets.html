@@ -1,0 +1,577 @@
+<title>Nandi 2027 Work Sheets</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap">
+
+<style>
+:root {
+  --paper:#FFFFFF; --raised:#FFFFFF; --sunk:#E7E9E3;
+  --ink:#141A16; --soft:#4A5751; --faint:#7E8A84;
+  --rule:#DBDDD5; --rule-firm:#C3C9C2;
+  --murram:#A8442A; --murram-wash:#F4E7E1;
+  --leaf:#2C6049; --leaf-wash:#E3EDE7;
+  --display:"Instrument Serif", Georgia, serif;
+  --body:"Manrope","Helvetica Neue",Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root[data-theme="__never"] {
+    --paper:#101410; --raised:#181D19; --sunk:#0A0D0B;
+    --ink:#ECEFE9; --soft:#ADB8B1; --faint:#79857E;
+    --rule:#262E28; --rule-firm:#3A443C;
+    --murram:#E08A69; --murram-wash:#2C1811;
+    --leaf:#6FBF9B; --leaf-wash:#13291F;
+  }
+}
+:root[data-theme="__never-dark"] {
+  --paper:#101410; --raised:#181D19; --sunk:#0A0D0B;
+  --ink:#ECEFE9; --soft:#ADB8B1; --faint:#79857E;
+  --rule:#262E28; --rule-firm:#3A443C;
+  --murram:#E08A69; --murram-wash:#2C1811;
+  --leaf:#6FBF9B; --leaf-wash:#13291F;
+}
+
+* { box-sizing:border-box; }
+body { margin:0; background:var(--paper); color:var(--ink);
+       font-family:var(--body); font-size:14px; line-height:1.5;
+       -webkit-font-smoothing:antialiased; }
+
+.sheet { max-width:880px; margin:0 auto 40px; padding:30px 28px 40px;
+         border-bottom:1px solid var(--rule); }
+
+/* ---- head ---- */
+.hd { border-bottom:2px solid var(--ink); padding-bottom:14px; margin-bottom:18px;
+      display:flex; align-items:flex-end; justify-content:space-between; gap:18px; flex-wrap:wrap; }
+.hd .l { flex:1 1 300px; }
+.num { font-family:var(--display); font-size:15px; color:var(--murram); letter-spacing:.02em; }
+.lbl { font-size:9.5px; font-weight:700; letter-spacing:.17em; text-transform:uppercase;
+       color:var(--murram); margin:0 0 9px; }
+h1 { font-family:var(--display); font-weight:400; font-size:36px; line-height:1.02;
+     letter-spacing:-.02em; margin:0 0 6px; }
+.one { margin:0; font-size:14.5px; color:var(--soft); max-width:54ch; }
+.tick { font-size:9.5px; font-weight:700; letter-spacing:.11em; text-transform:uppercase;
+        color:var(--faint); text-align:right; line-height:1.7; white-space:nowrap; }
+
+.cols { display:grid; grid-template-columns:1.35fr 1fr; gap:30px; align-items:start; }
+
+h3 { font-size:9.5px; font-weight:700; letter-spacing:.15em; text-transform:uppercase;
+     color:var(--faint); margin:0 0 9px; }
+.blk { margin-bottom:20px; }
+.blk p { margin:0 0 9px; font-size:13px; line-height:1.5; color:var(--soft); }
+.blk p:last-child { margin-bottom:0; }
+.blk p b { color:var(--ink); font-weight:700; }
+
+ul.build { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:0; }
+ul.build li { font-size:13px; line-height:1.42; padding:7px 0 7px 17px; position:relative;
+              border-bottom:1px solid var(--rule); color:var(--soft); }
+ul.build li:first-child { border-top:1px solid var(--rule); }
+ul.build li::before { content:""; position:absolute; left:0; top:.95em; width:8px; height:2px; background:var(--murram); }
+ul.build li b { color:var(--ink); font-weight:700; }
+
+.side { background:var(--sunk); border-radius:4px; padding:16px 17px; }
+.side .r { padding:9px 0; border-bottom:1px solid var(--rule); }
+.side .r:last-child { border-bottom:none; padding-bottom:0; }
+.side .r:first-child { padding-top:0; }
+.side .k { font-size:9px; font-weight:700; letter-spacing:.13em; text-transform:uppercase;
+           color:var(--faint); margin-bottom:4px; }
+.side .v { font-size:12.8px; line-height:1.42; color:var(--soft); }
+.side .v b { color:var(--ink); font-weight:700; }
+
+.done { background:var(--leaf-wash); border-left:2.5px solid var(--leaf);
+        border-radius:0 4px 4px 0; padding:13px 15px; margin-top:16px; }
+.done .k { font-size:9px; font-weight:700; letter-spacing:.13em; text-transform:uppercase;
+           color:var(--leaf); margin-bottom:5px; }
+.done p { margin:0; font-size:12.8px; line-height:1.45; color:var(--soft); }
+
+.skills { margin-top:20px; padding-top:11px; border-top:1px solid var(--rule);
+          font-size:9.5px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--faint); }
+.skills b { color:var(--leaf); font-weight:700; }
+
+
+/* ---------- visuals ---------- */
+.viz { margin:16px 0 4px; break-inside:avoid; }
+.viz .cap { font-size:9.5px; font-weight:700; letter-spacing:.14em; text-transform:uppercase;
+            color:var(--faint); margin-bottom:10px; }
+.viz .fig { font-size:11px; color:var(--faint); margin-top:8px; line-height:1.45; }
+
+.grow { display:grid; grid-template-columns:repeat(4,1fr); border-top:2px solid var(--rule); }
+.grow .y { position:relative; padding:14px 8px 0 0; }
+.grow .y::before { content:""; position:absolute; top:-6px; left:0; width:10px; height:10px;
+                   border-radius:50%; background:var(--rule); }
+.grow .y.on::before { background:var(--murram); }
+.grow .y.on { border-top:2px solid var(--murram); margin-top:-2px; }
+.grow .yr { font-size:12px; font-weight:800; letter-spacing:.04em; color:var(--faint); }
+.grow .y.on .yr { color:var(--murram); }
+.grow .wh { font-size:11.5px; line-height:1.4; color:var(--soft); margin-top:4px; }
+.grow .tree { display:flex; align-items:flex-end; gap:2px; height:34px; margin-top:9px; }
+.grow .tree i { display:block; width:5px; background:var(--leaf); opacity:.5; border-radius:1px; }
+.grow .y.on .tree i { background:var(--murram); opacity:1; }
+
+.hb { display:flex; flex-direction:column; gap:6px; }
+.hb .r { display:grid; grid-template-columns:84px 1fr 46px; gap:9px; align-items:center; }
+.hb .k { font-size:11px; color:var(--soft); text-align:right; }
+.hb .t { height:15px; background:var(--sunk); border-radius:2px; overflow:hidden; }
+.hb .f { display:block; height:100%; background:var(--rule-firm); border-radius:2px; }
+.hb .v { font-size:11px; font-weight:700; font-variant-numeric:tabular-nums; text-align:right; }
+.hb .r.on .k { color:var(--murram); font-weight:700; }
+.hb .r.on .f { background:var(--murram); }
+.hb .r.on .v { color:var(--murram); }
+
+.wk { display:grid; grid-template-columns:repeat(16,1fr); gap:3px; }
+.wk span { display:block; height:26px; border-radius:2px; }
+.wk .a { background:var(--rule-firm); } .wk .b { background:var(--leaf); opacity:.5; }
+.wk .c { background:var(--murram); opacity:.45; } .wk .d { background:var(--murram); }
+.wklg { display:flex; gap:14px; flex-wrap:wrap; font-size:10.5px; color:var(--soft); margin-top:8px; }
+.wklg i { display:inline-block; width:9px; height:9px; border-radius:2px; margin-right:5px; }
+
+.spec { display:grid; grid-template-columns:auto 1fr; gap:16px; align-items:center; }
+.sw { display:flex; gap:5px; }
+.sw i { display:block; width:30px; height:44px; border-radius:3px; }
+.spec .tw .a { font-family:var(--display); font-size:27px; line-height:1; }
+.spec .tw .b { font-size:11.5px; font-weight:700; letter-spacing:.02em; margin-top:5px; }
+.spec .tw .c { font-size:10.5px; color:var(--soft); margin-top:2px; }
+
+.anat { display:grid; grid-template-columns:1fr 1fr; gap:9px; }
+.anat .p { border:1px solid var(--rule); border-radius:3px; padding:8px 9px; background:var(--raised); }
+.anat .p b { display:block; font-size:10.5px; margin-bottom:5px; }
+.anat .p i { display:block; height:4px; background:var(--sunk); border-radius:2px; margin-bottom:3px; }
+.anat .p i.k { background:var(--murram); opacity:.55; width:44%; }
+.anat .p i.s { width:76%; } .anat .p i.t { width:60%; }
+
+.split2 { display:flex; height:44px; border-radius:3px; overflow:hidden; }
+.split2 .a { background:var(--rule-firm); display:flex; align-items:center; padding-left:11px;
+             font-size:11.5px; font-weight:700; color:var(--ink); }
+.split2 .b { background:var(--murram); display:flex; align-items:center; padding-left:11px;
+             font-size:11.5px; font-weight:700; color:#FFF3EE; }
+
+.drift { display:flex; flex-direction:column; gap:7px; }
+.drift .d { display:grid; grid-template-columns:96px 1fr; gap:10px; align-items:baseline;
+            padding-bottom:6px; border-bottom:1px solid var(--rule); }
+.drift .lb { font-size:11px; color:var(--soft); }
+.drift .vs { font-size:12px; }
+.drift .vs s { text-decoration:none; color:var(--faint); }
+.drift .vs em { font-style:normal; color:var(--murram); font-weight:700; }
+.drift .vs u { text-decoration:none; color:var(--faint); margin:0 5px; }
+
+/* ---- overview specifics ---- */
+.acts { border-top:1px solid var(--rule); }
+.act { display:grid; grid-template-columns:16px 1fr 44px; gap:9px; padding:8px 0;
+       border-bottom:1px solid var(--rule); align-items:baseline; }
+.act .i { font-size:10px; font-weight:700; color:var(--murram); font-variant-numeric:tabular-nums; }
+.act .t { font-size:12.8px; line-height:1.4; }
+.act .t b { font-weight:700; }
+.act .t span { color:var(--soft); }
+.act .w { font-size:9px; font-weight:700; letter-spacing:.06em; text-transform:uppercase;
+          color:var(--faint); text-align:right; white-space:nowrap; }
+.act.now .w { color:var(--murram); }
+
+.index { border-top:1px solid var(--rule); }
+.ix { display:grid; grid-template-columns:26px 1fr; gap:10px; padding:7px 0;
+      border-bottom:1px solid var(--rule); font-size:12.8px; align-items:baseline; }
+.ix .i { font-size:10px; font-weight:700; color:var(--murram); font-variant-numeric:tabular-nums; }
+.ix b { font-weight:700; }
+.ix span { color:var(--soft); }
+
+.box { background:var(--murram-wash); border-left:2.5px solid var(--murram);
+       border-radius:0 4px 4px 0; padding:13px 15px; margin-top:16px; }
+.box b { font-size:12.5px; display:block; margin-bottom:4px; }
+.box p { margin:0; font-size:12.5px; color:var(--soft); line-height:1.45; }
+
+.foot { margin-top:22px; padding-top:11px; border-top:2px solid var(--ink);
+        font-size:9px; letter-spacing:.06em; text-transform:uppercase; color:var(--faint); line-height:1.7; }
+
+@media (max-width:760px) { .cols { grid-template-columns:1fr; gap:22px; } }
+@media (prefers-reduced-motion: reduce) { * { animation:none !important; transition:none !important; } }
+
+/* locked to light mode */
+:root { color-scheme: light; }
+</style>
+
+<!-- ============ 00 OVERVIEW ============ -->
+<div class="sheet">
+  <div class="hd">
+    <div class="l">
+      <p class="lbl">Nandi 2027 &nbsp;&middot;&nbsp; Overview</p>
+      <h1>What needs doing</h1>
+      <p class="one">Five months to UDA nominations. Ordered by when each item has to start, not by importance.</p>
+    </div>
+    <div class="tick">Sheet 00<br>29 Aug 2026</div>
+  </div>
+
+  <div class="cols">
+    <div>
+      <h3>The eight items</h3>
+      <div class="acts">
+        <div class="act now"><span class="i">01</span><span class="t"><b>Confirm the coffee harvest window.</b> <span>One call to Baraka College or the county AFA office. The filming schedule follows this date.</span></span><span class="w">This week</span></div>
+        <div class="act now"><span class="i">02</span><span class="t"><b>Caption every post.</b> <span>Free and immediate. Same account, measured: 80,500 views against 802.</span></span><span class="w">This week</span></div>
+        <div class="act now"><span class="i">03</span><span class="t"><b>Pin the drifting figures.</b> <span>Scholarships appear as 409 and 449; the target as 3,500, 4,000 and 120 per ward.</span></span><span class="w">This week</span></div>
+        <div class="act"><span class="i">04</span><span class="t"><b>Count the surviving trees.</b> <span>A 90% rate circulates from a supporter's estimate. Measure it before it is printed.</span></span><span class="w">Sept</span></div>
+        <div class="act"><span class="i">05</span><span class="t"><b>Start owning the footage.</b> <span>Film every appearance in full, publish same day.</span></span><span class="w">Sept</span></div>
+        <div class="act"><span class="i">06</span><span class="t"><b>Film the harvest.</b> <span>2023 trees are bearing now. The window does not come back.</span></span><span class="w">Oct&ndash;Dec</span></div>
+        <div class="act"><span class="i">07</span><span class="t"><b>Publish the evidence page.</b> <span>Sourced figures, ward breakdowns, honest gaps.</span></span><span class="w">Nov&ndash;Dec</span></div>
+        <div class="act"><span class="i">08</span><span class="t"><b>Release and screen the film.</b> <span>Six sub-counties, in halls, before it goes online.</span></span><span class="w">January</span></div>
+      </div>
+      <div class="box">
+        <b>One decision to make early</b>
+        <p>That measured numbers get published even where they are lower than hoped. Agreed in September this costs nothing. Agreed in December it costs an argument.</p>
+      </div>
+    </div>
+
+    <div>
+      <h3>The sheets</h3>
+      <div class="index">
+        <div class="ix"><span class="i">01</span><span><b>The Film</b><br><span>Kahawa na Mama, documented properly</span></span></div>
+        <div class="ix"><span class="i">02</span><span><b>Owning the Footage</b><br><span>Same-day capture and publishing</span></span></div>
+        <div class="ix"><span class="i">03</span><span><b>The Weekly Rhythm</b><br><span>Sixteen weeks of short video</span></span></div>
+        <div class="ix"><span class="i">04</span><span><b>One Visual Identity</b><br><span>Recognisable at a glance</span></span></div>
+        <div class="ix"><span class="i">05</span><span><b>The Evidence Base</b><br><span>Where claims can be checked</span></span></div>
+        <div class="ix"><span class="i">06</span><span><b>Numbers People Understand</b><br><span>Charts that answer false figures</span></span></div>
+        <div class="ix"><span class="i">07</span><span><b>Verification</b><br><span>Keeping every claim traceable</span></span></div>
+      </div>
+      <div class="done">
+        <div class="k">Not mine</div>
+        <p>Polling needs a licensed firm. Election law, campaign finance and the cooperative branding question need a lawyer. Ward organising is its own discipline. Someone else owns overall strategy.</p>
+      </div>
+    </div>
+  </div>
+  <div class="foot">Nandi 2027 &middot; Working sheets &middot; 29 August 2026</div>
+</div>
+
+<!-- ============ 01 THE FILM ============ -->
+<div class="sheet">
+  <div class="hd">
+    <div class="l"><p class="lbl">Sheet 01 &nbsp;&middot;&nbsp; Film and photography</p>
+    <h1>The Film</h1>
+    <p class="one">A documentary record of Kahawa na Mama, built around the moment a woman is paid in her own name.</p></div>
+    <div class="tick">Starts Sept<br>Delivers January</div>
+  </div>
+  <div class="cols">
+    <div>
+      <div class="blk"><h3>Why it matters</h3>
+        <p>Every figure attached to the programme counts what was <b>given out</b>. None counts what came back. That is the difference between a giveaway and a record, and it is the gap opponents are already pointing at in public.</p>
+        <p>Trees planted in 2023 are bearing now. <b>The three-year before-and-after can be filmed this season and never again.</b></p>
+      </div>
+      <div class="blk"><h3>What gets built</h3>
+        <ul class="build">
+          <li><b>A 24-minute documentary</b> following four farmers across the programme, from nursery to payment slip</li>
+          <li><b>A shorter hall cut</b> for rallies, churches and community screenings where 24 minutes will not hold</li>
+          <li><b>A testimony library</b> of 30+ full interviews, archived and indexed by name, ward and phase</li>
+          <li><b>A stills archive</b> for print, press and the website</li>
+          <li><b>An honest section</b> on what did not work &mdash; the trees that died and why</li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <div class="side">
+        <div class="r"><div class="k">Timeline</div><div class="v"><b>Sept</b> cast and verify &middot; <b>Oct&ndash;Dec</b> filming, tied to the harvest &middot; <b>Jan</b> release and screening tour</div></div>
+        <div class="r"><div class="k">What I need</div><div class="v">Introduction to four or five farmers and to the cooperative. Any 2023 photographs of planted plots. Permission to film freely.</div></div>
+        <div class="r"><div class="k">Executed by</div><div class="v">Me, personally &mdash; camera, sound, interviews, edit, subtitles, grade.</div></div>
+      </div>
+      <div class="done"><div class="k">Done looks like</div>
+        <p>A film screened in six sub-counties before it goes online, and a permanent archive of farmers on the record in their own words.</p></div>
+    </div>
+  </div>
+    <div class="viz">
+    <div class="cap">Why this season and not next</div>
+    <div class="grow">
+      <div class="y"><div class="yr">2023</div><div class="wh">Pilot seedlings planted</div>
+        <div class="tree"><i style="height:5px"></i><i style="height:7px"></i><i style="height:5px"></i></div></div>
+      <div class="y"><div class="yr">2024</div><div class="wh">Establishing</div>
+        <div class="tree"><i style="height:11px"></i><i style="height:15px"></i><i style="height:12px"></i></div></div>
+      <div class="y"><div class="yr">2025</div><div class="wh">Phase II planted</div>
+        <div class="tree"><i style="height:19px"></i><i style="height:24px"></i><i style="height:20px"></i></div></div>
+      <div class="y on"><div class="yr">2026</div><div class="wh">First cherry &mdash; filmable now</div>
+        <div class="tree"><i style="height:28px"></i><i style="height:34px"></i><i style="height:30px"></i></div></div>
+    </div>
+    <p class="fig">The before-and-after only exists while the change is still visible. By 2027 a bearing tree looks ordinary.</p>
+  </div>
+<div class="skills">Skills &nbsp; <b>Videography &middot; Photography &middot; Sound design &middot; Storytelling &middot; Interviewing</b></div>
+</div>
+
+<!-- ============ 02 OWNING THE FOOTAGE ============ -->
+<div class="sheet">
+  <div class="hd">
+    <div class="l"><p class="lbl">Sheet 02 &nbsp;&middot;&nbsp; Capture and publishing</p>
+    <h1>Owning the Footage</h1>
+    <p class="one">Filming every public appearance in full, and publishing the same day, so the clip that travels is yours.</p></div>
+    <div class="tick">Starts Sept<br>Runs continuously</div>
+  </div>
+  <div class="cols">
+    <div>
+      <div class="blk"><h3>Why it matters</h3>
+        <p>Four of the five most-watched clips of you speaking were uploaded by other accounts, reaching <b>216,300, 215,200, 186,300 and 149,800</b> views. Your own best post reached 80,500.</p>
+        <p>Those edits carry no context and were not cleared with anyone. Every controversy on record spread through a clip someone else cut. <b>Owning the footage is the structural fix</b>, not a statement after the fact.</p>
+      </div>
+      <div class="blk"><h3>What gets built</h3>
+        <ul class="build">
+          <li><b>Full-length capture</b> at every public appearance, with proper sound</li>
+          <li><b>A four-hour turnaround</b> from event to published clip, with context intact</li>
+          <li><b>A YouTube archive</b> of complete speeches, so journalists quote the whole thing</li>
+          <li><b>A rapid-response capability</b> for the moment something is taken out of context</li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <div class="side">
+        <div class="r"><div class="k">Timeline</div><div class="v">Can begin immediately. Needs no film crew and no budget approval to start.</div></div>
+        <div class="r"><div class="k">What I need</div><div class="v">Access to the diary far enough ahead to be there. Permission to film events that go badly as well as well.</div></div>
+        <div class="r"><div class="k">Executed by</div><div class="v">Me on the ground, with a field edit setup so publishing does not wait for an office.</div></div>
+      </div>
+      <div class="done"><div class="k">Done looks like</div>
+        <p>The next time a phrase of yours is clipped and circulated, the full version is already online with the date on it.</p></div>
+    </div>
+  </div>
+    <div class="viz">
+    <div class="cap">Views on clips of you speaking</div>
+    <div class="hb">
+      <div class="r"><span class="k">Other account</span><span class="t"><span class="f" style="width:100%"></span></span><span class="v">216,300</span></div>
+      <div class="r"><span class="k">Other account</span><span class="t"><span class="f" style="width:99%"></span></span><span class="v">215,200</span></div>
+      <div class="r"><span class="k">Other account</span><span class="t"><span class="f" style="width:86%"></span></span><span class="v">186,300</span></div>
+      <div class="r"><span class="k">Other account</span><span class="t"><span class="f" style="width:69%"></span></span><span class="v">149,800</span></div>
+      <div class="r on"><span class="k">Your account</span><span class="t"><span class="f" style="width:37%"></span></span><span class="v">80,500</span></div>
+    </div>
+    <p class="fig">Four of the top five are other people&rsquo;s uploads of your own footage, cut without context.</p>
+  </div>
+<div class="skills">Skills &nbsp; <b>Videography &middot; Sound &middot; Rapid edit &middot; Digital publishing</b></div>
+</div>
+
+<!-- ============ 03 THE WEEKLY RHYTHM ============ -->
+<div class="sheet">
+  <div class="hd">
+    <div class="l"><p class="lbl">Sheet 03 &nbsp;&middot;&nbsp; Content and digital</p>
+    <h1>The Weekly Rhythm</h1>
+    <p class="one">One short video a week until nominations, each ending on a single fact with its source on screen.</p></div>
+    <div class="tick">Oct &ndash; Jan<br>16 weeks</div>
+  </div>
+  <div class="cols">
+    <div>
+      <div class="blk"><h3>Why it matters</h3>
+        <p>Posts published with a caption reach <b>80,500</b>. The same account without one reaches <b>802</b>. That is not a strategy problem, it is a workflow problem, and it is the cheapest fix available.</p>
+        <p>A weekly rhythm also builds an audience before the film lands, so that in January these are not strangers.</p>
+      </div>
+      <div class="blk"><h3>What gets built</h3>
+        <ul class="build">
+          <li><b>Sixteen shorts</b>, one a week, in four movements: establish, evidence, argument, case</li>
+          <li><b>A format that repeats</b> &mdash; a fixed opening mark, burned-in subtitles, a sourced fact card to close</li>
+          <li><b>A caption system</b> written differently for Facebook and TikTok, because the audiences differ</li>
+          <li><b>A distribution list</b> of ward coordinators, because a page post does not reach the groups on its own</li>
+          <li><b>Weekly measurement</b> on share rate and completion, not vanity view counts</li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <div class="side">
+        <div class="r"><div class="k">Timeline</div><div class="v">First short out in week one of October. Weekly through to nominations.</div></div>
+        <div class="r"><div class="k">What I need</div><div class="v">One person in the office who owns publishing with me. Access to the account, not a hand-off each time.</div></div>
+        <div class="r"><div class="k">Executed by</div><div class="v">Me &mdash; shoot, edit, caption, schedule, publish, measure.</div></div>
+      </div>
+      <div class="done"><div class="k">Done looks like</div>
+        <p>Sixteen weeks of material that can each be checked, and an audience that recognises the format before it sees the name.</p></div>
+    </div>
+  </div>
+    <div class="viz">
+    <div class="cap">Sixteen weeks, four movements</div>
+    <div class="wk">
+      <span class="a"></span><span class="a"></span><span class="a"></span><span class="a"></span>
+      <span class="b"></span><span class="b"></span><span class="b"></span><span class="b"></span><span class="b"></span>
+      <span class="c"></span><span class="c"></span><span class="c"></span><span class="c"></span>
+      <span class="d"></span><span class="d"></span><span class="d"></span>
+    </div>
+    <div class="wklg">
+      <span><i style="background:var(--rule-firm)"></i>Oct &mdash; establish</span>
+      <span><i style="background:var(--leaf);opacity:.5"></i>Nov &mdash; the harvest</span>
+      <span><i style="background:var(--murram);opacity:.45"></i>Dec &mdash; the argument</span>
+      <span><i style="background:var(--murram)"></i>Jan &mdash; the case</span>
+    </div>
+    <p class="fig">Captioned posts reach 80,500. The same account without a caption reaches 802.</p>
+  </div>
+<div class="skills">Skills &nbsp; <b>Video &middot; Editing &middot; Social and digital &middot; Content planning &middot; Analytics</b></div>
+</div>
+
+<!-- ============ 04 VISUAL IDENTITY ============ -->
+<div class="sheet">
+  <div class="hd">
+    <div class="l"><p class="lbl">Sheet 04 &nbsp;&middot;&nbsp; Graphic design and brand</p>
+    <h1>One Visual Identity</h1>
+    <p class="one">A single look, applied everywhere, so anything published is recognisable as yours before the name is read.</p></div>
+    <div class="tick">Sept<br>Then applied throughout</div>
+  </div>
+  <div class="cols">
+    <div>
+      <div class="blk"><h3>Why it matters</h3>
+        <p>Across four Facebook presences, TikTok, X and the website there is <b>no shared visual language</b>. Nothing you post can be identified by sight. Meanwhile supporter pages produce material in a dozen different styles, all attributed to you.</p>
+        <p>An identity is also protection: material that looks official is harder to counterfeit and easier to trust.</p>
+      </div>
+      <div class="blk"><h3>What gets built</h3>
+        <ul class="build">
+          <li><b>A core system</b> &mdash; one mark, one type pairing, one colour set, defined properly</li>
+          <li><b>Templates</b> for the fact cards, quote cards, event graphics and lower-thirds</li>
+          <li><b>An audio mark</b> for video, so a clip is recognisable with the sound on and the screen off</li>
+          <li><b>A short guide</b> supporter pages can follow, turning scattered goodwill into consistent output</li>
+          <li><b>Print assets</b> for banners, tents and programme materials</li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <div class="side">
+        <div class="r"><div class="k">Timeline</div><div class="v">Two to three weeks in September, then it costs nothing to keep using.</div></div>
+        <div class="r"><div class="k">What I need</div><div class="v">A decision on which Facebook presences consolidate, and sign-off on one direction rather than a committee.</div></div>
+        <div class="r"><div class="k">Note</div><div class="v">Any branding placed on cooperative property needs legal clearance first. Programme names are safer than personal ones.</div></div>
+      </div>
+      <div class="done"><div class="k">Done looks like</div>
+        <p>Someone scrolling past recognises the post as yours before reading a word of it.</p></div>
+    </div>
+  </div>
+    <div class="viz">
+    <div class="cap">The system, in miniature</div>
+    <div class="spec">
+      <div class="sw">
+        <i style="background:var(--ink)"></i><i style="background:var(--murram)"></i>
+        <i style="background:var(--leaf)"></i><i style="background:var(--sunk);border:1px solid var(--rule)"></i>
+      </div>
+      <div class="tw">
+        <div class="a">Cheptikonyol</div>
+        <div class="b">ONE DISPLAY FACE &middot; ONE TEXT FACE</div>
+        <div class="c">Applied to fact cards, lower-thirds, print and the site &mdash; so a post is recognisable before it is read.</div>
+      </div>
+    </div>
+    <p class="fig">Four colours, two typefaces, one mark. Everything else follows from these.</p>
+  </div>
+<div class="skills">Skills &nbsp; <b>Graphic design &middot; Brand development &middot; Typography &middot; Print &middot; Audio branding</b></div>
+</div>
+
+<!-- ============ 05 EVIDENCE BASE ============ -->
+<div class="sheet">
+  <div class="hd">
+    <div class="l"><p class="lbl">Sheet 05 &nbsp;&middot;&nbsp; Web and data</p>
+    <h1>The Evidence Base</h1>
+    <p class="one">One place where any claim about your record can be checked, with a source beside every number.</p></div>
+    <div class="tick">Nov &ndash; Dec<br>Live before January</div>
+  </div>
+  <div class="cols">
+    <div>
+      <div class="blk"><h3>Why it matters</h3>
+        <p>A resident has already published a detailed public challenge asking for <b>procurement records, supplier names, prices and beneficiary lists by ward</b>. It is sober and specific, which is exactly why it is hard to answer with a speech.</p>
+        <p>The current site opens on tournament registration and carries round unsourced figures. <b>Unverifiable numbers on your own site actively help the people calling you a project.</b></p>
+      </div>
+      <div class="blk"><h3>What gets built</h3>
+        <ul class="build">
+          <li><b>A programme page</b> for each initiative &mdash; figures, phases, wards, partners, each with its source</li>
+          <li><b>A stated-gaps section</b> naming what has not been measured, rather than estimating it</li>
+          <li><b>A database behind it</b> so the office updates figures without needing me</li>
+          <li><b>The video and speech archive</b>, searchable</li>
+          <li><b>The existing sports registration kept</b>, moved to its own path &mdash; it works and it serves people</li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <div class="side">
+        <div class="r"><div class="k">Timeline</div><div class="v">Sample page exists already. Full build November to December.</div></div>
+        <div class="r"><div class="k">What I need</div><div class="v">The beneficiary register, procurement records and partner documentation. Site access.</div></div>
+        <div class="r"><div class="k">Executed by</div><div class="v">Me &mdash; design, build, database, content. Handed over to the office to run.</div></div>
+      </div>
+      <div class="done"><div class="k">Done looks like</div>
+        <p>A journalist checking a claim finds your page first, and every figure on it survives being checked.</p></div>
+    </div>
+  </div>
+    <div class="viz">
+    <div class="cap">What a programme page contains</div>
+    <div class="anat">
+      <div class="p"><b>Sourced figures</b><i class="k"></i><i class="s"></i><i class="t"></i></div>
+      <div class="p"><b>Phases and wards</b><i class="s"></i><i class="t"></i><i class="s"></i></div>
+      <div class="p"><b>Partners named</b><i class="t"></i><i class="s"></i></div>
+      <div class="p"><b>What is not measured</b><i class="k"></i><i class="t"></i></div>
+    </div>
+    <p class="fig">A sample page already exists, built from published figures, with every number carrying its source.</p>
+  </div>
+<div class="skills">Skills &nbsp; <b>Web development &middot; Application development &middot; Information architecture &middot; Design &middot; Content</b></div>
+</div>
+
+<!-- ============ 06 DATA ============ -->
+<div class="sheet">
+  <div class="hd">
+    <div class="l"><p class="lbl">Sheet 06 &nbsp;&middot;&nbsp; Data visualisation</p>
+    <h1>Numbers People Understand</h1>
+    <p class="one">Turning official records into charts that make an argument in three seconds.</p></div>
+    <div class="tick">Rolling<br>From October</div>
+  </div>
+  <div class="cols">
+    <div>
+      <div class="blk"><h3>Why it matters</h3>
+        <p>The county's own budget shows <b>two thirds of spending goes on running the government and one third on building anything</b>. That is an official, checkable figure and nobody in this race is using it.</p>
+        <p>Meanwhile a false claim about your salary is circulating with specific figures attached. <b>A sourced graphic ends that; a denial does not.</b></p>
+      </div>
+      <div class="blk"><h3>What gets built</h3>
+        <ul class="build">
+          <li><b>County finance explainers</b> &mdash; where the money goes, drawn from Controller of Budget records</li>
+          <li><b>Programme charts</b> showing coverage by ward and progress by phase</li>
+          <li><b>Correction graphics</b> that answer a circulating false figure with the gazetted one</li>
+          <li><b>The film's end cards</b>, where each closing figure carries its source on screen</li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <div class="side">
+        <div class="r"><div class="k">Timeline</div><div class="v">Produced as needed. Each piece is days, not weeks.</div></div>
+        <div class="r"><div class="k">What I need</div><div class="v">Nothing you do not already have. These are built from public records.</div></div>
+        <div class="r"><div class="k">Caution</div><div class="v">Only figures that can be sourced get published. A wrong chart is worse than no chart.</div></div>
+      </div>
+      <div class="done"><div class="k">Done looks like</div>
+        <p>An argument about county spending that fits on a phone screen and cannot be disputed.</p></div>
+    </div>
+  </div>
+    <div class="viz">
+    <div class="cap">Nandi County spending, FY 2024/25</div>
+    <div class="split2">
+      <div class="a" style="flex:6.6">KSh 6.6bn &nbsp;running the county</div>
+      <div class="b" style="flex:3.3">KSh 3.3bn &nbsp;building</div>
+    </div>
+    <p class="fig">Two thirds of the budget runs the government; one third builds anything. Controller of Budget &mdash; official, checkable, and unused by anyone in this race.</p>
+  </div>
+<div class="skills">Skills &nbsp; <b>Data visualisation &middot; Research &middot; Graphic design &middot; Information design</b></div>
+</div>
+
+<!-- ============ 07 VERIFICATION ============ -->
+<div class="sheet">
+  <div class="hd">
+    <div class="l"><p class="lbl">Sheet 07 &nbsp;&middot;&nbsp; Research and verification</p>
+    <h1>Verification</h1>
+    <p class="one">Keeping every claim traceable, and knowing what is being said before it becomes a story.</p></div>
+    <div class="tick">Ongoing<br>Started already</div>
+  </div>
+  <div class="cols">
+    <div>
+      <div class="blk"><h3>Why it matters</h3>
+        <p>Your own figures currently drift. Scholarships appear as both <b>409 and 449</b>; the target as 3,500, 4,000 and 120 per ward; the programme under two different names. Each of those is something an opponent can hold up.</p>
+        <p>Fourteen Nandi groups were read from the inside for this work. It surfaced a second opinion poll nobody had cited, an elders' endorsement for a rival, and what a disputed Kalenjin word actually means.</p>
+      </div>
+      <div class="blk"><h3>What gets built</h3>
+        <ul class="build">
+          <li><b>One agreed figure set</b>, pinned and used everywhere</li>
+          <li><b>A source file</b> behind every published claim, so anything can be defended within the hour</li>
+          <li><b>Monitoring</b> of what is circulating, including the groups that are not searchable from outside</li>
+          <li><b>Early warning</b> on a story before it has run for three days</li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <div class="side">
+        <div class="r"><div class="k">Timeline</div><div class="v">Already underway, unpaid, so the work can be judged before anything is agreed.</div></div>
+        <div class="r"><div class="k">What I need</div><div class="v">Programme records and access to the people who ran each initiative.</div></div>
+        <div class="r"><div class="k">Limit</div><div class="v">This is verification, not polling and not legal advice. Both of those need specialists.</div></div>
+      </div>
+      <div class="done"><div class="k">Done looks like</div>
+        <p>Every number the campaign says in public can be traced to a document within a minute.</p></div>
+    </div>
+  </div>
+    <div class="viz">
+    <div class="cap">Figures currently in circulation</div>
+    <div class="drift">
+      <div class="d"><span class="lb">Scholarships</span><span class="vs"><s>409</s><u>vs</u><s>449</s><u>&rarr;</u><em>one agreed number</em></span></div>
+      <div class="d"><span class="lb">Target</span><span class="vs"><s>3,500</s><u>vs</u><s>4,000</s><u>vs</u><s>120 per ward</s><u>&rarr;</u><em>one</em></span></div>
+      <div class="d"><span class="lb">Launch year</span><span class="vs"><s>2022</s><u>vs</u><s>2023</s><u>&rarr;</u><em>one</em></span></div>
+      <div class="d"><span class="lb">Survival rate</span><span class="vs"><s>90% estimated</s><u>&rarr;</u><em>counted</em></span></div>
+    </div>
+    <p class="fig">Each unresolved figure is something an opponent can hold up. Pinning them is a morning of work.</p>
+  </div>
+<div class="skills">Skills &nbsp; <b>Research &middot; Information analysis &middot; Fact-checking &middot; Monitoring</b></div>
+</div>

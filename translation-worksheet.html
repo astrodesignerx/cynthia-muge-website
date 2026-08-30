@@ -1,0 +1,460 @@
+<title>Nandi Translation Worksheet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,400&family=Roboto+Mono:wght@400;500&display=swap">
+
+<style>
+:root {
+  --paper:     #FAF8F4;
+  --raised:    #FFFFFF;
+  --sunk:      #EFEBE3;
+  --ink:       #1F1A15;
+  --ink-soft:  #4E463D;
+  --ink-faint: #837A6F;
+  --rule:      #E0DACE;
+  --rule-firm: #C4BCAC;
+
+  --murram:      #B4502A;
+  --murram-wash: #F8EAE2;
+
+  --p1:      #A8302A;
+  --p1-wash: #F9E6E4;
+  --p2:      #B4502A;
+  --p2-wash: #F8EAE2;
+  --p3:      #4F6B57;
+  --p3-wash: #E9EFEA;
+
+  --display: "Fraunces", Georgia, serif;
+  --body: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
+  --mono: "Roboto Mono", ui-monospace, Menlo, monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root[data-theme="__never"] {
+    --paper:     #14110E;
+    --raised:    #1C1815;
+    --sunk:      #0E0C0A;
+    --ink:       #EDE8E1;
+    --ink-soft:  #B4AA9E;
+    --ink-faint: #857C71;
+    --rule:      #2C2721;
+    --rule-firm: #443D34;
+
+    --murram:      #E08556;
+    --murram-wash: #2E1A11;
+
+    --p1:      #E0776B;
+    --p1-wash: #2C1512;
+    --p2:      #E08556;
+    --p2-wash: #2E1A11;
+    --p3:      #8FBF9E;
+    --p3-wash: #16241A;
+  }
+}
+
+:root[data-theme="__never-dark"] {
+  --paper:     #14110E;
+  --raised:    #1C1815;
+  --sunk:      #0E0C0A;
+  --ink:       #EDE8E1;
+  --ink-soft:  #B4AA9E;
+  --ink-faint: #857C71;
+  --rule:      #2C2721;
+  --rule-firm: #443D34;
+
+  --murram:      #E08556;
+  --murram-wash: #2E1A11;
+
+  --p1:      #E0776B;
+  --p1-wash: #2C1512;
+  --p2:      #E08556;
+  --p2-wash: #2E1A11;
+  --p3:      #8FBF9E;
+  --p3-wash: #16241A;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap { max-width: 860px; margin: 0 auto; padding: 0 28px 120px; }
+
+/* masthead */
+.masthead { padding: 52px 0 28px; border-bottom: 2px solid var(--ink); }
+.slate { font-family: var(--mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--murram); margin-bottom: 18px; }
+h1 {
+  font-family: var(--display); font-weight: 700;
+  font-size: clamp(34px, 5.6vw, 58px);
+  line-height: 1.02; letter-spacing: -.02em; margin: 0 0 16px; text-wrap: balance;
+}
+.standfirst { font-size: 19px; font-weight: 300; line-height: 1.5; color: var(--ink-soft); max-width: 56ch; margin: 0 0 24px; }
+.counts { display: flex; gap: 26px; flex-wrap: wrap; }
+.ct .k { font-family: var(--mono); font-size: 9px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-faint); }
+.ct .v { font-family: var(--display); font-size: 22px; font-weight: 700; line-height: 1.2; margin-top: 2px; }
+.ct.a .v { color: var(--p1); }
+.ct.b .v { color: var(--p2); }
+.ct.c .v { color: var(--p3); }
+
+/* brief */
+.brief { margin: 34px 0 10px; padding: 20px 24px; background: var(--sunk); border-radius: 4px; border-left: 3px solid var(--murram); }
+.brief h2 { font-family: var(--display); font-size: 20px; font-weight: 600; margin: 0 0 10px; letter-spacing: -.01em; }
+.brief p { margin: 0 0 11px; font-size: 16px; }
+.brief p:last-child { margin-bottom: 0; }
+.brief ul { margin: 0 0 11px; padding-left: 20px; font-size: 16px; }
+.brief li { margin-bottom: 6px; }
+.brief li::marker { color: var(--murram); }
+
+/* priority bands */
+.band { margin: 46px 0 0; padding-bottom: 9px; border-bottom: 2px solid; display: flex; align-items: baseline; gap: 13px; flex-wrap: wrap; }
+.band .tag { font-family: var(--mono); font-size: 10px; font-weight: 500; letter-spacing: .11em; text-transform: uppercase; padding: 3px 8px; border-radius: 3px; }
+.band h2 { font-family: var(--display); font-size: 24px; font-weight: 600; margin: 0; letter-spacing: -.015em; }
+.band .why { flex-basis: 100%; font-size: 15.5px; color: var(--ink-soft); line-height: 1.5; margin-top: 4px; }
+.band.p1 { border-color: var(--p1); }
+.band.p1 .tag { background: var(--p1-wash); color: var(--p1); }
+.band.p2 { border-color: var(--p2); }
+.band.p2 .tag { background: var(--p2-wash); color: var(--p2); }
+.band.p3 { border-color: var(--p3); }
+.band.p3 .tag { background: var(--p3-wash); color: var(--p3); }
+
+/* entries */
+.entry { border: 1px solid var(--rule); border-radius: 4px; background: var(--raised); margin: 14px 0; overflow: hidden; }
+.entry .hd { display: flex; gap: 10px; align-items: baseline; padding: 10px 16px 8px; border-bottom: 1px solid var(--rule); background: var(--sunk); flex-wrap: wrap; }
+.entry .num { font-family: var(--mono); font-size: 11px; font-weight: 500; color: var(--murram); }
+.entry .src { font-family: var(--mono); font-size: 9.5px; letter-spacing: .05em; text-transform: uppercase; color: var(--ink-faint); margin-left: auto; }
+.entry .bd { padding: 14px 16px 12px; }
+.line {
+  font-family: var(--mono); font-size: 14.5px; line-height: 1.65;
+  background: var(--murram-wash); color: var(--ink);
+  padding: 11px 14px; border-radius: 3px; margin: 0 0 12px;
+  overflow-x: auto; white-space: pre-wrap; word-break: break-word;
+}
+.line.reply { background: var(--sunk); margin-top: -6px; }
+.ask { font-size: 15.5px; line-height: 1.5; color: var(--ink-soft); margin: 0; }
+.ask b { color: var(--ink); font-weight: 600; }
+.blank { margin-top: 12px; padding-top: 10px; border-top: 1px dashed var(--rule-firm); font-family: var(--mono); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-faint); }
+
+/* glossary */
+.gloss { border: 1px solid var(--rule); border-radius: 4px; overflow: auto; margin: 18px 0 0; background: var(--raised); }
+table { border-collapse: collapse; width: 100%; min-width: 480px; font-size: 15px; }
+th, td { padding: 9px 15px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--rule); line-height: 1.45; }
+thead th { font-family: var(--mono); font-size: 9px; font-weight: 500; letter-spacing: .11em; text-transform: uppercase; color: var(--ink-faint); background: var(--sunk); white-space: nowrap; }
+tbody tr:last-child td { border-bottom: none; }
+td.term { font-family: var(--mono); font-size: 13.5px; color: var(--murram); white-space: nowrap; font-weight: 500; }
+
+.note { margin: 26px 0 0; padding: 15px 19px; border-left: 3px solid var(--p1); background: var(--p1-wash); border-radius: 0 4px 4px 0; }
+.note h3 { font-family: var(--display); font-size: 17px; font-weight: 600; margin: 0 0 8px; }
+.note p { margin: 0 0 9px; font-size: 15.5px; }
+.note p:last-child { margin-bottom: 0; }
+
+.foot { margin-top: 60px; padding-top: 18px; border-top: 2px solid var(--ink); font-family: var(--mono); font-size: 10px; letter-spacing: .05em; text-transform: uppercase; color: var(--ink-faint); line-height: 1.7; }
+
+@media (max-width: 700px) {
+  .wrap { padding: 0 18px 90px; }
+  .entry .src { margin-left: 0; flex-basis: 100%; }
+  body { font-size: 16.5px; }
+}
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+
+/* locked to light mode */
+:root { color-scheme: light; }
+</style>
+
+<div class="wrap">
+
+<header class="masthead">
+  <div class="slate">Kalenjin / Nandi → English · Facebook harvest · 27 Aug 2026</div>
+  <h1>Lines that need a Nandi speaker</h1>
+  <p class="standfirst">Verbatim comments and phrases pulled from fourteen Nandi Facebook groups. Grouped by how much the answer changes what we do next.</p>
+  <div class="counts">
+    <div class="ct a"><div class="k">Priority 1</div><div class="v">11 lines</div></div>
+    <div class="ct b"><div class="k">Priority 2</div><div class="v">9 lines</div></div>
+    <div class="ct c"><div class="k">Priority 3</div><div class="v">8 lines</div></div>
+    <div class="ct"><div class="k">Glossary terms</div><div class="v">14</div></div>
+  </div>
+</header>
+
+<div class="brief">
+  <h2>For the translator</h2>
+  <p>These are public comments about a Nandi County politician, collected for research. We need to understand what was actually said — not a polished version.</p>
+  <ul>
+    <li><strong>Literal first, then meaning.</strong> Give the word-for-word sense, then what it actually conveys to a Nandi listener.</li>
+    <li><strong>Tell us the register.</strong> Is it affectionate, neutral, teasing, dismissive, insulting, or seriously offensive? That distinction is the whole point of the exercise.</li>
+    <li><strong>Don't soften anything.</strong> If a line is crude or demeaning, say so plainly. A cleaned-up translation is worse than useless here.</li>
+    <li><strong>Flag ambiguity.</strong> If a line could be read two ways, or if spelling is non-standard and you are guessing, say which reading you chose and why.</li>
+    <li><strong>Note if it is not Nandi.</strong> Some lines mix Swahili, Sheng or English. Say which language each part is.</li>
+    <li><strong>Gendered usage matters most.</strong> Where a term refers to a woman, tell us whether it is ordinary, patronising, or an insult — and whether it would be used about a man.</li>
+  </ul>
+  <p>Spelling is as posted, including errors. Please do not correct it — the misspellings may themselves be informative.</p>
+</div>
+
+<!-- PRIORITY 1 -->
+<div class="band p1">
+  <span class="tag">Priority 1</span>
+  <h2>Does a coordinated gendered attack exist?</h2>
+  <p class="why">These decide whether the "cultural" pressure on this candidate is an organised campaign or ordinary political rudeness. Everything else can wait; this cannot.</p>
+</div>
+
+<div class="entry">
+  <div class="hd"><span class="num">01</span><span class="src">Jonah Tanui · preference thread</span></div>
+  <div class="bd">
+    <p class="line">Moberberi lakwanaa tomo koyam kondoiwech chepyoso</p>
+    <p class="ask">The word <b>chepyoso</b> recurs across several dismissive comments. What does this sentence say, and is <b>chepyoso</b> neutral ("woman", "girl") or belittling?</p>
+    <div class="blank">Translation ·······················································</div>
+  </div>
+</div>
+
+<div class="entry">
+  <div class="hd"><span class="num">02</span><span class="src">Vincent Bett · preference thread</span></div>
+  <div class="bd">
+    <p class="line">Kwera ngondouun chepyoso</p>
+    <p class="ask">Same word, shorter line. <b>Would this be said about a male candidate?</b></p>
+    <div class="blank">Translation ·······················································</div>
+  </div>
+</div>
+
+<div class="entry">
+  <div class="hd"><span class="num">03</span><span class="src">Pracedes Jeptoo, with reply · preference thread</span></div>
+  <div class="bd">
+    <p class="line">Mitei lelwek jeingin kole Cynthia kikokere ngo chepyoso neilakjin sinendet suet how</p>
+    <p class="line reply">reply from the thread author, Amon Kosgei kirwa:
+kalya sinendet kogeny</p>
+    <p class="ask">The longest <b>chepyoso</b> line, and it names Cynthia directly. The word <b>sinendet</b> appears in both the comment and the reply — what is it? This exchange may be the clearest example of the attack and its rebuttal in one place.</p>
+    <div class="blank">Translation ·······················································</div>
+  </div>
+</div>
+
+<div class="entry">
+  <div class="hd"><span class="num">04</span><span class="src">Denoo Kibichii · preference thread</span></div>
+  <div class="bd">
+    <p class="line">Cheptilda ranii</p>
+    <p class="ask"><b>Cheptilda</b> appears four times across two groups, always in dismissive contexts. Is it a mocking distortion of her nickname Cheptikonyol, a separate word, or someone else's name entirely?</p>
+    <div class="blank">Translation ·······················································</div>
+  </div>
+</div>
+
+<div class="entry">
+  <div class="hd"><span class="num">05</span><span class="src">Kennedy Too · preference thread</span></div>
+  <div class="bd">
+    <p class="line">Kenu cheptilda ak kawek</p>
+    <p class="ask">Second <b>Cheptilda</b> instance.</p>
+    <div class="blank">Translation ·······················································</div>
+  </div>
+</div>
+
+<div class="entry">
+  <div class="hd"><span class="num">06</span><span class="src">Bethwel Birech · preference thread</span></div>
+  <div class="bd">
+    <p class="line">Meite cheptilda ing'ung inyee</p>
+    <p class="ask">Third instance. Note the possessive-sounding ending — who is being addressed?</p>
+    <div class="blank">Translation ·······················································</div>
+  </div>
+</div>
+
+<div class="entry">
+  <div class="hd"><span class="num">07</span><span class="src">Titus Korir · Nandi Hills Constituency Forum</span></div>
+  <div class="bd">
+    <p class="line">In fact the county is oready destroyed by the seating governor who need to extend the same power to Cheptiltah,,,, ashindwee eng kainet ab jeiso</p>
+    <p class="ask">Fourth instance, spelled <b>Cheptiltah</b>, mixed with English. What does the Kalenjin tail mean — and does it confirm Cheptilda/Cheptiltah refers to her?</p>
+    <div class="blank">Translation ·······················································</div>
+  </div>
+</div>
+
+<div class="entry">
+  <div class="hd"><span class="num">08</span><span class="src">Theovilus Kipruto Lagat · preference thread</span></div>
+  <div class="bd">
+    <p class="line">maa achek chelejiin karushek ORIPOO</p>
+    <p class="ask"><b>Oripoo</b> is the word at the centre of a public row — she is accused of insulting Nandi men by using it. Here it appears in ordinary argument. <b>What does it actually mean, and how offensive is it?</b> This is the single most consequential word in the whole worksheet.</p>
+    <div class="blank">Translation ·······················································</div>
+  </div>
+</div>
+
+<div class="entry">
+  <div class="hd"><span class="num">09</span><span class="src">Theovilus Kipruto Lagat · same exchange</span></div>
+  <div class="bd">
+    <p class="line">korom kabsa</p>
+    <p class="ask">Follow-up in the same argument. Included for tone.</p>
+    <div class="blank">Translation ·······················································</div>
+  </div>
+</div>
+
+<div class="entry">
+  <div class="hd"><span class="num">10</span><span class="src">CK Malel · NandiYouthBunge (151K members)</span></div>
+  <div class="bd">
+    <p class="line">Wale wa Mendoiweech Chebiosook si watakasirika na Kuaibika sana!?
+Team Allan wacheni Madharau kwa wanawake wetu wazuri wachapa kazi.</p>
+    <p class="ask">Mixed Swahili and Kalenjin, posted with photos captioned "Village elders, Chesumei". The Swahili half says roughly "Team Allan, stop disrespecting our good hardworking women." <b>What is <span style="font-family:var(--mono)">Mendoiweech Chebiosook</span>?</b> This post accuses a rival camp of a gendered campaign, so the Kalenjin phrase matters.</p>
+    <div class="blank">Translation ·······················································</div>
+  </div>
+</div>
+
+<div class="entry">
+  <div class="hd"><span class="num">11</span><span class="src">Willy K Choge · supporter group</span></div>
+  <div class="bd">
+    <p class="line">The position of the Governor is all about brain, and a willing heart to transform the livelihoods of your people, and not carrying it on shoulders!</p>
+    <p class="ask">English, but the idiom is the question. <b>Does "carrying it on shoulders" refer to something specific in Nandi culture</b> — initiation, warriorhood, physical manhood? If so, this is a coded rebuttal to a coded attack, and we need to know what it is answering.</p>
+    <div class="blank">Translation ·······················································</div>
+  </div>
+</div>
+
+<!-- PRIORITY 2 -->
+<div class="band p2">
+  <span class="tag">Priority 2</span>
+  <h2>Slogans, nicknames and one speech line</h2>
+  <p class="why">These shape how we write and film. Not urgent, but they determine whether we can use a phrase without embarrassing anyone.</p>
+</div>
+
+<div class="entry">
+  <div class="hd"><span class="num">12</span><span class="src">ubiquitous · every group</span></div>
+  <div class="bd">
+    <p class="line">kityo   ·   kityoo   ·   kitio   ·   kityooo</p>
+    <p class="ask">Appears after almost every candidate's name — "Allan kityo", "Mwalimu kityo", "Cynthia kityo". Presumably "is enough" or "is the one". <b>Confirm the meaning and the exact force</b> — is it endorsement, or something weaker?</p>
+    <div class="blank">Translation ·······················································</div>
+  </div>
+</div>
+
+<div class="entry">
+  <div class="hd"><span class="num">13</span><span class="src">Allan Kosgey's campaign hashtag</span></div>
+  <div class="bd">
+    <p class="line">maloo soboon   ·   maloosaboon   ·   MALOO SABOON KITYO 2027   ·   Maloo soboon kityo</p>
+    <p class="ask">His main slogan, spelled several ways. <b>What does it mean and what does it promise?</b> Knowing a rival's core slogan is basic.</p>
+    <div class="blank">Translation ·······················································</div>
+  </div>
+</div>
+
+<div class="entry">
+  <div class="hd"><span class="num">14</span><span class="src">her own nickname · used constantly</span></div>
+  <div class="bd">
+    <p class="line">Cheptikonyol   ·   Cheptikonyool   ·   CheptiKonyool   ·   cheptiikonyool</p>
+    <p class="ask">Her nickname, used affectionately by supporters and as a hashtag. <b>What does it mean, and where does it come from?</b> If we build a film or a campaign around her identity we cannot be the only people who don't know.</p>
+    <div class="blank">Translation ·······················································</div>
+  </div>
+</div>
+
+<div class="entry">
+  <div class="hd"><span class="num">15</span><span class="src">Nandi Daily · her top-performing speech clip</span></div>
+  <div class="bd">
+    <p class="line">Kasomook eng kaminninget ab kee</p>
+    <p class="ask">Caption on her single best-performing post — a speech at Chepterwai Ward, Mosop (1.4K reactions, 165 comments, 69 shares). <b>This is likely a memorable line from the speech itself.</b> If it is, it may be the campaign's strongest existing slogan and nobody has written it down.</p>
+    <div class="blank">Translation ·······················································</div>
+  </div>
+</div>
+
+<div class="entry">
+  <div class="hd"><span class="num">16</span><span class="src">Kevoo Man Kipz · Kenya Kwanza Nandi Chapter</span></div>
+  <div class="bd">
+    <p class="line">legetyoo rah   ·   Legetyo Ra!</p>
+    <p class="ask">A recurring exclamation in her supporters' posts. Rallying cry, or something more specific?</p>
+    <div class="blank">Translation ·······················································</div>
+  </div>
+</div>
+
+<div class="entry">
+  <div class="hd"><span class="num">17</span><span class="src">Willy K Choge · supporter group</span></div>
+  <div class="bd">
+    <p class="line">Oye Kikonin Cheptikonyool</p>
+    <p class="ask">Posted with "Nandi county deserves better". What is <b>Kikonin</b>?</p>
+    <div class="blank">Translation ·······················································</div>
+  </div>
+</div>
+
+<div class="entry">
+  <div class="hd"><span class="num">18</span><span class="src">Cleophas Lagat's nickname</span></div>
+  <div class="bd">
+    <p class="line">Chematel   ·   "If not Chematel, then whooo?"</p>
+    <p class="ask">The former governor's nickname. Meaning, and whether it is flattering.</p>
+    <div class="blank">Translation ·······················································</div>
+  </div>
+</div>
+
+<div class="entry">
+  <div class="hd"><span class="num">19</span><span class="src">George Maiyo GM · youth campaign frame</span></div>
+  <div class="bd">
+    <p class="line">VIJANA na Mama!
+Form ni Mama, Gavana ni Mjamo, Gavana ni Hon. Cynthia Muge!</p>
+    <p class="ask">Mostly Swahili and clear, except <b>Mjamo</b>. What is it, and does it fit a woman candidate?</p>
+    <div class="blank">Translation ·······················································</div>
+  </div>
+</div>
+
+<div class="entry">
+  <div class="hd"><span class="num">20</span><span class="src">Ronald Rotich · preference thread</span></div>
+  <div class="bd">
+    <p class="line">The teacher kityo komas kasit</p>
+    <p class="ask">A pro-Melly comment. <b>komas kasit</b> — is this praise of his work, or a qualification?</p>
+    <div class="blank">Translation ·······················································</div>
+  </div>
+</div>
+
+<!-- PRIORITY 3 -->
+<div class="band p3">
+  <span class="tag">Priority 3</span>
+  <h2>Colour and completeness</h2>
+  <p class="why">Short comments that would round out the picture. Do these only if the first two sets are done.</p>
+</div>
+
+<div class="entry">
+  <div class="hd"><span class="num">21–28</span><span class="src">preference thread · short comments</span></div>
+  <div class="bd">
+    <p class="line">21.  Kapleketyoo,,kapsomook            — Kemboi Bonyei
+22.  mamii kasiiit yuuu               — Felix Kiptoo
+23.  Cynthia koo nee chotok           — Theovilus Kipruto Lagat
+24.  mwalimu ineken                   — Ronoh Ian
+25.  Melly kitio newendi Bungee       — Brian Mbeumo Kasabera
+26.  Allan Kosgey Emeet               — Samuel Sirma
+27.  Allan tinget                     — Barno Timothy
+28.  none walet                       — Kipkemboi Kosgei</p>
+    <p class="ask">Short endorsements and jabs. A one-line gloss each is plenty. <b>Flag any that are more hostile than they look.</b></p>
+    <div class="blank">Translation ·······················································</div>
+  </div>
+</div>
+
+<!-- GLOSSARY -->
+<div class="band p2" style="margin-top:46px">
+  <span class="tag">Glossary</span>
+  <h2>Single terms</h2>
+  <p class="why">Words and names appearing across the harvest. A short gloss for each is enough.</p>
+</div>
+
+<div class="gloss">
+  <table>
+    <thead><tr><th>Term</th><th>Where it appears</th><th>What we need</th></tr></thead>
+    <tbody>
+      <tr><td class="term">oripoo / oriboo</td><td>The public row; also ordinary banter</td><td>Meaning and offensiveness. Highest priority word here.</td></tr>
+      <tr><td class="term">chepyoso</td><td>Three dismissive comments</td><td>Neutral or belittling? Used of men?</td></tr>
+      <tr><td class="term">cheptilda / cheptiltah</td><td>Four comments, two groups</td><td>Mocking distortion of Cheptikonyol, or unrelated?</td></tr>
+      <tr><td class="term">cheptikonyol</td><td>Her nickname, everywhere</td><td>Meaning and origin</td></tr>
+      <tr><td class="term">sinendet</td><td>Comment 03 and its reply</td><td>Meaning</td></tr>
+      <tr><td class="term">kityo</td><td>After every candidate name</td><td>Force of the endorsement</td></tr>
+      <tr><td class="term">maloo soboon</td><td>Kosgey's slogan</td><td>Meaning</td></tr>
+      <tr><td class="term">chematel</td><td>Lagat's nickname</td><td>Meaning, flattering or not</td></tr>
+      <tr><td class="term">mjamo</td><td>"Gavana ni Mjamo"</td><td>Meaning; fits a woman?</td></tr>
+      <tr><td class="term">legetyo ra</td><td>Supporter posts</td><td>Meaning</td></tr>
+      <tr><td class="term">kikonin</td><td>"Oye Kikonin Cheptikonyool"</td><td>Meaning</td></tr>
+      <tr><td class="term">boso / bosso</td><td>Her football tournament name</td><td>Does it mean something, or is it just a name?</td></tr>
+      <tr><td class="term">pota pota</td><td>Hashtag "#potapotasector"</td><td>What sector is this?</td></tr>
+      <tr><td class="term">tano fresh</td><td>Supporter hashtag "#TanoFresh"</td><td>Meaning in this context</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="note">
+  <h3>One non-language question, for the same person</h3>
+  <p>Two councils of elders appear in the research. The <strong>Talai Council of Elders</strong> has publicly blessed Allan Kosgey's candidacy. Cynthia Muge attended the installation of the National Chairman of the <strong>Nandi Kaburwo Council of Elders</strong>.</p>
+  <p><strong>Which council carries more weight in Nandi, and on what?</strong> Are they rivals, complementary, or unrelated? An endorsement from one may mean far more than the other, and we currently have no way to judge.</p>
+  <p>Also worth asking: is there a name behind <strong>"Mobutu Sese Seko"</strong>, used as a derogatory label for a candidate in two posts?</p>
+</div>
+
+<div class="foot">
+  Translation worksheet · 27 August 2026 · 28 lines, 14 terms, 1 context question<br>
+  Source: 14 Nandi County Facebook groups, harvested 27 Aug 2026. Spelling as posted.
+</div>
+
+</div>

@@ -1,0 +1,798 @@
+<title>Sixteen Weeks Vertical</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Karla:ital,wght@0,300;0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap">
+
+<style>
+:root {
+  --paper:     #F7F6F4;
+  --raised:    #FFFFFF;
+  --sunk:      #ECEAE6;
+  --ink:       #1A1614;
+  --ink-soft:  #4A423E;
+  --ink-faint: #7C736D;
+  --rule:      #DEDAD4;
+  --rule-firm: #C2BCB4;
+
+  --murram:      #B4502A;
+  --murram-wash: #F7E9E2;
+
+  --m1: #46688F;
+  --m2: #2A7A5B;
+  --m3: #B4502A;
+  --m4: #7A4A8C;
+
+  --alert:      #A8302A;
+  --alert-wash: #F8E5E3;
+
+  --display: "Sora", "Helvetica Neue", Arial, sans-serif;
+  --body: "Karla", "Helvetica Neue", Arial, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root[data-theme="__never"] {
+    --paper:     #14100E;
+    --raised:    #1D1815;
+    --sunk:      #0D0A09;
+    --ink:       #EDE9E5;
+    --ink-soft:  #B5ABA4;
+    --ink-faint: #837872;
+    --rule:      #2C2521;
+    --rule-firm: #423931;
+
+    --murram:      #E08556;
+    --murram-wash: #2E1A11;
+
+    --m1: #7FA5CE;
+    --m2: #62BE95;
+    --m3: #E08556;
+    --m4: #B689C6;
+
+    --alert:      #E0776B;
+    --alert-wash: #2C1512;
+  }
+}
+
+:root[data-theme="__never-dark"] {
+  --paper:     #14100E;
+  --raised:    #1D1815;
+  --sunk:      #0D0A09;
+  --ink:       #EDE9E5;
+  --ink-soft:  #B5ABA4;
+  --ink-faint: #837872;
+  --rule:      #2C2521;
+  --rule-firm: #423931;
+
+  --murram:      #E08556;
+  --murram-wash: #2E1A11;
+
+  --m1: #7FA5CE;
+  --m2: #62BE95;
+  --m3: #E08556;
+  --m4: #B689C6;
+
+  --alert:      #E0776B;
+  --alert-wash: #2C1512;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 16.5px;
+  line-height: 1.62;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap { max-width: 1140px; margin: 0 auto; padding: 0 28px 130px; }
+.col { max-width: 640px; }
+
+/* ---------- masthead ---------- */
+
+.masthead { padding: 54px 0 30px; border-bottom: 1px solid var(--rule-firm); }
+.slate { font-family: var(--mono); font-size: 10px; letter-spacing: .15em; text-transform: uppercase; color: var(--murram); margin-bottom: 20px; }
+h1 {
+  font-family: var(--display); font-weight: 700;
+  font-size: clamp(38px, 6.2vw, 74px);
+  line-height: .96; letter-spacing: -.035em;
+  margin: 0 0 18px; text-wrap: balance;
+}
+h1 span { color: var(--murram); }
+.standfirst { font-size: 19.5px; font-weight: 300; line-height: 1.5; color: var(--ink-soft); max-width: 58ch; margin: 0 0 28px; }
+
+.specs { display: grid; grid-template-columns: repeat(auto-fit, minmax(118px, 1fr)); gap: 15px 24px; }
+.spec .k { font-family: var(--mono); font-size: 8.5px; letter-spacing: .13em; text-transform: uppercase; color: var(--ink-faint); }
+.spec .v { font-family: var(--display); font-size: 16px; font-weight: 600; letter-spacing: -.01em; margin-top: 3px; line-height: 1.25; }
+
+/* ---------- sections ---------- */
+
+section { padding-top: 60px; }
+.sec-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 18px; }
+.sec-head .n { font-family: var(--mono); font-size: 10.5px; color: var(--murram); flex: none; }
+h2 {
+  font-family: var(--display); font-weight: 600;
+  font-size: clamp(24px, 3.4vw, 34px);
+  line-height: 1.08; letter-spacing: -.028em; margin: 0; text-wrap: balance;
+}
+h3 { font-family: var(--display); font-weight: 600; font-size: 17px; letter-spacing: -.015em; margin: 32px 0 10px; }
+h4 { font-family: var(--mono); font-size: 9.5px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-faint); margin: 24px 0 9px; }
+
+p { margin: 0 0 14px; max-width: 64ch; }
+.wrap ul, .wrap ol { max-width: 64ch; padding-left: 20px; margin: 0 0 15px; }
+.wrap li { margin-bottom: 7px; }
+.wrap li::marker { color: var(--murram); }
+.lede { font-size: 18.5px; font-weight: 300; line-height: 1.55; color: var(--ink-soft); max-width: 60ch; }
+strong { font-weight: 600; }
+code { font-family: var(--mono); font-size: .87em; background: var(--sunk); padding: 1px 5px; border-radius: 3px; }
+
+a { color: var(--murram); text-underline-offset: 2px; }
+a:focus-visible { outline: 2px solid var(--murram); outline-offset: 2px; border-radius: 2px; }
+
+/* ---------- frame diagram ---------- */
+
+.framewrap { display: grid; grid-template-columns: 232px 1fr; gap: 34px; align-items: start; margin: 26px 0 10px; }
+
+.frame {
+  position: relative;
+  width: 100%; aspect-ratio: 9 / 16;
+  background: var(--ink);
+  border-radius: 12px;
+  overflow: hidden;
+  font-family: var(--mono);
+}
+.zone { position: absolute; left: 0; right: 0; }
+.zone.top { top: 0; height: 10.4%; background: repeating-linear-gradient(45deg, #ffffff10 0 6px, #ffffff03 6px 12px); border-bottom: 1px dashed #ffffff30; }
+.zone.bot { bottom: 0; height: 26%; background: repeating-linear-gradient(45deg, #ffffff10 0 6px, #ffffff03 6px 12px); border-top: 1px dashed #ffffff30; }
+.zone.right { top: 10.4%; bottom: 26%; left: auto; right: 0; width: 17%; background: repeating-linear-gradient(45deg, #ffffff10 0 6px, #ffffff03 6px 12px); border-left: 1px dashed #ffffff30; }
+.safe {
+  position: absolute; top: 13%; bottom: 29%; left: 6%; right: 20%;
+  border: 1px solid var(--murram);
+  border-radius: 3px;
+}
+.safe span {
+  position: absolute; top: 4px; left: 5px;
+  font-size: 7px; letter-spacing: .1em; text-transform: uppercase; color: var(--murram);
+}
+.zlab { position: absolute; font-size: 7px; letter-spacing: .08em; text-transform: uppercase; color: #ffffff85; }
+.zlab.a { top: 4%; left: 7%; }
+.zlab.b { bottom: 11%; left: 7%; }
+.zlab.c { top: 45%; right: 2.5%; writing-mode: vertical-rl; }
+.beat { position: absolute; left: 6%; right: 20%; font-size: 7.5px; color: #ffffffb0; letter-spacing: .04em; }
+.beat b { color: var(--murram); font-weight: 500; }
+.beat.b1 { top: 16%; }
+.beat.b2 { top: 27%; }
+.beat.b3 { top: 48%; }
+.beat.b4 { top: 63%; }
+
+.fkey { font-family: var(--display); font-size: 13.5px; }
+.fkey dl { margin: 0; display: grid; grid-template-columns: 68px 1fr; gap: 9px 14px; }
+.fkey dt { font-family: var(--mono); font-size: 9.5px; letter-spacing: .05em; text-transform: uppercase; color: var(--murram); padding-top: 3px; }
+.fkey dd { margin: 0; line-height: 1.45; color: var(--ink-soft); }
+.fkey dd b { color: var(--ink); font-weight: 600; }
+
+/* ---------- movement band ---------- */
+
+.mv { margin: 46px 0 4px; padding: 0 0 10px; border-bottom: 2px solid var(--rule-firm); display: flex; gap: 14px; align-items: baseline; flex-wrap: wrap; }
+.mv .roman { font-family: var(--display); font-weight: 700; font-size: 24px; letter-spacing: -.02em; }
+.mv h3 { margin: 0; font-size: 20px; }
+.mv .wk { margin-left: auto; font-family: var(--mono); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-faint); }
+.mv .aim { flex-basis: 100%; font-size: 15px; color: var(--ink-soft); line-height: 1.5; max-width: 74ch; }
+.mv.i .roman, .mv.i .wk { color: var(--m1); }
+.mv.ii .roman, .mv.ii .wk { color: var(--m2); }
+.mv.iii .roman, .mv.iii .wk { color: var(--m3); }
+.mv.iv .roman, .mv.iv .wk { color: var(--m4); }
+.mv.i { border-bottom-color: var(--m1); }
+.mv.ii { border-bottom-color: var(--m2); }
+.mv.iii { border-bottom-color: var(--m3); }
+.mv.iv { border-bottom-color: var(--m4); }
+
+/* ---------- short cards ---------- */
+
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(316px, 1fr)); gap: 16px; margin: 20px 0 0; }
+.card {
+  border: 1px solid var(--rule);
+  border-radius: 5px;
+  background: var(--raised);
+  padding: 0 0 4px;
+  overflow: hidden;
+}
+.card .top { padding: 13px 16px 11px; border-bottom: 1px solid var(--rule); background: var(--sunk); }
+.card .id { display: flex; gap: 9px; align-items: baseline; font-family: var(--mono); font-size: 9.5px; letter-spacing: .07em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 5px; }
+.card .id .num { font-weight: 500; font-size: 11px; }
+.card .id .len { margin-left: auto; }
+.card h4.t { font-family: var(--display); font-size: 17px; font-weight: 600; letter-spacing: -.02em; text-transform: none; color: var(--ink); margin: 0; line-height: 1.2; }
+.card .rows { padding: 3px 16px 10px; }
+.row { display: grid; grid-template-columns: 52px 1fr; gap: 12px; padding: 9px 0; border-bottom: 1px solid var(--rule); }
+.row:last-child { border-bottom: none; }
+.row .lbl { font-family: var(--mono); font-size: 8.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-faint); padding-top: 3px; }
+.row .val { font-size: 14.5px; line-height: 1.45; }
+.row .val em { font-style: normal; font-weight: 600; }
+.row.fact .val { font-family: var(--mono); font-size: 12px; line-height: 1.5; color: var(--murram); }
+.row.fact .val small { display: block; color: var(--ink-faint); font-size: 10px; margin-top: 3px; letter-spacing: .02em; }
+.card.m1 .top { border-bottom-color: var(--m1); box-shadow: inset 0 3px 0 var(--m1); }
+.card.m2 .top { border-bottom-color: var(--m2); box-shadow: inset 0 3px 0 var(--m2); }
+.card.m3 .top { border-bottom-color: var(--m3); box-shadow: inset 0 3px 0 var(--m3); }
+.card.m4 .top { border-bottom-color: var(--m4); box-shadow: inset 0 3px 0 var(--m4); }
+.flag { display: inline-block; font-family: var(--mono); font-size: 8px; font-weight: 500; letter-spacing: .09em; text-transform: uppercase; padding: 2px 5px; border-radius: 2px; background: var(--alert-wash); color: var(--alert); vertical-align: 1px; }
+.flag.ok { background: var(--murram-wash); color: var(--murram); }
+
+/* ---------- tables ---------- */
+
+.data { border: 1px solid var(--rule); border-radius: 4px; overflow: auto; margin: 20px 0 24px; background: var(--raised); }
+table { border-collapse: collapse; width: 100%; min-width: 500px; font-family: var(--display); font-size: 13.5px; }
+th, td { padding: 9px 14px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--rule); line-height: 1.4; }
+thead th { font-family: var(--mono); font-size: 8.5px; font-weight: 500; letter-spacing: .11em; text-transform: uppercase; color: var(--ink-faint); background: var(--sunk); white-space: nowrap; }
+tbody tr:last-child td { border-bottom: none; }
+td.name { font-weight: 600; white-space: nowrap; }
+td.num { text-align: right; font-family: var(--mono); font-size: 12px; font-variant-numeric: tabular-nums; }
+tr.hl td { background: var(--murram-wash); }
+
+/* ---------- notes ---------- */
+
+.note { margin: 22px 0; padding: 15px 19px; border-left: 3px solid var(--murram); background: var(--sunk); border-radius: 0 4px 4px 0; }
+.note.stop { border-left-color: var(--alert); background: var(--alert-wash); }
+.note h4 { margin-top: 0; color: var(--ink-soft); }
+.note p:last-child, .note ul:last-child, .note ol:last-child { margin-bottom: 0; }
+
+/* ---------- caption spec ---------- */
+
+.capspec { border: 1px solid var(--rule); border-radius: 5px; background: var(--raised); overflow: hidden; margin: 22px 0; }
+.capspec .hd { background: var(--ink); color: var(--paper); font-family: var(--mono); font-size: 9.5px; letter-spacing: .12em; text-transform: uppercase; padding: 8px 15px; }
+.capspec .bd { padding: 15px 17px; font-family: var(--mono); font-size: 12.5px; line-height: 1.75; white-space: pre-wrap; }
+.capspec .bd .hint { color: var(--ink-faint); }
+.capspec .bd .tagline { color: var(--murram); }
+
+.foot { margin-top: 66px; padding-top: 20px; border-top: 1px solid var(--rule-firm); font-family: var(--mono); font-size: 10px; letter-spacing: .05em; text-transform: uppercase; color: var(--ink-faint); line-height: 1.75; }
+
+@media (max-width: 760px) {
+  .wrap { padding: 0 19px 100px; }
+  .framewrap { grid-template-columns: 1fr; gap: 24px; }
+  .frame { max-width: 210px; }
+  .mv .wk { margin-left: 0; flex-basis: 100%; }
+  body { font-size: 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+
+/* locked to light mode */
+:root { color-scheme: light; }
+</style>
+
+<div class="wrap">
+
+<header class="masthead">
+  <div class="slate">Vertical shorts series · Oct 2026 – Jan 2027 · TikTok &amp; Facebook</div>
+  <h1>Sixteen Weeks<br><span>Vertical</span></h1>
+  <p class="standfirst">One short a week from the documentary shoot, each ending on a single checkable fact with its source named on screen. Built to land the film in January and to fix the caption problem in week one.</p>
+  <div class="specs">
+    <div class="spec"><div class="k">Shorts</div><div class="v">16 + reactive</div></div>
+    <div class="spec"><div class="k">Length</div><div class="v">45–90 sec</div></div>
+    <div class="spec"><div class="k">Cadence</div><div class="v">Weekly, Thu</div></div>
+    <div class="spec"><div class="k">Format</div><div class="v">9:16 · 1080×1920</div></div>
+    <div class="spec"><div class="k">Language</div><div class="v">Nandi, burned subs</div></div>
+    <div class="spec"><div class="k">Share target</div><div class="v">0.25%+</div></div>
+  </div>
+</header>
+
+<!-- 01 PREMISE -->
+<section id="premise">
+  <div class="sec-head"><span class="n">01</span><h2>The premise, and the trap in it</h2></div>
+  <div class="col">
+
+  <p class="lede">Sixteen gentle films about coffee farmers will not do 216,000 plays. If that is all this series is, it will underperform, and the campaign will conclude that evidence does not travel. That conclusion would be wrong, and avoiding it is the whole design problem.</p>
+
+  <p>What actually travels on her material is <strong>her, speaking unscripted, in Nandi, with force, in front of a crowd</strong>. That is not a preference, it is what the numbers say. So the series does not choose between her voice and the evidence. It uses one to carry the other.</p>
+
+  <h4>The observed baseline</h4>
+  <div class="data"><table>
+    <thead><tr><th>Posted by</th><th>Subject</th><th class="num">Plays</th><th class="num">Shares</th><th class="num">Share rate</th></tr></thead>
+    <tbody>
+      <tr><td class="name">@rawbitez</td><td>Commentary on her word choice</td><td class="num">50,000</td><td class="num">351</td><td class="num">0.70%</td></tr>
+      <tr><td class="name">@whatstrendingkenya</td><td>The "kupeana" campaign</td><td class="num">149,800</td><td class="num">356</td><td class="num">0.24%</td></tr>
+      <tr><td class="name">@kenn_ke</td><td>Her, speaking</td><td class="num">152,900</td><td class="num">353</td><td class="num">0.23%</td></tr>
+      <tr><td class="name">@aldai001</td><td>Church speech</td><td class="num">186,300</td><td class="num">282</td><td class="num">0.15%</td></tr>
+      <tr><td class="name">@k.entertainment.digital</td><td>"Fearless Nandi Women rep"</td><td class="num">216,300</td><td class="num">307</td><td class="num">0.14%</td></tr>
+      <tr class="hl"><td class="name">@hon_cynthia_muge</td><td>"This is huge." — her own best post</td><td class="num">80,500</td><td class="num">102</td><td class="num">0.13%</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="note">
+    <h4>The encouraging finding</h4>
+    <p>Her own best post carries a <strong>6.4% like rate</strong> (5,178 on 80,500) — matching @aldai001's 6.4% and beating @k.entertainment.digital's 5.2%. People who see her material engage with it at least as hard as they engage with anyone else's cut of it. <strong>Her problem is distribution, not appeal.</strong> That is a far cheaper problem to fix, and captions fix most of it.</p>
+  </div>
+
+  <div class="note">
+    <h4>And the trap in the top row</h4>
+    <p>The 0.70% share rate belongs to a video <em>criticising</em> her. Controversy shares harder than anything else in this dataset, and those are hostile shares. Do not chase that number. <strong>Target 0.25% on evidence content</strong> — roughly double her current baseline, achieved by people who agree with what they are passing on.</p>
+  </div>
+
+  <h3>What each short has to do</h3>
+  <ol>
+    <li><strong>Fix the caption gap in week one.</strong> Her captioned posts do 80,500. Her captionless ones do 802. This is free reach and it needs no approval from anyone.</li>
+    <li><strong>Build a visual identity she does not currently have.</strong> Sixteen shorts with one grammar, one audio mark and one fact-card format will make her recognisable at a glance for the first time.</li>
+    <li><strong>End on something checkable.</strong> Every short closes on a number with its source named on screen. Over sixteen weeks that becomes a habit the audience notices, and it is the direct answer to the unsourced round numbers on her website.</li>
+    <li><strong>Reach the 54% who have not decided.</strong> Supporter content performs comfortably and changes nothing. Aim past the people already commenting "our incoming governor".</li>
+    <li><strong>Land the film.</strong> By mid-January the audience should already know these farmers by name.</li>
+  </ol>
+
+  </div>
+</section>
+
+<!-- 02 FORMAT -->
+<section id="format">
+  <div class="sec-head"><span class="n">02</span><h2>The format</h2></div>
+  <div class="col"><p>One template, held for all sixteen. Consistency is what turns a run of clips into a series, and the series is what makes the last one land.</p></div>
+
+  <div class="framewrap">
+    <div class="frame">
+      <div class="zone top"></div>
+      <div class="zone bot"></div>
+      <div class="zone right"></div>
+      <div class="safe"><span>Safe · text lives here</span></div>
+      <span class="zlab a">App chrome</span>
+      <span class="zlab b">Caption / audio</span>
+      <span class="zlab c">Buttons</span>
+      <div class="beat b1"><b>0:00–0:02</b> audio mark</div>
+      <div class="beat b2"><b>0:02–0:05</b> the hook</div>
+      <div class="beat b3"><b>middle</b> one idea, no more</div>
+      <div class="beat b4"><b>last 0:05</b> fact card + source</div>
+    </div>
+
+    <div class="fkey">
+      <dl>
+        <dt>Canvas</dt><dd><b>1080 × 1920, 9:16.</b> Shoot 4K 16:9 and reframe, or shoot native vertical for the pieces you know are vertical-only. Never letterbox a horizontal clip.</dd>
+        <dt>Safe area</dt><dd>Keep every word inside roughly <b>x 100–880, y 250–1400</b>. App UI eats the top strip, the bottom quarter and the right rail. Verify against the current app build before locking the template.</dd>
+        <dt>Head</dt><dd>Two frames of the <b>cherry-into-bucket impact</b> from shot 1.5. Same on every short. This is the audio mark and it costs nothing.</dd>
+        <dt>Hook</dt><dd>By <b>0:03</b>. A face mid-sentence, a hand doing something, or a question on screen. Never a logo, never a slow establishing wide.</dd>
+        <dt>Subtitles</dt><dd><b>Burned in, always.</b> Nandi speech subtitled in English. Most people watch muted, and this is not optional on any short.</dd>
+        <dt>Fact card</dt><dd>Last four to five seconds. Plain type on black. One number, one line of source. <b>No short ships without one.</b></dd>
+        <dt>Music</dt><dd>Only under process sequences. <b>Never</b> under a payment, a document or a failure.</dd>
+        <dt>Naming</dt><dd><code>NW[##]_[slug]_[platform]_v[n].mp4</code> — e.g. <code>NW08_docket_TT_v2.mp4</code>. Archive every version.</dd>
+      </dl>
+    </div>
+  </div>
+
+  <div class="note">
+    <h4>The one rule that governs the rest</h4>
+    <p><strong>One idea per short.</strong> The temptation on every single one of these will be to add a second point. Resist it. A short that makes one claim and proves it will outperform a short that makes three and proves none, and the sixteen together make the full argument anyway.</p>
+  </div>
+</section>
+
+<!-- 03 THE SERIES -->
+<section id="series">
+  <div class="sec-head"><span class="n">03</span><h2>The sixteen</h2></div>
+  <div class="col">
+    <p>Four movements. The arc runs craft → evidence → argument → case, and it is deliberate: the audience has to trust the series before it will accept the political shorts in December and January.</p>
+    <p>Shot references point to <em>The Tree in Her Name</em>. Most of this material is captured anyway during principal photography — the series costs edit time, not shoot days.</p>
+  </div>
+
+  <!-- MOVEMENT I -->
+  <div class="mv i">
+    <span class="roman">I</span>
+    <h3>Establish</h3>
+    <span class="wk">Weeks 1–4 · October</span>
+    <p class="aim">Prove the format, build the identity, earn attention without asking for anything. Almost no politics. If someone watches all four and still does not know it is a campaign, that is the correct outcome.</p>
+  </div>
+
+  <div class="grid">
+
+    <div class="card m1">
+      <div class="top">
+        <div class="id"><span class="num">NW01</span><span>Wk 1 · Oct</span><span class="len">45 sec</span></div>
+        <h4 class="t">The Stem Snap</h4>
+      </div>
+      <div class="rows">
+        <div class="row"><span class="lbl">Hook</span><span class="val">A hand enters frame and picks a single cherry. No words for six seconds.</span></div>
+        <div class="row"><span class="lbl">Body</span><span class="val">Dawn, mist, hands, rows, bucket. Pure craft. Establishes the audio mark and the whole visual grammar in one go.</span></div>
+        <div class="row fact"><span class="lbl">Fact</span><span class="val">650,000+ seedlings · 6 sub-counties · since 2023<small>Kenya News Agency, June 2025</small></span></div>
+        <div class="row"><span class="lbl">From</span><span class="val">1.1–1.5, 11.2</span></div>
+        <div class="row"><span class="lbl">Notes</span><span class="val"><span class="flag ok">Low risk</span> The series opener carries no argument at all. Let it be beautiful.</span></div>
+      </div>
+    </div>
+
+    <div class="card m1">
+      <div class="top">
+        <div class="id"><span class="num">NW02</span><span>Wk 2 · Oct</span><span class="len">60 sec</span></div>
+        <h4 class="t">Why Nandi Stopped Growing Coffee</h4>
+      </div>
+      <div class="rows">
+        <div class="row"><span class="lbl">Hook</span><span class="val"><em>"There was coffee here. All of this."</em> — elder, over the stumps.</span></div>
+        <div class="row"><span class="lbl">Body</span><span class="val">The stumps, the rusted pulping station, the faded society sign. The elder's account of why they uprooted: prices, delayed payment, the society's collapse.</span></div>
+        <div class="row fact"><span class="lbl">Fact</span><span class="val">Name the society and the year it stopped paying<small>Cooperative records — verify before publishing</small></span></div>
+        <div class="row"><span class="lbl">From</span><span class="val">2.1–2.6</span></div>
+        <div class="row"><span class="lbl">Notes</span><span class="val"><span class="flag ok">Low risk</span> Most Nandi people under 35 do not know this history. It is about them, not her — which is exactly why it will travel.</span></div>
+      </div>
+    </div>
+
+    <div class="card m1">
+      <div class="top">
+        <div class="id"><span class="num">NW03</span><span>Wk 3 · Oct</span><span class="len">50 sec</span></div>
+        <h4 class="t">Ruiru 11, Explained</h4>
+      </div>
+      <div class="rows">
+        <div class="row"><span class="lbl">Hook</span><span class="val">A seedling lifted from the bed, root ball intact, variety label readable.</span></div>
+        <div class="row"><span class="lbl">Body</span><span class="val">The agronomist, straight to camera: why these varieties, disease resistance, how long to first crop. Genuinely useful information for anyone farming.</span></div>
+        <div class="row fact"><span class="lbl">Fact</span><span class="val">Time from planting to first crop, stated<small>Baraka Agricultural College</small></span></div>
+        <div class="row"><span class="lbl">From</span><span class="val">6.2–6.4</span></div>
+        <div class="row"><span class="lbl">Notes</span><span class="val"><span class="flag ok">Low risk</span> The utility lane. Earns goodwill from people who do not want politics, and those are the undecideds.</span></div>
+      </div>
+    </div>
+
+    <div class="card m1">
+      <div class="top">
+        <div class="id"><span class="num">NW04</span><span>Wk 4 · Oct</span><span class="len">60 sec</span></div>
+        <h4 class="t">She Said It in Nandi</h4>
+      </div>
+      <div class="rows">
+        <div class="row"><span class="lbl">Hook</span><span class="val">Her, mid-sentence, no introduction: <em>"Most women do the hard labour on farms but have no control over the income."</em></span></div>
+        <div class="row"><span class="lbl">Body</span><span class="val">Her origin account, in Nandi, subtitled. Cut against present-day footage of women doing each task she names.</span></div>
+        <div class="row fact"><span class="lbl">Fact</span><span class="val">~4,000 women now hold coffee trees in their own name<small>Kenya News Agency, June 2025</small></span></div>
+        <div class="row"><span class="lbl">From</span><span class="val">5.1, 4.1, 4.3</span></div>
+        <div class="row"><span class="lbl">Notes</span><span class="val"><span class="flag ok">Low risk</span> Her first appearance, deliberately fourth. Her voice arrives inside a series people already recognise instead of as one more loose clip.</span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- MOVEMENT II -->
+  <div class="mv ii">
+    <span class="roman">II</span>
+    <h3>Evidence</h3>
+    <span class="wk">Weeks 5–9 · November</span>
+    <p class="aim">The harvest window. The substance of the whole project lands here: growth, picking, weighing, payment, and what the money bought. Shot 8 is the most important thing in the series.</p>
+  </div>
+
+  <div class="grid">
+
+    <div class="card m2">
+      <div class="top">
+        <div class="id"><span class="num">NW05</span><span>Wk 5 · Nov</span><span class="len">45 sec</span></div>
+        <h4 class="t">Three Years</h4>
+      </div>
+      <div class="rows">
+        <div class="row"><span class="lbl">Hook</span><span class="val">A 2023 photo of a bare plot, held up in frame — then pull back to the same plot now, in full canopy.</span></div>
+        <div class="row"><span class="lbl">Body</span><span class="val">Match-framed before and after. She walks into her own rows. The trees were below her knee; they are above her head.</span></div>
+        <div class="row fact"><span class="lbl">Fact</span><span class="val">Planted [month] 2023 · first crop [month] 2026<small>Beneficiary records, [ward]</small></span></div>
+        <div class="row"><span class="lbl">From</span><span class="val">10.1–10.3</span></div>
+        <div class="row"><span class="lbl">Notes</span><span class="val"><span class="flag ok">Low risk</span> The most immediately satisfying short in the series. Get the 2023 photograph during September casting or this one does not exist.</span></div>
+      </div>
+    </div>
+
+    <div class="card m2">
+      <div class="top">
+        <div class="id"><span class="num">NW06</span><span>Wk 6 · Nov</span><span class="len">50 sec</span></div>
+        <h4 class="t">How to Pick Coffee</h4>
+      </div>
+      <div class="rows">
+        <div class="row"><span class="lbl">Hook</span><span class="val">Extreme close on hands: taking red, leaving green, red, leaving green.</span></div>
+        <div class="row"><span class="lbl">Body</span><span class="val">The selectivity is the skill. She explains what she is looking for while doing it. Slow, tactile, satisfying.</span></div>
+        <div class="row fact"><span class="lbl">Fact</span><span class="val">Kilos picked per day, and what a kilo pays<small>Cooperative rate, [month] 2026</small></span></div>
+        <div class="row"><span class="lbl">From</span><span class="val">11.2–11.4</span></div>
+        <div class="row"><span class="lbl">Notes</span><span class="val"><span class="flag ok">Low risk</span> Travels well outside Nandi. Craft content reaches audiences politics cannot.</span></div>
+      </div>
+    </div>
+
+    <div class="card m2">
+      <div class="top">
+        <div class="id"><span class="num">NW07</span><span>Wk 7 · Nov</span><span class="len">55 sec</span></div>
+        <h4 class="t">The Scale</h4>
+      </div>
+      <div class="rows">
+        <div class="row"><span class="lbl">Hook</span><span class="val">The scale needle swinging, then settling. Number legible.</span></div>
+        <div class="row"><span class="lbl">Body</span><span class="val">Labour becomes a number. The queue, the crates, the weight called out, the docket started. Almost no dialogue — mechanism only.</span></div>
+        <div class="row fact"><span class="lbl">Fact</span><span class="val">Total kilos delivered by programme members this season<small>[Society] delivery records</small></span></div>
+        <div class="row"><span class="lbl">From</span><span class="val">12.1–12.4</span></div>
+        <div class="row"><span class="lbl">Notes</span><span class="val"><span class="flag ok">Low risk</span> Sets up NW08. These two should feel like one thought split across a week.</span></div>
+      </div>
+    </div>
+
+    <div class="card m2">
+      <div class="top">
+        <div class="id"><span class="num">NW08</span><span>Wk 8 · Nov</span><span class="len">45 sec</span></div>
+        <h4 class="t">Her Name on the Docket</h4>
+      </div>
+      <div class="rows">
+        <div class="row"><span class="lbl">Hook</span><span class="val">A payment slip, held in two hands. Her name at the top. Held in silence for five full seconds.</span></div>
+        <div class="row"><span class="lbl">Body</span><span class="val">Her face reading it. Then one line, from her, about whose name used to be on that paper. <strong>No music anywhere in this short.</strong></span></div>
+        <div class="row fact"><span class="lbl">Fact</span><span class="val">Women society members: [before] → [after]<small>[Society] membership register</small></span></div>
+        <div class="row"><span class="lbl">From</span><span class="val">13.1–13.3, 12.5, 4.2</span></div>
+        <div class="row"><span class="lbl">Notes</span><span class="val"><span class="flag ok">Anchor</span> The most important short in the series and the shortest and quietest. If only one of these sixteen gets made properly, it is this one.</span></div>
+      </div>
+    </div>
+
+    <div class="card m2">
+      <div class="top">
+        <div class="id"><span class="num">NW09</span><span>Wk 9 · Nov</span><span class="len">60 sec</span></div>
+        <h4 class="t">What the Money Bought</h4>
+      </div>
+      <div class="rows">
+        <div class="row"><span class="lbl">Hook</span><span class="val">A specific object — a school receipt, new iron sheets, a savings passbook — before any explanation.</span></div>
+        <div class="row"><span class="lbl">Body</span><span class="val">She names exactly what the coffee money paid for. Refuse the general answer in the interview; only the specific one works here.</span></div>
+        <div class="row fact"><span class="lbl">Fact</span><span class="val">The amount, and the term's fees it covered<small>Named beneficiary, [ward], with consent</small></span></div>
+        <div class="row"><span class="lbl">From</span><span class="val">13.3–13.4</span></div>
+        <div class="row"><span class="lbl">Notes</span><span class="val"><span class="flag">Consent</span> Naming a household's income publicly. Explicit separate consent on this specific topic, per the ethics protocol.</span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- MOVEMENT III -->
+  <div class="mv iii">
+    <span class="roman">III</span>
+    <h3>Argument</h3>
+    <span class="wk">Weeks 10–13 · December</span>
+    <p class="aim">Now the series has earned the right to make claims. The charter, the male voice, the failures, and the one unclaimed issue in the county. Higher risk, higher value.</p>
+  </div>
+
+  <div class="grid">
+
+    <div class="card m3">
+      <div class="top">
+        <div class="id"><span class="num">NW10</span><span>Wk 10 · Dec</span><span class="len">75 sec</span></div>
+        <h4 class="t">The Paper That Changed the Farm</h4>
+      </div>
+      <div class="rows">
+        <div class="row"><span class="lbl">Hook</span><span class="val">A pen signing. Then the clause on screen, readable: joint registration of coffee bushes between spouses.</span></div>
+        <div class="row"><span class="lbl">Body</span><span class="val">The charter explained in plain Nandi. What it means to have two names on a tree. The longest short in the series and the one that needs the most careful writing.</span></div>
+        <div class="row fact"><span class="lbl">Fact</span><span class="val">Number of jointly registered households on record<small>[Society] register — verify the count</small></span></div>
+        <div class="row"><span class="lbl">From</span><span class="val">8.1–8.4, 8.6</span></div>
+        <div class="row"><span class="lbl">Notes</span><span class="val"><span class="flag ok">Core</span> The intellectual centre of the whole project. A property-rights reform nobody knows exists. Write it three times before you cut it.</span></div>
+      </div>
+    </div>
+
+    <div class="card m3">
+      <div class="top">
+        <div class="id"><span class="num">NW11</span><span>Wk 11 · Dec</span><span class="len">60 sec</span></div>
+        <h4 class="t">Why He Signed</h4>
+      </div>
+      <div class="rows">
+        <div class="row"><span class="lbl">Hook</span><span class="val">A man, straight to camera: <em>"People asked me why I agreed."</em></span></div>
+        <div class="row"><span class="lbl">Body</span><span class="val">A husband or elder explaining, without defensiveness, why joint registration made sense to him. Unhurried. No counter-argument cut against him.</span></div>
+        <div class="row fact"><span class="lbl">Fact</span><span class="val">Households where both spouses signed, as a share of the ward<small>[Society] register</small></span></div>
+        <div class="row"><span class="lbl">From</span><span class="val">8.5, 4.5</span></div>
+        <div class="row"><span class="lbl">Notes</span><span class="val"><span class="flag ok">Strategic</span> Non-negotiable in the sequence. Without a male voice the series reads as a case against Nandi men, which is precisely the attack currently running against her.</span></div>
+      </div>
+    </div>
+
+    <div class="card m3">
+      <div class="top">
+        <div class="id"><span class="num">NW12</span><span>Wk 12 · Dec</span><span class="len">60 sec</span></div>
+        <h4 class="t">The Ones That Died</h4>
+      </div>
+      <div class="rows">
+        <div class="row"><span class="lbl">Hook</span><span class="val">Dead seedlings on a dry plot. On screen: <em>"Not all of them survived."</em></span></div>
+        <div class="row"><span class="lbl">Body</span><span class="val">The anchor farmer on what went wrong. The agronomist stating the real survival rate. Muge answering for it, briefly, without deflecting.</span></div>
+        <div class="row fact"><span class="lbl">Fact</span><span class="val">Survival rate: [x]% · what is changing in Phase 3<small>County extension / AFA assessment</small></span></div>
+        <div class="row"><span class="lbl">From</span><span class="val">14.1–14.4</span></div>
+        <div class="row"><span class="lbl">Notes</span><span class="val"><span class="flag">Will be resisted</span> The campaign will want this cut. It is the highest-trust short in the series and no competitor will publish anything like it. Agree it in writing in September.</span></div>
+      </div>
+    </div>
+
+    <div class="card m3">
+      <div class="top">
+        <div class="id"><span class="num">NW13</span><span>Wk 13 · Dec</span><span class="len">60 sec</span></div>
+        <h4 class="t">Nobody Is Talking About Tea</h4>
+      </div>
+      <div class="rows">
+        <div class="row"><span class="lbl">Hook</span><span class="val">The aerial over unbroken tea. On screen: <em>"This is most of Nandi's money. Who is asking about it?"</em></span></div>
+        <div class="row"><span class="lbl">Body</span><span class="val">She poses the question rather than claiming to have solved it: bonus rates, factory financing, who controls the payment card. Same diagnostic she ran at coffee, aimed at the bigger crop.</span></div>
+        <div class="row fact"><span class="lbl">Fact</span><span class="val">Nandi tea growers vs coffee growers, by number<small>KTDA / AFA county figures</small></span></div>
+        <div class="row"><span class="lbl">From</span><span class="val">3.1–3.3 + new pickup</span></div>
+        <div class="row"><span class="lbl">Notes</span><span class="val"><span class="flag">Verify first</span> The unclaimed issue in the race. Get the KTDA facts exactly right — this is the one short where a wrong number is genuinely costly.</span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- MOVEMENT IV -->
+  <div class="mv iv">
+    <span class="roman">IV</span>
+    <h3>Case</h3>
+    <span class="wk">Weeks 14–16 · January</span>
+    <p class="aim">The turn. Now the series makes the argument for the seat, and it can, because thirteen weeks of evidence sit behind it. Then it hands over to the film, ahead of nominations.</p>
+  </div>
+
+  <div class="grid">
+
+    <div class="card m4">
+      <div class="top">
+        <div class="id"><span class="num">NW14</span><span>Wk 14 · Jan</span><span class="len">60 sec</span></div>
+        <h4 class="t">In 2017, Nobody Backed Her</h4>
+      </div>
+      <div class="rows">
+        <div class="row"><span class="lbl">Hook</span><span class="val">On screen: <em>"24 years old. No party. No money."</em> Then the 2017 result.</span></div>
+        <div class="row"><span class="lbl">Body</span><span class="val">The independent run at Kilibwoni. Her own account of it. Archive stills if any exist. She beat the favourite with no machine behind her.</span></div>
+        <div class="row fact"><span class="lbl">Fact</span><span class="val">Kilibwoni Ward, 2017 · Independent · 8,760 votes<small>IEBC / Daily Nation, Aug 2017</small></span></div>
+        <div class="row"><span class="lbl">From</span><span class="val">New pickup + archive</span></div>
+        <div class="row"><span class="lbl">Notes</span><span class="val"><span class="flag ok">Highest value</span> The direct answer to the "political project" tag, made without ever naming it. An independent who beat the favourite at 24 is nobody's project.</span></div>
+      </div>
+    </div>
+
+    <div class="card m4">
+      <div class="top">
+        <div class="id"><span class="num">NW15</span><span>Wk 15 · Jan</span><span class="len">60 sec</span></div>
+        <h4 class="t">Where the Money Goes</h4>
+      </div>
+      <div class="rows">
+        <div class="row"><span class="lbl">Hook</span><span class="val">An animated bar filling: KSh 10.2 billion. Then it splits.</span></div>
+        <div class="row"><span class="lbl">Body</span><span class="val">Motion graphics over her voice. Two thirds of the county budget runs the county. One third builds anything. Plain, calm, no opponent named.</span></div>
+        <div class="row fact"><span class="lbl">Fact</span><span class="val">FY2024/25 · KSh 6.6bn recurrent · KSh 3.3bn development<small>Controller of Budget, county report FY2024/25</small></span></div>
+        <div class="row"><span class="lbl">From</span><span class="val">Design build, no shoot</span></div>
+        <div class="row"><span class="lbl">Notes</span><span class="val"><span class="flag ok">Design-led</span> Her sharpest unused argument and it is a graphic, not a speech. Official source, unarguable, and it needs no camera at all.</span></div>
+      </div>
+    </div>
+
+    <div class="card m4">
+      <div class="top">
+        <div class="id"><span class="num">NW16</span><span>Wk 16 · Jan</span><span class="len">60 sec</span></div>
+        <h4 class="t">The Tree in Her Name</h4>
+      </div>
+      <div class="rows">
+        <div class="row"><span class="lbl">Hook</span><span class="val">The four farmers, silent, on their own land — faces the audience now recognises.</span></div>
+        <div class="row"><span class="lbl">Body</span><span class="val">Trailer. Sixty seconds. Ends on the screening tour dates across the six sub-counties and the link to the full film.</span></div>
+        <div class="row fact"><span class="lbl">Fact</span><span class="val">Full film · 24 min · screening dates + link<small>Village halls before the internet</small></span></div>
+        <div class="row"><span class="lbl">From</span><span class="val">Cut from D1</span></div>
+        <div class="row"><span class="lbl">Notes</span><span class="val"><span class="flag ok">Hand-off</span> By now these are not strangers. That is the entire reason the series ran first.</span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="col">
+    <div class="note">
+      <h4>The reactive lane, running underneath all sixteen</h4>
+      <p>The scheduled series is weekly. <strong>Capture of her speaking is continuous.</strong> Every public appearance, church visit and rally gets filmed in full and a clip goes out the same day — 30 to 60 seconds, captioned, from her own account.</p>
+      <p>This is the fix for the biggest structural problem in the audit: other people currently own her best moments and out-reach her three to twenty times using her own footage. Same-day publishing takes that away from them. It also means that when the next controversy comes, the version circulating is hers with context rather than someone else's thirty-second excerpt.</p>
+      <p><strong>Target turnaround: four hours from event to post.</strong> That requires someone with an edit machine at the event, not a weekly batch.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 04 CAPTIONS -->
+<section id="captions">
+  <div class="sec-head"><span class="n">04</span><h2>Caption system</h2></div>
+  <div class="col">
+  <p>The cheapest measurable win available to this campaign. Her captioned posts run at 80,500 plays; her uncaptioned ones bottom out at 802. Nothing else in this document is that cheap.</p>
+  </div>
+
+  <div class="capspec">
+    <div class="hd">TikTok — short, front-loaded, tags carry the reach</div>
+    <div class="bd"><span class="hint">Line 1 — the hook restated, or a question. This is all that shows before "more".</span>
+She planted these in 2023. Look at them now.
+
+<span class="hint">Line 2 — one line of context. Optional.</span>
+Kahawa na Mama, Nandi Hills.
+
+<span class="tagline">#cynthiamuge #nandi #kalenjintiktok #kenyantiktok🇰🇪 #kahawanamama #coffeekenya #fyp</span></div>
+  </div>
+
+  <div class="capspec">
+    <div class="hd">Facebook — longer works, and the audience is closer to her</div>
+    <div class="bd"><span class="hint">Line 1 — same hook. Facebook shows more, but earns nothing by burying it.</span>
+She planted these in 2023. Look at them now.
+
+<span class="hint">Lines 2–4 — the context TikTok has no room for. Name the ward. Name the person.</span>
+Mama [name] received 200 seedlings in the pilot year at [ward].
+This week she delivered her first cherry to the society.
+
+<span class="hint">Line 5 — the fact, with its source. Always.</span>
+650,000+ seedlings have gone to about 4,000 women across all six sub-counties since 2023. (Kenya News Agency, June 2025)
+
+<span class="tagline">#KahawaNaMama #Nandi</span></div>
+  </div>
+
+  <div class="col">
+    <h4>Rules</h4>
+    <ul>
+      <li><strong>Never post without a caption.</strong> This is the entire finding. No exceptions, including for reactive clips.</li>
+      <li><strong>Do not cross-post identically.</strong> Same video, different caption register. TikTok is reaching strangers; Facebook is reaching people who already know her.</li>
+      <li><strong>Name people.</strong> "A woman in Nandi Hills" is worth less than "Mama [name], Kilibwoni". Named beneficiaries are the whole credibility argument — with consent, every time.</li>
+      <li><strong>Source every number in the caption</strong>, not only on the fact card. It costs six words and it is the habit that separates her from every competitor.</li>
+      <li><strong>Tag sets:</strong> keep a fixed core of three (<code>#cynthiamuge #nandi #kahawanamama</code>) and rotate four situational ones. Fixed tags build a searchable body of work; rotating tags chase reach.</li>
+      <li><strong>Do not use <code>#cynthiamugeforgovernor</code> on official accounts before nomination.</strong> Let supporters carry it. On her own channel it reads as presumption and feeds the project tag.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 05 DISTRIBUTION -->
+<section id="dist">
+  <div class="sec-head"><span class="n">05</span><h2>Distribution</h2></div>
+  <div class="col">
+
+  <p>Posting is half the job. Nandi's political argument happens inside Facebook groups — county forums, constituency forums, ward forums — and <strong>a post on her page does not reach them automatically</strong>. Someone has to carry it in.</p>
+
+  <h4>The chain</h4>
+  <ol>
+    <li><strong>Publish</strong> to TikTok and her Facebook page, Thursday, same asset, different captions.</li>
+    <li><strong>Seed</strong> to the office page within the hour.</li>
+    <li><strong>Distribute</strong> to a standing list of ward coordinators with the video file and a suggested caption, so it enters group conversations as a person sharing something rather than a page advertising.</li>
+    <li><strong>Diaspora</strong> — the Australia networks activated in June are a live list. Give them the file and the dates.</li>
+    <li><strong>Archive</strong> to YouTube monthly as a batch, so the material is searchable and permanent.</li>
+  </ol>
+
+  <div class="note">
+    <h4>Build the coordinator list in September</h4>
+    <p>One contact per ward, thirty wards, on WhatsApp. WhatsApp is the most-used platform in Kenya by self-declared use and it is invisible to every analytics dashboard, which is exactly why it matters. Without this list the series reaches her existing followers and stops. With it, sixteen shorts enter thirty ward conversations sixteen times.</p>
+  </div>
+
+  <h4>Cadence</h4>
+  <div class="data"><table>
+    <thead><tr><th>Slot</th><th>What</th><th>Who</th></tr></thead>
+    <tbody>
+      <tr><td class="name">Thursday</td><td>The scheduled short, both platforms</td><td>Editor</td></tr>
+      <tr><td class="name">Same day, any day</td><td>Reactive clip from any public appearance, 4-hour turnaround</td><td>Field editor</td></tr>
+      <tr><td class="name">Monthly</td><td>YouTube batch upload, full versions</td><td>Editor</td></tr>
+      <tr><td class="name">Weekly, Monday</td><td>Numbers review — see next section</td><td>Whoever owns the channel</td></tr>
+    </tbody>
+  </table></div>
+
+  <p><strong>On posting times:</strong> no reliable Kenyan political-audience timing data was available in the research behind this. Start with early evening, test four different slots across the first four shorts, and let the data decide by week five. Do not inherit a guess.</p>
+
+  </div>
+</section>
+
+<!-- 06 MEASUREMENT -->
+<section id="measure">
+  <div class="sec-head"><span class="n">06</span><h2>Measurement</h2></div>
+  <div class="col">
+
+  <p>Four numbers, reviewed every Monday. Views are the one everybody reports and the one that means least.</p>
+
+  <div class="data"><table>
+    <thead><tr><th>Metric</th><th>Why it matters</th><th>Baseline</th><th>Target</th></tr></thead>
+    <tbody>
+      <tr class="hl"><td class="name">Share rate</td><td>The reach engine. Shares put a video in front of strangers; likes do not</td><td>0.13%</td><td class="num">0.25%+</td></tr>
+      <tr><td class="name">Completion rate</td><td>Governs whether the platform shows it to anyone else. If it drops, the hook is failing, not the subject</td><td>Unknown</td><td class="num">Set in wk 1–4</td></tr>
+      <tr><td class="name">Comment sentiment</td><td>Read them, do not just count them. Hostile volume looks identical to support in a dashboard</td><td>Mixed</td><td class="num">Track by short</td></tr>
+      <tr><td class="name">Follows per 1,000 views</td><td>The only metric that measures whether strangers are converting into an audience</td><td>Unknown</td><td class="num">Set in wk 1–4</td></tr>
+    </tbody>
+  </table></div>
+
+  <h4>What to do with the numbers</h4>
+  <ul>
+    <li><strong>Weeks 1–4 set the baseline.</strong> Do not judge any single short before week five. Four data points is not a pattern.</li>
+    <li><strong>If completion is low, fix the first three seconds</strong> — not the topic. Almost every underperforming short is a hook problem wearing a subject-matter disguise.</li>
+    <li><strong>If share rate stays flat but likes are healthy,</strong> the content is comforting supporters rather than convincing anyone. Push harder toward the evidence shorts.</li>
+    <li><strong>Do not chase a viral outlier.</strong> One short will overperform for reasons nobody can reproduce. Note it, do not restructure the series around it.</li>
+  </ul>
+
+  </div>
+</section>
+
+<!-- 07 RISK -->
+<section id="risk">
+  <div class="sec-head"><span class="n">07</span><h2>What not to make</h2></div>
+  <div class="col">
+
+  <div class="note stop">
+    <h4>Out of scope for this series, without exception</h4>
+    <ul>
+      <li><strong>No response to the August 2026 remarks controversy.</strong> Wrong vehicle entirely. A vertical short cannot carry it, and attempting one reopens the story for an audience that has moved on.</li>
+      <li><strong>No content touching circumcision, initiation, or cultural standing.</strong> There is no winning move on that ground and this series should never set foot on it.</li>
+      <li><strong>No opponent named.</strong> Not Kosgey, not Melly, not Lagat. She is behind — attacking upward raises them and confirms she is the challenger.</li>
+      <li><strong>Nothing about the Kimasas land allegation.</strong> Unverified in the research. Repeating it puts her on the wrong side of an evidence-based positioning she is otherwise building.</li>
+      <li><strong>No round unsourced numbers.</strong> No "100,000 lives impacted". The entire value of this series is that its numbers can be checked.</li>
+      <li><strong>No AI voiceover, no stock music, no trending-audio lip-sync.</strong> The audio mark and locally recorded score are the identity. Borrowed audio erases it.</li>
+      <li><strong>No "incoming governor" framing on official channels before nomination.</strong> Supporters can say it. She cannot.</li>
+    </ul>
+  </div>
+
+  <h4>Two judgement calls to make in September, not December</h4>
+  <ol>
+    <li><strong>NW12, "The Ones That Died", ships.</strong> Get it agreed in writing before the shoot, alongside the film's Scene 14. In December it will be argued about; in September it costs nothing to agree.</li>
+    <li><strong>Who holds the account.</strong> Not her. Her job is to speak. A production team captures, edits, captions and publishes — the gap between an 80,500-play post and an 802-play post is entirely operational, and it will not close by asking her to post more.</li>
+  </ol>
+
+  </div>
+</section>
+
+<div class="foot">
+  Vertical shorts series v1 · 27 August 2026 · Nandi County<br>
+  Sibling to The Nandi Succession and The Tree in Her Name. Baselines drawn from observed TikTok performance data, August 2026 — re-measure before relying on them.
+</div>
+
+</div>

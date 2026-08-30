@@ -1,0 +1,218 @@
+<title>One Page Plan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap">
+
+<style>
+:root {
+  --paper:#FFFFFF; --raised:#FFFFFF; --sunk:#E7E9E3;
+  --ink:#141A16; --soft:#4A5751; --faint:#7E8A84;
+  --rule:#DBDDD5; --rule-firm:#C3C9C2;
+  --murram:#A8442A; --murram-wash:#F4E7E1;
+  --leaf:#2C6049; --leaf-wash:#E3EDE7;
+  --display:"Instrument Serif", Georgia, serif;
+  --body:"Manrope","Helvetica Neue",Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root[data-theme="__never"] {
+    --paper:#101410; --raised:#181D19; --sunk:#0A0D0B;
+    --ink:#ECEFE9; --soft:#ADB8B1; --faint:#79857E;
+    --rule:#262E28; --rule-firm:#3A443C;
+    --murram:#E08A69; --murram-wash:#2C1811;
+    --leaf:#6FBF9B; --leaf-wash:#13291F;
+  }
+}
+:root[data-theme="__never-dark"] {
+  --paper:#101410; --raised:#181D19; --sunk:#0A0D0B;
+  --ink:#ECEFE9; --soft:#ADB8B1; --faint:#79857E;
+  --rule:#262E28; --rule-firm:#3A443C;
+  --murram:#E08A69; --murram-wash:#2C1811;
+  --leaf:#6FBF9B; --leaf-wash:#13291F;
+}
+
+* { box-sizing:border-box; }
+body { margin:0; background:var(--paper); color:var(--ink);
+       font-family:var(--body); font-size:14px; line-height:1.5;
+       -webkit-font-smoothing:antialiased; }
+.sheet { max-width:900px; margin:0 auto; padding:34px 30px 70px; }
+
+header { border-bottom:2px solid var(--ink); padding-bottom:16px; margin-bottom:20px;
+         display:flex; align-items:flex-end; justify-content:space-between; gap:20px; flex-wrap:wrap; }
+.hl h1 { font-family:var(--display); font-weight:400; font-size:40px; line-height:1;
+         letter-spacing:-.02em; margin:0 0 6px; }
+.hl p { margin:0; font-size:14.5px; color:var(--soft); max-width:52ch; }
+.eyebrow { font-size:9.5px; font-weight:700; letter-spacing:.18em; text-transform:uppercase;
+           color:var(--murram); margin-bottom:11px; }
+.stamp { font-size:9.5px; font-weight:700; letter-spacing:.12em; text-transform:uppercase;
+         color:var(--faint); text-align:right; line-height:1.7; white-space:nowrap; }
+
+.cols { display:grid; grid-template-columns:1fr 1fr; gap:34px; align-items:start; }
+
+h2 { font-family:var(--display); font-weight:400; font-size:23px; line-height:1.1;
+     margin:0 0 4px; letter-spacing:-.01em; }
+.sub { font-size:12.5px; color:var(--faint); margin:0 0 14px; line-height:1.45; }
+
+/* action list */
+.acts { display:flex; flex-direction:column; gap:0; border-top:1px solid var(--rule); }
+.act { display:grid; grid-template-columns:17px 1fr 46px; gap:9px;
+       padding:9px 0; border-bottom:1px solid var(--rule); align-items:baseline; }
+.act .i { font-size:10.5px; font-weight:700; color:var(--murram); font-variant-numeric:tabular-nums; }
+.act .t { font-size:13px; line-height:1.42; }
+.act .t b { font-weight:700; display:block; margin-bottom:1px; }
+.act .t span { color:var(--soft); font-size:12.2px; }
+.act .w { font-size:9.5px; font-weight:700; letter-spacing:.06em; text-transform:uppercase;
+          color:var(--faint); text-align:right; white-space:nowrap; padding-top:1px; }
+.act.now .w { color:var(--murram); }
+
+/* capability list */
+.caps { display:flex; flex-direction:column; gap:0; border-top:1px solid var(--rule); }
+.cap { padding:9px 0; border-bottom:1px solid var(--rule); }
+.cap b { font-size:13px; display:block; margin-bottom:2px; }
+.cap span { font-size:12.2px; color:var(--soft); line-height:1.42; display:block; }
+.cap .sk { font-size:9.5px; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
+           color:var(--leaf); margin-top:4px; display:block; }
+
+.box { background:var(--murram-wash); border-left:2.5px solid var(--murram);
+       border-radius:0 4px 4px 0; padding:13px 15px; margin-top:18px; }
+.box b { font-size:12.5px; display:block; margin-bottom:4px; }
+.box p { margin:0; font-size:12.2px; color:var(--soft); line-height:1.45; }
+
+.not { margin-top:18px; padding-top:12px; border-top:1px solid var(--rule); }
+.not b { font-size:10px; font-weight:700; letter-spacing:.12em; text-transform:uppercase;
+         color:var(--faint); display:block; margin-bottom:7px; }
+.not span { font-size:12px; color:var(--soft); line-height:1.55; }
+
+.foot { margin-top:26px; padding-top:12px; border-top:2px solid var(--ink);
+        font-size:9.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--faint); line-height:1.7; }
+
+@media (max-width:760px) { .cols { grid-template-columns:1fr; gap:26px; } }
+@media (prefers-reduced-motion: reduce) { * { animation:none !important; transition:none !important; } }
+
+/* locked to light mode */
+:root { color-scheme: light; }
+</style>
+
+<div class="sheet">
+
+<header>
+  <div class="hl">
+    <div class="eyebrow">Nandi 2027 &nbsp;&middot;&nbsp; Working plan</div>
+    <h1>What needs doing, and who does it</h1>
+    <p>Five months from today to UDA nominations. Everything below is ordered by when it has to start, not by how important it is.</p>
+  </div>
+  <div class="stamp">29 Aug 2026<br>One page</div>
+</header>
+
+<div class="cols">
+
+  <!-- LEFT -->
+  <div>
+    <h2>What needs doing</h2>
+    <p class="sub">Eight items. The first three cost nothing and can start before any agreement is signed.</p>
+
+    <div class="acts">
+      <div class="act now">
+        <span class="i">01</span>
+        <span class="t"><b>Confirm the coffee harvest window</b><span>One call to Baraka Agricultural College or the county AFA office. The whole filming schedule follows this date.</span></span>
+        <span class="w">This week</span>
+      </div>
+      <div class="act now">
+        <span class="i">02</span>
+        <span class="t"><b>Caption every post</b><span>Free, immediate. The measured difference on the same account is 80,500 views against 802.</span></span>
+        <span class="w">This week</span>
+      </div>
+      <div class="act now">
+        <span class="i">03</span>
+        <span class="t"><b>Pin the drifting figures</b><span>Scholarships appear as both 409 and 449; the target as 3,500, 4,000 and 120 per ward. Fix one set and use it everywhere.</span></span>
+        <span class="w">This week</span>
+      </div>
+      <div class="act">
+        <span class="i">04</span>
+        <span class="t"><b>Count the surviving trees</b><span>A 90% survival rate is circulating from a supporter&rsquo;s estimate. Measure it before anyone prints it &mdash; and before the film is committed to.</span></span>
+        <span class="w">Sept</span>
+      </div>
+      <div class="act">
+        <span class="i">05</span>
+        <span class="t"><b>Start owning the footage</b><span>Film every public appearance in full, publish same day. This is the structural answer to the August controversy.</span></span>
+        <span class="w">Sept</span>
+      </div>
+      <div class="act">
+        <span class="i">06</span>
+        <span class="t"><b>Film the harvest</b><span>Trees planted in 2023 are bearing now. This window does not come back.</span></span>
+        <span class="w">Oct &ndash; Dec</span>
+      </div>
+      <div class="act">
+        <span class="i">07</span>
+        <span class="t"><b>Publish the evidence page</b><span>Sourced figures, ward breakdowns, and the honest gaps. Answers the audit question before it is asked again.</span></span>
+        <span class="w">Nov &ndash; Dec</span>
+      </div>
+      <div class="act">
+        <span class="i">08</span>
+        <span class="t"><b>Release and screen the film</b><span>Six sub-counties, in halls, before it goes online. Ahead of nominations.</span></span>
+        <span class="w">January</span>
+      </div>
+    </div>
+
+    <div class="box">
+      <b>One decision to make early</b>
+      <p>That the measured numbers get published even where they are lower than hoped. Agreed in September this costs nothing; agreed in December it costs an argument.</p>
+    </div>
+  </div>
+
+  <!-- RIGHT -->
+  <div>
+    <h2>What I do</h2>
+    <p class="sub">Seven capabilities, each attached to something on the left. All of it executed personally unless noted.</p>
+
+    <div class="caps">
+      <div class="cap">
+        <b>Film and photography</b>
+        <span>The documentary end to end, event coverage, farmer and beneficiary interviews, the stills archive.</span>
+        <span class="sk">Items 05 &middot; 06 &middot; 08</span>
+      </div>
+      <div class="cap">
+        <b>Sound and audiovisual</b>
+        <span>Location recording, interview audio, mix and score. Clean sound is what separates a film from footage.</span>
+        <span class="sk">Items 06 &middot; 08</span>
+      </div>
+      <div class="cap">
+        <b>Graphic design and identity</b>
+        <span>One mark, one type system, one set of templates, so anything published is recognisable at a glance.</span>
+        <span class="sk">Items 02 &middot; 07</span>
+      </div>
+      <div class="cap">
+        <b>Digital and publishing</b>
+        <span>Captions, scheduling, the weekly rhythm, same-day turnaround from event to post.</span>
+        <span class="sk">Items 02 &middot; 05</span>
+      </div>
+      <div class="cap">
+        <b>Web and application development</b>
+        <span>The evidence site and the database behind it, built so the office updates it without me.</span>
+        <span class="sk">Item 07</span>
+      </div>
+      <div class="cap">
+        <b>Data visualisation</b>
+        <span>County budget explainers, programme charts, the graphics that answer a false figure with a sourced one.</span>
+        <span class="sk">Items 03 &middot; 07</span>
+      </div>
+      <div class="cap">
+        <b>Research and verification</b>
+        <span>Source-checking, monitoring what is being said, and the tracking system that keeps every claim traceable.</span>
+        <span class="sk">Items 01 &middot; 03 &middot; 04</span>
+      </div>
+    </div>
+
+    <div class="not">
+      <b>Not mine &mdash; bring in specialists</b>
+      <span>Polling needs a licensed research firm. Election law, campaign finance and the cooperative branding question need a lawyer. Ward organising and agent recruitment are their own discipline. Someone must own overall strategy and message discipline; I make the evidence, I should not also decide how it is spent. Counsel on the cultural questions needs someone with standing in Nandi.</span>
+    </div>
+  </div>
+
+</div>
+
+<div class="foot">
+  Nandi 2027 &nbsp;&middot;&nbsp; Working plan &nbsp;&middot;&nbsp; 29 August 2026<br>
+  Full detail in the strategic dossier, the film treatment and the sixteen-week content plan.
+</div>
+
+</div>

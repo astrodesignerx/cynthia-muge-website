@@ -1,0 +1,1598 @@
+<title>The Nandi Succession</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+
+<style>
+:root {
+  --paper:        #FFFFFF;
+  --paper-raised: #FFFFFF;
+  --paper-sunk:   #F1F2EE;
+  --ink:          #131C1A;
+  --ink-soft:     #3D4C48;
+  --ink-faint:    #6E7B77;
+  --rule:         #DCDFD8;
+  --rule-strong:  #C2C7BD;
+
+  --green:        #2E6A55;
+  --green-deep:   #1E4B3B;
+  --green-wash:   #E7EFEA;
+
+  --clay:         #9A4A2C;
+  --clay-wash:    #F6E9E3;
+
+  --amber:        #8A6410;
+  --amber-wash:   #F4EEDC;
+
+  --slate:        #40566B;
+  --slate-wash:   #E7ECF0;
+
+  --tag-verified-fg: var(--green-deep);
+  --tag-verified-bg: var(--green-wash);
+  --tag-reported-fg: var(--slate);
+  --tag-reported-bg: var(--slate-wash);
+  --tag-sentiment-fg: var(--amber);
+  --tag-sentiment-bg: var(--amber-wash);
+  --tag-reading-fg:  var(--clay);
+  --tag-reading-bg:  var(--clay-wash);
+
+  --shadow: 0 1px 2px rgba(19,28,26,.05), 0 8px 24px -12px rgba(19,28,26,.12);
+
+  --display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --body: "Newsreader", Georgia, "Times New Roman", serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root[data-theme="__never"] {
+    --paper:        #101614;
+    --paper-raised: #172120;
+    --paper-sunk:   #0B100F;
+    --ink:          #E8EDEA;
+    --ink-soft:     #B0BCB7;
+    --ink-faint:    #7D8B86;
+    --rule:         #26332F;
+    --rule-strong:  #38473F;
+
+    --green:        #6DBF9F;
+    --green-deep:   #97D6BB;
+    --green-wash:   #16302733;
+
+    --clay:         #DE9370;
+    --clay-wash:    #3A201733;
+
+    --amber:        #D9B45E;
+    --amber-wash:   #34290E33;
+
+    --slate:        #9DB6CC;
+    --slate-wash:   #1E2A3433;
+
+    --tag-verified-fg: #97D6BB;
+    --tag-verified-bg: #16302E;
+    --tag-reported-fg: #9DB6CC;
+    --tag-reported-bg: #1B2530;
+    --tag-sentiment-fg: #D9B45E;
+    --tag-sentiment-bg: #2C2512;
+    --tag-reading-fg:  #DE9370;
+    --tag-reading-bg:  #2E1C14;
+
+    --shadow: 0 1px 2px rgba(0,0,0,.4), 0 10px 30px -14px rgba(0,0,0,.6);
+  }
+}
+
+:root[data-theme="__never-dark"] {
+  --paper:        #101614;
+  --paper-raised: #172120;
+  --paper-sunk:   #0B100F;
+  --ink:          #E8EDEA;
+  --ink-soft:     #B0BCB7;
+  --ink-faint:    #7D8B86;
+  --rule:         #26332F;
+  --rule-strong:  #38473F;
+
+  --green:        #6DBF9F;
+  --green-deep:   #97D6BB;
+  --green-wash:   #16302733;
+
+  --clay:         #DE9370;
+  --clay-wash:    #3A201733;
+
+  --amber:        #D9B45E;
+  --amber-wash:   #34290E33;
+
+  --slate:        #9DB6CC;
+  --slate-wash:   #1E2A3433;
+
+  --tag-verified-fg: #97D6BB;
+  --tag-verified-bg: #16302E;
+  --tag-reported-fg: #9DB6CC;
+  --tag-reported-bg: #1B2530;
+  --tag-sentiment-fg: #D9B45E;
+  --tag-sentiment-bg: #2C2512;
+  --tag-reading-fg:  #DE9370;
+  --tag-reading-bg:  #2E1C14;
+
+  --shadow: 0 1px 2px rgba(0,0,0,.4), 0 10px 30px -14px rgba(0,0,0,.6);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 17px;
+  line-height: 1.62;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- shell ---------- */
+
+.shell {
+  display: grid;
+  grid-template-columns: 250px minmax(0, 1fr);
+  gap: 0;
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+.rail {
+  border-right: 1px solid var(--rule);
+  padding: 34px 22px 60px 28px;
+  position: sticky;
+  top: 0;
+  align-self: start;
+  max-height: 100vh;
+  overflow-y: auto;
+}
+
+.rail-mark {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 26px;
+}
+
+.rail nav ol { list-style: none; margin: 0; padding: 0; counter-reset: toc; }
+.rail nav li { counter-increment: toc; }
+.rail nav a {
+  display: grid;
+  grid-template-columns: 22px 1fr;
+  gap: 8px;
+  padding: 5px 0;
+  font-family: var(--display);
+  font-size: 12.5px;
+  line-height: 1.35;
+  color: var(--ink-soft);
+  text-decoration: none;
+  border-radius: 3px;
+}
+.rail nav a::before {
+  content: counter(toc, decimal-leading-zero);
+  font-family: var(--mono);
+  font-size: 9.5px;
+  color: var(--ink-faint);
+  padding-top: 2px;
+}
+.rail nav a:hover { color: var(--green); }
+.rail nav a:hover::before { color: var(--green); }
+.rail nav a:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; }
+.rail .grp {
+  font-family: var(--mono);
+  font-size: 9.5px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin: 20px 0 7px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--rule);
+}
+.rail .grp:first-of-type { margin-top: 0; }
+
+main { padding: 34px 46px 120px; min-width: 0; }
+
+/* ---------- masthead ---------- */
+
+.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 26px; margin-bottom: 8px; }
+
+.kicker {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: .17em;
+  text-transform: uppercase;
+  color: var(--clay);
+  margin-bottom: 16px;
+}
+
+h1 {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(38px, 5.4vw, 66px);
+  line-height: .98;
+  letter-spacing: -.028em;
+  margin: 0 0 18px;
+  text-wrap: balance;
+}
+h1 em {
+  font-style: normal;
+  color: var(--green);
+}
+
+.standfirst {
+  font-size: 20px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  max-width: 64ch;
+  margin: 0 0 24px;
+  font-weight: 300;
+}
+
+.meta-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 30px;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: .05em;
+  color: var(--ink-faint);
+  text-transform: uppercase;
+}
+.meta-strip b { color: var(--ink-soft); font-weight: 500; }
+
+/* ---------- evidence key ---------- */
+
+.key {
+  margin: 30px 0 0;
+  padding: 20px 22px;
+  background: var(--paper-sunk);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+}
+.key h4 {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin: 0 0 14px;
+  font-weight: 500;
+}
+.key-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(215px, 1fr)); gap: 14px 22px; }
+.key-row { display: flex; gap: 10px; align-items: flex-start; }
+.key-row p { margin: 0; font-size: 14px; line-height: 1.45; color: var(--ink-soft); }
+
+/* ---------- tags ---------- */
+
+.t {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: 3px 6px;
+  border-radius: 3px;
+  vertical-align: 2px;
+  white-space: nowrap;
+}
+.t-v { color: var(--tag-verified-fg); background: var(--tag-verified-bg); }
+.t-r { color: var(--tag-reported-fg); background: var(--tag-reported-bg); }
+.t-s { color: var(--tag-sentiment-fg); background: var(--tag-sentiment-bg); }
+.t-a { color: var(--tag-reading-fg); background: var(--tag-reading-bg); }
+
+/* ---------- sections ---------- */
+
+section { padding-top: 54px; scroll-margin-top: 20px; }
+
+.sec-head {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  border-top: 1px solid var(--rule-strong);
+  padding-top: 12px;
+  margin-bottom: 22px;
+}
+.sec-num {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--green);
+  letter-spacing: .06em;
+  flex: none;
+}
+h2 {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(23px, 2.7vw, 31px);
+  line-height: 1.12;
+  letter-spacing: -.02em;
+  margin: 0;
+  text-wrap: balance;
+}
+
+h3 {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: .002em;
+  margin: 34px 0 12px;
+  color: var(--ink);
+}
+h4 {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin: 26px 0 10px;
+}
+
+p { margin: 0 0 15px; max-width: 68ch; }
+main ul, main ol { max-width: 68ch; padding-left: 20px; margin: 0 0 16px; }
+main li { margin-bottom: 8px; }
+main li::marker { color: var(--green); }
+
+a { color: var(--green); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; border-radius: 2px; }
+
+strong { font-weight: 600; }
+.lede { font-size: 18.5px; line-height: 1.55; color: var(--ink-soft); font-weight: 300; max-width: 66ch; }
+
+/* ---------- tables ---------- */
+
+.scroll { overflow-x: auto; margin: 20px 0 24px; border: 1px solid var(--rule); border-radius: 4px; background: var(--paper-raised); }
+table { border-collapse: collapse; width: 100%; font-family: var(--display); font-size: 13.5px; min-width: 520px; }
+th, td { padding: 10px 14px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--rule); line-height: 1.4; }
+thead th {
+  font-family: var(--mono);
+  font-size: 9.5px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-weight: 600;
+  background: var(--paper-sunk);
+  border-bottom: 1px solid var(--rule-strong);
+  white-space: nowrap;
+}
+tbody tr:last-child td { border-bottom: none; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; font-family: var(--mono); font-size: 12.5px; }
+td.name { font-weight: 600; white-space: nowrap; }
+tbody tr.hl td { background: var(--green-wash); }
+
+/* ---------- callouts ---------- */
+
+.note {
+  margin: 22px 0;
+  padding: 16px 20px;
+  border-left: 3px solid var(--green);
+  background: var(--paper-sunk);
+  border-radius: 0 4px 4px 0;
+}
+.note.risk { border-left-color: var(--clay); }
+.note.watch { border-left-color: var(--amber); }
+.note p:last-child { margin-bottom: 0; }
+.note h4 { margin-top: 0; }
+
+li.done { color: var(--ink-soft); }
+li.done strong { color: var(--moss, var(--ink)); }
+
+
+/* ---------- charts ---------- */
+.chart { margin: 22px 0 26px; }
+.chart .ct { font-family: var(--mono); font-size: 9.5px; letter-spacing: .12em;
+             text-transform: uppercase; color: var(--ink-faint); margin-bottom: 12px; }
+.chart .cn { font-size: 12.5px; color: var(--ink-faint); margin-top: 10px; line-height: 1.5; max-width: 70ch; }
+
+/* grouped poll bars */
+.poll { display: flex; flex-direction: column; gap: 14px; }
+.poll .grp { }
+.poll .gl { font-family: var(--display); font-size: 12px; font-weight: 600; margin-bottom: 6px; }
+.poll .gl span { color: var(--ink-faint); font-weight: 400; }
+.poll .row { display: grid; grid-template-columns: 62px 1fr 40px; gap: 9px;
+             align-items: center; margin-bottom: 3px; }
+.poll .nm { font-family: var(--display); font-size: 11.5px; color: var(--ink-soft); text-align: right; }
+.poll .tr { height: 13px; background: var(--paper-sunk); border-radius: 2px; overflow: hidden; }
+.poll .fl { display: block; height: 100%; border-radius: 2px; background: var(--rule-strong); }
+.poll .pc { font-family: var(--mono); font-size: 10.5px; font-variant-numeric: tabular-nums;
+            color: var(--ink-soft); text-align: right; }
+.poll .row.k .fl { background: var(--clay); }
+.poll .row.k .nm, .poll .row.k .pc { color: var(--clay); font-weight: 600; }
+.poll .row.g .fl { background: var(--green); }
+.poll .row.g .nm, .poll .row.g .pc { color: var(--green); font-weight: 600; }
+
+/* budget split */
+.bsplit { display: flex; height: 56px; border-radius: 3px; overflow: hidden; }
+.bsplit div { display: flex; flex-direction: column; justify-content: center; padding: 0 14px; }
+.bsplit .rec { background: var(--rule-strong); }
+.bsplit .dev { background: var(--green); }
+.bsplit b { font-family: var(--display); font-size: 15px; font-weight: 700; line-height: 1.1; }
+.bsplit span { font-size: 11px; margin-top: 2px; }
+.bsplit .rec b, .bsplit .rec span { color: var(--ink); }
+.bsplit .dev b, .bsplit .dev span { color: #F4FAF6; }
+
+/* phases */
+.phase { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.phase .p { border-top: 3px solid var(--rule-strong); padding-top: 12px; }
+.phase .p.on { border-top-color: var(--clay); }
+.phase .pn { font-family: var(--mono); font-size: 9.5px; letter-spacing: .1em;
+             text-transform: uppercase; color: var(--ink-faint); }
+.phase .p.on .pn { color: var(--clay); }
+.phase .pv { font-family: var(--display); font-size: 26px; font-weight: 700; line-height: 1;
+             margin: 6px 0 4px; font-variant-numeric: tabular-nums; }
+.phase .p.on .pv { color: var(--clay); }
+.phase .pd { font-size: 12px; color: var(--ink-soft); line-height: 1.4; }
+.phase .cum { height: 7px; background: var(--paper-sunk); border-radius: 2px; margin-top: 10px; overflow: hidden; }
+.phase .cum i { display: block; height: 100%; background: var(--green); border-radius: 2px; }
+.phase .p.on .cum i { background: var(--clay); }
+
+/* reach */
+.reach { display: flex; flex-direction: column; gap: 7px; }
+.reach .r { display: grid; grid-template-columns: 128px 1fr 52px; gap: 10px; align-items: center; }
+.reach .w { font-family: var(--display); font-size: 11.5px; color: var(--ink-soft); text-align: right; }
+.reach .t { height: 15px; background: var(--paper-sunk); border-radius: 2px; overflow: hidden; }
+.reach .f { display: block; height: 100%; background: var(--rule-strong); border-radius: 2px; }
+.reach .v { font-family: var(--mono); font-size: 10.5px; font-variant-numeric: tabular-nums;
+            text-align: right; color: var(--ink-soft); }
+.reach .r.own .w { color: var(--clay); font-weight: 700; }
+.reach .r.own .f { background: var(--clay); }
+.reach .r.own .v { color: var(--clay); font-weight: 600; }
+
+blockquote.quote {
+  margin: 22px 0;
+  padding: 16px 20px;
+  background: var(--sunk, rgba(128,128,128,.07));
+  border-left: 3px solid var(--clay);
+  border-radius: 0 4px 4px 0;
+}
+blockquote.quote p {
+  margin: 0;
+  font-family: var(--mono);
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--ink);
+}
+blockquote.quote p.tr {
+  margin-top: 10px;
+  font-family: var(--body);
+  font-size: 16.5px;
+  font-style: italic;
+  color: var(--ink-soft);
+}
+
+/* ---------- stat row ---------- */
+
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: 4px; margin: 22px 0 26px; overflow: hidden; }
+.stat { background: var(--paper-raised); padding: 15px 16px; }
+.stat .v { font-family: var(--display); font-weight: 700; font-size: 25px; letter-spacing: -.02em; font-variant-numeric: tabular-nums; line-height: 1.05; }
+.stat .l { font-family: var(--mono); font-size: 9.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-faint); margin-top: 5px; line-height: 1.35; }
+.stat.on .v { color: var(--green); }
+.stat.off .v { color: var(--clay); }
+
+/* ---------- swot ---------- */
+
+.quad { display: grid; grid-template-columns: repeat(auto-fit, minmax(255px, 1fr)); gap: 16px; margin: 22px 0; }
+.card {
+  border: 1px solid var(--rule);
+  border-top: 3px solid var(--rule-strong);
+  border-radius: 4px;
+  padding: 16px 18px 6px;
+  background: var(--paper-raised);
+}
+.card h4 { margin-top: 0; }
+.card ul { padding-left: 17px; font-size: 14.5px; }
+.card li { margin-bottom: 9px; }
+.card.s { border-top-color: var(--green); }
+.card.w { border-top-color: var(--amber); }
+.card.o { border-top-color: var(--slate); }
+.card.r { border-top-color: var(--clay); }
+
+/* ---------- timeline ---------- */
+
+.tl { list-style: none; padding: 0; margin: 22px 0; max-width: 72ch; }
+.tl li {
+  display: grid;
+  grid-template-columns: 88px 1fr;
+  gap: 18px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--rule);
+  margin: 0;
+}
+.tl li:last-child { border-bottom: none; }
+.tl .when { font-family: var(--mono); font-size: 10.5px; letter-spacing: .05em; text-transform: uppercase; color: var(--green); padding-top: 4px; }
+.tl .what { font-family: var(--display); font-size: 14px; line-height: 1.45; }
+.tl li.pivot .when { color: var(--clay); font-weight: 600; }
+
+/* ---------- gap grid ---------- */
+
+.gaps { display: grid; gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: 4px; overflow: hidden; margin: 22px 0; }
+.gap-row { display: grid; grid-template-columns: 168px 1fr 1fr; gap: 1px; background: var(--rule); }
+.gap-row > * { background: var(--paper-raised); padding: 13px 15px; }
+.gap-row.head > * { background: var(--paper-sunk); font-family: var(--mono); font-size: 9.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-faint); font-weight: 600; }
+.gap-row .issue { font-family: var(--display); font-weight: 600; font-size: 13.5px; }
+.gap-row .cell { font-family: var(--display); font-size: 13px; line-height: 1.45; color: var(--ink-soft); }
+.gap-row .cell b { color: var(--ink); font-weight: 600; }
+
+/* ---------- priorities ---------- */
+
+.pri { counter-reset: p; list-style: none; padding: 0; margin: 22px 0; max-width: 72ch; }
+.pri > li {
+  counter-increment: p;
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--rule);
+  margin: 0;
+}
+.pri > li::before {
+  content: "P" counter(p);
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--paper);
+  background: var(--green);
+  border-radius: 3px;
+  height: 22px;
+  display: grid;
+  place-items: center;
+}
+.pri h3 { margin: 0 0 6px; font-size: 15.5px; }
+.pri p { font-size: 15px; margin-bottom: 0; }
+
+/* ---------- sources ---------- */
+
+.src { font-family: var(--display); font-size: 13px; line-height: 1.5; }
+.src ol { padding-left: 22px; max-width: 78ch; }
+.src li { margin-bottom: 9px; color: var(--ink-soft); }
+.src a { word-break: break-word; }
+
+.foot {
+  margin-top: 60px;
+  padding-top: 20px;
+  border-top: 2px solid var(--ink);
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  line-height: 1.7;
+}
+
+@media (max-width: 940px) {
+  .shell { grid-template-columns: 1fr; }
+  .rail { position: static; max-height: none; border-right: none; border-bottom: 1px solid var(--rule); padding: 26px 24px; }
+  .rail nav ol { columns: 2; column-gap: 26px; }
+  main { padding: 26px 24px 90px; }
+  .gap-row { grid-template-columns: 1fr; }
+  .gap-row.head { display: none; }
+  body { font-size: 16.5px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+
+/* locked to light mode */
+:root { color-scheme: light; }
+</style>
+
+<div class="shell">
+
+<aside class="rail">
+  <div class="rail-mark">Nandi 2027 · Dossier</div>
+  <nav aria-label="Contents">
+    <div class="grp">Findings</div>
+    <ol>
+      <li><a href="#s1">Executive summary</a></li>
+      <li><a href="#s2">Muge profile</a></li>
+      <li><a href="#s3">Journey since 2017</a></li>
+      <li><a href="#s4">2017 &amp; 2022 campaigns</a></li>
+    </ol>
+    <div class="grp">Terrain</div>
+    <ol start="5">
+      <li><a href="#s5">Political environment</a></li>
+      <li><a href="#s6">Socioeconomic context</a></li>
+      <li><a href="#s7">Competitor landscape</a></li>
+      <li><a href="#s8">Social media audit</a></li>
+      <li><a href="#s9">Public narrative</a></li>
+    </ol>
+    <div class="grp">Assets</div>
+    <ol start="10">
+      <li><a href="#s10">The coffee story</a></li>
+      <li><a href="#s11">Kahawa na Mama</a></li>
+      <li><a href="#s12">Gender, age, culture</a></li>
+      <li><a href="#s13">Platform assessment</a></li>
+    </ol>
+    <div class="grp">Assessment</div>
+    <ol start="14">
+      <li><a href="#s14">SWOT</a></li>
+      <li><a href="#s15">Communication gaps</a></li>
+      <li><a href="#s16">Your role</a></li>
+      <li><a href="#s17">Key findings</a></li>
+      <li><a href="#s18">Strategic priorities</a></li>
+      <li><a href="#s19">Further research</a></li>
+      <li><a href="#s20">Sources</a></li>
+    </ol>
+  </nav>
+</aside>
+
+<main>
+
+<header class="masthead">
+  <div class="kicker">Strategic assessment · Revised 27 August 2026 · v2, after group-level research</div>
+  <h1>The <em>Nandi</em> Succession</h1>
+  <p class="standfirst">Hon. Cynthia Muge is running second in a race she is widely described as leading. This dossier separates what is verifiable about her record from what is merely said about her, maps the field she is running against, and identifies where creative and technical work moves the number.</p>
+  <div class="meta-strip">
+    <span><b>Subject</b> Hon. Cynthia Jepkosgei Muge</span>
+    <span><b>Contest</b> Nandi Governor, 2027</span>
+    <span><b>Horizon</b> UDA primaries, est. Q1 2027</span>
+  </div>
+</header>
+
+<div class="key">
+  <h4>How to read the evidence tags</h4>
+  <div class="key-grid">
+    <div class="key-row"><span class="t t-v">Verified</span><p>Confirmed in an official record, results database, or two independent outlets.</p></div>
+    <div class="key-row"><span class="t t-r">Reported</span><p>Carried by one credible outlet; plausible but not independently confirmed.</p></div>
+    <div class="key-row"><span class="t t-s">Sentiment</span><p>What the public is visibly saying. Real signal about mood, not about fact.</p></div>
+    <div class="key-row"><span class="t t-a">Reading</span><p>My inference or recommendation. Argued from the evidence, not itself evidence.</p></div>
+  </div>
+</div>
+
+<!-- 1 -->
+<section id="s1">
+  <div class="sec-head"><span class="sec-num">01</span><h2>Executive summary</h2></div>
+
+  <p class="lede">The single most consequential fact in this file is the gap between how Cynthia Muge is described and how she is currently measured. Press coverage from February to August 2026 repeatedly calls her a frontrunner. Four separate measurements, all weak, all point the other way.</p>
+
+  <div class="stats">
+    <div class="stat off"><div class="v">2nd</div><div class="l">Her position in 3 of 4 measures</div></div>
+    <div class="stat"><div class="v">4</div><div class="l">Independent measurements found</div></div>
+    <div class="stat"><div class="v">54%</div><div class="l">Undecided, separate survey</div></div>
+    <div class="stat on"><div class="v">90.3%</div><div class="l">Her 2022 vote share</div></div>
+  </div>
+
+  <div class="scroll">
+    <table>
+      <thead><tr><th>Measurement</th><th>Kosgey</th><th>Muge</th><th>Melly</th><th>Caveat</th></tr></thead>
+      <tbody>
+        <tr><td class="name">Darubini Research, ~Jun 2026</td><td>48%</td><td>28%</td><td>17%</td><td>Methodology unpublished</td></tr>
+        <tr><td class="name">Nandi Civic Voice poll, 713 votes</td><td>29.7%</td><td>25.5%</td><td>19.1%</td><td>Online; run by a <strong>pro-Muge</strong> page</td></tr>
+        <tr class="hl"><td class="name">Comment-thread tally, 204 comments</td><td>36.8%</td><td>40.4%</td><td>22.2%</td><td>Thread seeded pro-Muge by its author</td></tr>
+        <tr><td class="name">Mizani Africa X poll, 321 votes</td><td colspan="3">Results withheld until close</td><td>Brigaded by both camps</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <div class="chart">
+    <div class="ct">The four measurements, side by side</div>
+    <div class="poll">
+      <div class="grp">
+        <div class="gl">Darubini Research <span>&mdash; ~Jun 2026, methodology unpublished</span></div>
+        <div class="row k"><span class="nm">Kosgey</span><span class="tr"><span class="fl" style="width:100%"></span></span><span class="pc">48%</span></div>
+        <div class="row g"><span class="nm">Muge</span><span class="tr"><span class="fl" style="width:58%"></span></span><span class="pc">28%</span></div>
+        <div class="row"><span class="nm">Melly</span><span class="tr"><span class="fl" style="width:35%"></span></span><span class="pc">17%</span></div>
+      </div>
+      <div class="grp">
+        <div class="gl">Nandi Civic Voice poll <span>&mdash; 713 votes, run by a pro-Muge page</span></div>
+        <div class="row k"><span class="nm">Kosgey</span><span class="tr"><span class="fl" style="width:62%"></span></span><span class="pc">29.7%</span></div>
+        <div class="row g"><span class="nm">Muge</span><span class="tr"><span class="fl" style="width:53%"></span></span><span class="pc">25.5%</span></div>
+        <div class="row"><span class="nm">Melly</span><span class="tr"><span class="fl" style="width:40%"></span></span><span class="pc">19.1%</span></div>
+      </div>
+      <div class="grp">
+        <div class="gl">Comment-thread tally <span>&mdash; 204 comments, thread seeded pro-Muge</span></div>
+        <div class="row k"><span class="nm">Kosgey</span><span class="tr"><span class="fl" style="width:77%"></span></span><span class="pc">36.8%</span></div>
+        <div class="row g"><span class="nm">Muge</span><span class="tr"><span class="fl" style="width:84%"></span></span><span class="pc">40.4%</span></div>
+        <div class="row"><span class="nm">Melly</span><span class="tr"><span class="fl" style="width:46%"></span></span><span class="pc">22.2%</span></div>
+      </div>
+    </div>
+    <p class="cn">Bars are scaled against the highest value in the set. <b>Muge leads in exactly one measurement &mdash; the one seeded in her favour.</b> Melly is third in all three. The twenty-point Darubini gap does not reproduce anywhere else.</p>
+  </div>
+
+  <p><span class="t t-a">Reading</span> Every one of these is weak evidence. But <strong>Kosgey leads or ties in every measurement not seeded in Muge's favour, and Melly is third in all four.</strong> The Darubini twenty-point gap does not reproduce elsewhere and is probably overstated; the direction is not. She is second, not first, in a race where more than half the electorate has not chosen. That deficit is not closed by content volume. It is closed by giving undecided voters a specific, evidenced reason to pick her over a credible lawyer with a policy-first campaign and a council of elders behind him.</p>
+
+  <h3>The seven findings that matter</h3>
+  <ol>
+    <li><strong>Her record is larger than the file first found, and none of it is checkable.</strong> Beyond Kahawa na Mama there is <em>Elimu Ni Mwangaza</em> — 449 students on full scholarship, 206 sitting KCSE this year — and the <em>BOSO Supercup</em>, which reached all 30 wards with 499 teams and 846 matches in three months. Plus empowerment cheques, two boda boda shades, water and school projects. None of it has outcome data, a testimony library, or a page on her own site.</li>
+    <li><strong>Her legislative record is thin and she has not compensated for it.</strong> Mzalendo records zero bills sponsored, one question, zero petitions across the 13th Parliament. Opponents will use this. The counter-argument exists but has never been assembled.</li>
+    <li><strong>She is out-reached on her own footage.</strong> Third-party accounts routinely pull 150,000 to 216,000 views on clips of her speaking. Her own TikTok posts, mostly published with no caption at all, typically pull 8,000 to 48,000.</li>
+    <li><strong>Two of her four platforms are effectively dead.</strong> Instagram: 125 followers, five posts. X: her office account's recent posts draw double-digit view counts.</li>
+    <li><strong>She leads on Facebook and it is her real ground.</strong> ~149,800 followers personally, 71,000 on the office page, against Melly's 84,000 and Kosgey's 51,000.</li>
+    <li><strong>Her greatest strength is also her live risk.</strong> Her unscripted Nandi-language oratory is what makes clips travel. In August 2026 it produced a cultural backlash that is still running — though the translated evidence in section 12 shows that backlash is thinner and more answerable than it appeared.</li>
+    <li><strong>The "political project" tag is the frame to beat.</strong> It reframes her youth as sponsorship rather than achievement, and it is the one attack that neutralises her authentic-outsider story. Melly now uses it to her face.</li>
+    <li><strong>She is not undocumented — she is unverifiable.</strong> A network of at least twenty surrogate pages produces her documentation daily. What none of them provide, and what no opponent has yet had to face, is a single checkable source for any number.</li>
+  </ol>
+
+  <div class="note risk">
+    <h4>The critique that defines the job</h4>
+    <p><span class="t t-r">Reported</span> A sober, specific accountability challenge is circulating in the Nandi Hills groups, written by Robert Kibitok. It asks: how many seedlings came from NGAAF versus national government, who supplied them, at what price, which groups received them, which wards. Then the question none of this research had asked — <em>"If you give a women's group coffee seedlings but there is no factory or clear market around them, what happens when those trees mature?"</em> It closes: <strong>"Bring the numbers. Bring the beneficiary lists. Bring the procurement records… let's stop confusing visibility with impact."</strong></p>
+    <p><span class="t t-a">Reading</span> No gender, no culture, no insults — which is precisely why it is dangerous. It also identifies a genuine hole: her signature programme creates supply without any established market, and it serves coffee farmers only. The <em>mama mboga</em>, the boda rider, the unemployed graduate and the PWD are not served by it, and he says so.</p>
+  </div>
+
+  <div class="note risk">
+    <h4>Live issue — updated 27 August 2026</h4>
+    <p><span class="t t-r">Reported</span> Between roughly 20 and 24 August 2026, remarks attributed to her using the term <em>"oripoo"</em> toward Nandi men triggered a public rejection by a group of Nandi Hills women and a rebuke from former MP Cornelly Serem.</p>
+    <p><span class="t t-v">Verified</span> <em>Oripoo</em> means <strong>calm down, or bow down in a show of respect</strong>. Not an obscenity. The charge is status inversion — that she told men to defer.</p>
+    <p><span class="t t-a">Reading</span> The story is also much smaller than its circulation suggests. Searching <em>oripoo</em> inside the 50,000-member Nandi Hills forum returns <strong>three results</strong>, one of them pro-Muge. The rejection post itself carries 3 reactions against 35 shares — the signature of content being pushed, not spreading. Still no source carries her actual words in full. <strong>Finding that clip remains the highest-value task in this file</strong>, because a phrase meaning "calm down" became a scandal purely because nobody holds the original.</p>
+  </div>
+</section>
+
+<!-- 2 -->
+<section id="s2">
+  <div class="sec-head"><span class="sec-num">02</span><h2>Who Cynthia Muge is, on the record</h2></div>
+
+  <p><span class="t t-v">Verified</span> Born 29 July 1993 in Kipsirichoi village, Kilibwoni Ward, Emgwen Constituency, Nandi County. Eldest of six siblings. Kapchemoiywo Primary School (1998–2007); Moi Girls Isinya (2008–2011); BA in Urban and Regional Planning, University of Nairobi (2012–2016); MA in Project Planning and Management, University of Nairobi (2018–2020). Married to Mr Mathew Rotich; two sons. Known throughout Nandi by the name <em>Cheptikonyol</em>.</p>
+
+  <p><span class="t t-a">Reading</span> The academic credentials are more relevant than they are currently made to look. A governor's job is substantially planning and project delivery, and she holds a planning degree and a project management master's. Right now those sit on her website as dated rows in an education table. They are qualifications for the specific seat she is seeking, and nothing in her public communication makes that connection.</p>
+
+  <h3>Public offices held</h3>
+  <div class="scroll">
+    <table>
+      <thead><tr><th>Term</th><th>Office</th><th>Route</th><th>Committee roles</th></tr></thead>
+      <tbody>
+        <tr><td class="name">2017–2022</td><td>MCA, Kilibwoni Ward</td><td>Independent, elected at 24</td><td>Chair, Sports, Youth &amp; Social Welfare. Member: Trade &amp; Investments; Appointments; Liaison; Public Investments &amp; Accounts</td></tr>
+        <tr class="hl"><td class="name">2022–</td><td>Woman Representative, Nandi County</td><td>UDA, 90.29% of votes cast</td><td>Member: Committee on Implementation; Health</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Parliamentary record, 13th Parliament</h3>
+  <p><span class="t t-v">Verified</span> Mzalendo's tracking of the 13th Parliament records the following for Muge Cynthia Jepkosgei.</p>
+
+  <div class="stats">
+    <div class="stat off"><div class="v">0</div><div class="l">Bills sponsored</div></div>
+    <div class="stat on"><div class="v">143</div><div class="l">Counted contributions</div></div>
+    <div class="stat"><div class="v">2</div><div class="l">Committees</div></div>
+    <div class="stat off"><div class="v">1</div><div class="l">Questions</div></div>
+    <div class="stat off"><div class="v">0</div><div class="l">Petitions</div></div>
+    <div class="stat"><div class="v">98</div><div class="l">Times named by other members</div></div>
+  </div>
+
+  <p><span class="t t-a">Reading</span> Read honestly, this is a floor-presence record rather than a legislative one. Eleven of the 143 contributions fall in 2026. She speaks often and is named often — 98 mentions across 60 sittings by 25 different members is a real indicator of salience among peers. But zero bills and zero petitions is a hard, checkable number that any opponent's researcher will find in an afternoon.</p>
+
+  <p><span class="t t-a">Reading</span> There is a legitimate defence and it should be prepared before it is needed, not after. County Woman Representatives administer the NGAAF affirmative-action budget and their principal output is programme delivery, not private members' bills. The honest version of her case is: <em>I was elected to move money to women and I moved it — here is what it built.</em> That case cannot be made without the delivery data she does not currently publish, which is why section 11 matters more than any other in this file.</p>
+</section>
+
+<!-- 3 -->
+<section id="s3">
+  <div class="sec-head"><span class="sec-num">03</span><h2>The political journey since 2017</h2></div>
+
+  <ul class="tl">
+    <li class="pivot"><span class="when">Aug 2017</span><span class="what"><span class="t t-v">Verified</span> Elected MCA for Kilibwoni Ward at 24, running as an <strong>independent</strong> against the pre-election favourite, with 8,760 votes. One of only 96 women elected across 1,450 wards nationally that year.</span></li>
+    <li><span class="when">2017–22</span><span class="what"><span class="t t-v">Verified</span> Chairs the County Assembly's Sports, Youth and Social Welfare Committee; sits on Public Investments and Accounts. Moves a motion on surveying and protecting road reserves.</span></li>
+    <li class="pivot"><span class="when">Apr 2022</span><span class="what"><span class="t t-v">Verified</span> Wins the UDA nomination for Nandi Woman Representative at 29.</span></li>
+    <li class="pivot"><span class="when">Aug 2022</span><span class="what"><span class="t t-v">Verified</span> Elected Woman Representative with 275,500 votes — 90.29 per cent. Youngest of six women who moved from county assemblies into the National Assembly that cycle.</span></li>
+    <li><span class="when">2023/24</span><span class="what"><span class="t t-v">Verified</span> Kahawa na Mama pilot: 150,000+ Ruiru 11 and Batian seedlings to 900 women in 63 self-help groups.</span></li>
+    <li><span class="when">Mar 2024</span><span class="what"><span class="t t-r">Reported</span> Comments on Citizen TV describing the doctors' union position as discriminatory draw sustained online criticism. The clip reaches 478,000 views; a critical reply reaches 97,000.</span></li>
+    <li><span class="when">2024</span><span class="what"><span class="t t-r">Reported</span> Her "kupeana" campaign — addressing transactional relationships among young people — circulates widely on TikTok via third-party accounts.</span></li>
+    <li><span class="when">Jun 2025</span><span class="what"><span class="t t-v">Verified</span> Kahawa na Mama phase two launches at Maraba Primary, Aldai. 500,000 further seedlings; cumulative total passes 650,000; roughly 4,000 women reached across all six sub-counties.</span></li>
+    <li><span class="when">Oct 2025</span><span class="what"><span class="t t-r">Reported</span> Publicly challenges Cabinet Secretary Aden Duale after a confrontation with MP Kibagendi, calling him the "intimidator-in-chief".</span></li>
+    <li class="pivot"><span class="when">Feb 2026</span><span class="what"><span class="t t-v">Verified</span> Declares for governor. "My interest in the governor's seat is to completely redefine service to the people of Nandi and take the county to the next level in terms of how devolution can benefit our people."</span></li>
+    <li><span class="when">Jun 2026</span><span class="what"><span class="t t-r">Reported</span> Five-day diaspora tour of Australia — Adelaide, Melbourne, Sydney, Perth — on investment and remittances. Unveils an 11-point roads plan, reviving her 2017 road-reserves motion.</span></li>
+    <li><span class="when">~Jun 2026</span><span class="what"><span class="t t-r">Reported</span> Darubini Research poll: Kosgey 48, Muge 28, Melly 17. Coverage attaches the "political project" tag.</span></li>
+    <li class="pivot"><span class="when">Aug 2026</span><span class="what"><span class="t t-r">Reported</span> The "oripoo" remarks controversy. Nandi Hills women's rejection and Cornelly Serem's rebuke circulate on Facebook and TikTok.</span></li>
+  </ul>
+
+  <p><span class="t t-a">Reading</span> The shape of this journey is her best argument and it is not being told as a story. Twice she has entered a contest as the underrated option and won — once with no party behind her at all. That is a documented pattern of beating expectations, and it is the direct rebuttal to a poll showing her twenty points down. Nobody has made that film.</p>
+</section>
+
+<!-- 4 -->
+<section id="s4">
+  <div class="sec-head"><span class="sec-num">04</span><h2>What the 2017 and 2022 campaigns actually communicated</h2></div>
+
+  <h3>2017 — Kilibwoni Ward</h3>
+  <p><span class="t t-v">Verified</span> She ran as an independent, at 24, and won with 8,760 votes against the pre-election favourite.</p>
+  <p><span class="t t-a">Reading</span> An independent run is a message in itself. It says the party machine did not choose her and the ward did. Every piece of her later biography rests on this, and it is currently a single line in a timeline. In an environment where her main vulnerability is the claim that powerful people are installing her, 2017 is the counter-evidence — and it is the most under-used asset in the entire file.</p>
+
+  <h3>2022 — Nandi County Woman Representative</h3>
+  <div class="scroll">
+    <table>
+      <thead><tr><th>Candidate</th><th>Party</th><th class="num">Votes</th><th class="num">Share</th></tr></thead>
+      <tbody>
+        <tr class="hl"><td class="name">Cynthia Muge</td><td>UDA</td><td class="num">275,500</td><td class="num">90.29%</td></tr>
+        <tr><td class="name">Stellah Ruttoh</td><td>Independent</td><td class="num">21,722</td><td class="num">7.12%</td></tr>
+        <tr><td class="name">Truphena Korir</td><td>PDU</td><td class="num">7,922</td><td class="num">2.60%</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p><span class="t t-v">Verified</span> Nandi had 406,288 registered voters in 2022; 305,144 votes cast; 75.11 per cent turnout; 927 polling stations across 6 constituencies and 30 wards.</p>
+
+  <div class="note watch">
+    <h4>The honest caveat on 275,500</h4>
+    <p><span class="t t-a">Reading</span> This number is repeatedly used as proof of countywide popularity, and it is being asked to carry more weight than it can. In the same election Governor Sang took 237,405 and Senator Cherarkey 284,373 — county-wide UDA seats all cleared 230,000 in a one-party county. Her 90.29 per cent substantially measures the strength of the UDA ticket in Nandi, not a personal mandate that transfers to a contested primary against other UDA candidates. Building the campaign's confidence on it would be a mistake, and opponents' researchers already know this.</p>
+  </div>
+</section>
+
+<!-- 5 -->
+<section id="s5">
+  <div class="sec-head"><span class="sec-num">05</span><h2>The political environment she is entering</h2></div>
+
+  <p><span class="t t-v">Verified</span> Governor Stephen Sang is serving his second and final term. <span class="t t-r">Reported</span> He is understood to be eyeing the Aldai parliamentary seat. At least six aspirants were campaigning by May 2026.</p>
+
+  <h3>The four structural facts</h3>
+  <ol>
+    <li><strong>The primary is the election.</strong> <span class="t t-r">Reported</span> UDA dominance in Nandi means the party ticket is close to decisive. Every strategic calculation should be indexed to the nomination, not to August 2027.</li>
+    <li><strong>Ten years of alternation.</strong> <span class="t t-v">Verified</span> Lagat won in 2013 and lost to Sang in 2017. Sang served 2017–2027. A first-time governor has never yet been re-elected against a strong challenger here.</li>
+    <li><strong>The undecided bloc is the prize.</strong> <span class="t t-r">Reported</span> 54 per cent undecided means the race is not consolidated. Persuasion is still available.</li>
+    <li><strong>The imposition narrative is live.</strong> <span class="t t-r">Reported</span> Former Governor Lagat has publicly accused "powerful individuals" of trying to impose a preferred candidate: "No one should tell us that they may intervene and control how residents vote." <span class="t t-r">Reported</span> Head of Public Service Felix Koskei, who hails from Nandi, is widely viewed as an influential figure in local politics. <span class="t t-a">Reading</span> This is the machinery behind the "political project" tag, and it is aimed at whoever is seen as the establishment favourite.</li>
+  </ol>
+
+  <p><span class="t t-r">Reported</span> Governor Sang has urged residents to consider a candidate's "scorecard and track record" — language that favours aspirants with an executive or delivery history over those with a representative one.</p>
+</section>
+
+<!-- 6 -->
+<section id="s6">
+  <div class="sec-head"><span class="sec-num">06</span><h2>Socioeconomic and development context</h2></div>
+
+  <h3>County finances</h3>
+  <p><span class="t t-v">Verified</span> Controller of Budget, FY 2024/25: total budget KSh 10.2 billion; KSh 10.0 billion spent (98 per cent absorption); development spending KSh 3.3 billion at 90 per cent of the development budget; recurrent spending KSh 6.6 billion at 102 per cent of the recurrent budget.</p>
+  <p><span class="t t-a">Reading</span> Recurrent overspend against development underspend is the standard county pathology and it is quantified, official, and comprehensible. Two thirds of Nandi's money goes to running the government and one third to building anything. That is a chart, not a paragraph, and it is the sharpest single piece of evidence available for a devolution-reform argument.</p>
+
+
+  <div class="chart">
+    <div class="ct">Where Nandi County money went, FY 2024/25</div>
+    <div class="bsplit">
+      <div class="rec" style="flex:6.6"><b>KSh 6.6bn</b><span>Recurrent &mdash; running the county</span></div>
+      <div class="dev" style="flex:3.3"><b>KSh 3.3bn</b><span>Development &mdash; building things</span></div>
+    </div>
+    <p class="cn">Two thirds against one third, from the Controller of Budget's own figures. Recurrent spending came in at <b>102 per cent</b> of its budget while development reached only <b>90 per cent</b> of a smaller one. This is the sharpest evidence-based argument available in the race, and nobody is using it.</p>
+  </div>
+
+  <p><span class="t t-v">Verified</span> The FY 2026/27 development budget is KSh 3.89 billion, tabled by Finance CECM Alfred Lagat in June 2026. Notable lines: KSh 458.27m for ward road projects (the largest ward-level allocation), KSh 255.6m for ward education projects, KSh 217.88m for ward water projects across all 30 wards, KSh 150m for drugs and reagents, KSh 120m for the county bursary scheme, KSh 110.26m for ward-based health projects, KSh 100m to complete and equip five hospitals, KSh 96.6m for Community Health Promoter stipends.</p>
+
+  <p><span class="t t-v">Verified</span> NG-CDF allocations to Nandi's six constituencies total roughly KSh 1.16 billion in FY 2025/26, ranking the county 22nd of 47.</p>
+
+  <h3>The issues that will decide it</h3>
+  <div class="scroll">
+    <table>
+      <thead><tr><th>Domain</th><th>What the evidence shows</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td class="name">Roads</td><td>Largest ward-level budget line; Muge has an 11-point plan; Kosgey ties roads to agricultural marketing</td><td>Contested — she has a plan on the table</td></tr>
+        <tr><td class="name">Health</td><td>Heavy FY26/27 allocations. <span class="t t-s">Sentiment</span> A widely-shared 2024 post alleged Nandi's level 5 hospital ranked among Kenya's worst performing</td><td>Vulnerable — she sits on the Health Committee</td></tr>
+        <tr><td class="name">Coffee</td><td>Her signature territory. Distinct from the county's tea-dominated economy</td><td><strong>Owned</strong></td></tr>
+        <tr><td class="name">Tea</td><td>Bonus levels and KTDA factory financing are live national controversies</td><td>Unclaimed by any aspirant</td></tr>
+        <tr><td class="name">Dairy</td><td>Kosgey leads with it; Nandi's largest farming bloc</td><td>Conceded</td></tr>
+        <tr><td class="name">Youth jobs</td><td>Her digital-hubs platform; Rop's digital training centres</td><td>Crowded</td></tr>
+        <tr><td class="name">Land</td><td>Kimwani ADC land; the disputed Kimasas land involving Kosgey's family</td><td>High-risk, high-salience</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <h4>The unclaimed issue</h4>
+    <p><span class="t t-a">Reading</span> Tea is the county's dominant cash crop and no aspirant located in this research owns it. Bonus rates and KTDA factory borrowing were live national news during August 2026. She has a proven method for exactly this problem — she built Kahawa na Mama by asking women what they did not control about a cash crop. Running that method at tea would extend her coffee credibility into the county's largest agricultural constituency rather than leaving it to Kosgey's dairy pitch.</p>
+  </div>
+</section>
+
+<!-- 7 -->
+<section id="s7">
+  <div class="sec-head"><span class="sec-num">07</span><h2>Competitor landscape</h2></div>
+
+  <div class="scroll">
+    <table>
+      <thead>
+        <tr><th>Candidate</th><th>Base</th><th>Pitch</th><th class="num">FB reach</th><th>Strength</th><th>Vulnerability</th></tr>
+      </thead>
+      <tbody>
+        <tr class="hl">
+          <td class="name">Cynthia Muge</td>
+          <td>Woman Rep; UDA</td>
+          <td>Generational change; devolution that delivers</td>
+          <td class="num">~149.8K<br>+71K office</td>
+          <td>Oratory in Nandi; countywide name; women's networks; coffee record</td>
+          <td>Zero bills; "political project" tag; Aug 2026 cultural backlash</td>
+        </tr>
+        <tr>
+          <td class="name">Allan Kosgey</td>
+          <td>Advocate; son of Henry Kosgei</td>
+          <td>Sector-by-sector manifesto, agriculture first</td>
+          <td class="num">51K<br>verified</td>
+          <td>Poll leader at 48%; policy discipline; second attempt; close to Ruto's programme</td>
+          <td>Lost the 2022 UDA primary to Sang; Kimasas family land dispute in circulation; dynastic surname</td>
+        </tr>
+        <tr>
+          <td class="name">Julius Melly</td>
+          <td>Tinderet MP; chairs National Assembly Education Committee</td>
+          <td>Experience and delivery</td>
+          <td class="num">84K</td>
+          <td>Constant national media as Education chair; teacher networks; long incumbency</td>
+          <td>Third at 17%; generational-change argument runs against him</td>
+        </tr>
+        <tr>
+          <td class="name">Cleophas Lagat</td>
+          <td>Governor 2013–2017</td>
+          <td>Comeback; anti-imposition</td>
+          <td class="num">Not established</td>
+          <td>Executive experience; 55,375 votes in 2022; owns the anti-imposition frame</td>
+          <td>Already defeated twice by Sang; ten years out of office</td>
+        </tr>
+        <tr>
+          <td class="name">Dr Zaccius Rop</td>
+          <td>HOKIL Foundation</td>
+          <td>Professional technocrat; education philanthropy</td>
+          <td class="num">17.2K<br>+foundation</td>
+          <td>Best-organised digital operation; dedicated foundation website; documented beneficiaries</td>
+          <td>Newcomer; no electoral base</td>
+        </tr>
+        <tr>
+          <td class="name">Eng. Anderson Serem</td>
+          <td>Engineer</td>
+          <td>Service-oriented leadership</td>
+          <td class="num">Not established</td>
+          <td>Persistent; visibly tracking Muge's public events</td>
+          <td>2,999 votes for governor in 2022</td>
+        </tr>
+        <tr>
+          <td class="name">Antipas Tirop</td>
+          <td>Finance</td>
+          <td>Prudent resource management</td>
+          <td class="num">Not established</td>
+          <td>Fiscal competence framing fits the absorption problem</td>
+          <td>Minimal public profile</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note risk">
+    <h4>Three candidates this file had missed</h4>
+    <p><span class="t t-r">Reported</span> A Nandi Civic Voice opinion poll closed in August 2026 with 713 votes and surfaced names absent from all press coverage found in this research: <strong>Hon. Stanley Baliach</strong> at 12.8 per cent — fourth, and ahead of every minor candidate previously listed — <strong>Joshua Kiptoo</strong> at 6.9 per cent, and <strong>Dr. Yulita Mitei</strong> at 1.3 per cent, a second woman in the field. In the same poll Cleophas Lagat took 1.5 per cent, which suggests the "former governor comeback" narrative is not registering with online voters whatever the press says.</p>
+    <p><span class="t t-a">Reading</span> Baliach needs a profile built. A candidate polling fourth with no press coverage is either a genuine sleeper or an artefact of an online poll — and there is currently no basis to tell which.</p>
+  </div>
+
+  <div class="note risk">
+    <h4>Kosgey has an elders' endorsement</h4>
+    <p><span class="t t-r">Reported</span> The <strong>Talai Council of Elders</strong> publicly blessed Allan Kosgey's candidacy, announced from Kapsisiywo, describing him after wide consultation as best suited to lead the county. <span class="t t-a">Reading</span> In a race where the attack on Muge is about cultural standing, an elders' endorsement for her strongest rival is a material asset and should be treated as one. See section 12 for the Kaburwo counter-move.</p>
+  </div>
+
+  <div class="note watch">
+    <h4>Melly's camp is seeding a manufactured consensus</h4>
+    <p><span class="t t-v">Verified</span> Identical text — "Hon. Julius Melly is currently setting the pace in the Nandi gubernatorial contest, with Allan Kosgey following closely in second and Cynthia Muge in third" — was found posted by <strong>six different accounts across five groups</strong>, traced to <strong>Mtetezi Mtetezi (@TeamMtetezi001)</strong>, a 162,700-follower page posting it repeatedly within hours. That page's other output is generic viral filler.</p>
+    <p><span class="t t-a">Reading</span> Coordination is proven. Payment is not, and should not be alleged. The practical consequence is that <strong>no camp's claimed ordering is independent evidence</strong> — Muge's side alleges Kosgey used fake accounts on an online poll while soliciting votes for the same poll, and Melly's side is demonstrably seeding a fixed ordering. Treat all of it as noise.</p>
+  </div>
+
+  <h3>How each is communicating</h3>
+  <ul>
+    <li><strong>Kosgey</strong> <span class="t t-r">Reported</span> is releasing a manifesto sector by sector, starting with agriculture — dairy, tea, coffee, sugarcane, avocados, cooperatives, mechanisation, value addition. <span class="t t-a">Reading</span> This is the most professional communication strategy in the field: it manufactures repeat coverage from a single document and makes him look like the candidate who has done the work. It is also why he polls at 48.</li>
+    <li><strong>Melly</strong> <span class="t t-v">Verified</span> generates near-daily national coverage as Education Committee chair. <span class="t t-a">Reading</span> He does not need to campaign to stay visible. That is structurally cheap airtime she cannot match.</li>
+    <li><strong>Rop</strong> <span class="t t-r">Reported</span> has built his profile through aggressive social media and governance debate. <span class="t t-a">Reading</span> He runs the only operation in the field with an independent institutional website carrying documented beneficiaries. He is the model for what her coffee programme should look like online.</li>
+    <li><strong>Lagat</strong> <span class="t t-a">Reading</span> has chosen the sharpest available frame — anti-imposition — and it is aimed squarely at her.</li>
+  </ul>
+
+  <div class="note risk">
+    <h4>What the field says about her position</h4>
+    <p><span class="t t-a">Reading</span> Three men are running on documented professional competence: a lawyer with a manifesto, a committee chairman with an institutional record, a doctor with a foundation. She is running on energy, oratory and accessibility. Against one such opponent that is a fair fight. Against three, "youthful appeal" becomes the thing that distinguishes her from every candidate who looks like a manager — which is precisely the trade the 48/28 split reflects. The correction is not to abandon the energy. It is to attach hard delivery evidence to it, which she has and does not publish.</p>
+  </div>
+</section>
+
+<!-- 8 -->
+<section id="s8">
+  <div class="sec-head"><span class="sec-num">08</span><h2>Social media audit, 2017 to present</h2></div>
+
+  <div class="scroll">
+    <table>
+      <thead><tr><th>Platform</th><th>Account</th><th class="num">Audience</th><th>State</th><th>Verdict</th></tr></thead>
+      <tbody>
+        <tr class="hl"><td class="name">Facebook</td><td>Personal profile</td><td class="num">~149.8K</td><td>Active, largest in field</td><td><strong>Primary channel</strong></td></tr>
+        <tr class="hl"><td class="name">Facebook</td><td>@Nandithesourceofchampions</td><td class="num">71K</td><td>Office page, active</td><td>Institutional record</td></tr>
+        <tr><td class="name">TikTok</td><td>@hon_cynthia_muge</td><td class="num">Not retrievable</td><td>Posting; most videos have <strong>no caption</strong></td><td>Live but unoptimised</td></tr>
+        <tr><td class="name">X</td><td>@Muge_Cynthia</td><td class="num">—</td><td>No original posts surfaced in search</td><td>Dormant</td></tr>
+        <tr><td class="name">X</td><td>@Cheptikonyool (office)</td><td class="num">—</td><td>Recent posts drawing 10–221 views</td><td>Effectively dead</td></tr>
+        <tr><td class="name">Instagram</td><td>@cynthia_muge_mp</td><td class="num">125</td><td>5 posts total</td><td>Abandoned</td></tr>
+        <tr><td class="name">Instagram</td><td>@jepmuge</td><td class="num">617</td><td>0 posts</td><td>Empty</td></tr>
+        <tr><td class="name">YouTube</td><td>None found</td><td class="num">—</td><td>All footage owned by broadcasters and fan accounts</td><td><strong>Absent</strong></td></tr>
+        <tr><td class="name">Facebook</td><td>@cynthiamugechepti</td><td class="num">44.3K</td><td>Additional page, Kapsabet</td><td>Fragmenting the audience</td></tr>
+        <tr><td class="name">Facebook</td><td>"Cynthia J Muge" public figure</td><td class="num">32K</td><td>Bio still reads <strong>"Works at Nandi County Assembly"</strong> — three years stale</td><td>Neglected</td></tr>
+        <tr><td class="name">Web</td><td>cynthiamuge.com</td><td class="num">—</td><td>Currently fronted by sports tournament registration</td><td>Misaligned</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note risk">
+    <h4>Correction — she is not undocumented</h4>
+    <p><span class="t t-v">Verified</span> An earlier version of this section concluded she had no owned media operation. A systematic read of fourteen Nandi Facebook groups on 27 August 2026 shows otherwise. <strong>At least twenty surrogate pages publish her work daily</strong>, including CYNTHIA MUGE PRESS UNIT, Cynthia Muge MEDIA, Nandi Updates, The Third Eye, Nandi Civic Voice, Nandi Civic Tàlk, Nandi Daily, Nandi Snaipper, Nandi Lioness, Back Up, Vee Jeptoo KE, George Maiyo GM, Kevoo Man Kipz, Savannahmax Media House and Lemiso Media House.</p>
+    <p><span class="t t-a">Reading</span> This changes the diagnosis entirely. <strong>The problem is not production. It is that none of it is verifiable and none of it lives anywhere she controls.</strong> The surrogates are also already making the arguments this file recommends — the 2017 independent rebuttal, the competence-over-identity frame, the reclaimed "project" slur — which means the strategic work is amplification and sourcing, not invention. It also means she cannot cleanly allege coordination against rivals: the "not because she is a WOMAN" post appears near-verbatim from two different posters, so <strong>her camp runs the same copy-paste technique Melly's does.</strong></p>
+  </div>
+
+  <div class="note watch">
+    <h4>Four official presences, one stale</h4>
+    <p><span class="t t-a">Reading</span> The 149.8K profile, the 71K office page, a 44.3K page and a 32K public-figure page are four audiences that should be one or two. The public-figure page still describes her as working at the County Assembly, a role she left in 2022. That is the kind of detail an opponent screenshots.</p>
+  </div>
+
+  <h3>The reach inversion</h3>
+  <p><span class="t t-v">Verified</span> Comparing her own TikTok output against third-party accounts posting the same subject.</p>
+
+  <div class="scroll">
+    <table>
+      <thead><tr><th>Posted by</th><th>Content</th><th class="num">Plays</th><th class="num">Likes</th><th>Caption</th></tr></thead>
+      <tbody>
+        <tr><td class="name">@k.entertainment.digital</td><td>"Fearless Nandi Women rep"</td><td class="num">216,300</td><td class="num">11,300</td><td>Hashtagged</td></tr>
+        <tr><td class="name">@hon.dr.rachaelnyamai</td><td>Welcome to Hon. Muge</td><td class="num">215,200</td><td class="num">5,353</td><td>Hashtagged</td></tr>
+        <tr><td class="name">@aldai001</td><td>Church speech, ACK St Stephen's</td><td class="num">186,300</td><td class="num">12,000</td><td>Descriptive</td></tr>
+        <tr><td class="name">@whatstrendingkenya</td><td>The "kupeana" campaign</td><td class="num">149,800</td><td class="num">4,189</td><td>Hashtagged</td></tr>
+        <tr class="hl"><td class="name">@hon_cynthia_muge</td><td>"This is huge."</td><td class="num">80,500</td><td class="num">5,178</td><td>Two words</td></tr>
+        <tr class="hl"><td class="name">@hon_cynthia_muge</td><td>Japanese partners, Kapsabet health</td><td class="num">48,000</td><td class="num">1,499</td><td>Descriptive</td></tr>
+        <tr class="hl"><td class="name">@hon_cynthia_muge</td><td>Untitled</td><td class="num">34,600</td><td class="num">1,714</td><td><strong>None</strong></td></tr>
+        <tr class="hl"><td class="name">@hon_cynthia_muge</td><td>Untitled</td><td class="num">12,400</td><td class="num">1,167</td><td><strong>None</strong></td></tr>
+        <tr class="hl"><td class="name">@hon_cynthia_muge</td><td>Untitled</td><td class="num">8,724</td><td class="num">461</td><td><strong>None</strong></td></tr>
+        <tr class="hl"><td class="name">@hon_cynthia_muge</td><td>Untitled</td><td class="num">802</td><td class="num">86</td><td><strong>None</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <div class="chart">
+    <div class="ct">Plays on TikTok clips of her speaking</div>
+    <div class="reach">
+      <div class="r"><span class="w">k.entertainment.digital</span><span class="t"><span class="f" style="width:100%"></span></span><span class="v">216,300</span></div>
+      <div class="r"><span class="w">hon.dr.rachaelnyamai</span><span class="t"><span class="f" style="width:99%"></span></span><span class="v">215,200</span></div>
+      <div class="r"><span class="w">aldai001</span><span class="t"><span class="f" style="width:86%"></span></span><span class="v">186,300</span></div>
+      <div class="r"><span class="w">whatstrendingkenya</span><span class="t"><span class="f" style="width:69%"></span></span><span class="v">149,800</span></div>
+      <div class="r own"><span class="w">Her account, captioned</span><span class="t"><span class="f" style="width:37%"></span></span><span class="v">80,500</span></div>
+      <div class="r own"><span class="w">Her account, no caption</span><span class="t"><span class="f" style="width:16%"></span></span><span class="v">34,600</span></div>
+      <div class="r own"><span class="w">Her account, no caption</span><span class="t"><span class="f" style="width:0.4%"></span></span><span class="v">802</span></div>
+    </div>
+    <p class="cn">The top four are other people's uploads of her own footage. Her two best posts are the two carrying text; every sub-15,000 post has no caption at all.</p>
+  </div>
+
+  <p><span class="t t-a">Reading</span> Her two best-performing posts are the two that carry text. Every sub-15,000-play post has no caption at all. This is the cheapest fix in the entire file: the audience for her material demonstrably exists at 200,000-plus, other people are harvesting it, and the difference between her posts and theirs is a written line and a set of hashtags. That is a workflow change, not a strategy.</p>
+
+  <h3>Recurring themes across her content</h3>
+  <ul>
+    <li><strong>Consistent since 2017:</strong> women's economic empowerment, youth and sports, education visits and graduations, coffee, church and community gatherings, tree planting and environment.</li>
+    <li><strong>Visual identity:</strong> <span class="t t-a">Reading</span> There isn't one. Her website carries a "Keeping The Promise" lockup, the older X account used <span class="mono">#Cheptikonyool</span> and <span class="mono">#KeepingThePromise</span>, and TikTok carries nothing. Three channels, three identities, no through-line. Nobody could identify one of her posts by sight.</li>
+    <li><strong>What performs:</strong> unscripted speech, in Nandi, in front of a live crowd, ideally with a moment of confrontation in it.</li>
+    <li><strong>What under-performs:</strong> silent event footage with no framing.</li>
+    <li><strong>What is missing entirely:</strong> farmers speaking, beneficiaries speaking, before-and-after evidence, any long-form explanation of a policy position, any data.</li>
+  </ul>
+</section>
+
+<!-- 9 -->
+<section id="s9">
+  <div class="sec-head"><span class="sec-num">09</span><h2>Public narrative analysis</h2></div>
+
+  <h3>The four frames in circulation</h3>
+
+  <h4>1 · The generational-change frame — hers</h4>
+  <p><span class="t t-r">Reported</span> Coverage consistently describes powerful oratory in Nandi and national languages, large public events, sports gatherings drawing young crowds, and accessibility. Analysts quoted as saying she "has the potential to become the first elected female governor in Nandi County". <span class="t t-s">Sentiment</span> Supporters address her as "our incoming Governor"; a Kapsabet business community group in Sydney publicly endorsed her; the hashtag <span class="mono">#cynthiamugeforgovernor</span> is in circulation; one X user speculated about a 2032 presidential run.</p>
+
+  <h4>2 · The "political project" frame — the most dangerous</h4>
+  <p><span class="t t-r">Reported</span> Northrift News framing, June 2026: she "struggles to shake off the 'political project' tag" as the poll widened Kosgey's lead. <span class="t t-a">Reading</span> This is the highest-leverage attack against her because it converts every strength into evidence of sponsorship. Youth becomes inexperience. Rapid rise becomes patronage. National-figure appearances become proof of handling. It is also the frame that Lagat's anti-imposition campaign feeds directly. Her 2017 independent run is the factual rebuttal and it is currently unarmed.</p>
+
+  <h4>3 · The competence frame</h4>
+  <p><span class="t t-s">Sentiment</span> "She is still young and inexperienced to vie for governor position... advise her to go for the same seat, women representative." <span class="t t-s">Sentiment</span> A March 2024 post with 343 likes and 97,658 views attacked her medical-interns remarks and pointed at Nandi's level 5 hospital ranking. <span class="t t-r">Reported</span> Governor Sang's "scorecard and track record" framing operates in the same register.</p>
+
+  <h4>4 · The cultural-disrespect frame — currently live</h4>
+  <p><span class="t t-r">Reported</span> August 2026. Remarks attributed to her using "oripoo" toward Nandi men produced a Nandi Hills women's rejection statement circulating across at least four Facebook pages and a TikTok video at 27,900+ views, plus a rebuke from former MP Cornelly Serem. <span class="t t-s">Sentiment</span> On X: "you have started spoiling your Campaign, your choice of words against a Patriarchal society is actually very wanting."</p>
+
+  <h4>5 · The "maneno mingi" frame — sharper than the project tag</h4>
+  <p><span class="t t-s">Sentiment</span> Found repeatedly in the 204-comment preference thread: <em>"Mtu wa maneno mingi kama Sang Tawe.. Mwenye microphone"</em> — a person of many words like Sang, the one with the microphone. And <em>"Toa huyo wa tournament na maneno mengi?"</em> — remove that one with the tournament and many words.</p>
+  <p><span class="t t-a">Reading</span> This is more dangerous than the project tag and it is not in the earlier version of this file. It attacks her <strong>two most visible activities</strong> — the oratory and the sports tournaments — and equates her with the incumbent voters are tired of. Where "political project" attacks her origins, this attacks her strengths, which is harder to answer. It also cuts directly against the tournament registration currently fronting her website.</p>
+
+  <h4>6 · The greed frame — detailed, and largely false</h4>
+  <p><span class="t t-s">Sentiment</span> A post circulating under the name NANDI GEN Z asks why she would "abandon a very wealthy women rep seat… motivated by her greed (TAMAA)", and lists figures: KSh 700,000 per month as an MCA, then KSh 740,000 salary, KSh 400,000 car maintenance and KSh 354,000 mileage as Woman Rep.</p>
+  <p><span class="t t-a">Reading</span> The MCA figure is almost certainly false — Kenyan MCAs earn roughly KSh 144,000 gross — and the rest look inflated or garbled. But it is specific, numerate and authoritative-looking, which is exactly what makes it travel. <strong>A sourced graphic using SRC gazetted pay scales would end it</strong>, and nothing else will.</p>
+
+  <h4>7 · The comparative frame</h4>
+  <p><span class="t t-s">Sentiment</span> Posted verbatim by at least two accounts: <em>"While Nandi County Woman Representative Cynthia Muge is busy campaigning for the gubernatorial seat, Kericho County Woman Representative Hon. Beatrice Kemei continues empowering her constituents through development programmes."</em> A related post contrasts Bomet's NGAAF spending with Nandi's, framed as <em>"hapa nandi tuendelee kuvalia jersey"</em> — here in Nandi we keep wearing jerseys.</p>
+  <p><span class="t t-a">Reading</span> Campaigning instead of working, evidenced against a neighbouring county. It pairs with the Kibitok sports critique, and together they make <strong>the tournament spending a genuine vulnerability even though the 30-ward network is a real organisational asset.</strong> Both are true at once, and the campaign needs an answer that concedes neither.</p>
+
+  <div class="note risk">
+    <h4>The pattern underneath all seven</h4>
+    <p><span class="t t-a">Reading</span> Every one of her documented reputational incidents — the medical interns, "kupeana", the Gachagua exchange, "oripoo" — comes from unscripted speaking. That is not a coincidence and it is not fixable by telling her to be careful, because the same trait is what produces 216,000-play clips and the crowd reactions that make her formidable. The workable response is coverage, not restraint: if her own team films and publishes her full remarks, the clip that travels is hers with context rather than someone else's thirty-second excerpt. She currently owns almost none of her own footage, which means every controversy is litigated using material edited by other people.</p>
+  </div>
+</section>
+
+<!-- 10 -->
+<section id="s10">
+  <div class="sec-head"><span class="sec-num">10</span><h2>The coffee story</h2></div>
+
+  <p class="lede">This is the strongest and most under-exploited thing in the entire file. It is the only asset she holds that no competitor can copy, contest, or claim a version of.</p>
+
+  <p><span class="t t-v">Verified</span> Her account of the origin: the project came from what she saw on her campaign tours — women doing the farm labour while excluded from the income from cash crops. "Most women do the hard labour on farms but have no control over the income. Kahawa na Mama changes that by giving them direct ownership of coffee trees, access to training, and connections to markets."</p>
+
+  <h3>Why it is genuinely distinctive</h3>
+  <ol>
+    <li><strong>It is an ownership intervention, not a handout.</strong> <span class="t t-v">Verified</span> The programme includes a charter mandating joint registration of coffee bushes between spouses. <span class="t t-a">Reading</span> That is a property-rights reform delivered through agricultural extension. It is a structurally more serious idea than anything else on offer in this race, and almost nobody knows it exists.</li>
+    <li><strong>Coffee is a counter-cyclical choice in a tea county.</strong> <span class="t t-a">Reading</span> Reviving a crop Nandi had largely abandoned is a more interesting story than competing for dairy, and it gave her a lane nobody else was standing in.</li>
+    <li><strong>The unit of impact is a tree, and a tree is filmable.</strong> <span class="t t-a">Reading</span> Seedlings planted in 2023 are bearing by 2026. There is a three-year before-and-after available on camera right now that will never be available again.</li>
+    <li><strong>It is the answer to "zero bills".</strong> <span class="t t-a">Reading</span> A candidate who moved 650,000 trees into women's hands has a delivery record. It just isn't written down anywhere a voter can check.</li>
+  </ol>
+
+  <p><span class="t t-v">Verified</span> Recognition: the government's own communication channel described it as "a promising model for national replication" as Kenya explores coffee sector reforms and gender gaps in agriculture.</p>
+
+  <div class="note risk">
+    <h4>What is missing</h4>
+    <p><span class="t t-a">Reading</span> Everything that would make it count. No yield data. No income data. No survival rate for the seedlings. No named farmer followed across three years. No film. No cooperative revenue figures. No independent evaluation. The programme is documented in press releases about distribution — inputs — and not at all in outcomes. Every number publicly attached to Kahawa na Mama counts things she gave out, and none counts what happened next. That is the difference between a giveaway and a record, and it is the single largest recoverable asset identified in this research.</p>
+  </div>
+</section>
+
+<!-- 11 -->
+<section id="s11">
+  <div class="sec-head"><span class="sec-num">11</span><h2>Kahawa na Mama, in detail</h2></div>
+
+  <div class="stats">
+    <div class="stat on"><div class="v">650K+</div><div class="l">Seedlings distributed</div></div>
+    <div class="stat on"><div class="v">~4,000</div><div class="l">Women reached</div></div>
+    <div class="stat on"><div class="v">63</div><div class="l">Self-help groups, pilot</div></div>
+    <div class="stat on"><div class="v">6 / 6</div><div class="l">Sub-counties covered</div></div>
+  </div>
+
+  <div class="scroll">
+    <table>
+      <thead><tr><th>Phase</th><th>Period</th><th class="num">Seedlings</th><th class="num">Women</th><th>Detail</th></tr></thead>
+      <tbody>
+        <tr><td class="name">Pilot</td><td>2023/24</td><td class="num">150,000+</td><td class="num">900</td><td>63 self-help groups; certified Ruiru 11 and Batian</td></tr>
+        <tr><td class="name">Phase 2</td><td>Launched Jun 2025, Maraba Primary, Aldai</td><td class="num">500,000</td><td class="num">~3,100 more</td><td>Cumulative 650,000+ and ~4,000 women</td></tr>
+        <tr><td class="name">Phase 3</td><td>Ongoing, 2026</td><td class="num">Toward 1M</td><td class="num">Not published</td><td><span class="t t-r">Reported</span> "One Million Coffee Seedlings Distribution" documented only on a supporter's TikTok</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <div class="chart">
+    <div class="ct">Kahawa na Mama, cumulative distribution</div>
+    <div class="phase">
+      <div class="p"><div class="pn">Pilot &middot; 2023&ndash;24</div><div class="pv">150,000</div>
+        <div class="pd">900 women, 63 self-help groups</div><div class="cum"><i style="width:10%"></i></div></div>
+      <div class="p"><div class="pn">Phase II &middot; from Jun 2025</div><div class="pv">650,000</div>
+        <div class="pd">cumulative; ~4,000 women, all six sub-counties</div><div class="cum"><i style="width:43%"></i></div></div>
+      <div class="p on"><div class="pn">Phase III &middot; 2026</div><div class="pv">1.5m</div>
+        <div class="pd">stated target; 15,000 households at 100 trees each</div><div class="cum"><i style="width:100%"></i></div></div>
+    </div>
+    <p class="cn">Every figure here counts <b>trees handed over</b>. None counts trees alive, cherry sold, or shillings received. The Phase III target and the 90 per cent survival rate attached to it both come from a supporter's model rather than a measurement.</p>
+  </div>
+
+  <p><span class="t t-v">Verified</span> Coverage: all six sub-counties — Nandi Hills, Aldai, Mosop, Chesumei, Emgwen, Tinderet. Nandi Hills leads with over 1,000 women trained and supplied. Delivery partners: the National Government Affirmative Action Fund, the Agriculture and Food Authority, the Nandi County Government, and Baraka Agricultural College. Her own description of the method: "We didn't just give out seedlings. We built nurseries, trained farmers, and involved cooperatives and agronomists to ensure sustainability."</p>
+
+  <div class="note">
+    <h4>What this reveals about her leadership style</h4>
+    <p><span class="t t-a">Reading</span> Four things, all of them useful and none of them currently argued. She diagnoses from listening rather than from a manifesto — the programme came out of campaign conversations. She works through institutions rather than around them, partnering with four bodies including the county government she now wants to run. She attacks a structural cause, control of income, rather than a symptom. And she built durable delivery infrastructure — nurseries, training, agronomists, cooperatives. That is a governing temperament, and it is exactly what the "youthful appeal" framing obscures.</p>
+    <p><span class="t t-a">Reading</span> Note also the political geography: Nandi Hills has the most beneficiaries, and Nandi Hills is where the August 2026 rejection statement originated. Roughly a thousand women there have a direct material relationship with her office. If that network is real, it is her most concrete organising asset and the fastest route to reversing that story. If it is not real, that is the most important thing this file could not determine.</p>
+  </div>
+
+  <div class="note risk">
+    <h4>A 90 per cent survival rate is circulating as if it were measured</h4>
+    <p><span class="t t-s">Sentiment</span> A supporter has published a full economic model: by the end of Phase III, <em>"a total of 1.5 million seedlings… At 100 seedlings per farmer, that translates to 15,000 households… With a 90% survival rate and an average yield of 4kg per productive tree… about 5,400 tonnes… at an illustrative KSh100 per kilo, that is about KSh540 million in annual coffee value."</em></p>
+    <p><span class="t t-a">Reading</span> To the author's credit the price is flagged as illustrative. <strong>The 90 per cent is not.</strong> It is an assumption inside a supporter's spreadsheet and it is the most dangerous number in circulation, because it will be repeated as fact and then demolished by the first person who walks a plot and counts dead trees. Measuring the real rate is now urgent rather than merely good practice.</p>
+  </div>
+
+  <div class="note watch">
+    <h4>Two things that change the programme's strategic value</h4>
+    <p><span class="t t-r">Reported</span> <strong>Competitors have started copying it.</strong> Hon. CPA Paul K. Birech distributed 5,000 certified coffee seedlings in Tindiret Ward — <em>"Coffee is the Black Gold of Tindiret… restoring its glory, one seedling at a time"</em> — and MCA John Bittok-Laltim has begun touring coffee cooperatives. <span class="t t-a">Reading</span> By 2027 "I gave out seedlings" will not distinguish her from anyone. <strong>What remains uniquely hers is the spousal joint-registration charter</strong>, and that should now carry the weight the seedling numbers used to.</p>
+    <p><span class="t t-a">Reading</span> <strong>And the market question is unanswered.</strong> Kibitok's challenge — seedlings without a factory or a buyer produce worthless mature trees — is the strongest criticism found in this research and nothing in the record addresses it. Establishing whether Nandi has processing and absorptive capacity for 1.5 million trees is now the largest open question attached to her signature programme.</p>
+  </div>
+</section>
+
+<!-- 12 -->
+<section id="s12">
+  <div class="sec-head"><span class="sec-num">12</span><h2>Gender, age and cultural narratives</h2></div>
+
+  <p class="lede">Rewritten 27 August 2026 after a systematic read of fourteen Nandi Facebook groups and a native-speaker translation of the Kalenjin comments found there. The previous version of this section was built on a premise the evidence does not support.</p>
+
+  <div class="note risk">
+    <h4>Correction to the earlier finding</h4>
+    <p>This section previously treated <strong>circumcision status</strong> as the likely vector of the cultural attack, on the reasoning that such discourse lives in login-walled spaces this research could not reach. Those spaces have now been read. Across fourteen groups, hundreds of posts and 204 comments on a single preference thread, <strong>circumcision does not appear once.</strong> A different and far more specific attack does.</p>
+  </div>
+
+  <h3>The cultural attack is about sinendet</h3>
+  <p><span class="t t-v">Verified</span> <em>Sinendet</em> is a ceremonial plant worn on formal occasions in Nandi culture. The live attack, found verbatim in a preference thread and translated by a Nandi speaker, is that Cynthia wore it and that women do not:</p>
+
+  <blockquote class="quote">
+    <p>"Mitei lelwek jeingin kole Cynthia kikokere ngo chepyoso neilakjin sinendet suet how"</p>
+    <p class="tr">— "There are people from Lelwak who know Cynthia. Who has ever seen a woman wearing <em>sinendet</em> at the waist?"</p>
+  </blockquote>
+
+  <p><span class="t t-a">Reading</span> This is a charge of violating ceremonial protocol by adopting a marker critics say is not hers to wear. It is materially better ground than circumcision for three reasons. It is <strong>factual and therefore checkable</strong> — either she wore it and there is a defensible reason, or the claim is wrong. It is <strong>not a slur</strong>, so it can be argued with rather than only condemned. And it is visibly <strong>tired</strong>: the reply in that same thread, from the thread's own author, was <em>"kalya sinendet kogeny"</em> — "What is this about <em>sinendet</em> again?"</p>
+
+  <div class="note watch">
+    <h4>Two questions that close this</h4>
+    <p>Did she wear <em>sinendet</em>, when, and is there a photograph? And do women wear it in any context — blessings, church, ceremony? A single documented counter-example from an elder ends the argument permanently. Until then it recurs every cycle.</p>
+  </div>
+
+  <h3>"Oripoo" decoded</h3>
+  <p><span class="t t-v">Verified</span> Translation obtained 27 August 2026: <em>oripoo</em> means <strong>calm down, or bow down in a show of respect</strong>. It is a deference gesture, not an obscenity. A comment found in ordinary political argument — "maa achek chelejiin karushek ORIPOO" — translates as "it is not us who tell people to bow down," indicating the practice of demanding deference is itself contested locally.</p>
+
+  <p><span class="t t-a">Reading</span> The August backlash therefore rests on a <strong>status inversion</strong>, not on vulgarity: the charge is that she told Nandi men to defer. That makes context decisive. If she said it to a rowdy crowd meaning "settle down," the entire controversy is a deliberate misreading of a crowd-control phrase. If she said it as a general instruction to men, it is a real problem. <strong>Locating the original clip is the single highest-value factual task in this file.</strong></p>
+
+  <h3>Age and gender, stated plainly</h3>
+  <p><span class="t t-v">Verified</span> Both attacks appear in translated Kalenjin comments, uncoded. <em>Chepyoso</em> simply means "women" — it is not a slur.</p>
+  <ul>
+    <li>"Moberberi lakwanaa tomo koyam kondoiwech chepyoso" — <em>"That <strong>child</strong> — let us not deceive each other, the time has not yet come for her to lead us."</em> Age and gender fused in one sentence.</li>
+    <li>"Kwera ngondouun chepyoso" — <em>"Am I to be led by <strong>women</strong>?"</em></li>
+  </ul>
+  <p><span class="t t-a">Reading</span> These are objections rather than abuse, which is strategically useful: an objection invites an answer, where abuse only invites condemnation.</p>
+
+  <div class="note">
+    <h4>Second correction — "Cheptilda"</h4>
+    <p>An earlier read of this harvest treated <em>Cheptilda</em> as a mocking distortion of her nickname. It is not. It is simply a nickname, used on both sides: "Konu Cheptilda ak kawek" translates as <em>"She gives us coffee"</em> — a supporter referencing Kahawa na Mama — while "Meite cheptilda ing'ung inyee" is hostile. Roughly half the instances are friendly.</p>
+  </div>
+
+  <h3>The elders are the real institutional battleground</h3>
+  <p><span class="t t-r">Reported</span> The <strong>Talai Council of Elders</strong> has publicly blessed Allan Kosgey's candidacy, announced from Kapsisiywo after what the elders described as wide consultation. Separately, Cynthia Muge attended and publicised the installation of Mzee Augustine Kisorio as National Chairman of the <strong>Nandi Kaburwo Council of Elders</strong> at Baraton.</p>
+  <p><span class="t t-a">Reading</span> This is where cultural legitimacy is actually conferred, and both camps know it. She is contesting the same ground through a different council, which is a considered move rather than an accident. <strong>The relative standing of Talai versus Kaburwo is not established in this research and needs answering</strong> — an endorsement from one may be worth substantially more than the other, and there is currently no basis to judge.</p>
+
+  <h3>The structural dynamic</h3>
+  <p><span class="t t-a">Reading</span> Three attacks — too young, a woman overreaching, ceremonially improper — are not three problems. They are one argument: <em>she does not have standing.</em> Note the delivery mechanism in August 2026: the rejection was voiced by <em>women</em>, and the rebuke by a former male MP. Attacks on a woman candidate's legitimacy are most effective when other women carry them, because it removes the sexism defence. Any response that treats this as men attacking a woman will misfire.</p>
+
+  <p><span class="t t-r">Reported</span> There is also evidence the August rejection was organised rather than spontaneous. Her camp's own counter-post states the women's response was assembled "to counter <strong>a single woman</strong> who made a statement that undermines the ability of the girl child." A separate post from a youth advocate alleges women were given "a different script to insult Cynthia J Muge, but they refused that part." Both are claims from her side and neither is independently verified — but they are consistent with the engagement data, which shows the rejection post carrying 35 shares against 3 reactions, and only three <em>oripoo</em> results in the entire 50,000-member Nandi Hills group.</p>
+
+  <p><span class="t t-v">Verified</span> The wider comparative picture is favourable, and worth using. Kenya has had no elected female governor in Nandi and few nationally, but the 2027 cycle has an unusually deep field of Rift Valley women in county-top contests — Susan Nakhumicha, Chepkirui Kones, Tabitha Karanja, Gladwell Cheruiyot, Cate Waruguru and others. She is part of a documented wave, not an isolated anomaly, and that is a stronger frame than lone-pioneer.</p>
+
+  <h3>Recommended posture</h3>
+  <p><span class="t t-a">Reading</span> The translation changes the recommendation. The previous advice was pure de-escalation, on the assumption the attack was an unanswerable identity claim. It is not — it is two checkable factual claims and one open objection. That admits a narrow, evidence-led response where none was available before.</p>
+  <ol>
+    <li><strong>Settle the two factual questions privately, then decide.</strong> Get the <em>oripoo</em> clip and the <em>sinendet</em> facts in hand before choosing any public posture. Both may be exculpatory. Responding before knowing is the only way to lose ground that is currently neutral.</li>
+    <li><strong>Still do not argue "is she Nandi enough" on its own terms.</strong> <span class="t t-a">Reading</span> The narrow factual points are answerable; the broad legitimacy frame is not. Answer the specific claim, never the general insinuation, and never at length.</li>
+    <li><strong>Answer standing with evidence, not assertion.</strong> The response is 650,000 trees, 449 scholarships, a football tournament in all 30 wards, and a decade of elected office starting at 24. Facts move the frame; indignation confirms it.</li>
+    <li><strong>Let Nandi women carry her record.</strong> <span class="t t-a">Reading</span> If the attack is delivered by women, the answer has to be too — and this is already happening organically. One post in Nandi Hills reads: <em>"We gave birth to sons and daughters. We did not love them differently. We did not feed them differently. Why should we seat them differently at the decision-making table?"</em> That was written by a supporter, unprompted. It is better than anything a strategist would draft, and it needs amplification, not replacement.</li>
+    <li><strong>Work the Kaburwo relationship deliberately.</strong> <span class="t t-a">Reading</span> Kosgey has Talai. Cultural legitimacy in Nandi is conferred by elders, and she has already begun building that relationship. It should be a documented, sustained programme rather than one attended installation.</li>
+    <li><strong>Own the footage so the excerpt is yours.</strong> Covered in section 15 — it is the structural fix for a recurring problem, and the <em>oripoo</em> row is the clearest possible demonstration of why it matters: a phrase meaning "calm down" became a scandal because no one holds the full clip.</li>
+  </ol>
+</section>
+
+<!-- 13 -->
+<section id="s13">
+  <div class="sec-head"><span class="sec-num">13</span><h2>Digital platform assessment</h2></div>
+
+  <p><span class="t t-v">Verified</span> Kenyan context, 2026. Facebook: roughly 23.1–23.5 million users, about 38 per cent of population, ranked first in the Communications Authority's media survey. TikTok: 18.4 million adult advertising reach per TikTok's own tools in late 2025; 29.3 per cent usage in the CA's Q1 2026 audience data, ahead of YouTube at 26.6 per cent. WhatsApp: named favourite platform by 33.7 per cent of respondents with 79.3 per cent self-declared use.</p>
+
+  <div class="scroll">
+    <table>
+      <thead><tr><th>Platform</th><th>Role for this campaign</th><th>Investment</th></tr></thead>
+      <tbody>
+        <tr class="hl"><td class="name">Facebook</td><td>The primary channel. Largest Kenyan platform, her largest audience, and where Nandi's political argument visibly happens — every controversy in this file surfaced in Facebook groups and pages first</td><td><strong>Heaviest</strong></td></tr>
+        <tr class="hl"><td class="name">TikTok</td><td>The persuasion channel and the reach engine. Already proven at 200,000+ plays on her material</td><td><strong>Heavy</strong></td></tr>
+        <tr><td class="name">WhatsApp</td><td>The organising channel. Where 4,000 coffee beneficiaries and ward networks actually coordinate. Invisible to research and decisive in delivery</td><td>High, operational</td></tr>
+        <tr><td class="name">YouTube</td><td>The archive. Full speeches, long-form documentary, the searchable record. Third in national usage and currently at zero</td><td>Medium, foundational</td></tr>
+        <tr><td class="name">Website</td><td>The evidence base. Where a journalist or undecided voter goes to check a claim</td><td>Medium</td></tr>
+        <tr><td class="name">X</td><td>National press and elite conversation only. Not a Nandi voter channel</td><td><strong>Minimal</strong></td></tr>
+        <tr><td class="name">Instagram</td><td>Nothing this campaign needs that Facebook and TikTok do not already deliver</td><td><strong>None</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>On the TikTok hesitation</h3>
+  <p><span class="t t-a">Reading</span> The hesitation is understandable and the decision has already been made for her by events. Her material is on TikTok at scale whether she participates or not — 216,000 plays, 215,200, 186,300, 149,800 on other people's uploads of her speaking. The choice was never whether she appears on TikTok. It is whether the version that travels is edited by her team or by @k.entertainment.digital.</p>
+  <p><span class="t t-a">Reading</span> The reputational risk she is worried about is real, but it runs the opposite way to how it feels. Every controversy in section 9 spread through third-party clips of her speaking. An owned, active account with full-context uploads is the mitigation, not the exposure. On operating it: she should not. Her role is to speak, which she does exceptionally well. A production team should handle capture, edit, caption and publish — which is where captioned posts at 80,500 plays and uncaptioned ones at 802 plays come from.</p>
+
+  <h3>On X</h3>
+  <p><span class="t t-a">Reading</span> Do not revive it as a personal channel. Her office account draws double-digit views on recent posts; rebuilding that is weeks of work for an audience that does not vote in Nandi. Keep one account alive as a press-facing wire — statements, clarifications, and a place for journalists to find quotable text — and route everything else to Facebook and TikTok. The one X asset worth having is a rapid, authoritative statement channel for exactly the moment a controversy breaks, which is a low-cost use of a dormant account rather than a revival.</p>
+
+  <h3>On the website</h3>
+  <p><span class="t t-v">Verified</span> cynthiamuge.com currently opens on volleyball and football tournament registration, brands itself "Nandi Portal", and its empowerment page carries round unsourced figures — 10+ programs, 100,000+ lives impacted, 300+ communities, 5+ years active — with a broken projects link and one paragraph on Kahawa na Mama behind a "Download Details" button.</p>
+  <p><span class="t t-a">Reading</span> The sports registration is genuinely good work and shouldn't be removed; it is a functioning tool that serves a real constituency, and it should sit at a sub-path. The unsourced round numbers should go. "100,000+ lives impacted" is worth less than "650,000 seedlings to 4,000 women across six sub-counties, with these partners" precisely because the second can be checked. In a race where her core vulnerability is that she is a project rather than a performer, unverifiable numbers on her own site actively hurt her.</p>
+</section>
+
+<!-- 14 -->
+<section id="s14">
+  <div class="sec-head"><span class="sec-num">14</span><h2>SWOT</h2></div>
+
+  <div class="quad">
+    <div class="card s">
+      <h4>Strengths</h4>
+      <ul>
+        <li>Oratory in Nandi and national languages — the demonstrated driver of every viral clip</li>
+        <li>Kahawa na Mama: quantified, countywide, structurally serious, uncontested</li>
+        <li>Largest social audience in the field, ~149.8K plus 71K</li>
+        <li>Proven twice at beating expectations, including as an independent</li>
+        <li>Planning degree and project-management master's — directly relevant to the office</li>
+        <li>Direct engagement ability; crowds respond in the room</li>
+        <li>Deep women's network across all six sub-counties</li>
+        <li><strong>BOSO Supercup: teams, organisers and fields in all 30 wards</strong> — a ground machine misread as a sports programme</li>
+        <li>Elimu Ni Mwangaza: 449 scholarships, 206 KCSE candidates, a second delivery record</li>
+        <li>Twenty-plus surrogate pages already publishing her work daily</li>
+        <li>Council of elders relationship begun through Nandi Kaburwo</li>
+      </ul>
+    </div>
+    <div class="card w">
+      <h4>Weaknesses</h4>
+      <ul>
+        <li>Zero bills, one question, zero petitions — checkable and coming</li>
+        <li>No outcome data on her signature programme</li>
+        <li>No owned video archive; opponents edit her footage</li>
+        <li>No visual identity across any channel</li>
+        <li>Two dead platforms; captionless posting on the live one</li>
+        <li>Website misaligned and carrying unsourced claims</li>
+        <li>Trailing in three of four measurements</li>
+        <li>Message is a disposition ("generational change") rather than a programme</li>
+        <li><strong>Her own numbers drift</strong> — 409 vs 449 scholarships, three different targets, two launch years, two programme names</li>
+        <li>Four fragmented Facebook presences, one with a three-year-stale bio</li>
+        <li><strong>No market for the coffee.</strong> Supply created with no established buyer or processing capacity</li>
+        <li>Coffee seedlings now being distributed by rivals — the differentiator is eroding</li>
+      </ul>
+    </div>
+    <div class="card o">
+      <h4>Opportunities</h4>
+      <ul>
+        <li>54 per cent undecided — the race is not settled</li>
+        <li>Tea unclaimed by any aspirant, and her coffee method transfers to it</li>
+        <li>Three-year coffee before-and-after is filmable right now and expires</li>
+        <li>The county's 98% absorption / 2:1 recurrent split is an unanswered evidence-based attack line</li>
+        <li>First elected female governor in Nandi, within a documented national wave</li>
+        <li>Diaspora networks already activated in Australia</li>
+        <li>Nobody in the field is doing serious documentary work</li>
+        <li><strong>The BOSO county grand finale, December 2026</strong> — a funded, 30-ward set-piece landing immediately before nominations</li>
+        <li>Her supporters have already built the right frames organically: the "our project" inversion, the women-carry-her-record answer, the 2017 rebuttal</li>
+        <li><em>"Kasomook eng kaminninget ab kee"</em> — "I have asked you humbly" — her best-performing line, and the direct answer to the arrogance attack</li>
+      </ul>
+    </div>
+    <div class="card r">
+      <h4>Risks</h4>
+      <ul>
+        <li>The "political project" tag, amplified by Lagat's anti-imposition campaign</li>
+        <li>Unscripted speech producing further cultural incidents</li>
+        <li>The Aug 2026 Nandi Hills rejection hardening into a women's-vote problem</li>
+        <li>Health record attacks — she sits on the Health Committee</li>
+        <li>Kosgey consolidating the competence vote before she reframes</li>
+        <li>Being persuaded to run on volume rather than evidence</li>
+        <li>Losing the primary, where the contest is actually decided</li>
+        <li><strong>The Kibitok audit demand</strong> — sober, specific, public, and currently unanswered</li>
+        <li><strong>Kosgey holds the Talai Council of Elders</strong> blessing</li>
+        <li>A 90% seedling survival rate circulating from a supporter's spreadsheet, waiting to be disproved</li>
+        <li>Her own camp generating false claims — "99% of county development projects" — that will not survive a debate</li>
+        <li>"Maneno mingi kama Sang": her strengths reframed as the incumbent's failings</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 15 -->
+<section id="s15">
+  <div class="sec-head"><span class="sec-num">15</span><h2>Communication gap analysis</h2></div>
+
+  <div class="gaps">
+    <div class="gap-row head"><div>Gap</div><div>Where she stands</div><div>Where the field stands</div></div>
+    <div class="gap-row"><div class="issue">Owned footage</div><div class="cell"><b>None.</b> Broadcasters and fan accounts hold the archive of her best material</div><div class="cell">Also weak, but Rop's foundation publishes its own documented beneficiaries</div></div>
+    <div class="gap-row"><div class="issue">Outcome evidence</div><div class="cell"><b>Inputs only.</b> Seedlings given, women reached. Nothing about what grew</div><div class="cell">Kosgey substitutes a detailed forward manifesto for a delivery record</div></div>
+    <div class="gap-row"><div class="issue">Policy documents</div><div class="cell">One 11-point roads plan</div><div class="cell"><b>Kosgey is publishing sector by sector</b> and manufacturing coverage from each release</div></div>
+    <div class="gap-row"><div class="issue">Visual identity</div><div class="cell"><b>None.</b> Three channels, three looks, no recognisable mark</div><div class="cell">Kosgey has a verified page and consistent "Wakili" framing; Rop has foundation branding</div></div>
+    <div class="gap-row"><div class="issue">Rapid response</div><div class="cell"><b>Absent.</b> The Aug 2026 story ran for days across four-plus pages with no located reply</div><div class="cell">Melly's committee chairmanship gives him a standing platform to respond from</div></div>
+    <div class="gap-row"><div class="issue">Searchable record</div><div class="cell">No YouTube. Website misaligned. Fact-checking her is hard</div><div class="cell">Rop's hokilfoundation.org is the field's only real institutional evidence site</div></div>
+    <div class="gap-row"><div class="issue">Beneficiary voice</div><div class="cell"><b>Zero.</b> Four thousand women in the programme, none on the record</div><div class="cell">Nobody is doing this. <b>Genuinely open ground</b></div></div>
+    <div class="gap-row"><div class="issue">Caption discipline</div><div class="cell">Most posts published with no text at all</div><div class="cell">Third parties out-reach her 3–20× using her own footage plus a caption</div></div>
+  </div>
+
+  <div class="note">
+    <h4>The one-line version</h4>
+    <p><span class="t t-a">Reading</span> She has the substance and none of the evidence infrastructure. Kosgey has the evidence infrastructure and a thinner record of delivery. He is winning 48 to 28. The gap between them is not popularity, competence or record — it is documentation, and documentation is a production problem before it is a political one. That is unusually good news, because production is fixable in months and popularity is not.</p>
+  </div>
+</section>
+
+<!-- 16 -->
+<section id="s16">
+  <div class="sec-head"><span class="sec-num">16</span><h2>Where your skills contribute</h2></div>
+
+  <p class="lede">The finding that should govern your role: this campaign does not need more content. It needs evidence, captured well and organised so it can be checked. That is a narrower and more valuable brief than "handle the socials", and it maps directly onto what you can execute alone.</p>
+
+  <h3>Highest value, and you can execute it personally</h3>
+
+  <div class="scroll">
+    <table>
+      <thead><tr><th>Deliverable</th><th>Why it moves the number</th><th>Skills used</th></tr></thead>
+      <tbody>
+        <tr class="hl"><td class="name">The Kahawa na Mama documentary</td><td>Converts her signature programme from a press release into checkable evidence. Answers "zero bills", "political project" and "no standing" in one artefact. The three-year before-and-after is available now and expires</td><td>Video, sound, story, research</td></tr>
+        <tr class="hl"><td class="name">Owned-footage pipeline</td><td>Every controversy in this file spread through someone else's edit. Filming every public appearance in full and publishing same-day is the structural fix</td><td>Video, sound, workflow</td></tr>
+        <tr class="hl"><td class="name">Caption and publishing discipline</td><td>The cheapest measurable win here. Her captioned posts do 80,500; her captionless ones do 802</td><td>Communication, content planning</td></tr>
+        <tr><td class="name">Evidence website rebuild</td><td>Replace unsourced round numbers with a verifiable programme record. Move sports registration to a sub-path and keep it</td><td>Web development, design, information architecture</td></tr>
+        <tr><td class="name">Farmer testimony library</td><td>Four thousand women, none on the record. Lets Nandi women carry her record in their own voices — the only effective answer to a women-delivered attack</td><td>Video, sound, interviewing</td></tr>
+        <tr><td class="name">One visual identity</td><td>Nothing she posts is recognisable as hers. One mark, one type system, one colour, one lower-third template</td><td>Graphic design, brand</td></tr>
+        <tr><td class="name">County finance explainers</td><td>The 98% absorption and 2:1 recurrent split is her strongest unused attack, and it is a chart</td><td>Data visualisation, research</td></tr>
+        <tr><td class="name">YouTube archive</td><td>Full speeches, searchable and permanent. Makes journalists' default source hers</td><td>Video, sound, systems</td></tr>
+        <tr><td class="name">Programme tracking system</td><td>Where seedling, ward, group and outcome data lives so claims can be verified on demand</td><td>Development, data</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>What you should not take on</h3>
+  <ul>
+    <li><strong>Polling.</strong> Requires a licensed research firm. The Darubini number should be independently tested — that is a procurement decision, not a production one.</li>
+    <li><strong>Legal and compliance.</strong> IEBC nomination requirements, campaign finance and the gazetted spending limits need counsel.</li>
+    <li><strong>Political organising.</strong> Ward coordinators, agent recruitment and primary-day coverage are a separate discipline with its own head.</li>
+    <li><strong>Campaign management.</strong> Someone must own strategy, budget and message discipline. You can be the person who makes the evidence; you should not also be the person who decides how it is spent.</li>
+    <li><strong>Crisis counsel on the cultural narratives.</strong> Section 12 is genuinely delicate and needs someone with standing in Nandi. Your contribution there is the footage and the record, not the judgement call.</li>
+  </ul>
+
+  <div class="note">
+    <h4>How to pitch this</h4>
+    <p><span class="t t-a">Reading</span> Do not offer to run her social media. Offer to build the evidence base her campaign is missing, and lead with the documentary. It is the deliverable with the shortest expiry — those 2023 trees are bearing now, and the visual proof of a three-year transformation stops being capturable once it becomes ordinary. It is also the one that demonstrates every skill you have in a single artefact, which makes it the right first project regardless of what follows.</p>
+  </div>
+</section>
+
+<!-- 17 -->
+<section id="s17">
+  <div class="sec-head"><span class="sec-num">17</span><h2>Key findings</h2></div>
+  <ol>
+    <li>She is <strong>behind, not ahead</strong>, in three of four measurements. The twenty-point Darubini gap is probably overstated; the direction is not.</li>
+    <li><strong>54 per cent are undecided.</strong> The race is winnable and the deficit is a persuasion problem, not a popularity one.</li>
+    <li><strong>Her legislative record is checkable and thin.</strong> Zero bills, one question, zero petitions. Prepare the answer before it is needed.</li>
+    <li><strong>Her delivery record is three programmes, not one.</strong> Kahawa na Mama, Elimu Ni Mwangaza (449 scholarships, 206 KCSE candidates) and the BOSO Supercup (all 30 wards, 499 teams). All documented as inputs only.</li>
+    <li><strong>The BOSO tournament is a county-wide organising network</strong> misread as a sports programme — teams, organisers and fields in all 30 wards, with a grand finale in December 2026, immediately before nominations.</li>
+    <li><strong>She is not undocumented, she is unverifiable.</strong> Twenty-plus surrogate pages publish her daily. Not one produces a checkable source.</li>
+    <li><strong>The cultural attack is <em>sinendet</em>, not circumcision</strong> — a checkable claim about ceremonial dress, and far better ground than this file previously assumed.</li>
+    <li><strong>"Oripoo" means calm down.</strong> The scandal rests on status inversion, not obscenity, and turns entirely on a clip nobody holds.</li>
+    <li><strong>Kosgey has the Talai Council of Elders.</strong> Cultural legitimacy is being conferred institutionally, and she is contesting it through Kaburwo.</li>
+    <li><strong>The "maneno mingi" frame attacks her strengths</strong> — the oratory and the tournaments — which makes it more dangerous than the project tag.</li>
+    <li><strong>The market question is unanswered.</strong> Seedlings without a factory or buyer produce worthless mature trees, and nothing in her record addresses it.</li>
+    <li><strong>Other people own her best footage</strong> and out-reach her three to twenty times using it.</li>
+    <li><strong>Captions alone are worth an order of magnitude</strong> of reach on her own account.</li>
+    <li><strong>Facebook is her ground</strong> and she leads the field on it.</li>
+    <li><strong>TikTok is already happening to her.</strong> Ownership is the mitigation, not the risk.</li>
+    <li><strong>X and Instagram are not worth reviving</strong> beyond a press-facing statement account.</li>
+    <li><strong>The "political project" tag is the fight</strong>, and her 2017 independent win is the unarmed rebuttal.</li>
+    <li><strong>Three opponents run on documented competence.</strong> "Youthful appeal" is a weak position against three managers.</li>
+    <li><strong>Tea is unclaimed</strong> and her coffee method transfers to it directly.</li>
+    <li><strong>The county's own finances are her sharpest unused weapon</strong> — 98 per cent absorption, two thirds recurrent.</li>
+    <li><strong>The cultural attacks are one argument about standing</strong>, and evidence answers them where indignation does not.</li>
+    <li><strong>The gap between her and the frontrunner is documentation</strong>, which is the most fixable kind of gap there is.</li>
+  </ol>
+</section>
+
+<!-- 18 -->
+<section id="s18">
+  <div class="sec-head"><span class="sec-num">18</span><h2>Strategic priorities</h2></div>
+
+  <ol class="pri">
+    <li><div>
+      <h3>Turn the coffee programme into evidence</h3>
+      <p>Yield, income, survival rates, cooperative revenue, named farmers followed across three years. Film it now. This is the foundation everything else stands on, and it is the only item here with a hard expiry date.</p>
+    </div></li>
+    <li><div>
+      <h3>Own every frame of her speaking</h3>
+      <p>Film every public appearance in full. Publish same-day with context. This converts her greatest strength from a recurring liability into a controlled asset, and it is the structural answer to a pattern that has now produced four separate incidents.</p>
+    </div></li>
+    <li><div>
+      <h3>Caption everything, starting today</h3>
+      <p>The measured difference between her captioned and uncaptioned posts is roughly a hundredfold at the extremes. No budget, no approval, immediate effect.</p>
+    </div></li>
+    <li><div>
+      <h3>Answer "zero bills" before it is asked</h3>
+      <p>Assemble the delivery record — programmes, partners, wards, money moved, outcomes — into one checkable document. Reframe from what she voted on to what she built.</p>
+    </div></li>
+    <li><div>
+      <h3>Disarm the "political project" tag with 2017</h3>
+      <p>An independent candidate at 24 who beat the favourite is not anyone's project. This is the most persuasive fact about her and it is currently one line in a timeline.</p>
+    </div></li>
+    <li><div>
+      <h3>Take a position on tea</h3>
+      <p>The largest crop, and nobody has claimed it. Run the Kahawa na Mama diagnostic method at tea and publish what farmers say.</p>
+    </div></li>
+    <li><div>
+      <h3>Move from disposition to programme</h3>
+      <p>"Generational change" is a feeling. Kosgey is publishing sector by sector and leading by twenty points. She needs a comparable document with better evidence behind it — which she can have, because she has actually delivered something and he has not yet.</p>
+    </div></li>
+    <li><div>
+      <h3>Rebuild the site as an evidence base</h3>
+      <p>Verifiable numbers with sources, programme pages, the video archive, full speech transcripts. Keep the sports registration; move it to a sub-path.</p>
+    </div></li>
+    <li><div>
+      <h3>Answer Kibitok before he is quoted back at her</h3>
+      <p>Publish the procurement records, the beneficiary lists by ward, and the funding split between NGAAF and national government. He has written the audit demand in public and in sober language; the only losing move is silence. And find an answer on the coffee market, because that question is correct.</p>
+    </div></li>
+    <li><div>
+      <h3>Build the December BOSO finale into the campaign calendar</h3>
+      <p>A tournament that reached 499 teams across all 30 wards culminates in December 2026, immediately before nominations. It is the largest scheduled set-piece available to her, it is already funded, and nothing currently treats it as a political asset. It also needs a livelihoods answer attached, or the "how many get a job after the final whistle" critique lands unopposed.</p>
+    </div></li>
+    <li><div>
+      <h3>Consolidate four Facebook presences into two</h3>
+      <p>149.8K, 71K, 44.3K and 32K are four audiences doing the work of one. Fix the public-figure bio that still says she works at the County Assembly, and give the surrogate network a single canonical source to cite.</p>
+    </div></li>
+    <li><div>
+      <h3>Pin every drifting number, this week</h3>
+      <p>Scholarships appear as 409 and 449; the target as 3,500, 4,000 and 120 per ward; the launch year as 2022 and 2023; the programme as "Elimu Ni Mwangaza" and "Mwangaza na Elimu". A 90 per cent survival rate is circulating from a supporter's spreadsheet. In a race where her core vulnerability is that she cannot be checked, every one of these is a loaded gun.</p>
+    </div></li>
+  </ol>
+</section>
+
+<!-- 19 -->
+<section id="s19">
+  <div class="sec-head"><span class="sec-num">19</span><h2>Recommended further research</h2></div>
+  <ol>
+    <li class="done"><strong>The cultural narrative — DONE, 27 August 2026.</strong> Fourteen Facebook groups read systematically and the Kalenjin translated. Circumcision does not appear. The attack is <em>sinendet</em>, plus explicit age and gender objections. See section 12. WhatsApp remains unread and is the one channel still closed.</li>
+    <li><strong>Her exact words in August 2026.</strong> Still the highest-value task in this list. Every source carries a characterisation, not a transcript. Now that <em>oripoo</em> is known to mean "calm down", the context may be exculpatory — but nobody can say so until the recording exists.</li>
+    <li><strong>Did she wear <em>sinendet</em>, and do women ever wear it?</strong> A photograph and one elder's counter-example would close a recurring attack permanently.</li>
+    <li><strong>Talai versus Kaburwo.</strong> Which council carries more weight, on what, and are they rivals? Kosgey holds one of them and there is currently no basis to judge what that is worth.</li>
+    <li><strong>Seedling survival rate, measured.</strong> A 90 per cent figure is already circulating as fact from a supporter's model. Count trees before anyone prints it.</li>
+    <li><strong>Coffee market and processing capacity in Nandi.</strong> The Kibitok challenge. Is there a factory, a buyer, and absorptive capacity for 1.5 million trees?</li>
+    <li><strong>Stanley Baliach.</strong> Polling fourth at 12.8 per cent with no press coverage found. Sleeper or artefact.</li>
+    <li><strong>SRC gazetted pay scales for MCAs and Woman Reps.</strong> To kill the greed attack with a sourced graphic rather than a denial.</li>
+    <li><strong>The Darubini poll's methodology.</strong> Sample size, field dates, geographic spread, sponsor. A poll shaping the entire narrative should not be accepted on a Facebook summary.</li>
+    <li><strong>Kahawa na Mama outcomes.</strong> A real survey of the ~4,000 beneficiaries. This is a research task before it is a film.</li>
+    <li><strong>Whether the beneficiary network is organisationally real.</strong> Do those 63 self-help groups still meet? This determines whether her strongest asset is a network or a mailing list.</li>
+    <li><strong>Facebook group discourse at scale.</strong> Nandi's political argument happens in login-walled groups — NANDI COUNTY FORUM, MOSOP CONSTITUENCY FORUM, ward forums. Systematic reading requires manual access.</li>
+    <li><strong>Nandi Hills specifically.</strong> Most coffee beneficiaries and the origin of the August rejection. Understand why.</li>
+    <li><strong>Ward-level 2022 data.</strong> Where her margins were strongest and where UDA's ticket, rather than her, carried the vote.</li>
+    <li><strong>Kimasas — direction corrected.</strong> This is an attack <em>she</em> makes against the Kosgey family, not one made against her. Kosgey's camp pushes back: "whenever elections are approaching, you always resort to talking about Kimasas." Establish the underlying facts before she uses it again.</li>
+    <li><strong>Felix Koskei's actual posture.</strong> Widely described as influential; his preference is undocumented and may be decisive.</li>
+    <li><strong>Competitor TikTok operations.</strong> This research surfaced Facebook comparisons; TikTok is where reach is being won.</li>
+    <li><strong>County service delivery evidence.</strong> The audit trail behind the health-performance claims, so the attack line rests on documents rather than a viral post.</li>
+  </ol>
+</section>
+
+<!-- 20 -->
+<section id="s20">
+  <div class="sec-head"><span class="sec-num">20</span><h2>Sources</h2></div>
+
+  <div class="src">
+    <h4>Official and structured records</h4>
+    <ol>
+      <li>Parliament of Kenya — <a href="https://www.parliament.go.ke/the-national-assembly/hon-muge-cynthia-jepkosgei">Hon. Muge Cynthia Jepkosgei</a>. Offices and committee roles.</li>
+      <li>Mzalendo — <a href="https://mzalendo.com/mps-performance/national-assembly/13th-parliament/muge-cynthia-jepkosgei/">member scorecard</a>. Bills, contributions, committees, questions, petitions.</li>
+      <li>Mzalendo — <a href="https://mzalendo.com/mps-performance/counties/nandi/">Nandi county page</a>. IEBC-gazetted 2022 winners, Controller of Budget FY2024/25 figures, NG-CDF allocations.</li>
+      <li>TransTally — <a href="https://transtally.co.ke/elections/2022/woman-representative/nandi">2022 Woman Representative result, Nandi</a>. Full tally, registration and turnout.</li>
+      <li>Nandi County Government — <a href="https://nandi.go.ke/wp-content/uploads/Final%20Nandi%20CADP%20FY%202026-2027.pdf">Annual Development Plan FY 2026/27</a>.</li>
+      <li>Kenya News Agency — <a href="https://www.kenyanews.go.ke/governor-sang-retains-his-seat/">Governor Sang retains his seat</a>. 2022 gubernatorial tallies.</li>
+      <li>Wikipedia — <a href="https://en.wikipedia.org/wiki/Cynthia_Muge">Cynthia Muge</a>. Biography, cited to Kulan Post, Daily Nation and Kilimo News.</li>
+    </ol>
+
+    <h4>The race</h4>
+    <ol start="8">
+      <li>The Star, 12 Feb 2026 — <a href="https://www.the-star.co.ke/counties/rift-valley/2026-02-12-woman-rep-muge-shakes-up-nandi-governor-race">Woman Rep Muge shakes up Nandi governor race</a>.</li>
+      <li>The Star, 29 May 2026 — <a href="https://www.the-star.co.ke/counties/rift-valley/2026-05-29-nandi-governors-seat-sparks-fierce-contest">Race to succeed Governor Sang</a>. Full field and analyst assessment.</li>
+      <li>The Star, 7 Aug 2026 — <a href="https://www.the-star.co.ke/counties/rift-valley/2026-08-07-farming-tops-kosgey-agenda-as-the-race-to-succeed-sang-hots-up">Farming tops Kosgey agenda</a>.</li>
+      <li>Kenya News Agency — <a href="https://www.kenyanews.go.ke/it-is-a-two-horse-race-in-nandi-gubernatorial-race/">It is a two-horse race in Nandi</a>.</li>
+      <li>Daily Nation, 11 Jun 2026 — <a href="https://nation.africa/kenya/news/gender/rift-valley-s-women-politicians-ready-to-cause-upset-in-county-top-contests-5489454">Rift Valley's women politicians ready to cause upset</a>.</li>
+      <li>Nandi News, 6 Jun 2026 — <a href="https://www.nandi.news/2026/06/cynthia-muge-courts-diaspora-voters-in.html">Cynthia Muge courts diaspora voters in Australia</a>.</li>
+      <li>Western Insight, 6 Jun 2026 — <a href="https://westerninsight.co.ke/cynthia-muge-unveils-11-point-plan-to-fix-nandis-road-network/">11-point roads plan</a>.</li>
+      <li>Northrift News, Facebook, ~Jun 2026 — Darubini Research poll: Kosgey 48, Muge 28, Melly 17. <em>Single-source; verify.</em></li>
+    </ol>
+
+    <h4>The coffee record</h4>
+    <ol start="16">
+      <li>Kenya News Agency, 15 Jun 2025 — <a href="https://www.kenyanews.go.ke/kahawa-na-mama-programme-uplifts-nandis-women-and-revives-a-lost-crop/">Kahawa na Mama uplifts Nandi's women</a>. Phase figures, sub-county spread, partners.</li>
+      <li>MyGov — <a href="https://mygov.go.ke/index.php/nandis-kahawa-na-mama-initiative-revives-coffee-sector-and-empowers-women">Nandi's Kahawa na Mama initiative</a>. The spousal joint-registration charter.</li>
+      <li>Kilimo News, 16 Jun 2025 — Nandi County MP drawing thousands of women into coffee ownership.</li>
+      <li>cynthiamuge.com — <a href="https://cynthiamuge.com/empowerment">Empowerment Programs</a> and <a href="https://cynthiamuge.com/about">Biography</a>.</li>
+    </ol>
+
+    <h4>Public discourse and platform data</h4>
+    <ol start="20">
+      <li>X / Twitter — timeline and mention analysis of @Muge_Cynthia and @Cheptikonyool; engagement-ranked sample of 60 posts referencing her, 2022–2026.</li>
+      <li>TikTok — search of her handle and name; 45+ videos with play, like, comment and share counts, own account versus third-party.</li>
+      <li>Instagram — profile data for @cynthia_muge_mp and @jepmuge.</li>
+      <li>Facebook — page follower counts for @Nandithesourceofchampions, @HonAllanKosgeyofficial, @HonJKMelly; Northrift News, Keiyo Nation and Nandi group post indexes for the August 2026 controversy. <em>Post bodies are login-walled; headline framing only.</em></li>
+      <li>DataReportal — <a href="https://datareportal.com/reports/digital-2026-kenya">Digital 2026: Kenya</a>.</li>
+      <li>NapoleonCat — <a href="https://stats.napoleoncat.com/social-media-users-in-kenya/">Social media users in Kenya, July 2026</a>.</li>
+      <li>DotSavvy — <a href="https://dotsavvyafrica.com/the-state-of-social-media-in-kenya-2026/">The State of Social Media in Kenya 2026</a>.</li>
+      <li>People Daily, 15 Oct 2025 — <a href="https://peopledaily.digital/news/nandi-woman-rep-cynthia-muge-fires-back-at-duale-after-chaotic-confrontation-with-kibagendi">Muge fires back at Duale</a>.</li>
+    </ol>
+
+    <h4>Facebook group research, 27 August 2026 <span class="t t-r">Second pass</span></h4>
+    <ol start="28">
+      <li>Fourteen Nandi County Facebook groups read from inside a logged-in member account, with full post text expanded. Groups covered: NANDI COUNTY FORUM ✍️ (151K, "NandiYouthBunge"), NANDI COUNTY FORUM (219K), NANDI HILLS CONSTITUENCY FORUM (50K), Cynthia Muge 3rd Governor (64.5K), NANDI COUNTY RENAISSANCE (29K), NANDI COUNTY (20K), Office of the Youth President Nandi (16K), NEW NANDIHILLS CONSTITUENCY PROGRESS (8.9K), NANDI COUNTY FORUM ✅ (8.7K), Nandi county forum (9.2K), NANDI COUNTY POLITICAL ARENA (4.6K), and three further NANDI COUNTY FORUM variants. LANGAS YETU excluded as Uasin Gishu.</li>
+      <li>Preference thread, "Mumesema ni nani 2027 Governor Race Nandi County" by Amon Kosgei kirwa — 204 of 239 comments extracted and tallied. Growing during capture (342/232 to 361/243 within one day).</li>
+      <li>Nandi Civic Voice opinion poll <span class="mono">#NCV/2027/GOV/002</span>, closed August 2026, 713 votes. Published by a pro-Muge page.</li>
+      <li>Mizani Africa X poll, <a href="https://x.com/Mizaniafrica/status/2092853670639468776">27 Aug 2026</a> — "Who has the strongest grassroots support across Nandi?" 321 votes, results withheld until close. Solicited by both camps.</li>
+      <li>Robert Kibitok, accountability post, NEW NANDIHILLS CONSTITUENCY PROGRESS — the procurement and market challenge quoted in sections 1 and 11.</li>
+      <li>Mtetezi Mtetezi (@TeamMtetezi001), 162.7K followers — origin of the copy-pasted Melly ordering text found across five groups.</li>
+      <li>Kalenjin translation obtained from a native speaker, 27 August 2026: <em>oripoo</em>, <em>chepyoso</em>, <em>sinendet</em>, <em>cheptilda</em>, <em>kityo</em>, <em>maloo saboon</em>, <em>legetyo ra</em> and 20 further lines. <em>Rough and partly non-literal by the translator's own description.</em></li>
+    </ol>
+
+    <h4>Cultural context</h4>
+    <ol start="28">
+      <li>Theological Studies — <a href="https://theologicalstudies.net/wp-content/uploads/2022/08/63.3.7.pdf">Christ's Salvific Message and the Nandi Ritual of Female Circumcision</a>.</li>
+      <li>Social &amp; Legal Studies — <a href="https://sage.cnpereading.com/doi/10.1177/09646639221118862">Interrogating Kenya's Prohibition of Female Genital Mutilation Act</a>.</li>
+      <li>Nakamura, K. (2023) — <a href="https://www.fgmcri.org/media/uploads/Academic%20Papers/nakamura_2023_community_response_kenya.pdf">An Ethnography of Diversity and Flexibility Around Female Circumcision</a>.</li>
+    </ol>
+  </div>
+
+  <div class="note watch">
+    <h4>Limits of this research</h4>
+    <p><strong>Revised 27 August 2026, second pass.</strong> The original version of this file was built from indexed sources only, with Facebook group discussion read through search-result framing. That limitation has since been removed: <strong>fourteen Nandi Facebook groups were read systematically from inside</strong>, including full post text and a 204-comment preference thread, and the Kalenjin comments were translated by a native speaker. Sections 1, 7, 8, 9, 11, 12, 17, 18 and 19 have been revised against that evidence, and two earlier conclusions were corrected outright — the cultural attack is <em>sinendet</em> rather than circumcision, and she has an extensive surrogate media network rather than none.</p>
+    <p>What remains closed: <strong>WhatsApp</strong>, where much Nandi organising happens, is unreachable. <strong>No transcript of the disputed August remarks was located</strong>, and it remains the single highest-value outstanding item. TikTok follower counts for her account could not be retrieved. The Darubini poll is single-sourced through a news page's Facebook summary with unknown methodology; the three other measurements in section 1 are all weak in their own ways and are presented as a direction, not a number. Where this file says "not established", it means not found in this research — not confirmed absent.</p>
+    <p><strong>On social-media evidence generally.</strong> Much of what is quoted here is unverified assertion by partisans on both sides. Claims sourced to Facebook are labelled Reported or Sentiment and should not be repeated as fact — in particular the allegations of poll rigging, scripted insults, and the salary figures, all of which are contested or demonstrably wrong.</p>
+  </div>
+</section>
+
+<div class="foot">
+  Compiled 27 August 2026 · Nandi County, Kenya<br>
+  Every substantive claim carries an evidence tag. Verified facts, reported claims, public sentiment and my own inference are kept separate throughout, and should stay separate in anything built on top of this.
+</div>
+
+</main>
+</div>
