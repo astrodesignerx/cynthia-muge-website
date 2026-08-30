@@ -102,6 +102,14 @@ export const programmes: Programme[] = [
         label: "Sub-counties with registered beneficiaries",
         source: KNA,
       },
+      {
+        status: "verified",
+        value: "2026",
+        label: "First harvest",
+        source: HER_PAGE_DELIVERY,
+        note:
+          "The pilot beneficiaries began picking cherries this year, opening what she calls forty years or more of income from the same trees.",
+      },
     ],
     phases: [
       {
@@ -139,9 +147,9 @@ export const programmes: Programme[] = [
     coverageNote:
       "Counted figures for the remaining sub-counties are being compiled from the beneficiary register.",
     distinctive: {
-      title: "The trees are registered in both spouses' names.",
+      title: "A tent lasts five years. A coffee tree pays for forty.",
       body:
-        "The programme includes a charter requiring joint registration of coffee bushes between husband and wife. A woman who does the work on the farm is named on the asset, and on the payment that follows from it.",
+        "Her own case for the programme: a 100-seater tent costs KSh 150,000 and wears out within five years, while the same sum in an acre of coffee can generate millions over decades. The programme moves affirmative action money from consumption to production. The trees are also registered in both spouses' names, so a woman who does the work on the farm is named on the asset and on the payment.",
     },
     partners: [
       { name: "NGAAF", role: "National Government Affirmative Action Fund: programme funding" },
@@ -330,11 +338,27 @@ export const programmes: Programme[] = [
     ],
     phases: [
       {
-        name: "Ward stage",
-        period: "Three months to Aug 2026",
+        name: "Sports kitting",
+        period: "2024",
+        quantity: "Gear, not fixtures",
+        beneficiaries: "Named teams",
+        detail:
+          "Playing kit and equipment handed to active teams, including Kabirer volleyball and football. The office was in sport two years before the tournament.",
+      },
+      {
+        name: "Ward stage, mid-point",
+        period: "July 2026",
+        quantity: "642 of 798 played",
+        beneficiaries: "22 of 30 wards",
+        detail: "156 matches still to play at the time of the progress report.",
+      },
+      {
+        name: "Ward stage, close",
+        period: "August 2026",
         quantity: "846 matches",
         beneficiaries: "499 teams",
-        detail: "All 30 wards, 83 playing fields, six constituencies.",
+        detail:
+          "All 30 wards, 83 playing fields, six constituencies. The final count exceeded the 798 originally scheduled.",
       },
       {
         name: "Sub-county stage",
@@ -353,9 +377,9 @@ export const programmes: Programme[] = [
     ],
     coverage: [],
     distinctive: {
-      title: "Thirty wards, in three months, for men and women.",
+      title: "A team was disqualified, and it was announced.",
       body:
-        "Thirty wards, 83 playing fields and 499 registered teams, in men's and women's competitions running to the same rules and the same prize structure.",
+        "Seroi FC was disqualified from the Chepkunyuk ward round for fielding an ineligible player. Every match it had played was nullified, the affected teams were each awarded three points, and the decision was published alongside the results. A competition that enforces its own rules in public is doing something harder than staging matches.",
     },
     partners: [],
     gaps: [
@@ -378,6 +402,7 @@ export const programmes: Programme[] = [
         publisher: "Nandi Updates",
         date: "August 2026",
       },
+      HER_PAGE_DELIVERY,
     ],
   },
 
@@ -725,12 +750,12 @@ export const pillars = [
   {
     n: "02",
     name: "Education",
-    body: "Scholarships, and the schools that hold the students already sponsored.",
+    body: "Scholarships, the schools that hold the students already sponsored, and foundational literacy at ECDE, which she calls a non-negotiable imperative.",
   },
   {
     n: "03",
     name: "Health",
-    body: "Facilities within reach of the townships that have none.",
+    body: "Facilities within reach of the townships that have none, and the equipment to make them work.",
   },
   {
     n: "04",
@@ -740,7 +765,7 @@ export const pillars = [
   {
     n: "05",
     name: "Wealth Creation",
-    body: "Coffee, dairy, tea and the enterprises run by women and young people.",
+    body: "Coffee, dairy, tea and the enterprises run by women, young people and persons with disability.",
   },
   {
     n: "06",
@@ -801,5 +826,60 @@ export const healthVote = {
     publisher: "Cynthia Muge, official Facebook page",
     date: "August 2026",
     url: "https://www.facebook.com/profile.php?id=100083334182719",
+  } as Source,
+};
+
+/**
+ * Work in the National Assembly, and positions taken on public questions.
+ * Sourced from her own posts. The site had none of this: it presented her
+ * only as someone who delivers programmes, not as a legislator.
+ */
+export const parliament = {
+  committees: [
+    "Implementation",
+    "Health",
+    "Sports, Youth and Social Welfare (County Assembly, 2017 to 2022, as chair)",
+  ],
+  items: [
+    {
+      title: "Social Health Insurance Fund tariffs",
+      year: "2024",
+      body:
+        "A review of the tariffs and benefit package at the National Assembly's Health Committee, covering primary healthcare, maternity, emergency care, critical care and chronic disease. She put the question to constituents while the legislation was still being drafted: \u201cWe ask for your views as the ministry prepares to submit the legislation to Parliament. What is your say?\u201d",
+      tag: "Committee",
+    },
+    {
+      title: "Karebe Goldmine, Kibisem",
+      year: "2024",
+      body:
+        "On the expansion of mining at Karebe, alongside the Cabinet Secretary for Mining: \u201cWhile we do not object to the expansion of the mining areas, we insist that the affected residents must be compensated adequately. Moreover, the extent of CSR activities by the company should be proportionate to the value of the company's revenue from the site.\u201d",
+      tag: "Position",
+    },
+    {
+      title: "Koitalel Samoei University and Samoei Boys High School",
+      year: "2024",
+      body:
+        "A commitment to put the legal instruments in place so the school and the university can each operate without conflict over the same site, following a public conversation in Nandi Hills town.",
+      tag: "Commitment",
+    },
+    {
+      title: "Early childhood literacy",
+      year: "2026",
+      body:
+        "After reading compositions by two grade 7 pupils: \u201cinvestment in foundational literacy at ECDE is a non-negotiable imperative.\u201d Early childhood education is a devolved county function, which places this under the Education pillar rather than her current seat.",
+      tag: "Position",
+    },
+    {
+      title: "Mashujaa Day 2026",
+      year: "2026",
+      body:
+        "Hosted leaders from Nandi, Elgeyo Marakwet and Uasin Gishu on the national celebrations to be held in Eldoret on 20 October 2026, and met the President on the same. Kipchoge Stadium in Kapsabet is among the venues due for completion by year end.",
+      tag: "Convening",
+    },
+  ],
+  source: {
+    label: "Posts by the office, National Assembly work and public engagements",
+    publisher: "Cynthia Muge, Facebook",
+    date: "2024 to 2026",
   } as Source,
 };

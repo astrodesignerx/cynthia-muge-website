@@ -66,10 +66,22 @@ export function FigureCard({ figure }: { figure: Figure }) {
 
 export function FigureGrid({ figures }: { figures: Figure[] }) {
   if (!figures.length) return null;
+  const n = figures.length;
+  // Widest column count that divides evenly, so the last row is usually full.
+  const perRow = n % 4 === 0 ? 4 : n % 3 === 0 ? 3 : n % 2 === 0 ? 2 : 3;
+  const cols =
+    perRow === 4 ? "lg:grid-cols-4" : perRow === 3 ? "lg:grid-cols-3" : "lg:grid-cols-2";
+  // Any shortfall would show the grid-line colour through, so pad it out.
+  const fill = (perRow - (n % perRow)) % perRow;
   return (
-    <div className="grid gap-px border border-[var(--color-rule)] bg-[var(--color-rule)] sm:grid-cols-2 lg:grid-cols-4">
+    <div
+      className={`grid gap-px border border-[var(--color-rule)] bg-[var(--color-rule)] sm:grid-cols-2 ${cols}`}
+    >
       {figures.map((f) => (
         <FigureCard key={f.label} figure={f} />
+      ))}
+      {Array.from({ length: fill }).map((_, i) => (
+        <div key={`fill-${i}`} aria-hidden className="hidden bg-[var(--color-paper)] lg:block" />
       ))}
     </div>
   );

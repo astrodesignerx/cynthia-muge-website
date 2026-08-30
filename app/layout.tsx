@@ -42,6 +42,7 @@ export const metadata: Metadata = {
 const nav = [
   { href: "/pillars", label: "The six pillars" },
   { href: "/record", label: "The record" },
+  { href: "/parliament", label: "In Parliament" },
   { href: "/about", label: "About" },
   { href: "/boso", label: "BOSO Supercup" },
   { href: "/media", label: "Media" },

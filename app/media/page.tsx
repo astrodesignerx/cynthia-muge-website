@@ -84,6 +84,18 @@ export default function Media() {
           </div>
         </div>
 
+        <div className="mt-14 border-t border-[var(--color-rule)] pt-10">
+          <p className="eyebrow">Broadcast</p>
+          <h3 className="display mt-4 text-[1.75rem]">
+            Cynthia Muge on healthcare, and on the 2027 bid
+          </h3>
+          <p className="mt-3 max-w-[58ch] leading-relaxed text-[var(--color-soft)]">
+            A radio interview in which she sets out the healthcare record and
+            why she is asking Nandi to support her for governor.
+          </p>
+          <p className="meta mt-3">Carried by Bethwel Melli, 2026</p>
+        </div>
+
         <div className="mt-14 rounded-sm border border-dashed border-[var(--color-rule-firm)] p-10">
           <span className="inline-block rounded-sm bg-[var(--color-amber-wash)] px-2.5 py-1 text-[0.625rem] font-bold uppercase tracking-[0.11em] text-[var(--color-amber)]">
             In production
