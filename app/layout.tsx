@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Instrument_Serif, Manrope, JetBrains_Mono } from "next/font/google";
+import { Anton, Instrument_Serif, Manrope, JetBrains_Mono } from "next/font/google";
 import Link from "next/link";
 import { MainNav } from "@/components/Nav";
 import { ScrollProgress } from "@/components/Motion";
@@ -11,6 +11,13 @@ const instrument = Instrument_Serif({
   style: ["normal", "italic"],
   subsets: ["latin"],
   variable: "--font-instrument",
+  display: "swap",
+});
+
+const anton = Anton({
+  weight: ["400"],
+  subsets: ["latin"],
+  variable: "--font-anton",
   display: "swap",
 });
 
@@ -69,7 +76,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${instrument.variable} ${manrope.variable} ${jetbrains.variable}`}
+        className={`${instrument.variable} ${anton.variable} ${manrope.variable} ${jetbrains.variable}`}
       >
         <a
           href="#main"

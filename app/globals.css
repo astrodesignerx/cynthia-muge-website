@@ -203,3 +203,10 @@ body {
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
+/* The wordmark face: heavy condensed caps, as on her printed material. */
+@utility heavy {
+  font-family: var(--font-anton), "Arial Narrow", Impact, sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+}

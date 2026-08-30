@@ -13,11 +13,11 @@ export const metadata: Metadata = {
 /** A photograph for each pillar, drawn from work already on the record. */
 const art: Record<string, { img: string; pos: string }> = {
   "Road Network": { img: "/img/boda-shade-lelmokwo.jpg", pos: "50% 55%" },
-  Education: { img: "/img/elimu-service-a.jpg", pos: "50% 35%" },
+  Education: { img: "/img/scholars-line.jpg", pos: "50% 35%" },
   Health: { img: "/img/health-scanner.jpg", pos: "50% 40%" },
   Water: { img: "/img/water-c.jpg", pos: "50% 45%" },
   "Wealth Creation": { img: "/img/coffee-spouses.jpg", pos: "50% 45%" },
-  Governance: { img: "/img/baraza-c.jpg", pos: "50% 42%" },
+  Governance: { img: "/img/baraza-forum.jpg", pos: "50% 45%" },
 };
 
 export default function Pillars() {

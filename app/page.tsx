@@ -99,7 +99,7 @@ export default function Home() {
           aria-hidden
           className="absolute -left-24 top-1/2 -z-20 hidden h-[38rem] w-[38rem] -translate-y-1/2 rounded-full bg-[var(--color-murram)]/12 blur-3xl lg:block"
         />
-        <div className="mx-auto grid max-w-7xl items-end gap-4 px-6 pt-24 sm:gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:pt-36">
+        <div className="mx-auto grid max-w-7xl items-end gap-4 px-6 pt-24 sm:gap-8 lg:grid-cols-[1fr_1fr] lg:pt-36">
           <div className="pb-10 sm:pb-16 lg:pb-32">
             <p className="label rise text-[var(--color-gold)]">
               Woman Representative, Nandi County
@@ -126,11 +126,11 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative min-h-[19rem] sm:min-h-[28rem] lg:min-h-[41rem]">
+          <div className="relative min-h-[22rem] sm:min-h-[33rem] lg:min-h-[47rem]">
             {/* The murram disc sits behind her, so the cutout reads as standing on it. */}
             <div
               aria-hidden
-              className="absolute bottom-0 left-1/2 h-[16rem] w-[16rem] -translate-x-1/2 rounded-full bg-[var(--color-murram)] sm:h-[24rem] sm:w-[24rem] lg:h-[35rem] lg:w-[35rem]"
+              className="absolute bottom-0 left-1/2 h-[19rem] w-[19rem] -translate-x-1/2 rounded-full bg-[var(--color-murram)] sm:h-[28rem] sm:w-[28rem] lg:h-[40rem] lg:w-[40rem]"
             />
             <Image
               src="/img/speaking-beaded-cutout.png"
@@ -266,7 +266,7 @@ export default function Home() {
       </section>
 
       {/* Signposts into the rest of the site */}
-      <section className="mx-auto max-w-7xl px-6 pt-4 pb-20 lg:pt-6 lg:pb-24">
+      <section className="mx-auto max-w-7xl px-6 py-20 lg:py-24">
         <p className="eyebrow">Across the county</p>
         <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {signposts.map((sp, i) => (
