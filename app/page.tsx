@@ -16,6 +16,7 @@ import {
   Stat,
   WardGrid,
 } from "@/components/Viz";
+import { Reveal } from "@/components/Motion";
 
 const cards = [
   { slug: "kahawa-na-mama", img: "/img/coffee-handover-a.jpg", pos: "50% 45%" },
@@ -98,8 +99,8 @@ export default function Home() {
           aria-hidden
           className="absolute -left-24 top-1/2 -z-20 hidden h-[38rem] w-[38rem] -translate-y-1/2 rounded-full bg-[var(--color-murram)]/12 blur-3xl lg:block"
         />
-        <div className="mx-auto grid max-w-7xl items-end gap-4 px-6 pt-20 sm:gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:pt-28">
-          <div className="pb-8 sm:pb-12 lg:pb-24">
+        <div className="mx-auto grid max-w-7xl items-end gap-4 px-6 pt-24 sm:gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:pt-36">
+          <div className="pb-10 sm:pb-16 lg:pb-32">
             <p className="label rise text-[var(--color-gold)]">
               Woman Representative, Nandi County
             </p>
@@ -125,11 +126,11 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative min-h-[17rem] sm:min-h-[24rem] lg:min-h-[34rem]">
+          <div className="relative min-h-[19rem] sm:min-h-[28rem] lg:min-h-[41rem]">
             {/* The murram disc sits behind her, so the cutout reads as standing on it. */}
             <div
               aria-hidden
-              className="absolute bottom-0 left-1/2 h-[15rem] w-[15rem] -translate-x-1/2 rounded-full bg-[var(--color-murram)] sm:h-[21rem] sm:w-[21rem] lg:h-[30rem] lg:w-[30rem]"
+              className="absolute bottom-0 left-1/2 h-[16rem] w-[16rem] -translate-x-1/2 rounded-full bg-[var(--color-murram)] sm:h-[24rem] sm:w-[24rem] lg:h-[35rem] lg:w-[35rem]"
             />
             <Image
               src="/img/speaking-beaded-cutout.png"
@@ -195,11 +196,12 @@ export default function Home() {
         </div>
 
         <ul className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {cards.map((c) => {
+          {cards.map((c, i) => {
             const p = programmes.find((x) => x.slug === c.slug);
             if (!p) return null;
             return (
               <li key={c.slug}>
+                <Reveal delay={i * 70}>
                 <Link
                   href={`/record/${p.slug}`}
                   className="group relative isolate flex min-h-[24rem] flex-col justify-end overflow-hidden rounded-sm p-7 lg:min-h-[28rem]"
@@ -226,6 +228,7 @@ export default function Home() {
                     {p.started} &ndash; {p.ended ?? "present"}
                   </p>
                 </Link>
+                </Reveal>
               </li>
             );
           })}
@@ -263,11 +266,12 @@ export default function Home() {
       </section>
 
       {/* Signposts into the rest of the site */}
-      <section className="mx-auto max-w-7xl px-6 pb-20 lg:pb-24">
+      <section className="mx-auto max-w-7xl px-6 pt-4 pb-20 lg:pt-6 lg:pb-24">
         <p className="eyebrow">Across the county</p>
         <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {signposts.map((sp) => (
+          {signposts.map((sp, i) => (
             <li key={sp.href}>
+              <Reveal delay={i * 60}>
               <Link
                 href={sp.href}
                 className="group relative isolate flex min-h-[13rem] flex-col justify-end overflow-hidden rounded-sm p-6"
@@ -289,6 +293,7 @@ export default function Home() {
                   {sp.body}
                 </p>
               </Link>
+              </Reveal>
             </li>
           ))}
         </ul>
@@ -334,14 +339,14 @@ export default function Home() {
           </Link>
         </div>
         <ol className="mt-12 grid gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
-          {pillars.map((p) => (
-            <li key={p.n} className="border-t-2 border-[var(--color-murram)] pt-5">
+          {pillars.map((p, i) => (
+            <Reveal key={p.n} as="li" delay={i * 60} className="border-t-2 border-[var(--color-murram)] pt-5">
               <span className="label text-[var(--color-murram)]">{p.n}</span>
               <h3 className="display mt-2 text-[1.875rem] leading-tight">{p.name}</h3>
               <p className="mt-2.5 text-[0.9375rem] leading-relaxed text-[var(--color-soft)]">
                 {p.body}
               </p>
-            </li>
+            </Reveal>
           ))}
         </ol>
       </section>
@@ -398,9 +403,9 @@ export default function Home() {
         />
         <div
           aria-hidden
-          className="absolute inset-0 -z-20 bg-[linear-gradient(75deg,#0C1420_0%,#0C1420F2_50%,#0C1420CC_100%)]"
+          className="absolute inset-0 -z-20 bg-[linear-gradient(75deg,#080E17_0%,#080E17F7_46%,#0C1420E6_100%)]"
         />
-        <div className="mx-auto grid max-w-7xl items-end gap-6 px-6 pt-20 lg:grid-cols-[1.1fr_0.9fr] lg:pt-24">
+        <div className="mx-auto grid max-w-7xl items-end gap-6 px-6 pt-20 lg:grid-cols-[1fr_1fr] lg:pt-24">
           <figure className="pb-14 lg:pb-24">
             <p className="label text-[var(--color-gold)]">In her words</p>
             <blockquote className="display mt-6 text-[1.75rem] leading-[1.22] text-white sm:text-[2.375rem]">
@@ -411,16 +416,12 @@ export default function Home() {
             </figcaption>
           </figure>
 
-          <div className="relative min-h-[17rem] sm:min-h-[24rem] lg:min-h-[32rem]">
-            <div
-              aria-hidden
-              className="absolute bottom-0 left-1/2 h-[15rem] w-[15rem] -translate-x-1/2 rounded-full bg-[var(--color-murram)] sm:h-[20rem] sm:w-[20rem] lg:h-[27rem] lg:w-[27rem]"
-            />
+          <div className="relative min-h-[22rem] sm:min-h-[30rem] lg:min-h-[40rem]">
             <Image
               src="/img/portrait-cutout.png"
               alt="Cynthia Muge speaking"
               fill
-              sizes="(max-width: 1024px) 100vw, 42vw"
+              sizes="(max-width: 1024px) 100vw, 48vw"
               className="object-contain object-bottom"
             />
           </div>

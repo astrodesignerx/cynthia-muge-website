@@ -13,11 +13,11 @@ export const metadata: Metadata = {
 /** A photograph for each pillar, drawn from work already on the record. */
 const art: Record<string, { img: string; pos: string }> = {
   "Road Network": { img: "/img/boda-shade-lelmokwo.jpg", pos: "50% 55%" },
-  Education: { img: "/img/compositions.jpg", pos: "50% 50%" },
+  Education: { img: "/img/elimu-service-a.jpg", pos: "50% 35%" },
   Health: { img: "/img/health-scanner.jpg", pos: "50% 40%" },
-  Water: { img: "/img/water-a.jpg", pos: "50% 45%" },
+  Water: { img: "/img/water-c.jpg", pos: "50% 45%" },
   "Wealth Creation": { img: "/img/coffee-spouses.jpg", pos: "50% 45%" },
-  Governance: { img: "/img/elders.jpg", pos: "50% 45%" },
+  Governance: { img: "/img/baraza-c.jpg", pos: "50% 42%" },
 };
 
 export default function Pillars() {
@@ -62,7 +62,7 @@ export default function Pillars() {
                 : "bg-[var(--color-paper)]"
             }
           >
-            <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 py-16 lg:grid-cols-2 lg:gap-16 lg:py-20">
+            <div className="mx-auto grid max-w-6xl items-start gap-12 px-6 py-16 lg:grid-cols-[1.15fr_1fr] lg:gap-16 lg:py-20">
               <div className={flip ? "lg:order-2" : undefined}>
                 <span className="numeral text-[3.5rem] text-[var(--color-murram)]">
                   {p.n}
@@ -70,13 +70,35 @@ export default function Pillars() {
                 <h2 className="display mt-4 text-[2.5rem] leading-tight sm:text-[3rem]">
                   {p.name}
                 </h2>
-                <p className="mt-5 max-w-[44ch] text-[1.0625rem] leading-relaxed text-[var(--color-soft)]">
+                <p className="mt-5 max-w-[46ch] text-[1.125rem] leading-relaxed text-[var(--color-ink)]">
                   {p.body}
                 </p>
+                <p className="mt-4 max-w-[52ch] leading-relaxed text-[var(--color-soft)]">
+                  {p.detail}
+                </p>
+
+                <dl className="mt-8 max-w-[52ch] border-t border-[var(--color-rule)]">
+                  <div className="grid gap-1 border-b border-[var(--color-rule)] py-4 sm:grid-cols-[9rem_1fr] sm:gap-5">
+                    <dt className="label text-[var(--color-leaf)]">
+                      Already
+                    </dt>
+                    <dd className="text-[0.9375rem] leading-relaxed text-[var(--color-soft)]">
+                      {p.already}
+                    </dd>
+                  </div>
+                  <div className="grid gap-1 border-b border-[var(--color-rule)] py-4 sm:grid-cols-[9rem_1fr] sm:gap-5">
+                    <dt className="label text-[var(--color-amber)]">
+                      Open question
+                    </dt>
+                    <dd className="text-[0.9375rem] leading-relaxed text-[var(--color-soft)]">
+                      {p.question}
+                    </dd>
+                  </div>
+                </dl>
               </div>
               {a && (
                 <figure
-                  className={`relative aspect-[4/3] overflow-hidden rounded-sm bg-[var(--color-sunk)] ${
+                  className={`relative aspect-[4/3] overflow-hidden rounded-sm bg-[var(--color-sunk)] lg:sticky lg:top-28 ${
                     flip ? "lg:order-1" : ""
                   }`}
                 >

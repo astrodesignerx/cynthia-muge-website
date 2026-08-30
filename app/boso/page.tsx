@@ -35,7 +35,9 @@ const prizes = [
 
 const strip = [
   { src: "/img/boso-action.jpg", alt: "A ward match in play", pos: "50% 45%" },
-  { src: "/img/boso-prize-b.jpg", alt: "Prize money settled at the close of a ward round", pos: "50% 40%" },
+  { src: "/img/boso-prize-b.jpg", alt: "A men's champion collecting prize money", pos: "50% 40%" },
+  { src: "/img/boso-women-prize.jpg", alt: "A women's champion collecting the same prize", pos: "50% 35%" },
+  { src: "/img/boso-prize-a.jpg", alt: "Prize money settled at the close of a ward round", pos: "50% 40%" },
   { src: "/img/boso-crowd.jpg", alt: "A crowd gathered for the ward stage", pos: "50% 45%" },
 ];
 
@@ -126,8 +128,10 @@ export default function Boso() {
         <div className="grid gap-14 lg:grid-cols-[1fr_1.2fr]">
           <div>
             <p className="eyebrow">Per ward</p>
-            <h2 className="display mt-4 max-w-[14ch] text-[2.5rem] leading-[1.02] sm:text-[3rem]">
-              The same prize, either competition.
+            <h2 className="display mt-4 text-[2.25rem] leading-[1.06] sm:text-[2.75rem]">
+              The same prize,
+              <br />
+              either competition.
             </h2>
             <p className="mt-5 max-w-[46ch] leading-relaxed text-[var(--color-soft)]">
               Positions one and two go through to the sub-county round.
@@ -181,7 +185,7 @@ export default function Boso() {
         <div className="mx-auto max-w-6xl px-6 py-20">
           <NightHead
             eyebrow="Next"
-            title="Sub-county rounds, from September."
+            title="Sub-county rounds, from September"
             lead="120 teams carry their wards into the sub-county stage. The county final is in December 2026."
             split
           />

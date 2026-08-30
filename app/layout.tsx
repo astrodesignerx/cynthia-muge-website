@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Instrument_Serif, Manrope, JetBrains_Mono } from "next/font/google";
 import Link from "next/link";
+import { MainNav } from "@/components/Nav";
+import { ScrollProgress } from "@/components/Motion";
+import { Wordmark } from "@/components/Wordmark";
 import "./globals.css";
 
 const instrument = Instrument_Serif({
@@ -53,7 +56,18 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
+    // suppressHydrationWarning: the pre-paint script below sets data-motion,
+    // an attribute React did not render.
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        {/* Set before paint, so nothing is hidden where the observer cannot run. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "try{if(!matchMedia('(prefers-reduced-motion: reduce)').matches){document.documentElement.dataset.motion='on'}}catch(e){}",
+          }}
+        />
+      </head>
       <body
         className={`${instrument.variable} ${manrope.variable} ${jetbrains.variable}`}
       >
@@ -65,34 +79,17 @@ export default function RootLayout({
         </a>
 
         <header className="night sticky top-0 z-40 border-b border-[var(--color-night-rule)]/70 backdrop-blur-sm">
-          <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 py-4">
-            <Link href="/" className="group flex shrink-0 flex-col gap-1.5">
-              <span className="display whitespace-nowrap text-[1.25rem] leading-none text-[var(--color-on-night)] sm:text-[1.375rem]">
-                Cynthia Muge
-              </span>
-              <span
-                aria-hidden
-                className="h-[2px] w-14 bg-[var(--color-gold)] transition-[width] duration-200 ease-out group-hover:w-20"
-              />
-              <span className="label hidden text-[0.5625rem] text-[var(--color-on-night-soft)] sm:block">
-                Keeping the Promise
-              </span>
+          <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 py-3">
+            <Link
+              href="/"
+              aria-label="Cynthia Muge, home"
+              className="shrink-0 transition-opacity duration-200 hover:opacity-85"
+            >
+              <Wordmark />
             </Link>
-            <nav aria-label="Main" className="-mx-2 overflow-x-auto px-2">
-              <ul className="flex items-center gap-x-6 whitespace-nowrap">
-                {nav.map((item) => (
-                  <li key={item.href}>
-                    <Link
-                      href={item.href}
-                      className="text-[0.875rem] font-medium text-[var(--color-on-night-soft)] transition-colors duration-150 hover:text-[var(--color-gold)] lg:text-[0.9375rem]"
-                    >
-                      {item.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </nav>
+            <MainNav nav={nav} />
           </div>
+          <ScrollProgress />
         </header>
 
         <main id="main">{children}</main>
@@ -101,13 +98,8 @@ export default function RootLayout({
           <div className="mx-auto max-w-7xl px-6 py-16">
             <div className="flex flex-wrap justify-between gap-10">
               <div className="max-w-sm">
-                <p className="display text-[1.75rem] text-[var(--color-on-night)]">
-                  Cynthia Muge
-                </p>
-                <p className="label mt-4 text-[var(--color-gold)]">
-                  Keeping the Promise
-                </p>
-                <p className="mt-3 text-[0.9375rem] leading-relaxed text-[var(--color-on-night-soft)]">
+                <Wordmark size="lg" />
+                <p className="mt-6 text-[0.9375rem] leading-relaxed text-[var(--color-on-night-soft)]">
                   Woman Representative, Nandi County. Serving the six
                   sub-counties and thirty wards.
                 </p>

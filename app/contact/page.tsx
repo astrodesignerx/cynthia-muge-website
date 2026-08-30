@@ -38,9 +38,9 @@ export default function Contact() {
         eyebrow="Get in touch"
         title="Contact"
         lead="Six sub-counties. Thirty wards."
-        img="/img/coffee-crowd.jpg"
-        alt="A Kahawa na Mama seedling distribution in Nandi County"
-        pos="50% 58%"
+        img="/img/coffee-handover-b.jpg"
+        alt="A Kahawa na Mama distribution point in Nandi County"
+        pos="50% 45%"
       />
 
       <section className="mx-auto max-w-6xl px-6 py-20">

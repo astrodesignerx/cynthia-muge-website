@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { GrowBar, Reveal } from "@/components/Motion";
 import type { Source } from "@/lib/types";
 
 /* ------------------------------------------------------------------ *
@@ -36,7 +37,7 @@ export function Stat({
     tone === "ink" ? "text-[var(--color-faint)]" : "text-[var(--color-on-night-soft)]";
 
   return (
-    <div>
+    <Reveal>
       <p className={`numeral ${size} ${colour}`}>{value}</p>
       <p className={`label mt-4 ${labelColour}`}>{label}</p>
       {note && (
@@ -48,7 +49,7 @@ export function Stat({
           {note}
         </p>
       )}
-    </div>
+    </Reveal>
   );
 }
 
@@ -63,11 +64,12 @@ export function WardGrid({
   caption?: string;
 }) {
   return (
-    <figure>
+    <Reveal as="figure">
       <ul className="grid grid-cols-2 gap-px overflow-hidden rounded-sm bg-[var(--color-night-rule)] sm:grid-cols-3 lg:grid-cols-5">
         {wards.map((w, i) => (
           <li
             key={w}
+
             className={`flex min-h-[4.5rem] flex-col justify-between p-3 transition-colors duration-200 ${
               i < reached
                 ? "bg-[var(--color-night-2)]"
@@ -88,7 +90,7 @@ export function WardGrid({
           {caption}
         </figcaption>
       )}
-    </figure>
+    </Reveal>
   );
 }
 
@@ -104,7 +106,7 @@ export function Funnel({
   return (
     <figure>
       <ul className="grid gap-4">
-        {steps.map((s) => {
+        {steps.map((s, i) => {
           const pct = Math.max(6, Math.round((s.value / top) * 100));
           return (
             <li key={s.label} className="grid gap-2">
@@ -116,12 +118,11 @@ export function Funnel({
                   {s.display}
                 </span>
               </div>
-              <div className="h-2.5 overflow-hidden rounded-full bg-[var(--color-night-rule)]">
-                <div
-                  className="h-full rounded-full bg-[var(--color-gold)] transition-[width] duration-700 ease-out"
-                  style={{ width: `${pct}%` }}
-                />
-              </div>
+              <GrowBar
+                pct={pct}
+                delay={i * 90}
+                className="h-2.5 overflow-hidden rounded-full bg-[var(--color-night-rule)]"
+              />
             </li>
           );
         })}
@@ -145,7 +146,7 @@ export function PhotoStrip({
 }) {
   return (
     <div
-      className="flex gap-3 overflow-x-auto pb-3"
+      className="no-scrollbar flex gap-3 overflow-x-auto pb-1"
       style={{ scrollSnapType: "x mandatory" }}
     >
       {images.map((im) => (
@@ -238,7 +239,7 @@ export function NightHead({
 }) {
   if (split && lead) {
     return (
-      <header className="grid gap-8 lg:grid-cols-[1.1fr_1fr] lg:items-end lg:gap-20">
+      <Reveal as="header" className="grid gap-8 lg:grid-cols-[1.1fr_1fr] lg:items-end lg:gap-20">
         <div>
           <p className="label text-[var(--color-gold)]">{eyebrow}</p>
           <h2 className="display mt-5 max-w-[15ch] text-[2.5rem] leading-[1.02] text-[var(--color-on-night)] sm:text-[3.25rem]">
@@ -248,11 +249,11 @@ export function NightHead({
         <p className="max-w-[54ch] text-[1.0625rem] leading-relaxed text-[var(--color-on-night-soft)] lg:pb-2">
           {lead}
         </p>
-      </header>
+      </Reveal>
     );
   }
   return (
-    <header className="max-w-[34ch]">
+    <Reveal as="header" className="max-w-[34ch]">
       <p className="label text-[var(--color-gold)]">{eyebrow}</p>
       <h2 className="display mt-5 text-[2.5rem] leading-[1.02] text-[var(--color-on-night)] sm:text-[3.25rem]">
         {title}
@@ -262,6 +263,6 @@ export function NightHead({
           {lead}
         </p>
       )}
-    </header>
+    </Reveal>
   );
 }

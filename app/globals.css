@@ -167,3 +167,39 @@ body {
   .rise { animation: none; }
   html { scroll-behavior: auto; }
 }
+
+/* ---- Reveal on scroll -------------------------------------------- */
+
+[data-motion="on"] [data-reveal] {
+  opacity: 0;
+  transition:
+    opacity 700ms cubic-bezier(0.16, 0.84, 0.44, 1),
+    transform 700ms cubic-bezier(0.16, 0.84, 0.44, 1);
+  will-change: opacity, transform;
+}
+[data-motion="on"] [data-reveal="up"]    { transform: translate3d(0, 22px, 0); }
+[data-motion="on"] [data-reveal="left"]  { transform: translate3d(-26px, 0, 0); }
+[data-motion="on"] [data-reveal="right"] { transform: translate3d(26px, 0, 0); }
+[data-motion="on"] [data-reveal="none"]  { transform: none; }
+
+[data-motion="on"] [data-reveal][data-seen="true"] {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-motion="on"] [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* Horizontal strips scroll without showing a bar. */
+@utility no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}

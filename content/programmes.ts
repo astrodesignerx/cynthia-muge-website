@@ -191,6 +191,12 @@ export const programmes: Programme[] = [
     ],
     gaps: [
       {
+        title: "650,000 against her own graphic",
+        body:
+          "Her Mama na Kahawa graphic sets out 100,000 in 2024, 500,000 in 2025 and 1,000,000 for 2026, with nearly 4,800 beneficiaries and a projected KSh 500m in annual income once the trees mature. The 650,000 published here is the counted figure carried by news reports. The office should say whether the 2026 million is distributed or planned.",
+        tag: "Unconfirmed",
+      },
+      {
         title: "Seedling survival rate",
         body:
           "No count of how many distributed trees are alive. A figure of 90% circulates publicly. It is an estimate, not a survey.",
@@ -937,34 +943,75 @@ export const pillars = [
   {
     n: "01",
     name: "Road Network",
-    body: "Access between the wards, the markets and the tea and coffee collection points.",
+    body:
+      "Access between the wards, the markets and the tea and coffee collection points.",
+    detail:
+      "A coffee tree is only worth what a farmer can get to a factory, and a dairy cooperative is only worth what a cooler can be reached from. Roads are the pillar the other five depend on, which is why she lists it first.",
+    already:
+      "Boda boda shades at Lelmokwo, Lessos, Chebarbar and Soy-Sitet, for the riders who carry most of that traffic.",
+    question:
+      "Which roads, in what order, and at what cost per kilometre.",
   },
   {
     n: "02",
     name: "Education",
-    body: "Scholarships, the schools that hold the students already sponsored, and foundational literacy at ECDE, which she calls a non-negotiable imperative.",
+    body:
+      "Scholarships, the schools that hold the students already sponsored, and foundational literacy at ECDE.",
+    detail:
+      "Her stated target is 4,000 students on full scholarship, or a minimum of 120 per ward, against the 449 supported now. She has also argued that early childhood literacy is “a non-negotiable imperative”, which matters because ECDE is a county function rather than a national one.",
+    already:
+      "449 students on full scholarship across all cohorts, 206 of them sitting KCSE this year.",
+    question:
+      "What an expanded resource envelope actually is, and where it comes from.",
   },
   {
     n: "03",
     name: "Health",
-    body: "Facilities within reach of the townships that have none, and the equipment to make them work.",
+    body:
+      "Facilities within reach of the townships that have none, and the equipment to make them work.",
+    detail:
+      "Her test is distance: Kipkaren Salient had no public health facility within five kilometres. A building without diagnostic equipment is not a facility, which is why the Kabiemit proposal covered both.",
+    already:
+      "Two facilities carried on the national development estimates at KSh 20m each, an ambulance and eight units of diagnostic and maternity equipment at Kabiemit.",
+    question:
+      "Staffing and running costs, which are county obligations rather than national ones.",
   },
   {
     n: "04",
     name: "Water",
     body: "Boreholes, storage and supply across the six sub-counties.",
+    detail:
+      "Water is where the county's own performance is most visible to a household, and where a borehole that stops working is as conspicuous as one that never came.",
+    already:
+      "Boreholes at Tulwo Girls High and Kabolebo Primary, the second with Lake Basin Development Authority, serving the school, the community and Maraba Market.",
+    question:
+      "Whether the boreholes already drilled are still yielding, which nobody has published.",
   },
   {
     n: "05",
     name: "Wealth Creation",
-    body: "Coffee, dairy, tea and the enterprises run by women, young people and persons with disability.",
+    body:
+      "Coffee, dairy, tea and the enterprises run by women, young people and persons with disability.",
+    detail:
+      "Her argument is that affirmative action money should buy production rather than consumption. A tent costs KSh 150,000 and wears out in five years; the same sum in an acre of coffee pays for forty. Tea is the gap in her published record, and it is the county's largest crop.",
+    already:
+      "650,000 coffee seedlings, the first harvest in 2026, ten milk coolers, and eighteen groups funded at KSh 100,000 each.",
+    question:
+      "Tea. Nothing in the record so far addresses the crop most of Nandi actually grows.",
   },
   {
     n: "06",
     name: "Governance",
     body: "How the county budget is set, spent and accounted for.",
+    detail:
+      "Nandi spent KSh 10.2bn in FY 2024/25 at 98% absorption, but two thirds of it ran the county and one third built anything. Recurrent spending came in at 102% of budget while development reached 90%, which is the shape of the problem.",
+    already:
+      "Public participation forums before the budget year, and a tournament that disqualified a team under its own published rules and said so.",
+    question:
+      "Whether the development share can be moved, and what is cut to move it.",
   },
 ];
+
 
 export const declaration = {
   quote:
