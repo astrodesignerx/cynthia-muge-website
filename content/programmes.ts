@@ -463,6 +463,12 @@ export const programmes: Programme[] = [
     ],
     gaps: [
       {
+        title: "Water tanks and sanitary towels",
+        body:
+          "Supporters list school water tanks and sanitary towel distribution among her delivery. Neither appears in any post from the office, so neither is published here until the office documents them.",
+        tag: "Unconfirmed",
+      },
+      {
         title: "Two shade locations that do not match",
         body:
           "An earlier office record names Ndalat Centre and Kapkilel. Neither is among the four she has named publicly. Whether they are additional shades or superseded entries has not been checked.",
