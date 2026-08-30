@@ -151,9 +151,9 @@ export const programmes: Programme[] = [
         tag: "Not measured",
       },
       {
-        title: "Cherry delivered and paid",
+        title: "Cherry volume and price",
         body:
-          "Pilot trees reach bearing age in 2026. No cooperative delivery or payment data has been collected yet.",
+          "The first beneficiaries began harvesting cherries in 2026. How much was delivered, and what the cooperatives paid for it, has not been collected.",
         tag: "Not measured",
       },
       {
@@ -576,15 +576,15 @@ export const programmes: Programme[] = [
         label: "Shillings per group cheque",
         source: HER_PAGE_DELIVERY,
         note:
-          "The amount handed to Baraka 112 Women Group and to Chepkemel Youth Group, each.",
+          "The amount handed to each group at the Chepkemel, Keben and Ol'lessos Centre handovers.",
       },
       {
         status: "verified",
-        value: "2",
+        value: "8",
         label: "Groups named publicly to date",
         source: HER_PAGE_DELIVERY,
         note:
-          "Baraka 112 Women Group and Chepkemel Youth Group, at Chepkemel DIP Grounds, Tindiret Ward.",
+          "Across three handovers, in Tindiret Ward and Ol'lessos Ward.",
       },
       {
         status: "unconfirmed",
@@ -599,7 +599,32 @@ export const programmes: Programme[] = [
           "No follow-up on what the grants were spent on, or which groups are still operating.",
       },
     ],
-    phases: [],
+    phases: [
+      {
+        name: "Chepkemel DIP Grounds",
+        period: "August 2026",
+        quantity: "2 cheques",
+        beneficiaries: "2 groups",
+        detail:
+          "Baraka 112 Women Group and Chepkemel Youth Group. Tindiret Ward, Tinderet.",
+      },
+      {
+        name: "Keben",
+        period: "August 2026",
+        quantity: "3 cheques",
+        beneficiaries: "3 groups",
+        detail:
+          "Kimolwet SH Group, Konyitkei Women Group and Sobentroba 2001 Youth Group. Ol'lessos Ward, Nandi Hills.",
+      },
+      {
+        name: "Ol'lessos Centre",
+        period: "August 2026",
+        quantity: "3 cheques",
+        beneficiaries: "3 groups",
+        detail:
+          "Ol'lessos Soko Women Group, Chomyet Women Group and Ilen Nee Inyee Self-Help Group. Ol'lessos Ward, Nandi Hills.",
+      },
+    ],
     coverage: [],
     distinctive: {
       title: "It is paid to the group, not the individual.",
@@ -613,7 +638,7 @@ export const programmes: Programme[] = [
       {
         title: "How many groups, and where",
         body:
-          "Two groups in one ward are on the public record. The total, and the spread across the thirty wards, is not published.",
+          "Eight groups in two wards are on the public record. The total, and the spread across the thirty wards, is not published.",
         tag: "Unconfirmed",
       },
       {
