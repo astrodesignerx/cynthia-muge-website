@@ -8,7 +8,7 @@ import { ImageBand } from "@/components/Page";
 export const metadata: Metadata = {
   title: "The record",
   description:
-    "Kahawa na Mama, Elimu Ni Mwangaza, the BOSO Supercup, and health and water projects across Nandi County.",
+    "Kahawa na Mama, Elimu Ni Mwangaza, the BOSO Supercup, dairy, group empowerment, and health and water projects across Nandi County.",
 };
 
 const art: Record<string, { img: string; pos: string; tag: string }> = {
@@ -16,6 +16,8 @@ const art: Record<string, { img: string; pos: string; tag: string }> = {
   "elimu-ni-mwangaza": { img: "/img/scholars-service.jpg", pos: "50% 35%", tag: "Education" },
   "boso-supercup": { img: "/img/football.jpeg", pos: "center", tag: "Youth & sport" },
   "health-and-infrastructure": { img: "/img/ambulance-inside.jpg", pos: "center", tag: "Health & water" },
+  "dairy-value-chain": { img: "/img/milk-coolers.jpg", pos: "50% 45%", tag: "Agriculture" },
+  "group-empowerment": { img: "/img/empowerment-meeting.jpg", pos: "50% 30%", tag: "Enterprise" },
 };
 
 export default function RecordPage() {
@@ -28,7 +30,7 @@ export default function RecordPage() {
             The record
           </h1>
           <p className="mt-6 max-w-[46ch] text-[1.1875rem] leading-relaxed text-[var(--color-soft)]">
-            Four programmes, where each one reached, and what is still being
+            Six programmes, where each one reached, and what is still being
             counted.
           </p>
         </div>
@@ -65,7 +67,8 @@ export default function RecordPage() {
                       {p.oneLine}
                     </p>
                     <p className="meta mt-6 border-t border-[var(--color-rule)] pt-3.5">
-                      {p.started} &ndash; present <span className="sep" aria-hidden /> {p.status}
+                      {p.started} &ndash; {p.ended ?? "present"}{" "}
+                      <span className="sep" aria-hidden /> {p.status}
                     </p>
                   </div>
                 </Link>

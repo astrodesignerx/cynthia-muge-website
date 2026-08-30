@@ -72,6 +72,8 @@ export type Programme = {
   name: string;
   oneLine: string;
   started: string;
+  /** Omit while the programme is still running. */
+  ended?: string;
   status: string;
   lastUpdated: string;
   figures: Figure[];

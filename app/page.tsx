@@ -7,6 +7,8 @@ const cards = [
   { slug: "elimu-ni-mwangaza", img: "/img/scholars-service.jpg", pos: "50% 35%", tag: "Education" },
   { slug: "boso-supercup", img: "/img/football.jpeg", pos: "center", tag: "Youth & sport" },
   { slug: "health-and-infrastructure", img: "/img/ambulance-team.jpg", pos: "center", tag: "Health & water" },
+  { slug: "dairy-value-chain", img: "/img/milk-coolers.jpg", pos: "50% 45%", tag: "Agriculture" },
+  { slug: "group-empowerment", img: "/img/empowerment-meeting.jpg", pos: "50% 30%", tag: "Enterprise" },
 ];
 
 export default function Home() {
@@ -67,7 +69,7 @@ export default function Home() {
       <section className="bg-[var(--color-ink)] text-white">
         <div className="mx-auto max-w-6xl px-6 py-16">
           <p className="text-[0.6875rem] font-bold uppercase tracking-[0.16em] text-[#8FA398]">
-            Four years, four programmes
+            Four years on the record
           </p>
           <dl className="mt-9 grid gap-y-11 sm:grid-cols-2 lg:grid-cols-4 lg:gap-x-8">
             {[
@@ -97,7 +99,7 @@ export default function Home() {
             href="/record"
             className="text-[0.9375rem] font-bold text-[var(--color-murram)] underline underline-offset-4"
           >
-            All four, in full
+            All six, in full
           </Link>
         </div>
 
@@ -131,7 +133,8 @@ export default function Home() {
                       {p.oneLine}
                     </p>
                     <p className="meta mt-6 border-t border-[var(--color-rule)] pt-3.5">
-                      {p.started} &ndash; present <span className="sep" aria-hidden /> {p.status}
+                      {p.started} &ndash; {p.ended ?? "present"}{" "}
+                      <span className="sep" aria-hidden /> {p.status}
                     </p>
                   </div>
                 </Link>

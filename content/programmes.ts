@@ -40,6 +40,20 @@ const HER_PAGE: Source = {
   url: "https://www.facebook.com/profile.php?id=100083334182719",
 };
 
+const HER_PAGE_DAIRY: Source = {
+  label: "Milk cooler flagging-off at Nandi Dairy Cooperative Union, Kabiyet",
+  publisher: "Cynthia Muge, official Facebook page",
+  date: "August 2026",
+  url: "https://www.facebook.com/profile.php?id=100083334182719",
+};
+
+const HER_PAGE_DELIVERY: Source = {
+  label: "Delivery posts, official page",
+  publisher: "Cynthia Muge, official Facebook page",
+  date: "August 2026",
+  url: "https://www.facebook.com/profile.php?id=100083334182719",
+};
+
 const NGAAF_GRAPHIC: Source = {
   label: "Elimu Ni Mwangaza: students on full scholarship, by sub-county",
   publisher: "Office of the Woman Representative / NGAAF, published graphic",
@@ -394,13 +408,19 @@ export const programmes: Programme[] = [
       },
       {
         status: "verified",
+        value: "4",
+        label: "Boda boda shades: Lelmokwo, Lessos, Chebarbar, Soy-Sitet",
+        source: HER_PAGE_DELIVERY,
+        note:
+          "Funded by NGAAF, as stated on the Lelmokwo shade itself.",
+      },
+      {
+        status: "verified",
         value: "2",
-        label: "Boda boda shades at Ndalat Centre and Kapkilel",
-        source: {
-          label: "Constituency delivery record",
-          publisher: "Office of the Woman Representative",
-          date: "2026",
-        },
+        label: "Health facilities funded for construction",
+        source: HER_PAGE_DELIVERY,
+        note:
+          "Chebirir in Aldai, then Kipkaren Salient in Mosop. Funding secured, not buildings opened.",
       },
       {
         status: "unmeasured",
@@ -414,12 +434,24 @@ export const programmes: Programme[] = [
     distinctive: {
       title: "Each item sits in a named place.",
       body:
-        "An ambulance at Kabiemit, boreholes at Tulwo Girls High and Kabolebo Primary, boda boda shades at Ndalat Centre and Kapkilel.",
+        "An ambulance at Kabiemit, boreholes at Tulwo Girls High and Kabolebo Primary, boda boda shades at Lelmokwo, Lessos, Chebarbar and Soy-Sitet.",
     },
     partners: [
       { name: "NGAAF", role: "National Government Affirmative Action Fund" },
     ],
     gaps: [
+      {
+        title: "Two shade locations that do not match",
+        body:
+          "An earlier office record names Ndalat Centre and Kapkilel. Neither is among the four she has named publicly. Whether they are additional shades or superseded entries has not been checked.",
+        tag: "Unconfirmed",
+      },
+      {
+        title: "Construction at Chebirir and Kipkaren Salient",
+        body:
+          "Funding is secured. No start date, contractor or completion date has been published for either facility.",
+        tag: "Open question",
+      },
       {
         title: "Usage and maintenance",
         body:
@@ -428,6 +460,7 @@ export const programmes: Programme[] = [
       },
     ],
     sources: [
+      HER_PAGE_DELIVERY,
       {
         label: "Empowerment Programs",
         publisher: "cynthiamuge.com",
@@ -435,6 +468,162 @@ export const programmes: Programme[] = [
         url: "https://cynthiamuge.com/empowerment",
       },
     ],
+  },
+  {
+    slug: "dairy-value-chain",
+    hero: "/img/milk-coolers.jpg",
+    heroAlt: "Bulk milk coolers arriving for Nandi dairy cooperatives",
+    name: "Dairy Value Chain",
+    oneLine:
+      "Ten solar-powered bulk milk coolers placed with named Nandi cooperatives.",
+    started: "2026",
+    ended: "2026",
+    status: "All ten delivered",
+    lastUpdated: "30 August 2026",
+    figures: [
+      {
+        status: "verified",
+        value: "10",
+        label: "Bulk milk coolers allocated to Nandi County",
+        source: HER_PAGE_DAIRY,
+        note:
+          "Delivered in two tranches under the Livestock Value Chain Support Project.",
+      },
+      {
+        status: "verified",
+        value: "5",
+        label: "Cooperatives named in the final tranche",
+        source: HER_PAGE_DAIRY,
+        note:
+          "Kaptiltil, Chepterwai, Kipshangui, Tabolwa and Kosoiywo.",
+      },
+      {
+        status: "unconfirmed",
+        label: "Cooperatives in the first tranche",
+        note:
+          "Five earlier coolers complete the ten. The recipients have not been named publicly.",
+      },
+      {
+        status: "unmeasured",
+        label: "Milk volume preserved",
+        note:
+          "No post-harvest loss figures have been collected before or after installation.",
+      },
+    ],
+    phases: [
+      {
+        name: "First tranche",
+        period: "2026",
+        quantity: "5 coolers",
+        beneficiaries: "Not named",
+        detail: "Delivered before the flagging-off ceremony at Kabiyet.",
+      },
+      {
+        name: "Final tranche",
+        period: "August 2026",
+        quantity: "5 coolers",
+        beneficiaries: "5 cooperatives",
+        detail:
+          "Flagged off at Nandi Dairy Cooperative Union, Kabiyet. Kaptiltil, Chepterwai, Kipshangui, Tabolwa and Kosoiywo.",
+      },
+    ],
+    coverage: [],
+    distinctive: {
+      title: "This one is national money, not hers.",
+      body:
+        "The coolers come from the State Department for Livestock Development under the Livestock Value Chain Support Project. Her role was securing the county allocation and holding the delivery to its date, which she had announced ten weeks earlier.",
+    },
+    partners: [
+      {
+        name: "State Department for Livestock Development",
+        role: "Livestock Value Chain Support Project: funding and delivery",
+      },
+      {
+        name: "Nandi Dairy Cooperative Union",
+        role: "Distribution point, Kabiyet",
+      },
+    ],
+    gaps: [
+      {
+        title: "The first five recipients",
+        body:
+          "Ten coolers were allocated and ten delivered. Only the final five cooperatives have been named.",
+        tag: "Unconfirmed",
+      },
+      {
+        title: "Farmer earnings",
+        body:
+          "Whether cooling raised the price paid to farmers, and by how much, has not been measured.",
+        tag: "Not measured",
+      },
+    ],
+    sources: [HER_PAGE_DAIRY],
+  },
+  {
+    slug: "group-empowerment",
+    hero: "/img/empowerment-meeting.jpg",
+    heroAlt: "A group member addressing the empowerment meeting at Chepkemel",
+    name: "Group Empowerment",
+    oneLine:
+      "Cash grants to registered women and youth groups, paid at ward level.",
+    started: "2023",
+    status: "Ongoing",
+    lastUpdated: "30 August 2026",
+    figures: [
+      {
+        status: "verified",
+        value: "100,000",
+        label: "Shillings per group cheque",
+        source: HER_PAGE_DELIVERY,
+        note:
+          "The amount handed to Baraka 112 Women Group and to Chepkemel Youth Group, each.",
+      },
+      {
+        status: "verified",
+        value: "2",
+        label: "Groups named publicly to date",
+        source: HER_PAGE_DELIVERY,
+        note:
+          "Baraka 112 Women Group and Chepkemel Youth Group, at Chepkemel DIP Grounds, Tindiret Ward.",
+      },
+      {
+        status: "unconfirmed",
+        label: "Groups funded in total",
+        note:
+          "The office holds the disbursement record. Only two handovers have been published.",
+      },
+      {
+        status: "unmeasured",
+        label: "Enterprises still trading",
+        note:
+          "No follow-up on what the grants were spent on, or which groups are still operating.",
+      },
+    ],
+    phases: [],
+    coverage: [],
+    distinctive: {
+      title: "It is paid to the group, not the individual.",
+      body:
+        "The cheque goes to a registered group with its own officials and account. A woman or a young person reaches it through a body that has to keep records and answer to its own members.",
+    },
+    partners: [
+      { name: "NGAAF", role: "National Government Affirmative Action Fund" },
+    ],
+    gaps: [
+      {
+        title: "How many groups, and where",
+        body:
+          "Two groups in one ward are on the public record. The total, and the spread across the thirty wards, is not published.",
+        tag: "Unconfirmed",
+      },
+      {
+        title: "What the money did",
+        body:
+          "No record yet of what the grants bought or whether the enterprises are still running.",
+        tag: "Not measured",
+      },
+    ],
+    sources: [HER_PAGE_DELIVERY],
   },
 ];
 
