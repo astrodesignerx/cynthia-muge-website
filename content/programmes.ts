@@ -33,6 +33,13 @@ const REGISTER: Source = {
   date: "Held by the office",
 };
 
+const HER_PAGE: Source = {
+  label: "Elimu Ni Mwangaza dedication service, posted by the office",
+  publisher: "Cynthia Muge, official Facebook page",
+  date: "21 August 2026",
+  url: "https://www.facebook.com/profile.php?id=100083334182719",
+};
+
 const NGAAF_GRAPHIC: Source = {
   label: "Elimu Ni Mwangaza: students on full scholarship, by sub-county",
   publisher: "Office of the Woman Representative / NGAAF, published graphic",
@@ -153,7 +160,7 @@ export const programmes: Programme[] = [
 
   {
     slug: "elimu-ni-mwangaza",
-    hero: "/img/education.jpg",
+    hero: "/img/scholars-walk.jpg",
     heroAlt: "Students supported through the Elimu Ni Mwangaza scholarship programme",
     name: "Elimu Ni Mwangaza",
     oneLine:
@@ -174,17 +181,19 @@ export const programmes: Programme[] = [
       },
       {
         status: "verified",
-        value: "411",
-        label: "Students on full scholarship, across all six sub-counties",
-        source: NGAAF_GRAPHIC,
+        value: "449",
+        label: "Students on full scholarship, all cohorts",
+        source: HER_PAGE,
         note:
-          "The sub-county figures below sum to this total.",
+          "The 206 above are the pioneer cohort. The rest sit KCSE in later years.",
       },
       {
-        status: "unconfirmed",
-        label: "Scaling target",
+        status: "verified",
+        value: "4,000",
+        label: "Stated target, or 120 per ward",
+        source: HER_PAGE,
         note:
-          "Three targets circulate: 3,500, 4,000, and 120 per ward. One must be agreed before it is published.",
+          "A target for an expanded mandate, not a figure reached.",
       },
       {
         status: "unconfirmed",
@@ -212,7 +221,7 @@ export const programmes: Programme[] = [
       { area: "Chesumei", value: 63, display: "63" },
     ],
     coverageNote:
-      "Counted per sub-county. The six add to 411.",
+      "From the programme's published breakdown, which sums to 411. That breakdown predates the current total of 449.",
     distinctive: {
       title: "It is not only school fees.",
       body:
@@ -223,9 +232,9 @@ export const programmes: Programme[] = [
     ],
     gaps: [
       {
-        title: "Whether 411 is still current",
+        title: "The sub-county split for the current 449",
         body:
-          "411 is the total on the programme's own published breakdown. Totals of 409 and 449 also circulate, and the graphic is undated.",
+          "The published breakdown sums to 411 and is undated. The 38 students added since have not been assigned to a sub-county here.",
         tag: "Unconfirmed",
       },
       {
@@ -236,6 +245,7 @@ export const programmes: Programme[] = [
       },
     ],
     sources: [
+      HER_PAGE,
       NGAAF_GRAPHIC,
       {
         label: "Elimu Ni Mwangaza dedication service coverage",
@@ -440,4 +450,53 @@ export const countyFinance = {
   recurrent: { amount: "KSh 6.6bn", ofBudget: "102%", flex: 6.6 },
   development: { amount: "KSh 3.3bn", ofBudget: "90%", flex: 3.3 },
   source: COB,
+};
+
+/**
+ * The six pillars, in the order she published them.
+ * Source: her declaration post, official Facebook page, August 2026.
+ * Wording of the pillar names is hers. The one-liners describe scope only.
+ */
+export const pillars = [
+  {
+    n: "01",
+    name: "Road Network",
+    body: "Access between the wards, the markets and the tea and coffee collection points.",
+  },
+  {
+    n: "02",
+    name: "Education",
+    body: "Scholarships, and the schools that hold the students already sponsored.",
+  },
+  {
+    n: "03",
+    name: "Health",
+    body: "Facilities within reach of the townships that have none.",
+  },
+  {
+    n: "04",
+    name: "Water",
+    body: "Boreholes, storage and supply across the six sub-counties.",
+  },
+  {
+    n: "05",
+    name: "Wealth Creation",
+    body: "Coffee, dairy, tea and the enterprises run by women and young people.",
+  },
+  {
+    n: "06",
+    name: "Governance",
+    body: "How the county budget is set, spent and accounted for.",
+  },
+];
+
+export const declaration = {
+  quote:
+    "The race for the county's top seat is demanding, but when I look at 15 years of devolution and the many unmet needs across Nandi, I know fear is a luxury we cannot afford. Nandi deserves empathetic, disciplined and foresighted leadership.",
+  source: {
+    label: "Declaration of candidacy for Governor of Nandi County",
+    publisher: "Cynthia Muge, official Facebook page",
+    date: "August 2026",
+    url: "https://www.facebook.com/profile.php?id=100083334182719",
+  } as Source,
 };

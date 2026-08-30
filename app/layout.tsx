@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://cynthiamuge.com"),
   title: {
     default: "Hon. Cynthia Muge | Woman Representative, Nandi County",
-    template: "%s · Hon. Cynthia Muge",
+    template: "%s | Hon. Cynthia Muge",
   },
   description:
     "Hon. Cynthia Jepkosgei Muge, Woman Representative for Nandi County. Her work across the six sub-counties and thirty wards.",
@@ -40,6 +40,7 @@ export const metadata: Metadata = {
 };
 
 const nav = [
+  { href: "/pillars", label: "The six pillars" },
   { href: "/record", label: "The record" },
   { href: "/about", label: "About" },
   { href: "/boso", label: "BOSO Supercup" },
@@ -118,8 +119,8 @@ export default function RootLayout({
               </nav>
             </div>
             <p className="meta mt-10 border-t border-[var(--color-rule)] pt-5">
-              Office of the Woman Representative, Nandi County · Last reviewed 30
-              August 2026 · Figures on this site carry their source; those not
+              Office of the Woman Representative, Nandi County. Last reviewed 30
+              August 2026. Figures on this site carry their source; those not
               yet counted are marked as such
             </p>
           </div>

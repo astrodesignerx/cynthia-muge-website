@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 const art: Record<string, { img: string; pos: string; tag: string }> = {
   "kahawa-na-mama": { img: "/img/coffee-planting.jpg", pos: "50% 50%", tag: "Agriculture" },
-  "elimu-ni-mwangaza": { img: "/img/education.jpg", pos: "center", tag: "Education" },
+  "elimu-ni-mwangaza": { img: "/img/scholars-service.jpg", pos: "50% 35%", tag: "Education" },
   "boso-supercup": { img: "/img/football.jpeg", pos: "center", tag: "Youth & sport" },
   "health-and-infrastructure": { img: "/img/ambulance-inside.jpg", pos: "center", tag: "Health & water" },
 };
@@ -65,7 +65,7 @@ export default function RecordPage() {
                       {p.oneLine}
                     </p>
                     <p className="meta mt-6 border-t border-[var(--color-rule)] pt-3.5">
-                      {p.started} &ndash; present · {p.status}
+                      {p.started} &ndash; present <span className="sep" aria-hidden /> {p.status}
                     </p>
                   </div>
                 </Link>
@@ -90,7 +90,7 @@ export default function RecordPage() {
               {countyFinance.recurrent.amount}
             </p>
             <p className="text-[0.8125rem] text-[var(--color-soft)]">
-              Recurrent · {countyFinance.recurrent.ofBudget} of budget
+              Recurrent <span className="sep" aria-hidden /> {countyFinance.recurrent.ofBudget} of budget
             </p>
           </div>
           <div
@@ -101,7 +101,7 @@ export default function RecordPage() {
               {countyFinance.development.amount}
             </p>
             <p className="text-[0.8125rem] text-[#F6DFD6]">
-              Development · {countyFinance.development.ofBudget}
+              Development <span className="sep" aria-hidden /> {countyFinance.development.ofBudget}
             </p>
           </div>
         </div>

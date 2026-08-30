@@ -99,3 +99,15 @@ body {
   line-height: 1.5;
   color: var(--color-faint);
 }
+
+/* Separator between metadata items. Drawn, so no bullet character sits in the copy. */
+@utility sep {
+  display: inline-block;
+  width: 3px;
+  height: 3px;
+  border-radius: 9999px;
+  background: currentColor;
+  opacity: 0.55;
+  vertical-align: middle;
+  margin-inline: 0.5em;
+}

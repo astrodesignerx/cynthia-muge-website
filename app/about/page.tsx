@@ -38,7 +38,7 @@ export default function About() {
   return (
     <>
       <SplitHero
-        eyebrow="Woman Representative · Nandi County"
+        eyebrow="Woman Representative, Nandi County"
         title={<>Hon. Cynthia<br />Jepkosgei Muge</>}
         lead="Born in 1993 in Kipsirichoi village, Kilibwoni Ward, Emgwen Constituency. The eldest of six."
         img="/img/ambulance-speech.jpg"

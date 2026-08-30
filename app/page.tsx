@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import { programmes } from "@/content/programmes";
+import { pillars, programmes } from "@/content/programmes";
 
 const cards = [
   { slug: "kahawa-na-mama", img: "/img/coffee-crowd.jpg", pos: "center", tag: "Agriculture" },
-  { slug: "elimu-ni-mwangaza", img: "/img/education.jpg", pos: "center", tag: "Education" },
+  { slug: "elimu-ni-mwangaza", img: "/img/scholars-service.jpg", pos: "50% 35%", tag: "Education" },
   { slug: "boso-supercup", img: "/img/football.jpeg", pos: "center", tag: "Youth & sport" },
   { slug: "health-and-infrastructure", img: "/img/ambulance-team.jpg", pos: "center", tag: "Health & water" },
 ];
@@ -18,7 +18,9 @@ export default function Home() {
       <section className="border-b border-[var(--color-rule)]">
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 py-16 lg:grid-cols-[1.05fr_1fr] lg:py-24">
           <div>
-            <p className="eyebrow">Woman Representative · Nandi County</p>
+            <p className="eyebrow">
+          Woman Representative <span className="sep" aria-hidden /> Nandi County
+        </p>
             <h1 className="display mt-6 max-w-[13ch] text-[3.25rem] leading-[0.96] sm:text-[4.25rem] lg:text-[4.75rem]">
               For the women and young people of Nandi.
             </h1>
@@ -129,7 +131,7 @@ export default function Home() {
                       {p.oneLine}
                     </p>
                     <p className="meta mt-6 border-t border-[var(--color-rule)] pt-3.5">
-                      {p.started} &ndash; present · {p.status}
+                      {p.started} &ndash; present <span className="sep" aria-hidden /> {p.status}
                     </p>
                   </div>
                 </Link>
@@ -166,6 +168,38 @@ export default function Home() {
           >
             Read the Kahawa na Mama record
           </Link>
+        </div>
+      </section>
+
+      {/* The six pillars */}
+      <section className="border-t border-[var(--color-rule)]">
+        <div className="mx-auto max-w-6xl px-6 py-20">
+          <div className="flex flex-wrap items-baseline justify-between gap-4">
+            <h2 className="display text-[2.5rem] sm:text-[3rem]">
+              The six pillars
+            </h2>
+            <Link
+              href="/pillars"
+              className="meta hover:text-[var(--color-murram)]"
+            >
+              All six &rarr;
+            </Link>
+          </div>
+          <ol className="mt-10 grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
+            {pillars.map((p) => (
+              <li
+                key={p.n}
+                className="border-t-2 border-[var(--color-murram)] pt-4"
+              >
+                <span className="font-mono text-[0.75rem] font-medium tabular-nums text-[var(--color-murram)]">
+                  {p.n}
+                </span>
+                <h3 className="display mt-1.5 text-[1.625rem] leading-tight">
+                  {p.name}
+                </h3>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
 

@@ -49,7 +49,8 @@ export default async function ProgrammePage({
 
       <header className="border-b-2 border-[var(--color-ink)] pb-8 pt-6">
         <p className="eyebrow">
-          Programme record · Office of the Woman Representative, Nandi County
+          Programme record <span className="sep" aria-hidden /> Office of the Woman Representative, Nandi
+          County
         </p>
         <h1 className="display mt-4 text-[3rem] sm:text-[4rem]">{p.name}</h1>
         <p className="mt-4 max-w-[56ch] text-[1.1875rem] leading-relaxed text-[var(--color-soft)]">
