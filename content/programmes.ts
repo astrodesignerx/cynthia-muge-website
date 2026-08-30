@@ -34,7 +34,7 @@ const REGISTER: Source = {
 };
 
 const NGAAF_GRAPHIC: Source = {
-  label: "Elimu Ni Mwangaza — students on full scholarship, by sub-county",
+  label: "Elimu Ni Mwangaza: students on full scholarship, by sub-county",
   publisher: "Office of the Woman Representative / NGAAF, published graphic",
   date: "Undated",
 };
@@ -46,7 +46,7 @@ export const programmes: Programme[] = [
     heroAlt: "Women planting coffee seedlings together in Nandi County",
     name: "Kahawa na Mama",
     oneLine:
-      "Putting coffee trees, and the income from them, into the hands of Nandi women — and registering those trees in their own names.",
+      "Putting coffee trees, and the income from them, into the hands of Nandi women, and registering those trees in their own names.",
     started: "2023",
     status: "Phase III running",
     lastUpdated: "29 August 2026",
@@ -117,7 +117,7 @@ export const programmes: Programme[] = [
         "The programme includes a charter requiring joint registration of coffee bushes between husband and wife. A woman who does the work on the farm is named on the asset, and on the payment that follows from it.",
     },
     partners: [
-      { name: "NGAAF", role: "National Government Affirmative Action Fund — programme funding" },
+      { name: "NGAAF", role: "National Government Affirmative Action Fund: programme funding" },
       { name: "Agriculture and Food Authority", role: "Certification and agronomy standards" },
       { name: "Nandi County Government", role: "Extension services and coordination" },
       { name: "Baraka Agricultural College", role: "Nursery capacity and farmer training" },
@@ -219,7 +219,7 @@ export const programmes: Programme[] = [
         "The commitment runs across four years: walking alongside students, tracking academic growth, and giving them the peace of mind required to excel.",
     },
     partners: [
-      { name: "NGAAF", role: "National Government Affirmative Action Fund — scholarship funding" },
+      { name: "NGAAF", role: "National Government Affirmative Action Fund: scholarship funding" },
     ],
     gaps: [
       {
@@ -375,7 +375,7 @@ export const programmes: Programme[] = [
       {
         status: "verified",
         value: "2",
-        label: "Boreholes — Tulwo Girls High and Kabolebo Primary",
+        label: "Boreholes at Tulwo Girls High and Kabolebo Primary",
         source: {
           label: "Empowerment programmes",
           publisher: "cynthiamuge.com",
@@ -385,7 +385,7 @@ export const programmes: Programme[] = [
       {
         status: "verified",
         value: "2",
-        label: "Boda boda shades — Ndalat Centre and Kapkilel",
+        label: "Boda boda shades at Ndalat Centre and Kapkilel",
         source: {
           label: "Constituency delivery record",
           publisher: "Office of the Woman Representative",

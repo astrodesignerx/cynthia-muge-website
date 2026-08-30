@@ -22,7 +22,7 @@ export function SourceLine({ source }: { source: Source }) {
 }
 
 /**
- * A figure renders one of three ways. There is no fourth path — a value
+ * A figure renders one of three ways. There is no fourth path. A value
  * without a source cannot be constructed (see lib/types.ts).
  */
 export function FigureCard({ figure }: { figure: Figure }) {

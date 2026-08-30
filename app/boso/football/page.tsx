@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Football — rules and registration",
+  title: "Football: rules and registration",
   description: "Register your football team for the BOSO Supercup, Nandi County.",
 };
 
@@ -17,20 +18,40 @@ const rules = [
 
 export default function Page() {
   return (
-    <div className="mx-auto max-w-3xl px-6">
-      <nav aria-label="Breadcrumb" className="pt-10">
-        <Link href="/boso" className="meta hover:text-[var(--color-murram)]">
-          &larr; BOSO Supercup
-        </Link>
-      </nav>
-
-      <header className="border-b-2 border-[var(--color-ink)] pb-8 pt-6">
-        <p className="eyebrow">BOSO Supercup</p>
-        <h1 className="display mt-4 text-[3rem]">Football</h1>
-        <p className="mt-4 max-w-[54ch] text-[1.125rem] leading-relaxed text-[var(--color-soft)]">
-          Rules and registration for the football competition.
-        </p>
+    <div>
+      <header className="relative isolate overflow-hidden">
+        <Image
+          src="/img/football.jpeg"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="-z-10 object-cover"
+          style={{ objectPosition: "50% 45%" }}
+        />
+        <div aria-hidden className="absolute inset-0 -z-10 bg-[#141A16]/78" />
+        <div className="mx-auto max-w-3xl px-6 pb-16 pt-10">
+          <nav aria-label="Breadcrumb">
+            <Link
+              href="/boso"
+              className="text-[0.75rem] font-medium uppercase tracking-[0.1em] text-[#B8C4BC] transition-colors duration-200 hover:text-white"
+            >
+              &larr; BOSO Supercup
+            </Link>
+          </nav>
+          <p className="mt-12 text-[0.6875rem] font-bold uppercase tracking-[0.16em] text-[#E9906F]">
+            BOSO Supercup
+          </p>
+          <h1 className="display mt-4 text-[3.25rem] leading-none text-white sm:text-[4rem]">
+            Football
+          </h1>
+          <p className="mt-4 max-w-[46ch] text-[1.0625rem] leading-relaxed text-[#D3DCD6]">
+            Rules and registration.
+          </p>
+        </div>
       </header>
+
+      <div className="mx-auto max-w-3xl px-6">
 
       <section className="pt-12">
         <h2 className="display text-[2.125rem]">Rules</h2>
@@ -62,6 +83,7 @@ export default function Page() {
           Contact the office
         </Link>
       </section>
+      </div>
     </div>
   );
 }

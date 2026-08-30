@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { programmes, countyFinance } from "@/content/programmes";
 import { SourceLine } from "@/components/Figures";
+import { ImageBand } from "@/components/Page";
 
 export const metadata: Metadata = {
   title: "The record",
@@ -9,86 +11,108 @@ export const metadata: Metadata = {
     "Kahawa na Mama, Elimu Ni Mwangaza, the BOSO Supercup, and health and water projects across Nandi County.",
 };
 
+const art: Record<string, { img: string; pos: string; tag: string }> = {
+  "kahawa-na-mama": { img: "/img/coffee-planting.jpg", pos: "50% 50%", tag: "Agriculture" },
+  "elimu-ni-mwangaza": { img: "/img/education.jpg", pos: "center", tag: "Education" },
+  "boso-supercup": { img: "/img/football.jpeg", pos: "center", tag: "Youth & sport" },
+  "health-and-infrastructure": { img: "/img/ambulance-inside.jpg", pos: "center", tag: "Health & water" },
+};
+
 export default function RecordPage() {
   return (
-    <div className="mx-auto max-w-5xl px-6">
-      <header className="border-b-2 border-[var(--color-ink)] pb-8 pt-14">
-        <p className="eyebrow">Office of the Woman Representative, Nandi County</p>
-        <h1 className="display mt-4 text-[3rem] sm:text-[4rem]">The record</h1>
-        <p className="mt-4 max-w-[58ch] text-[1.1875rem] leading-relaxed text-[var(--color-soft)]">
-          Four programmes, where each one reached, and what is still being
-          counted.
-        </p>
-      </header>
+    <>
+      <section className="border-b border-[var(--color-rule)]">
+        <div className="mx-auto max-w-6xl px-6 py-14 lg:py-20">
+          <p className="eyebrow">Office of the Woman Representative</p>
+          <h1 className="display mt-5 text-[3.25rem] leading-[0.98] sm:text-[4.25rem]">
+            The record
+          </h1>
+          <p className="mt-6 max-w-[46ch] text-[1.1875rem] leading-relaxed text-[var(--color-soft)]">
+            Four programmes, where each one reached, and what is still being
+            counted.
+          </p>
+        </div>
+      </section>
 
-      <ul className="mt-12 grid gap-5 sm:grid-cols-2">
-        {programmes.map((p) => {
-          const verified = p.figures.filter((f) => f.status === "verified");
-          const open = p.gaps.length;
-          return (
-            <li key={p.slug}>
-              <Link
-                href={`/record/${p.slug}`}
-                className="group flex h-full flex-col rounded border border-[var(--color-rule)] p-7 transition-colors duration-150 hover:border-[var(--color-murram)]"
-              >
-                <p className="meta">{p.status}</p>
-                <h2 className="display mt-2 text-[1.625rem] group-hover:text-[var(--color-murram)]">
-                  {p.name}
-                </h2>
-                <p className="mt-3 flex-1 text-[0.9375rem] leading-relaxed text-[var(--color-soft)]">
-                  {p.oneLine}
-                </p>
-                <p className="meta mt-5 border-t border-[var(--color-rule)] pt-3">
-                  {verified.length} sourced{" "}
-                  {verified.length === 1 ? "figure" : "figures"} · {open} open{" "}
-                  {open === 1 ? "question" : "questions"}
-                </p>
-              </Link>
-            </li>
-          );
-        })}
-      </ul>
+      <section className="mx-auto max-w-6xl px-6 py-16">
+        <ul className="grid gap-6 sm:grid-cols-2">
+          {programmes.map((p) => {
+            const a = art[p.slug];
+            return (
+              <li key={p.slug}>
+                <Link
+                  href={`/record/${p.slug}`}
+                  className="group flex h-full flex-col overflow-hidden rounded-sm border border-[var(--color-rule)] transition-colors duration-200 hover:border-[var(--color-murram)]"
+                >
+                  <div className="relative aspect-[16/10] overflow-hidden bg-[var(--color-sunk)]">
+                    <Image
+                      src={a.img}
+                      alt=""
+                      fill
+                      sizes="(max-width: 640px) 100vw, 44vw"
+                      className="object-cover transition-transform duration-300 ease-out group-hover:scale-[1.03] motion-reduce:transform-none"
+                      style={{ objectPosition: a.pos }}
+                    />
+                    <span className="absolute left-4 top-4 rounded-sm bg-white/90 px-2.5 py-1 text-[0.625rem] font-bold uppercase tracking-[0.11em] text-[var(--color-ink)]">
+                      {a.tag}
+                    </span>
+                  </div>
+                  <div className="flex flex-1 flex-col p-7">
+                    <h2 className="display text-[1.75rem] transition-colors duration-200 group-hover:text-[var(--color-murram)]">
+                      {p.name}
+                    </h2>
+                    <p className="mt-2.5 flex-1 text-[0.9375rem] leading-relaxed text-[var(--color-soft)]">
+                      {p.oneLine}
+                    </p>
+                    <p className="meta mt-6 border-t border-[var(--color-rule)] pt-3.5">
+                      {p.started} &ndash; present · {p.status}
+                    </p>
+                  </div>
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      </section>
 
-      {/* County finance explainer — an official, checkable argument */}
-      <section className="mt-20 border-t border-[var(--color-rule)] pt-12">
-        <p className="eyebrow">Context</p>
-        <h2 className="display mt-3 text-[2.125rem]">
-          Where Nandi County money goes
-        </h2>
-        <p className="mt-3 max-w-[58ch] leading-relaxed text-[var(--color-soft)]">
+      <ImageBand
+        img="/img/coffee-crowd.jpg"
+        pos="50% 40%"
+        eyebrow="Context"
+        title="Where Nandi County money goes."
+      >
+        <div className="mt-9 flex h-28 overflow-hidden rounded-sm">
+          <div
+            className="flex flex-col justify-center bg-white/90 px-6"
+            style={{ flex: countyFinance.recurrent.flex }}
+          >
+            <p className="display text-[1.625rem] text-[var(--color-ink)]">
+              {countyFinance.recurrent.amount}
+            </p>
+            <p className="text-[0.8125rem] text-[var(--color-soft)]">
+              Recurrent · {countyFinance.recurrent.ofBudget} of budget
+            </p>
+          </div>
+          <div
+            className="flex flex-col justify-center bg-[var(--color-murram)] px-6"
+            style={{ flex: countyFinance.development.flex }}
+          >
+            <p className="display text-[1.625rem] text-white">
+              {countyFinance.development.amount}
+            </p>
+            <p className="text-[0.8125rem] text-[#F6DFD6]">
+              Development · {countyFinance.development.ofBudget}
+            </p>
+          </div>
+        </div>
+        <p className="mt-5 text-[0.9375rem] text-[#D3DCD6]">
           {countyFinance.total} in {countyFinance.year}, at{" "}
           {countyFinance.absorption} absorption.
         </p>
-
-        <div className="mt-7 flex h-24 overflow-hidden rounded">
-          <div
-            className="flex flex-col justify-center bg-[var(--color-rule-firm)] px-6"
-            style={{ flex: countyFinance.recurrent.flex }}
-          >
-            <p className="display text-[1.375rem] text-[var(--color-ink)]">
-              {countyFinance.recurrent.amount}
-            </p>
-            <p className="text-[0.8125rem] text-[var(--color-ink)]">
-              Recurrent — {countyFinance.recurrent.ofBudget} of budget
-            </p>
-          </div>
-          <div
-            className="flex flex-col justify-center bg-[var(--color-leaf)] px-6"
-            style={{ flex: countyFinance.development.flex }}
-          >
-            <p className="display text-[1.375rem] text-[#F4FAF6]">
-              {countyFinance.development.amount}
-            </p>
-            <p className="text-[0.8125rem] text-[#F4FAF6]">
-              Development — {countyFinance.development.ofBudget}
-            </p>
-          </div>
-        </div>
-
-        <div className="max-w-[52ch]">
+        <div className="mt-1 max-w-[52ch] [&_p]:text-[#8FA398] [&_a]:text-[#B8C4BC]">
           <SourceLine source={countyFinance.source} />
         </div>
-      </section>
-    </div>
+      </ImageBand>
+    </>
   );
 }

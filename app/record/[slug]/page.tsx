@@ -36,7 +36,8 @@ export default async function ProgrammePage({
   if (!p) notFound();
 
   return (
-    <article className="mx-auto max-w-4xl px-6">
+    <article>
+      <div className="mx-auto max-w-4xl px-6">
       <nav aria-label="Breadcrumb" className="pt-10">
         <Link
           href="/record"
@@ -70,18 +71,22 @@ export default async function ProgrammePage({
         </dl>
       </header>
 
+      </div>
+
       {p.hero && (
-        <figure className="relative mt-10 aspect-[16/8] overflow-hidden rounded-sm bg-[var(--color-sunk)]">
+        <figure className="relative mt-10 aspect-[21/9] w-full overflow-hidden bg-[var(--color-sunk)]">
           <Image
             src={p.hero}
             alt={p.heroAlt ?? ""}
             fill
             priority
-            sizes="(max-width: 896px) 100vw, 896px"
+            sizes="100vw"
             className="object-cover"
           />
         </figure>
       )}
+
+      <div className="mx-auto max-w-4xl px-6">
 
       <Section title="The figures">
         <FigureGrid figures={p.figures} />
@@ -146,9 +151,11 @@ export default async function ProgrammePage({
 
       {p.distinctive && (
         <Section title="What makes it different">
-          <div className="rounded-r border-l-[3px] border-[var(--color-leaf)] bg-[var(--color-leaf-wash)] px-7 py-6">
-            <h3 className="display text-[1.625rem]">{p.distinctive.title}</h3>
-            <p className="mt-3 max-w-[60ch] leading-relaxed text-[var(--color-soft)]">
+          <div className="rounded-sm bg-[var(--color-leaf)] px-9 py-10">
+            <h3 className="display text-[2rem] leading-tight text-white">
+              {p.distinctive.title}
+            </h3>
+            <p className="mt-4 max-w-[58ch] leading-relaxed text-[#D6E6DC]">
               {p.distinctive.body}
             </p>
           </div>
@@ -198,7 +205,7 @@ export default async function ProgrammePage({
         </Section>
       )}
 
-      {/* Required. See BUILD-BRIEF.md §3 — this section is what makes the rest credible. */}
+        {/* Required. See BUILD-BRIEF.md section 3. This section is what makes the rest credible. */}
       <Section title="Still to be counted">
         <GapCards gaps={p.gaps} />
       </Section>
@@ -206,6 +213,7 @@ export default async function ProgrammePage({
       <Section title="Sources">
         <SourceList sources={p.sources} />
       </Section>
+      </div>
     </article>
   );
 }

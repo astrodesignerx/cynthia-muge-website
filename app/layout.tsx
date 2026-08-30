@@ -27,11 +27,11 @@ const jetbrains = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://cynthiamuge.com"),
   title: {
-    default: "Hon. Cynthia Muge — Woman Representative, Nandi County",
+    default: "Hon. Cynthia Muge | Woman Representative, Nandi County",
     template: "%s · Hon. Cynthia Muge",
   },
   description:
-    "Hon. Cynthia Jepkosgei Muge, Woman Representative for Nandi County — her work across the six sub-counties and thirty wards.",
+    "Hon. Cynthia Jepkosgei Muge, Woman Representative for Nandi County. Her work across the six sub-counties and thirty wards.",
   openGraph: {
     type: "website",
     locale: "en_KE",

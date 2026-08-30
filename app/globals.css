@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /*
-  Visual identity — see BUILD-BRIEF.md §2.
+   Visual identity: see BUILD-BRIEF.md section 2.
   Light mode only. Every colour painted explicitly; no dark-mode blocks.
 */
 
@@ -28,7 +28,7 @@
   --font-body: var(--font-manrope), "Helvetica Neue", Arial, sans-serif;
   --font-mono: var(--font-jetbrains), ui-monospace, Menlo, monospace;
 
-  /* Scale — 12 / 14 / 16 / 18 / 21 / 26 / 34 / 46 / 64 */
+  /* Scale: 12 / 14 / 16 / 18 / 21 / 26 / 34 / 46 / 64 */
   --text-2xs: 0.75rem;
   --text-xs: 0.875rem;
   --text-sm: 1rem;
