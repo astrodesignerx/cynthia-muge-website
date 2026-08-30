@@ -220,16 +220,37 @@ export function EvidencePlate({
   );
 }
 
-/** Section heading for the dark surface. */
+/**
+ * Section heading for the dark surface.
+ * `split` sets the heading against the left edge and the body copy to the
+ * right, for sections that run the full width rather than sitting in a column.
+ */
 export function NightHead({
   eyebrow,
   title,
   lead,
+  split = false,
 }: {
   eyebrow: string;
   title: string;
   lead?: string;
+  split?: boolean;
 }) {
+  if (split && lead) {
+    return (
+      <header className="grid gap-8 lg:grid-cols-[1.1fr_1fr] lg:items-end lg:gap-20">
+        <div>
+          <p className="label text-[var(--color-gold)]">{eyebrow}</p>
+          <h2 className="display mt-5 max-w-[15ch] text-[2.5rem] leading-[1.02] text-[var(--color-on-night)] sm:text-[3.25rem]">
+            {title}
+          </h2>
+        </div>
+        <p className="max-w-[54ch] text-[1.0625rem] leading-relaxed text-[var(--color-on-night-soft)] lg:pb-2">
+          {lead}
+        </p>
+      </header>
+    );
+  }
   return (
     <header className="max-w-[34ch]">
       <p className="label text-[var(--color-gold)]">{eyebrow}</p>

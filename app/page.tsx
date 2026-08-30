@@ -27,14 +27,72 @@ const cards = [
 ];
 
 
+/**
+ * Signposts, not decoration. Each frame previews a section covered in full
+ * elsewhere and links to it, so repeating those photographs is the point.
+ */
+const signposts = [
+  {
+    href: "/pillars",
+    img: "/img/elders.jpg",
+    pos: "50% 45%",
+    label: "Governance",
+    body: "The Kaburwo Council of Elders",
+  },
+  {
+    href: "/parliament",
+    img: "/img/state-house.jpg",
+    pos: "50% 55%",
+    label: "In Parliament",
+    body: "Committee work and positions",
+  },
+  {
+    href: "/record/kahawa-na-mama",
+    img: "/img/coffee-spouses.jpg",
+    pos: "50% 40%",
+    label: "Kahawa na Mama",
+    body: "Trees in both spouses' names",
+  },
+  {
+    href: "/record/elimu-ni-mwangaza",
+    img: "/img/scholars-walk.jpg",
+    pos: "50% 30%",
+    label: "Elimu Ni Mwangaza",
+    body: "449 students on scholarship",
+  },
+  {
+    href: "/record/health-and-infrastructure",
+    img: "/img/boda-shade-lelmokwo.jpg",
+    pos: "50% 50%",
+    label: "Health and Infrastructure",
+    body: "Shades, boreholes, equipment",
+  },
+  {
+    href: "/contact",
+    img: "/img/listening.jpg",
+    pos: "50% 45%",
+    label: "Contact",
+    body: "Six sub-counties, thirty wards",
+  },
+];
+
 export default function Home() {
   return (
     <>
       {/* Hero: she stands on the field, rather than behind a scrim */}
       <section className="night relative isolate overflow-hidden">
+        <Image
+          src="/img/baraza-b.jpg"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="-z-30 object-cover"
+          style={{ objectPosition: "50% 42%" }}
+        />
         <div
           aria-hidden
-          className="absolute inset-0 -z-20 bg-[radial-gradient(120%_90%_at_15%_10%,#1B2A3D_0%,#0C1420_55%,#080E17_100%)]"
+          className="absolute inset-0 -z-20 bg-[linear-gradient(105deg,#0C1420_0%,#0C1420E6_45%,#0C1420B3_100%)]"
         />
         <div
           aria-hidden
@@ -92,6 +150,7 @@ export default function Home() {
             eyebrow="Four years on the record"
             title="What the office has counted."
             lead="Each figure below carries its source on the programme page it comes from. Where nothing has been counted, this site says so instead of estimating."
+            split
           />
           <dl className="mt-16 grid gap-y-14 sm:grid-cols-2 lg:grid-cols-4 lg:gap-x-10">
             <Stat
@@ -201,6 +260,38 @@ export default function Home() {
             />
           </div>
         </div>
+      </section>
+
+      {/* Signposts into the rest of the site */}
+      <section className="mx-auto max-w-7xl px-6 pb-20 lg:pb-24">
+        <p className="eyebrow">Across the county</p>
+        <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {signposts.map((sp) => (
+            <li key={sp.href}>
+              <Link
+                href={sp.href}
+                className="group relative isolate flex min-h-[13rem] flex-col justify-end overflow-hidden rounded-sm p-6"
+              >
+                <Image
+                  src={sp.img}
+                  alt=""
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="-z-10 object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.05] motion-reduce:transform-none"
+                  style={{ objectPosition: sp.pos }}
+                />
+                <div
+                  aria-hidden
+                  className="absolute inset-0 -z-10 bg-gradient-to-t from-[#0C1420]/94 via-[#0C1420]/40 to-transparent"
+                />
+                <p className="label text-[var(--color-gold)]">{sp.label}</p>
+                <p className="mt-2 text-[1.0625rem] font-semibold leading-snug text-white">
+                  {sp.body}
+                </p>
+              </Link>
+            </li>
+          ))}
+        </ul>
       </section>
 
       {/* Evidence: the budget line */}

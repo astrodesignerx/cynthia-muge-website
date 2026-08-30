@@ -74,6 +74,9 @@ export default function RootLayout({
                 aria-hidden
                 className="h-[2px] w-14 bg-[var(--color-gold)] transition-[width] duration-200 ease-out group-hover:w-20"
               />
+              <span className="label hidden text-[0.5625rem] text-[var(--color-on-night-soft)] sm:block">
+                Keeping the Promise
+              </span>
             </Link>
             <nav aria-label="Main" className="-mx-2 overflow-x-auto px-2">
               <ul className="flex items-center gap-x-6 whitespace-nowrap">
@@ -100,6 +103,9 @@ export default function RootLayout({
               <div className="max-w-sm">
                 <p className="display text-[1.75rem] text-[var(--color-on-night)]">
                   Cynthia Muge
+                </p>
+                <p className="label mt-4 text-[var(--color-gold)]">
+                  Keeping the Promise
                 </p>
                 <p className="mt-3 text-[0.9375rem] leading-relaxed text-[var(--color-on-night-soft)]">
                   Woman Representative, Nandi County. Serving the six

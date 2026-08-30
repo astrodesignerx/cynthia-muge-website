@@ -183,6 +183,7 @@ export default function Boso() {
             eyebrow="Next"
             title="Sub-county rounds, from September."
             lead="120 teams carry their wards into the sub-county stage. The county final is in December 2026."
+            split
           />
           <dl className="mt-14 grid gap-y-12 sm:grid-cols-3 lg:gap-x-12">
             <Stat scale="sm" value="120" label="Teams through" />

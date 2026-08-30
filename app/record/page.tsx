@@ -54,6 +54,7 @@ export default function RecordPage() {
             eyebrow="Office of the Woman Representative"
             title="The record"
             lead="Six programmes, where each one reached, and what is still being counted."
+            split
           />
           <dl className="mt-16 grid gap-y-12 sm:grid-cols-3 lg:gap-x-12">
             <Stat scale="sm" value={String(programmes.length)} label="Programmes" />
