@@ -66,6 +66,9 @@ export type Partner = { name: string; role: string };
 
 export type Programme = {
   slug: string;
+  /** Lead photograph for the programme page. */
+  hero?: string;
+  heroAlt?: string;
   name: string;
   oneLine: string;
   started: string;

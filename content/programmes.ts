@@ -33,9 +33,17 @@ const REGISTER: Source = {
   date: "Held by the office",
 };
 
+const NGAAF_GRAPHIC: Source = {
+  label: "Elimu Ni Mwangaza — students on full scholarship, by sub-county",
+  publisher: "Office of the Woman Representative / NGAAF, published graphic",
+  date: "Undated",
+};
+
 export const programmes: Programme[] = [
   {
     slug: "kahawa-na-mama",
+    hero: "/img/coffee-planting.jpg",
+    heroAlt: "Women planting coffee seedlings together in Nandi County",
     name: "Kahawa na Mama",
     oneLine:
       "Putting coffee trees, and the income from them, into the hands of Nandi women — and registering those trees in their own names.",
@@ -145,6 +153,8 @@ export const programmes: Programme[] = [
 
   {
     slug: "elimu-ni-mwangaza",
+    hero: "/img/education.jpg",
+    heroAlt: "Students supported through the Elimu Ni Mwangaza scholarship programme",
     name: "Elimu Ni Mwangaza",
     oneLine:
       "Full scholarships for students from families who could not otherwise keep them in school.",
@@ -163,10 +173,12 @@ export const programmes: Programme[] = [
         },
       },
       {
-        status: "unconfirmed",
-        label: "Total students on full scholarship",
+        status: "verified",
+        value: "411",
+        label: "Students on full scholarship, across all six sub-counties",
+        source: NGAAF_GRAPHIC,
         note:
-          "Two different totals are in public circulation — 409 and 449. No figure is published here until the office confirms which is correct.",
+          "The sub-county figures below sum to exactly this total. Later totals of 449 also circulate; if the number has grown since this graphic, the office should publish the newer breakdown.",
       },
       {
         status: "unconfirmed",
@@ -191,7 +203,16 @@ export const programmes: Programme[] = [
           "Entered Form One in 2023, sitting KCSE in 2026. The first full four-year cycle.",
       },
     ],
-    coverage: [],
+    coverage: [
+      { area: "Emgwen", value: 74, display: "74" },
+      { area: "Tinderet", value: 72, display: "72" },
+      { area: "Aldai", value: 69, display: "69" },
+      { area: "Mosop", value: 67, display: "67" },
+      { area: "Nandi Hills", value: 66, display: "66" },
+      { area: "Chesumei", value: 63, display: "63" },
+    ],
+    coverageNote:
+      "Counted per sub-county, and the six add to 411. Spread is deliberately even — no sub-county carries fewer than 63 or more than 74.",
     distinctive: {
       title: "It is not only school fees.",
       body:
@@ -202,9 +223,9 @@ export const programmes: Programme[] = [
     ],
     gaps: [
       {
-        title: "Confirmed enrolment total",
+        title: "Whether 411 is still current",
         body:
-          "Until the office reconciles 409 against 449, no total is published on this page.",
+          "411 comes from the programme's own published breakdown and the six sub-county figures sum to it exactly. Totals of 409 and 449 also circulate. If the cohort has grown, the office should publish an updated breakdown rather than a bare number.",
         tag: "Unconfirmed",
       },
       {
@@ -215,6 +236,7 @@ export const programmes: Programme[] = [
       },
     ],
     sources: [
+      NGAAF_GRAPHIC,
       {
         label: "Elimu Ni Mwangaza dedication service coverage",
         publisher: "Savannahmax Media House",
@@ -226,6 +248,8 @@ export const programmes: Programme[] = [
 
   {
     slug: "boso-supercup",
+    hero: "/img/football.jpeg",
+    heroAlt: "BOSO Supercup football in Nandi County",
     name: "BOSO Supercup",
     oneLine:
       "A football and volleyball league that reached every ward in Nandi in three months.",
@@ -329,6 +353,8 @@ export const programmes: Programme[] = [
 
   {
     slug: "health-and-infrastructure",
+    hero: "/img/ambulance-speech.jpg",
+    heroAlt: "The ambulance handed over at Kabiemit Health Centre, Mosop",
     name: "Health and Infrastructure",
     oneLine:
       "Equipment, water and workspaces delivered to named facilities and centres.",

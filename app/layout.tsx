@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     template: "%s · Hon. Cynthia Muge",
   },
   description:
-    "The record of Hon. Cynthia Jepkosgei Muge, Woman Representative for Nandi County. Every figure carries its source.",
+    "Hon. Cynthia Jepkosgei Muge, Woman Representative for Nandi County — her work across the six sub-counties and thirty wards.",
   openGraph: {
     type: "website",
     locale: "en_KE",
@@ -98,9 +98,8 @@ export default function RootLayout({
               <div className="max-w-sm">
                 <p className="display text-[1.375rem]">Cynthia Muge</p>
                 <p className="mt-3 text-[0.9375rem] leading-relaxed text-[var(--color-soft)]">
-                  Woman Representative, Nandi County. Every figure published on
-                  this site carries its source, or is marked as not yet
-                  measured.
+                  Woman Representative, Nandi County. Serving the six
+                  sub-counties and thirty wards.
                 </p>
               </div>
               <nav aria-label="Footer">
@@ -119,8 +118,9 @@ export default function RootLayout({
               </nav>
             </div>
             <p className="meta mt-10 border-t border-[var(--color-rule)] pt-5">
-              Office of the Woman Representative, Nandi County · Last reviewed 29
-              August 2026
+              Office of the Woman Representative, Nandi County · Last reviewed 30
+              August 2026 · Figures on this site carry their source; those not
+              yet counted are marked as such
             </p>
           </div>
         </footer>

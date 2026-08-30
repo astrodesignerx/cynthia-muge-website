@@ -6,7 +6,7 @@ import { SourceLine } from "@/components/Figures";
 export const metadata: Metadata = {
   title: "The record",
   description:
-    "Every programme delivered by the Office of the Woman Representative, Nandi County — with sources, and with the gaps stated plainly.",
+    "Kahawa na Mama, Elimu Ni Mwangaza, the BOSO Supercup, and health and water projects across Nandi County.",
 };
 
 export default function RecordPage() {
@@ -16,9 +16,8 @@ export default function RecordPage() {
         <p className="eyebrow">Office of the Woman Representative, Nandi County</p>
         <h1 className="display mt-4 text-[3rem] sm:text-[4rem]">The record</h1>
         <p className="mt-4 max-w-[58ch] text-[1.1875rem] leading-relaxed text-[var(--color-soft)]">
-          Four programmes, what each one delivered, and what has not yet been
-          counted. Every figure names its source. Where a number is disputed or
-          unmeasured, this site says so instead of publishing an estimate.
+          Four programmes, where each one reached, and what is still being
+          counted.
         </p>
       </header>
 

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { programmes, getProgramme } from "@/content/programmes";
@@ -69,10 +70,20 @@ export default async function ProgrammePage({
         </dl>
       </header>
 
-      <Section
-        title="The figures"
-        lead="Every number here carries its source. Where something has not been measured, this page says so rather than estimating."
-      >
+      {p.hero && (
+        <figure className="relative mt-10 aspect-[16/8] overflow-hidden rounded-sm bg-[var(--color-sunk)]">
+          <Image
+            src={p.hero}
+            alt={p.heroAlt ?? ""}
+            fill
+            priority
+            sizes="(max-width: 896px) 100vw, 896px"
+            className="object-cover"
+          />
+        </figure>
+      )}
+
+      <Section title="The figures">
         <FigureGrid figures={p.figures} />
       </Section>
 
@@ -188,14 +199,11 @@ export default async function ProgrammePage({
       )}
 
       {/* Required. See BUILD-BRIEF.md §3 — this section is what makes the rest credible. */}
-      <Section
-        title="What has not been measured"
-        lead="These are open, and stating them plainly is the point. A record that only carries good news is not a record."
-      >
+      <Section title="Still to be counted">
         <GapCards gaps={p.gaps} />
       </Section>
 
-      <Section title="How to check this">
+      <Section title="Sources">
         <SourceList sources={p.sources} />
       </Section>
     </article>
