@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import { PhotoStrip } from "@/components/Viz";
 import { programmes, getProgramme } from "@/content/programmes";
 import {
   FigureGrid,
@@ -204,6 +205,19 @@ export default async function ProgrammePage({
       )}
 
         {/* Required. See BUILD-BRIEF.md section 3. This section is what makes the rest credible. */}
+      </div>
+
+      {p.gallery && p.gallery.length > 0 && (
+        <section className="mx-auto max-w-7xl px-6 py-14">
+          <p className="eyebrow">Photographs</p>
+          <div className="mt-6">
+            <PhotoStrip images={p.gallery} height="19rem" />
+          </div>
+        </section>
+      )}
+
+      <div className="mx-auto max-w-4xl px-6">
+
       <Section title="Still to be counted">
         <GapCards gaps={p.gaps} />
       </Section>

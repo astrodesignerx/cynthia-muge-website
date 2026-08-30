@@ -69,8 +69,40 @@ const NGAAF_GRAPHIC: Source = {
 export const programmes: Programme[] = [
   {
     slug: "kahawa-na-mama",
-    hero: "/img/coffee-planting.jpg",
-    heroAlt: "Women planting coffee seedlings together in Nandi County",
+    hero: "/img/coffee-planting-hand.jpg",
+    heroAlt: "Cynthia Muge planting a coffee seedling by hand in Nandi County",
+    gallery: [
+      {
+        src: "/img/coffee-spouses.jpg",
+        alt: "Men collecting seedlings as beneficiaries through their wives",
+        pos: "50% 40%",
+      },
+      {
+        src: "/img/coffee-handover-a.jpg",
+        alt: "A seedling distribution day",
+        pos: "50% 45%",
+      },
+      {
+        src: "/img/coffee-loading.jpg",
+        alt: "Seedlings loaded for distribution",
+        pos: "50% 50%",
+      },
+      {
+        src: "/img/coffee-beneficiaries.jpg",
+        alt: "Beneficiaries of Kahawa na Mama with their seedlings",
+        pos: "50% 45%",
+      },
+      {
+        src: "/img/coffee-distributing.jpg",
+        alt: "Seedlings handed over one by one",
+        pos: "50% 45%",
+      },
+      {
+        src: "/img/coffee-handover-b.jpg",
+        alt: "A distribution point in Nandi County",
+        pos: "50% 45%",
+      },
+    ],
     name: "Kahawa na Mama",
     oneLine:
       "Putting coffee trees, and the income from them, into the hands of Nandi women, and registering those trees in their own names.",
@@ -286,7 +318,7 @@ export const programmes: Programme[] = [
 
   {
     slug: "boso-supercup",
-    hero: "/img/football.jpeg",
+    hero: "/img/boso-prize-a.jpg",
     heroAlt: "BOSO Supercup football in Nandi County",
     name: "BOSO Supercup",
     oneLine:

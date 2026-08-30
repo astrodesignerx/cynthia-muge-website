@@ -14,14 +14,14 @@ const comps = [
   {
     href: "/boso/football",
     name: "Football",
-    img: "/img/football.jpeg",
+    img: "/img/football.jpg",
     pos: "50% 45%",
     body: "Ward, sub-county and county rounds.",
   },
   {
     href: "/boso/volleyball",
     name: "Volleyball",
-    img: "/img/volley.jpeg",
+    img: "/img/volley.jpg",
     pos: "50% 45%",
     body: "County championships.",
   },

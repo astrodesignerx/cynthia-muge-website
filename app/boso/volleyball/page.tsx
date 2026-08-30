@@ -21,7 +21,7 @@ export default function Page() {
     <div>
       <header className="relative isolate overflow-hidden">
         <Image
-          src="/img/volley.jpeg"
+          src="/img/volley.jpg"
           alt=""
           fill
           priority

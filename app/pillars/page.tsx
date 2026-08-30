@@ -16,7 +16,7 @@ const art: Record<string, { img: string; pos: string }> = {
   Education: { img: "/img/scholars-walk.jpg", pos: "50% 30%" },
   Health: { img: "/img/ambulance-team.jpg", pos: "50% 40%" },
   Water: { img: "/img/water-a.jpg", pos: "50% 45%" },
-  "Wealth Creation": { img: "/img/coffee-planting.jpg", pos: "50% 50%" },
+  "Wealth Creation": { img: "/img/coffee-spouses.jpg", pos: "50% 45%" },
   Governance: { img: "/img/baraza-a.jpg", pos: "50% 40%" },
 };
 

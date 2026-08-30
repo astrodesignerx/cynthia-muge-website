@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 const art: Record<string, { img: string; pos: string; tag: string }> = {
-  "kahawa-na-mama": { img: "/img/coffee-planting.jpg", pos: "50% 50%", tag: "Agriculture" },
+  "kahawa-na-mama": { img: "/img/coffee-planting-hand.jpg", pos: "50% 45%", tag: "Agriculture" },
   "elimu-ni-mwangaza": { img: "/img/scholars-walk.jpg", pos: "50% 30%", tag: "Education" },
   "boso-supercup": { img: "/img/boso-prize-b.jpg", pos: "50% 40%", tag: "Youth and sport" },
   "health-and-infrastructure": { img: "/img/ambulance-inside.jpg", pos: "center", tag: "Health and water" },

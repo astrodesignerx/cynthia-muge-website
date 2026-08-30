@@ -19,7 +19,7 @@ import {
 } from "@/components/Viz";
 
 const cards = [
-  { slug: "kahawa-na-mama", img: "/img/coffee-crowd.jpg", pos: "50% 45%" },
+  { slug: "kahawa-na-mama", img: "/img/coffee-handover-a.jpg", pos: "50% 45%" },
   { slug: "elimu-ni-mwangaza", img: "/img/scholars-line.jpg", pos: "50% 30%" },
   { slug: "boso-supercup", img: "/img/boso-prize-a.jpg", pos: "50% 40%" },
   { slug: "health-and-infrastructure", img: "/img/ambulance-team.jpg", pos: "50% 40%" },
@@ -30,7 +30,7 @@ const cards = [
 const strip = [
   { src: "/img/baraza-a.jpg", alt: "A community meeting at Chemamul", pos: "50% 40%" },
   { src: "/img/boso-terraces.jpg", alt: "Spectators at a BOSO ward final", pos: "50% 45%" },
-  { src: "/img/coffee-planting.jpg", alt: "Coffee seedlings going into the ground", pos: "50% 50%" },
+  { src: "/img/coffee-planting-hand.jpg", alt: "Planting a coffee seedling by hand", pos: "50% 45%" },
   { src: "/img/scholars-walk.jpg", alt: "Scholarship students before the KCSE dedication", pos: "50% 35%" },
   { src: "/img/boda-shade-lelmokwo.jpg", alt: "The boda boda shade at Lelmokwo Centre", pos: "50% 50%" },
   { src: "/img/listening.jpg", alt: "A listening session at Himaki", pos: "50% 45%" },

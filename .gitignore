@@ -11,3 +11,6 @@ node_modules/
 .next/
 next-env.d.ts
 tsconfig.tsbuildinfo
+
+# Source art for the image pipeline, not shipped
+Images/

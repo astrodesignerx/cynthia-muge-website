@@ -69,6 +69,8 @@ export type Programme = {
   /** Lead photograph for the programme page. */
   hero?: string;
   heroAlt?: string;
+  /** Further photographs, shown as a scrolling strip. */
+  gallery?: { src: string; alt: string; pos?: string }[];
   name: string;
   oneLine: string;
   started: string;
