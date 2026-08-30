@@ -19,7 +19,7 @@ export function Wordmark({ size = "lg" }: { size?: "sm" | "lg" }) {
         >
           <span
             className={`${upright} heavy block leading-none tracking-[0.05em] text-[#1A1206] ${
-              big ? "text-[0.8125rem]" : "text-[0.5625rem]"
+              big ? "text-[0.8125rem]" : "text-[0.5rem]"
             }`}
           >
             HON.
@@ -29,7 +29,7 @@ export function Wordmark({ size = "lg" }: { size?: "sm" | "lg" }) {
         <span className={lean}>
           <span
             className={`${upright} heavy block leading-[0.9] tracking-[0.015em] ${
-              big ? "text-[2rem]" : "text-[1.375rem]"
+              big ? "text-[2rem]" : "text-[1.125rem]"
             }`}
           >
             <span className="text-[var(--color-on-night)]">CYNTHIA</span>{" "}
@@ -44,7 +44,7 @@ export function Wordmark({ size = "lg" }: { size?: "sm" | "lg" }) {
         >
           <span
             className={`${upright} heavy block text-center uppercase leading-none tracking-[0.1em] text-white ${
-              big ? "text-[0.9375rem]" : "text-[0.6875rem]"
+              big ? "text-[0.9375rem]" : "text-[0.5625rem]"
             }`}
           >
             Keeping the Promise

@@ -17,6 +17,7 @@ import {
   WardGrid,
 } from "@/components/Viz";
 import { FloatingPillars, Reveal } from "@/components/Motion";
+import { NetField } from "@/components/NetField";
 
 const cards = [
   { slug: "kahawa-na-mama", img: "/img/coffee-handover-a.jpg", pos: "50% 45%" },
@@ -150,8 +151,9 @@ export default function Home() {
       </section>
 
       {/* Four years, in numbers */}
-      <section className="night">
-        <div className="mx-auto max-w-6xl px-6 py-20 lg:py-28">
+      <section className="night relative isolate overflow-hidden">
+        <NetField />
+        <div className="relative mx-auto max-w-7xl px-6 py-20 lg:py-28">
           <NightHead
             eyebrow="Four years on the record"
             title="What the office has counted."
@@ -246,7 +248,7 @@ export default function Home() {
 
       {/* BOSO, as data */}
       <section className="night">
-        <div className="mx-auto max-w-6xl px-6 py-20 lg:py-28">
+        <div className="mx-auto max-w-7xl px-6 py-20 lg:py-28">
           <div className="grid gap-16 lg:grid-cols-[1fr_1.1fr] lg:gap-20">
             <div>
               <NightHead
@@ -310,7 +312,7 @@ export default function Home() {
 
       {/* Evidence: the budget line */}
       <section className="night">
-        <div className="mx-auto max-w-6xl px-6 py-20 lg:py-28">
+        <div className="mx-auto max-w-7xl px-6 py-20 lg:py-28">
           <p className="label text-[var(--color-gold)]">Health, on the estimates</p>
           <h2 className="display mt-5 max-w-[18ch] text-[2.5rem] leading-[1.02] text-[var(--color-on-night)] sm:text-[3.25rem]">
             A promise you can look up.
@@ -362,7 +364,7 @@ export default function Home() {
 
       {/* County money */}
       <section className="night">
-        <div className="mx-auto max-w-6xl px-6 py-20 lg:py-28">
+        <div className="mx-auto max-w-7xl px-6 py-20 lg:py-28">
           <div className="grid gap-14 lg:grid-cols-[1fr_1.2fr] lg:items-end">
             <NightHead
               eyebrow="Context"
@@ -431,7 +433,7 @@ export default function Home() {
               alt="Cynthia Muge speaking"
               fill
               sizes="(max-width: 1024px) 100vw, 48vw"
-              className="object-contain object-bottom"
+              className="origin-bottom scale-[1.22] object-contain object-bottom"
             />
           </div>
         </div>

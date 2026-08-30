@@ -128,7 +128,7 @@ export default function Pillars() {
           style={{ objectPosition: "50% 45%" }}
         />
         <div aria-hidden className="absolute inset-0 -z-10 bg-[#0C1420]/84" />
-        <div className="mx-auto max-w-4xl px-6 py-24 lg:py-28">
+        <div className="mx-auto max-w-7xl px-6 py-24 lg:py-28">
           <NightHead eyebrow="In her words" title="Fear is a luxury we cannot afford." />
           <blockquote className="mt-8 max-w-[58ch] text-[1.125rem] leading-relaxed text-[var(--color-on-night-soft)]">
             <p>&ldquo;{declaration.quote}&rdquo;</p>

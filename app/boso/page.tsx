@@ -107,7 +107,7 @@ export default function Boso() {
 
       {/* The ward stage, as data */}
       <section className="night">
-        <div className="mx-auto max-w-6xl px-6 py-20 lg:py-28">
+        <div className="mx-auto max-w-7xl px-6 py-20 lg:py-28">
           <div className="grid gap-16 lg:grid-cols-[1fr_1.1fr] lg:gap-20">
             <NightHead
               eyebrow="The ward stage, closed"
@@ -124,7 +124,7 @@ export default function Boso() {
       </section>
 
       {/* Prize structure */}
-      <section className="mx-auto max-w-6xl px-6 py-20 lg:py-24">
+      <section className="mx-auto max-w-7xl px-6 py-20 lg:py-24">
         <div className="grid gap-14 lg:grid-cols-[1fr_1.2fr]">
           <div>
             <p className="eyebrow">Per ward</p>
@@ -182,7 +182,7 @@ export default function Boso() {
 
       {/* Next stage */}
       <section className="night">
-        <div className="mx-auto max-w-6xl px-6 py-20">
+        <div className="mx-auto max-w-7xl px-6 py-20">
           <NightHead
             eyebrow="Next"
             title="Sub-county rounds, from September"

@@ -130,7 +130,7 @@ export default function RecordPage() {
       </section>
 
       <section className="night">
-        <div className="mx-auto max-w-6xl px-6 py-20 lg:py-24">
+        <div className="mx-auto max-w-7xl px-6 py-20 lg:py-24">
           <div className="grid gap-14 lg:grid-cols-[1fr_1.2fr] lg:items-end">
             <NightHead
               eyebrow="Context"

@@ -43,7 +43,7 @@ export default function Contact() {
         pos="50% 45%"
       />
 
-      <section className="mx-auto max-w-6xl px-6 py-20">
+      <section className="mx-auto max-w-7xl px-6 py-20">
         <div className="grid gap-14 lg:grid-cols-[1.2fr_1fr]">
           <dl>
             {routes.map((r) => (

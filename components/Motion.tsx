@@ -223,11 +223,11 @@ export function FloatingPillars({
 }) {
   // deg clockwise from twelve o'clock, and how far out as a share of the radius
   const spots = [
-    { deg: 322, r: 0.86, front: false, dur: "7.5s", delay: "0s", rot: -5 },
+    { deg: 330, r: 0.80, front: false, dur: "7.5s", delay: "0s", rot: -5 },
     { deg: 38, r: 0.88, front: true, dur: "9s", delay: "-2s", rot: 4 },
-    { deg: 300, r: 0.80, front: true, dur: "8.2s", delay: "-4s", rot: 3 },
+    { deg: 285, r: 0.82, front: true, dur: "8.2s", delay: "-4s", rot: 3 },
     { deg: 88, r: 0.90, front: false, dur: "10s", delay: "-1s", rot: -4 },
-    { deg: 254, r: 0.74, front: true, dur: "8.8s", delay: "-3s", rot: 5 },
+    { deg: 243, r: 0.72, front: true, dur: "8.8s", delay: "-3s", rot: 5 },
     { deg: 128, r: 0.86, front: true, dur: "7.8s", delay: "-5s", rot: -3 },
   ];
 
@@ -240,8 +240,9 @@ export function FloatingPillars({
         const s = spots[i];
         const rad = (s.deg * Math.PI) / 180;
         // 50% is the disc centre; sin/cos put the chip on the chord
-        const left = 50 + Math.sin(rad) * s.r * 50;
-        const top = 50 - Math.cos(rad) * s.r * 50;
+        // fixed precision, so the server and the client emit the same string
+        const left = (50 + Math.sin(rad) * s.r * 50).toFixed(3);
+        const top = (50 - Math.cos(rad) * s.r * 50).toFixed(3);
         return (
           <span
             key={p.n}

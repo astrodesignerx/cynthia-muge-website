@@ -33,7 +33,7 @@ export default function Media() {
         pos="50% 0%"
       />
 
-      <section className="mx-auto max-w-6xl px-6 py-20">
+      <section className="mx-auto max-w-7xl px-6 py-20">
         <div className="grid gap-14 lg:grid-cols-[1fr_1.2fr]">
           <div>
             <p className="eyebrow">On the page now</p>

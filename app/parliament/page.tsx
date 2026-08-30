@@ -50,7 +50,7 @@ export default function Parliament() {
       </section>
 
       <section className="night border-t border-[var(--color-night-rule)]">
-        <div className="mx-auto max-w-6xl px-6 py-16">
+        <div className="mx-auto max-w-7xl px-6 py-16">
           <p className="label text-[var(--color-gold)]">Committees</p>
           <ul className="mt-8 grid gap-x-10 gap-y-6 sm:grid-cols-2 lg:grid-cols-3">
             {parliament.committees.map((c) => (
@@ -65,7 +65,7 @@ export default function Parliament() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-6 py-20 lg:py-24">
+      <section className="mx-auto max-w-7xl px-6 py-20 lg:py-24">
         <div className="flex flex-wrap items-baseline justify-between gap-4">
           <h2 className="display text-[2.5rem] leading-tight sm:text-[3rem]">
             On the record
@@ -109,7 +109,7 @@ export default function Parliament() {
       </section>
 
       <section className="night">
-        <div className="mx-auto max-w-6xl px-6 py-20">
+        <div className="mx-auto max-w-7xl px-6 py-20">
           <div className="grid gap-14 lg:grid-cols-[1fr_1.1fr] lg:items-center">
             <NightHead
               eyebrow="Elected"

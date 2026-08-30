@@ -53,7 +53,7 @@ export default async function ProgrammePage({
           aria-hidden
           className="absolute inset-0 -z-10 bg-gradient-to-t from-[#0C1420] via-[#0C1420]/85 to-[#0C1420]/45"
         />
-        <div className="mx-auto w-full max-w-6xl px-6 pb-14 pt-24">
+        <div className="mx-auto w-full max-w-7xl px-6 pb-14 pt-24">
           <nav aria-label="Breadcrumb">
             <Link
               href="/record"
@@ -85,7 +85,7 @@ export default async function ProgrammePage({
         </div>
       </header>
 
-      <div className="mx-auto max-w-6xl px-6">
+      <div className="mx-auto max-w-7xl px-6">
 
       <Section title="The figures">
         <FigureGrid figures={p.figures} />
@@ -216,7 +216,7 @@ export default async function ProgrammePage({
         </section>
       )}
 
-      <div className="mx-auto max-w-6xl px-6">
+      <div className="mx-auto max-w-7xl px-6">
 
       <Section title="Still to be counted">
         <GapCards gaps={p.gaps} />

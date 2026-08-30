@@ -43,11 +43,11 @@ export default function About() {
         lead="Born in 1993 in Kipsirichoi village, Kilibwoni Ward, Emgwen Constituency. The eldest of six."
         img="/img/coffee-seedling-wide.jpg"
         alt="Coffee seedlings ready for distribution in Nandi County"
-        pos="50% 0%"
+        pos="50% 50%"
       />
 
       {/* Timeline */}
-      <section className="mx-auto max-w-5xl px-6 py-20">
+      <section className="mx-auto max-w-7xl px-6 py-20">
         <h2 className="display text-[2.5rem]">The journey</h2>
         <ol className="mt-10 grid gap-8 sm:grid-cols-3">
           {timeline.map((t) => (
@@ -88,7 +88,7 @@ export default function About() {
       />
 
       {/* Education */}
-      <section className="mx-auto max-w-6xl px-6 py-20">
+      <section className="mx-auto max-w-7xl px-6 py-20">
         <div className="grid gap-14 lg:grid-cols-[1fr_1.1fr]">
           <div>
             <h2 className="display text-[2.5rem]">Education</h2>
@@ -128,7 +128,7 @@ export default function About() {
 
       {/* Family */}
       <section className="border-t border-[var(--color-rule)]">
-        <div className="mx-auto max-w-6xl px-6 py-16">
+        <div className="mx-auto max-w-7xl px-6 py-16">
           <h2 className="display text-[2.5rem]">Family</h2>
           <p className="mt-4 max-w-[52ch] text-[1.1875rem] leading-relaxed text-[var(--color-soft)]">
             Married to Mr Mathew Rotich. With two sons.
