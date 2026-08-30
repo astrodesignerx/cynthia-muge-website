@@ -222,6 +222,38 @@ export const programmes: Programme[] = [
     slug: "elimu-ni-mwangaza",
     hero: "/img/scholars-walk.jpg",
     heroAlt: "Students supported through the Elimu Ni Mwangaza scholarship programme",
+    gallery: [
+      {
+        src: "/img/elimu-service-a.jpg",
+        alt: "The KCSE dedication service",
+        pos: "50% 35%",
+      },
+      {
+        src: "/img/elimu-candidates.jpg",
+        alt: "Candidates at the dedication service",
+        pos: "50% 35%",
+      },
+      {
+        src: "/img/elimu-service-b.jpg",
+        alt: "Students at the commitment service",
+        pos: "50% 35%",
+      },
+      {
+        src: "/img/elimu-ready.jpg",
+        alt: "Preparations for the commitment service",
+        pos: "50% 40%",
+      },
+      {
+        src: "/img/elimu-preparation.jpg",
+        alt: "Final preparations at Namgoi",
+        pos: "50% 45%",
+      },
+      {
+        src: "/img/scholars-line.jpg",
+        alt: "Scholarship students in their school uniforms",
+        pos: "50% 30%",
+      },
+    ],
     name: "Elimu Ni Mwangaza",
     oneLine:
       "Full scholarships for students from families who could not otherwise keep them in school.",
@@ -320,6 +352,58 @@ export const programmes: Programme[] = [
     slug: "boso-supercup",
     hero: "/img/boso-prize-a.jpg",
     heroAlt: "BOSO Supercup football in Nandi County",
+    gallery: [
+      {
+        src: "/img/boso-women-prize.jpg",
+        alt: "A women's champion collecting her prize money",
+        pos: "50% 35%",
+      },
+      {
+        src: "/img/boso-women-champions.jpg",
+        alt: "Women champions at a ward final",
+        pos: "50% 35%",
+      },
+      {
+        src: "/img/boso-stats.jpg",
+        alt: "Tournament progress by constituency",
+        pos: "50% 20%",
+      },
+      {
+        src: "/img/boso-fixtures.jpg",
+        alt: "Ward fixtures, men's and women's competitions",
+        pos: "50% 25%",
+      },
+      {
+        src: "/img/boso-qualifiers.jpg",
+        alt: "The two teams qualifying from Kabwareng Ward",
+        pos: "50% 30%",
+      },
+      {
+        src: "/img/boso-speaking.jpg",
+        alt: "Cynthia Muge at a ward round",
+        pos: "50% 35%",
+      },
+      {
+        src: "/img/boso-ground.jpg",
+        alt: "A ward crowd on the touchline",
+        pos: "50% 50%",
+      },
+      {
+        src: "/img/boso-celebration.jpg",
+        alt: "Supporters celebrating a ward result",
+        pos: "50% 40%",
+      },
+      {
+        src: "/img/boso-seated.jpg",
+        alt: "Spectators seated for a ward final",
+        pos: "50% 50%",
+      },
+      {
+        src: "/img/boso-quarter.jpg",
+        alt: "A quarter final in play",
+        pos: "50% 45%",
+      },
+    ],
     name: "BOSO Supercup",
     oneLine:
       "A football and volleyball league that reached every ward in Nandi in three months.",
@@ -442,6 +526,43 @@ export const programmes: Programme[] = [
     slug: "health-and-infrastructure",
     hero: "/img/ambulance-team.jpg",
     heroAlt: "Staff at Kabiemit Health Centre with the ambulance",
+    gallery: [
+      {
+        src: "/img/boda-shade-lelmokwo.jpg",
+        alt: "The boda boda shade at Lelmokwo Centre, funded by NGAAF",
+        pos: "50% 50%",
+      },
+      {
+        src: "/img/boda-shade-b.jpg",
+        alt: "A boda boda shade in use",
+        pos: "50% 50%",
+      },
+      {
+        src: "/img/boda-shade-c.jpg",
+        alt: "Riders under a completed shade",
+        pos: "50% 50%",
+      },
+      {
+        src: "/img/boda-shade-d.jpg",
+        alt: "A shade at a trading centre",
+        pos: "50% 50%",
+      },
+      {
+        src: "/img/health-scanner.jpg",
+        alt: "Diagnostic equipment at Kabiemit Health Centre",
+        pos: "50% 40%",
+      },
+      {
+        src: "/img/ambulance-inside.jpg",
+        alt: "Inside the ambulance",
+        pos: "50% 45%",
+      },
+      {
+        src: "/img/budget-line.jpg",
+        alt: "The two facilities on the national development estimates",
+        pos: "50% 20%",
+      },
+    ],
     name: "Health and Infrastructure",
     oneLine:
       "Equipment, water and workspaces delivered to named facilities and centres.",
@@ -559,6 +680,23 @@ export const programmes: Programme[] = [
     slug: "dairy-value-chain",
     hero: "/img/milk-coolers.jpg",
     heroAlt: "Bulk milk coolers arriving for Nandi dairy cooperatives",
+    gallery: [
+      {
+        src: "/img/dairy-handover.jpg",
+        alt: "The flagging-off at Nandi Dairy Cooperative Union",
+        pos: "50% 45%",
+      },
+      {
+        src: "/img/dairy-cooperative.jpg",
+        alt: "Cooperative members at the handover",
+        pos: "50% 40%",
+      },
+      {
+        src: "/img/dairy-speaking.jpg",
+        alt: "Cynthia Muge at the cooperative",
+        pos: "50% 30%",
+      },
+    ],
     name: "Dairy Value Chain",
     oneLine:
       "Ten solar-powered bulk milk coolers placed with named Nandi cooperatives.",
@@ -649,6 +787,28 @@ export const programmes: Programme[] = [
     slug: "group-empowerment",
     hero: "/img/empowerment-group.jpg",
     heroAlt: "A group member addressing the empowerment meeting at Chepkemel",
+    gallery: [
+      {
+        src: "/img/empowerment-cheque.jpg",
+        alt: "A cheque handed to a registered group",
+        pos: "50% 40%",
+      },
+      {
+        src: "/img/empowerment-handover.jpg",
+        alt: "A handover at Ol'lessos Centre",
+        pos: "50% 40%",
+      },
+      {
+        src: "/img/empowerment-speaker.jpg",
+        alt: "A group member addressing the meeting",
+        pos: "50% 30%",
+      },
+      {
+        src: "/img/empowerment-meeting.jpg",
+        alt: "A group representative speaking at Chepkemel",
+        pos: "50% 25%",
+      },
+    ],
     name: "Group Empowerment",
     oneLine:
       "Cash grants to registered women and youth groups, paid at ward level.",

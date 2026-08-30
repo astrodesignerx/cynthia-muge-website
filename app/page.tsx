@@ -132,7 +132,7 @@ export default function Home() {
               className="absolute bottom-0 left-1/2 h-[15rem] w-[15rem] -translate-x-1/2 rounded-full bg-[var(--color-murram)] sm:h-[21rem] sm:w-[21rem] lg:h-[30rem] lg:w-[30rem]"
             />
             <Image
-              src="/img/portrait-cutout.png"
+              src="/img/speaking-beaded-cutout.png"
               alt="Cynthia Muge speaking"
               fill
               priority
@@ -387,25 +387,43 @@ export default function Home() {
       </section>
 
       {/* Declaration */}
-      <section className="relative isolate overflow-hidden">
+      <section className="night relative isolate overflow-hidden">
         <Image
-          src="/img/portrait.jpg"
+          src="/img/baraza-a.jpg"
           alt=""
           fill
           sizes="100vw"
-          className="-z-10 object-cover"
-          style={{ objectPosition: "50% 22%" }}
+          className="-z-30 object-cover"
+          style={{ objectPosition: "50% 40%" }}
         />
-        <div aria-hidden className="absolute inset-0 -z-10 bg-[#0C1420]/82" />
-        <div className="mx-auto max-w-4xl px-6 py-28">
-          <figure>
-            <blockquote className="display text-[2rem] leading-[1.2] text-white sm:text-[2.75rem]">
+        <div
+          aria-hidden
+          className="absolute inset-0 -z-20 bg-[linear-gradient(75deg,#0C1420_0%,#0C1420F2_50%,#0C1420CC_100%)]"
+        />
+        <div className="mx-auto grid max-w-7xl items-end gap-6 px-6 pt-20 lg:grid-cols-[1.1fr_0.9fr] lg:pt-24">
+          <figure className="pb-14 lg:pb-24">
+            <p className="label text-[var(--color-gold)]">In her words</p>
+            <blockquote className="display mt-6 text-[1.75rem] leading-[1.22] text-white sm:text-[2.375rem]">
               <p>&ldquo;{declaration.quote}&rdquo;</p>
             </blockquote>
-            <figcaption className="label mt-10 border-t border-white/25 pt-5 text-[var(--color-on-night-soft)]">
+            <figcaption className="label mt-9 border-t border-white/20 pt-5 text-[var(--color-on-night-soft)]">
               {declaration.source.publisher}, {declaration.source.date}
             </figcaption>
           </figure>
+
+          <div className="relative min-h-[17rem] sm:min-h-[24rem] lg:min-h-[32rem]">
+            <div
+              aria-hidden
+              className="absolute bottom-0 left-1/2 h-[15rem] w-[15rem] -translate-x-1/2 rounded-full bg-[var(--color-murram)] sm:h-[20rem] sm:w-[20rem] lg:h-[27rem] lg:w-[27rem]"
+            />
+            <Image
+              src="/img/portrait-cutout.png"
+              alt="Cynthia Muge speaking"
+              fill
+              sizes="(max-width: 1024px) 100vw, 42vw"
+              className="object-contain object-bottom"
+            />
+          </div>
         </div>
       </section>
     </>
