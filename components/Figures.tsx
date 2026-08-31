@@ -40,7 +40,8 @@ export function FigureCard({ figure }: { figure: Figure }) {
     );
   }
 
-  const isUnconfirmed = figure.status === "unconfirmed";
+  const statusLabel =
+    figure.status === "unconfirmed" ? "Awaiting confirmation" : "Being gathered";
   return (
     <div className="bg-[var(--color-paper)] p-6">
       <p
@@ -54,7 +55,7 @@ export function FigureCard({ figure }: { figure: Figure }) {
       </p>
       <p className="mt-3 border-t border-[var(--color-rule)] pt-2">
         <span className="inline-block rounded-sm bg-[var(--color-amber-wash)] px-2 py-[3px] text-[0.625rem] font-bold uppercase tracking-[0.11em] text-[var(--color-amber)]">
-          {isUnconfirmed ? "Unconfirmed" : "Not measured"}
+          {statusLabel}
         </span>
       </p>
       <p className="mt-2 text-[0.8125rem] leading-relaxed text-[var(--color-faint)]">
@@ -160,7 +161,11 @@ export function GapCards({ gaps }: { gaps: Gap[] }) {
           className="rounded border border-dashed border-[var(--color-rule-firm)] p-5"
         >
           <span className="inline-block rounded-sm bg-[var(--color-amber-wash)] px-2 py-[3px] text-[0.625rem] font-bold uppercase tracking-[0.11em] text-[var(--color-amber)]">
-            {g.tag}
+            {g.tag === "Unconfirmed"
+              ? "Awaiting confirmation"
+              : g.tag === "Not measured"
+                ? "Being gathered"
+                : "Next update"}
           </span>
           <p className="mt-3 text-[1rem] font-bold">{g.title}</p>
           <p className="mt-1 text-[0.875rem] leading-relaxed text-[var(--color-soft)]">
@@ -211,13 +216,15 @@ export function Section({
   title,
   lead,
   children,
+  className = "",
 }: {
   title: string;
   lead?: string;
   children: React.ReactNode;
+  className?: string;
 }) {
   return (
-    <section className="pt-14">
+    <section className={`pt-14 ${className}`}>
       <h2 className="display text-[2.125rem]">{title}</h2>
       {lead && (
         <p className="mt-2 max-w-[62ch] text-[1rem] leading-relaxed text-[var(--color-soft)]">

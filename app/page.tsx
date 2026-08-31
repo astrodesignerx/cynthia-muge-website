@@ -1,14 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
 import {
+  BOSO_REPORT,
   bosoFunnel,
   countyFinance,
   declaration,
   healthVote,
+  homeStats,
   pillars,
   programmes,
   wards,
 } from "@/content/programmes";
+import { fieldNotes } from "@/content/stories";
 import {
   EvidencePlate,
   Funnel,
@@ -16,8 +19,10 @@ import {
   Stat,
   WardGrid,
 } from "@/components/Viz";
-import { FloatingPillars, Reveal } from "@/components/Motion";
+import { FloatingPillars, Parallax, Reveal } from "@/components/Motion";
 import { NetField } from "@/components/NetField";
+import { ScrollQuote } from "@/components/ScrollQuote";
+import { StoryCard } from "@/components/StoryCard";
 
 const cards = [
   { slug: "kahawa-na-mama", img: "/img/coffee-handover-a.jpg", pos: "50% 45%" },
@@ -81,17 +86,19 @@ const signposts = [
 export default function Home() {
   return (
     <>
-      {/* Hero: she stands on the field, rather than behind a scrim */}
+      {/* Hero: she stands on the field, with the image carrying the scene */}
       <section className="night relative isolate overflow-hidden">
-        <Image
-          src="/img/baraza-b.jpg"
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          className="-z-30 object-cover"
-          style={{ objectPosition: "50% 42%" }}
-        />
+        <Parallax className="absolute inset-0 -z-30" speed={0.1}>
+          <Image
+            src="/img/baraza-b.jpg"
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="kenburns object-cover"
+            style={{ objectPosition: "50% 42%" }}
+          />
+        </Parallax>
         <div
           aria-hidden
           className="absolute inset-0 -z-20 bg-[linear-gradient(105deg,#0C1420_0%,#0C1420E6_45%,#0C1420B3_100%)]"
@@ -105,18 +112,19 @@ export default function Home() {
             <p className="label rise text-[var(--color-gold)]">
               Woman Representative, Nandi County
             </p>
-            <h1 className="display rise mt-6 max-w-[15ch] text-[2.5rem] leading-[0.98] text-white sm:text-[3.75rem] sm:leading-[0.94] lg:text-[4.75rem]">
-              For the women and young people of Nandi.
+            <h1 className="display rise mt-6 max-w-[15ch] text-[2.5rem] leading-[calc(2.5rem*0.98_+_8px)] text-white sm:text-[3.75rem] sm:leading-[calc(3.75rem*0.94_+_8px)] lg:text-[4.75rem] lg:leading-[calc(4.75rem*0.94_+_8px)]">
+              For the women and young people of{" "}
+              <span className="block">Nandi.</span>
             </h1>
-            <p className="rise mt-8 text-[1.125rem] text-[var(--color-on-night-soft)]">
-              Six sub-counties. Thirty wards. One office.
+            <p className="rise mt-8 max-w-[38ch] text-[1.125rem] text-[var(--color-on-night-soft)]">
+              A record of the people, places, and work that have shaped her service.
             </p>
             <div className="mt-10 flex flex-wrap gap-3">
               <Link
                 href="/record"
                 className="rounded-sm bg-[var(--color-gold)] px-7 py-3.5 text-[0.9375rem] font-bold text-[#1A1206] transition-colors duration-200 hover:bg-[var(--color-gold-soft)]"
               >
-                The record
+                Explore the work
               </Link>
               <Link
                 href="/pillars"
@@ -133,7 +141,17 @@ export default function Home() {
             <div className="relative h-[19rem] w-[19rem] sm:h-[28rem] sm:w-[28rem] lg:h-[40rem] lg:w-[40rem]">
               <div
                 aria-hidden
-                className="absolute inset-0 z-0 rounded-full bg-[var(--color-murram)]"
+                className="absolute inset-0 z-0 rounded-full bg-[var(--color-murram)] bg-[radial-gradient(circle_at_50%_28%,rgba(255,206,156,0.8),rgba(255,156,96,0.25)_46%,transparent_68%)]"
+              />
+              {/* the glow breathes toward yellow, then back to light orange */}
+              <div
+                aria-hidden
+                className="glow-breathe absolute inset-0 z-0 rounded-full bg-[radial-gradient(circle_at_50%_28%,rgba(255,214,74,0.9),rgba(255,196,40,0.28)_46%,transparent_70%)]"
+              />
+              {/* a yellow dashed stroke circle that rotates around the disc */}
+              <div
+                aria-hidden
+                className="spin-slow absolute inset-0 z-0 rounded-full border-2 border-dashed border-[#f2c21a]"
               />
               {/* chips marked front carry z-20, so they pass in front of her */}
               <FloatingPillars pillars={pillars} className="inset-0" />
@@ -142,8 +160,8 @@ export default function Home() {
                 alt="Cynthia Muge speaking"
                 fill
                 priority
-                sizes="(max-width: 1024px) 100vw, 46vw"
-                className="rise z-10 origin-bottom scale-[1.16] object-contain object-bottom"
+              sizes="(max-width: 1024px) 100vw, 46vw"
+              className="rise z-10 origin-bottom scale-[1.4] object-contain object-bottom"
               />
             </div>
           </div>
@@ -155,36 +173,22 @@ export default function Home() {
         <NetField />
         <div className="relative mx-auto max-w-7xl px-6 py-20 lg:py-28">
           <NightHead
-            eyebrow="Four years on the record"
-            title="What the office has counted."
-            lead="Each figure below carries its source on the programme page it comes from. Where nothing has been counted, this site says so instead of estimating."
+            eyebrow="Across Nandi"
+            title="Work that begins close to home."
+            lead="A few figures offer a starting point. Each programme page brings the people, places, and detail around them."
             split
           />
           <dl className="mt-16 grid gap-y-14 sm:grid-cols-2 lg:grid-cols-4 lg:gap-x-10">
-            <Stat
-              value="650,000"
-              count
-              label="Coffee seedlings"
-              note="Distributed to roughly 4,000 women across all six sub-counties."
-            />
-            <Stat
-              value="449"
-              count
-              label="Students on scholarship"
-              note="All cohorts. 206 sit KCSE this year."
-            />
-            <Stat
-              value="30 / 30"
-              count
-              label="Wards reached by BOSO"
-              note="846 matches in three months."
-            />
-            <Stat
-              value="KSh 2.7m"
-              count
-              label="Prize money paid"
-              note="Settled at the close of each ward competition."
-            />
+            {homeStats.map((stat) => (
+              <Stat
+                key={stat.label}
+                value={stat.value}
+                count
+                label={stat.label}
+                note={stat.note}
+                source={stat.source}
+              />
+            ))}
           </dl>
         </div>
       </section>
@@ -193,9 +197,9 @@ export default function Home() {
       <section className="mx-auto max-w-7xl px-6 py-20 lg:py-28">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div>
-            <p className="eyebrow">The record</p>
+            <p className="eyebrow">The work</p>
             <h2 className="display mt-4 max-w-[16ch] text-[2.5rem] leading-[1.02] sm:text-[3.25rem]">
-              Six programmes, each with its evidence attached.
+              Six programmes, rooted in Nandi.
             </h2>
           </div>
           <Link
@@ -246,6 +250,36 @@ export default function Home() {
         </ul>
       </section>
 
+      {/* Field notes bring the work back to its people and places. */}
+      <section className="border-t border-[var(--color-rule)]">
+        <div className="mx-auto max-w-7xl px-6 py-20 lg:py-24">
+          <div className="flex flex-wrap items-end justify-between gap-6">
+            <div>
+              <p className="eyebrow">From the wards</p>
+              <h2 className="display mt-4 max-w-[16ch] text-[2.5rem] leading-[1.02] sm:text-[3.25rem]">
+                The people and places around the work.
+              </h2>
+            </div>
+            <Link
+              href="/stories"
+              className="text-[0.9375rem] font-bold text-[var(--color-murram)] underline underline-offset-4"
+            >
+              More from the wards
+            </Link>
+          </div>
+          <p className="mt-5 max-w-[58ch] leading-relaxed text-[var(--color-soft)]">
+            Start with a place and follow the work from there.
+          </p>
+          <ul className="mt-12 grid gap-5 lg:grid-cols-3">
+            {fieldNotes.map((story) => (
+              <li key={story.slug}>
+                <StoryCard story={story} />
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
       {/* BOSO, as data */}
       <section className="night">
         <div className="mx-auto max-w-7xl px-6 py-20 lg:py-28">
@@ -253,8 +287,8 @@ export default function Home() {
             <div>
               <NightHead
                 eyebrow="BOSO Supercup, ward stage"
-                title="Every ward of the county, in one season."
-                lead="The first time a talent competition ran simultaneously in all thirty wards of Nandi. The ward stage closed in August. Sub-county rounds begin in September."
+                title="A season that brought every ward into play."
+                lead="Players, organisers, fields, and supporters carried the competition from the ward stage towards the county final."
               />
               <Link
                 href="/boso"
@@ -263,7 +297,11 @@ export default function Home() {
                 Rules and registration
               </Link>
             </div>
-            <Funnel steps={bosoFunnel} caption="Ward stage, April to August 2026" />
+            <Funnel
+              steps={bosoFunnel}
+              caption="Ward stage, April to August 2026"
+              source={BOSO_REPORT}
+            />
           </div>
 
           <div className="mt-20">
@@ -313,23 +351,23 @@ export default function Home() {
       {/* Evidence: the budget line */}
       <section className="night">
         <div className="mx-auto max-w-7xl px-6 py-20 lg:py-28">
-          <p className="label text-[var(--color-gold)]">Health, on the estimates</p>
+          <p className="label text-[var(--color-gold)]">Health and public investment</p>
           <h2 className="display mt-5 max-w-[18ch] text-[2.5rem] leading-[1.02] text-[var(--color-on-night)] sm:text-[3.25rem]">
-            A promise you can look up.
+            Plans that reach the page.
           </h2>
           <p className="mt-5 max-w-[58ch] text-[1.0625rem] leading-relaxed text-[var(--color-on-night-soft)]">
             Two health facilities for Nandi appear as named line items in the
-            national development estimates, with an amount against each.
+            national development estimates, with a named amount beside each one.
           </p>
-          <div className="mt-14">
+          <Reveal delay={60} className="mt-14">
             <EvidencePlate
-              img="/img/budget-line.jpg"
+              img="/img/budget-line.png"
               alt="Vote 1082 development expenditure estimates showing the two Nandi health facilities"
               title={healthVote.table}
               rows={healthVote.rows}
               source={healthVote.source}
             />
-          </div>
+          </Reveal>
         </div>
       </section>
 
@@ -337,9 +375,9 @@ export default function Home() {
       <section className="mx-auto max-w-7xl px-6 py-20 lg:py-28">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div>
-            <p className="eyebrow">Nandi County, 2027</p>
+            <p className="eyebrow">Looking ahead</p>
             <h2 className="display mt-4 text-[2.5rem] leading-[1.02] sm:text-[3.25rem]">
-              The six pillars
+              Six priorities for Nandi.
             </h2>
           </div>
           <Link
@@ -363,8 +401,10 @@ export default function Home() {
       </section>
 
       {/* County money */}
-      <section className="night">
-        <div className="mx-auto max-w-7xl px-6 py-20 lg:py-28">
+      <section className="night relative isolate overflow-hidden">
+        <NetField />
+        <div className="relative mx-auto max-w-7xl px-6 py-20 lg:py-28">
+          <Reveal delay={80}>
           <div className="grid gap-14 lg:grid-cols-[1fr_1.2fr] lg:items-end">
             <NightHead
               eyebrow="Context"
@@ -399,28 +439,31 @@ export default function Home() {
               </p>
             </div>
           </div>
+          </Reveal>
         </div>
       </section>
 
       {/* Declaration */}
       <section className="night relative isolate overflow-hidden">
+        <Parallax className="absolute inset-0 -z-30" speed={0.1}>
         <Image
           src="/img/baraza-a.jpg"
           alt=""
           fill
           sizes="100vw"
-          className="-z-30 object-cover"
+          className="kenburns object-cover"
           style={{ objectPosition: "50% 40%" }}
         />
+        </Parallax>
         <div
           aria-hidden
           className="absolute inset-0 -z-20 bg-[linear-gradient(75deg,#080E17_0%,#080E17F7_46%,#0C1420E6_100%)]"
         />
         <div className="mx-auto grid max-w-7xl items-end gap-6 px-6 pt-20 lg:grid-cols-[1fr_1fr] lg:pt-24">
           <figure className="pb-14 lg:pb-24">
-            <p className="label text-[var(--color-gold)]">In her words</p>
+            <p className="label text-[var(--color-gold)]">Her own words</p>
             <blockquote className="display mt-6 text-[1.75rem] leading-[1.22] text-white sm:text-[2.375rem]">
-              <p>&ldquo;{declaration.quote}&rdquo;</p>
+              <ScrollQuote text={`\u201C${declaration.quote}\u201D`} />
             </blockquote>
             <figcaption className="label mt-9 border-t border-white/20 pt-5 text-[var(--color-on-night-soft)]">
               {declaration.source.publisher}, {declaration.source.date}
@@ -433,7 +476,7 @@ export default function Home() {
               alt="Cynthia Muge speaking"
               fill
               sizes="(max-width: 1024px) 100vw, 48vw"
-              className="origin-bottom scale-[1.22] object-contain object-bottom"
+              className="origin-bottom scale-[1.45] object-contain object-bottom"
             />
           </div>
         </div>

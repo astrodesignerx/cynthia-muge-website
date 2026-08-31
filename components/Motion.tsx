@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 
 /* ------------------------------------------------------------------ *
  * Motion. Two kinds: things that reveal when a section is reached,
@@ -130,6 +131,53 @@ export function ScrollProgress() {
 }
 
 /**
+ * A wrapper that drifts its child a few percent as it passes the middle of
+ * the viewport, giving photographs a sense of depth. Transform-only, and cut
+ * to a static frame under reduced motion.
+ */
+export function Parallax({
+  children,
+  speed = 0.08,
+  className = "",
+}: {
+  children: React.ReactNode;
+  speed?: number;
+  className?: string;
+}) {
+  const ref = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    let raf = 0;
+    const update = () => {
+      raf = 0;
+      const el = ref.current;
+      if (!el) return;
+      const r = el.getBoundingClientRect();
+      const p = (r.top + r.height / 2 - window.innerHeight / 2) / window.innerHeight;
+      el.style.transform = `translate3d(0, ${(-p * 100 * speed).toFixed(2)}%, 0)`;
+    };
+    const onMove = () => {
+      if (!raf) raf = requestAnimationFrame(update);
+    };
+    update();
+    window.addEventListener("scroll", onMove, { passive: true });
+    window.addEventListener("resize", onMove);
+    return () => {
+      window.removeEventListener("scroll", onMove);
+      window.removeEventListener("resize", onMove);
+      if (raf) cancelAnimationFrame(raf);
+    };
+  }, [speed]);
+
+  return (
+    <div ref={ref} className={className} style={{ willChange: "transform" }}>
+      {children}
+    </div>
+  );
+}
+
+/**
  * A bar that grows to its width when reached.
  * Used by the funnel, so the figures arrive rather than being already there.
  */
@@ -208,11 +256,12 @@ export function Counter({ value, ms = 1100 }: { value: string; ms?: number }) {
 }
 
 /**
- * Six pillar chips arranged around the inside of the hero disc, three passing
- * in front of her and three behind, which is what gives the composition depth.
+ * Six pillar chips arranged around the inside of the hero disc. All sit in
+ * front of her, so nothing passes behind the cut image. Each is a link to its
+ * pillar on the six-pillars page, carrying the pointer and the hover glow.
  * Positions are polar: an angle and a radius as a fraction of the disc, so
  * every chip lands inside the circle whatever size the disc renders at.
- * Decorative, so hidden from assistive technology and from small screens.
+ * Shown only on large screens; earlier the whole cluster was decorative.
  */
 export function FloatingPillars({
   pillars,
@@ -221,9 +270,15 @@ export function FloatingPillars({
   pillars: { n: string; name: string }[];
   className?: string;
 }) {
+  const slug = (name: string) =>
+    name
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-|-$/g, "");
+
   // deg clockwise from twelve o'clock, and how far out as a share of the radius
   const spots = [
-    { deg: 330, r: 0.80, front: false, dur: "7.5s", delay: "0s", rot: -5 },
+    { deg: 316, r: 0.84, front: false, dur: "7.5s", delay: "0s", rot: -5 },
     { deg: 38, r: 0.88, front: true, dur: "9s", delay: "-2s", rot: 4 },
     { deg: 285, r: 0.82, front: true, dur: "8.2s", delay: "-4s", rot: 3 },
     { deg: 88, r: 0.90, front: false, dur: "10s", delay: "-1s", rot: -4 },
@@ -232,10 +287,7 @@ export function FloatingPillars({
   ];
 
   return (
-    <div
-      aria-hidden
-      className={`pointer-events-none absolute hidden lg:block ${className}`}
-    >
+    <div className={`pointer-events-none absolute hidden lg:block ${className}`}>
       {pillars.slice(0, 6).map((p, i) => {
         const s = spots[i];
         const rad = (s.deg * Math.PI) / 180;
@@ -246,9 +298,7 @@ export function FloatingPillars({
         return (
           <span
             key={p.n}
-            className={`drift absolute -translate-x-1/2 -translate-y-1/2 ${
-              s.front ? "z-20" : "z-0"
-            }`}
+            className="drift absolute z-20 -translate-x-1/2 -translate-y-1/2"
             style={{
               top: `${top}%`,
               left: `${left}%`,
@@ -257,24 +307,18 @@ export function FloatingPillars({
               ["--rot" as string]: `${s.rot}deg`,
             }}
           >
-            <span
-              className={`flex items-center gap-2 rounded-sm border px-2.5 py-1.5 backdrop-blur-sm ${
-                s.front
-                  ? "border-white/25 bg-[#0C1420]/78 shadow-lg shadow-black/40"
-                  : "border-white/12 bg-[#0C1420]/55"
-              }`}
+            <Link
+              href={`/pillars#${slug(p.name)}`}
+              aria-label={`${p.name}: pillar ${p.n}`}
+              className="pillar-chip pointer-events-auto flex items-center gap-2 rounded-sm border border-white/25 bg-[#0C1420]/78 px-2.5 py-1.5 shadow-lg shadow-black/40 backdrop-blur-sm"
             >
               <span className="label text-[0.5625rem] text-[var(--color-gold)]">
                 {p.n}
               </span>
-              <span
-                className={`whitespace-nowrap text-[0.75rem] font-semibold ${
-                  s.front ? "text-white" : "text-white/70"
-                }`}
-              >
+              <span className="whitespace-nowrap text-[0.75rem] font-semibold text-white">
                 {p.name}
               </span>
-            </span>
+            </Link>
           </span>
         );
       })}

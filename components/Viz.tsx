@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Counter, GrowBar, Reveal } from "@/components/Motion";
+import { PhotoMarquee } from "@/components/PhotoMarquee";
 import type { Source } from "@/lib/types";
 
 /* ------------------------------------------------------------------ *
@@ -12,6 +13,7 @@ export function Stat({
   value,
   label,
   note,
+  source,
   scale = "md",
   tone = "gold",
   count = false,
@@ -19,6 +21,7 @@ export function Stat({
   value: string;
   label: string;
   note?: string;
+  source?: Source;
   scale?: "sm" | "md" | "lg";
   tone?: "gold" | "ember" | "ink";
   count?: boolean;
@@ -51,6 +54,11 @@ export function Stat({
           }`}
         >
           {note}
+        </p>
+      )}
+      {source && (
+        <p className="label mt-3 max-w-[34ch] leading-relaxed text-[var(--color-on-night-soft)]">
+          Source: {source.publisher}, {source.date}
         </p>
       )}
     </Reveal>
@@ -102,9 +110,11 @@ export function WardGrid({
 export function Funnel({
   steps,
   caption,
+  source,
 }: {
   steps: { value: number; display: string; label: string }[];
   caption?: string;
+  source?: Source;
 }) {
   const top = Math.max(...steps.map((s) => s.value));
   return (
@@ -136,35 +146,43 @@ export function Funnel({
           {caption}
         </figcaption>
       )}
+      {source && (
+        <p className="label mt-3 text-[var(--color-on-night-soft)]">
+          Source: {source.publisher}, {source.date}
+        </p>
+      )}
     </figure>
   );
 }
 
-/** A horizontal strip of photographs that scrolls sideways. */
+/** A horizontal strip of photographs. `fit` spreads them across the row;
+ *  otherwise the pictures drift past in a seamless, endless marquee. */
 export function PhotoStrip({
   images,
   height = "18rem",
+  fit = false,
 }: {
   images: { src: string; alt: string; pos?: string }[];
   height?: string;
+  fit?: boolean;
 }) {
+  if (!fit) {
+    return <PhotoMarquee images={images} height={height} />;
+  }
   return (
-    <div
-      className="no-scrollbar flex gap-3 overflow-x-auto pb-1"
-      style={{ scrollSnapType: "x mandatory" }}
-    >
+    <div className="flex gap-3">
       {images.map((im) => (
         <div
           key={im.src}
-          className="relative shrink-0 overflow-hidden rounded-sm bg-[var(--color-night-2)]"
-          style={{ height, width: "min(78vw, 26rem)", scrollSnapAlign: "start" }}
+          className="relative min-w-0 flex-1 overflow-hidden rounded-sm bg-[var(--color-night-2)]"
+          style={{ height }}
         >
           <Image
             src={im.src}
             alt={im.alt}
             fill
-            sizes="(max-width: 640px) 78vw, 26rem"
-            className="object-cover"
+            sizes="(max-width: 1024px) 50vw, 25vw"
+            className="kenburns object-cover"
             style={{ objectPosition: im.pos ?? "center" }}
           />
         </div>

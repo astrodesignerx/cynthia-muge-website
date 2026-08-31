@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import { Anton, Instrument_Serif, Manrope, JetBrains_Mono } from "next/font/google";
 import Link from "next/link";
 import { MainNav } from "@/components/Nav";
+import { FooterWordmark } from "@/components/FooterWordmark";
+import { NavWordmark } from "@/components/NavWordmark";
 import { ScrollProgress } from "@/components/Motion";
-import { Wordmark } from "@/components/Wordmark";
 import "./globals.css";
 
 const instrument = Instrument_Serif({
@@ -41,20 +42,29 @@ export const metadata: Metadata = {
     template: "%s | Hon. Cynthia Muge",
   },
   description:
-    "Hon. Cynthia Jepkosgei Muge, Woman Representative for Nandi County. Her work across the six sub-counties and thirty wards.",
+    "Hon. Cynthia Jepkosgei Muge, Woman Representative for Nandi County. A record of service, rooted in the people and places of Nandi.",
   openGraph: {
     type: "website",
     locale: "en_KE",
     siteName: "Hon. Cynthia Muge",
+    images: [
+      {
+        url: "/img/facebook/i-am-not-a-small-girl-anymore-1-1367x2048.jpg",
+        width: 1367,
+        height: 2048,
+        alt: "Hon. Cynthia Muge",
+      },
+    ],
   },
 };
 
 const nav = [
   { href: "/about", label: "About" },
-  { href: "/pillars", label: "The six pillars" },
+  { href: "/stories", label: "Stories" },
+  { href: "/pillars", label: "Pillars" },
   { href: "/record", label: "The record" },
-  { href: "/parliament", label: "In Parliament" },
-  { href: "/boso", label: "BOSO Supercup" },
+  { href: "/parliament", label: "Parliament" },
+  { href: "/boso", label: "BOSO" },
   { href: "/media", label: "Media" },
   { href: "/contact", label: "Contact" },
 ];
@@ -87,13 +97,7 @@ export default function RootLayout({
 
         <header className="night sticky top-0 z-40 border-b border-[var(--color-night-rule)]/70 backdrop-blur-sm">
           <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 py-3">
-            <Link
-              href="/"
-              aria-label="Cynthia Muge, home"
-              className="shrink-0 transition-opacity duration-200 hover:opacity-85"
-            >
-              <Wordmark />
-            </Link>
+            <NavWordmark />
             <MainNav nav={nav} />
           </div>
           <ScrollProgress />
@@ -105,10 +109,10 @@ export default function RootLayout({
           <div className="mx-auto max-w-7xl px-6 py-16">
             <div className="flex flex-wrap justify-between gap-10">
               <div className="max-w-sm">
-                <Wordmark size="lg" />
+                <FooterWordmark />
                 <p className="mt-6 text-[0.9375rem] leading-relaxed text-[var(--color-on-night-soft)]">
-                  Woman Representative, Nandi County. Serving the six
-                  sub-counties and thirty wards.
+                  Woman Representative, Nandi County. Working with the people
+                  and communities of Nandi.
                 </p>
                 <p className="label mt-5 text-[var(--color-gold)]">
                   #FormNiMama
@@ -131,8 +135,8 @@ export default function RootLayout({
             </div>
             <p className="label mt-12 border-t border-[var(--color-night-rule)] pt-6 leading-relaxed text-[var(--color-on-night-soft)]">
               Office of the Woman Representative, Nandi County. Last reviewed 30
-              August 2026. Figures on this site carry their source; those not
-              yet counted are marked as such
+              August 2026. This site follows the work across Nandi and updates
+              the record as information arrives.
             </p>
           </div>
         </footer>

@@ -15,6 +15,19 @@ export function MainNav({ nav }: { nav: { href: string; label: string }[] }) {
       <ul className="flex items-center gap-x-6 whitespace-nowrap">
         {nav.map((item) => {
           const current = isCurrent(item.href);
+          if (item.href === "/contact") {
+            return (
+              <li key={item.href}>
+                <Link
+                  href={item.href}
+                  aria-current={current ? "page" : undefined}
+                  className="rounded-sm bg-[var(--color-gold)] px-4 py-1.5 text-[0.875rem] font-bold text-[#1A1206] transition-colors duration-200 hover:bg-[var(--color-gold-soft)]"
+                >
+                  {item.label}
+                </Link>
+              </li>
+            );
+          }
           return (
             <li key={item.href}>
               <Link

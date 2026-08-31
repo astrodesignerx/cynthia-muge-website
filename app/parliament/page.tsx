@@ -4,11 +4,13 @@ import Link from "next/link";
 import { parliament } from "@/content/programmes";
 import { NightHead, Stat } from "@/components/Viz";
 import { SourceLine } from "@/components/Figures";
+import { NetField } from "@/components/NetField";
+import { Reveal } from "@/components/Motion";
 
 export const metadata: Metadata = {
   title: "In Parliament",
   description:
-    "Committee work and positions taken in the National Assembly, and on public questions in Nandi.",
+    "Cynthia Muge's committee work, public positions, and service to Nandi in Parliament.",
 };
 
 const tagTone: Record<string, string> = {
@@ -28,7 +30,7 @@ export default function Parliament() {
           fill
           priority
           sizes="100vw"
-          className="-z-10 object-cover"
+          className="-z-10 kenburns object-cover"
           style={{ objectPosition: "50% 55%" }}
         />
         <div
@@ -36,29 +38,38 @@ export default function Parliament() {
           className="absolute inset-0 -z-10 bg-gradient-to-t from-[#0C1420] via-[#0C1420]/86 to-[#0C1420]/45"
         />
         <div className="mx-auto w-full max-w-7xl px-6 pb-14 pt-28">
-          <p className="label text-[var(--color-gold)]">
+          <p
+            className="label rise text-[var(--color-gold)]"
+            style={{ animationDelay: "120ms" }}
+          >
             The National Assembly, 13th Parliament
           </p>
-          <h1 className="display mt-6 max-w-[13ch] text-[3rem] leading-[0.96] text-white sm:text-[4rem] lg:text-[4.75rem]">
+          <h1
+            className="display rise mt-6 max-w-[13ch] text-[3rem] leading-[0.96] text-white sm:text-[4rem] lg:text-[4.75rem]"
+            style={{ animationDelay: "200ms" }}
+          >
             In Parliament
           </h1>
-          <p className="mt-6 max-w-[52ch] text-[1.125rem] leading-relaxed text-[var(--color-on-night-soft)]">
-            Committee work, and positions taken on questions that reached Nandi
-            before they reached the floor.
+          <p
+            className="rise mt-6 max-w-[52ch] text-[1.125rem] leading-relaxed text-[var(--color-on-night-soft)]"
+            style={{ animationDelay: "300ms" }}
+          >
+            Committee work, public positions, and the questions she has carried
+            from Nandi into Parliament.
           </p>
         </div>
       </section>
 
       <section className="night border-t border-[var(--color-night-rule)]">
         <div className="mx-auto max-w-7xl px-6 py-16">
-          <p className="label text-[var(--color-gold)]">Committees</p>
+            <p className="label text-[var(--color-gold)]">Work in Parliament</p>
           <ul className="mt-8 grid gap-x-10 gap-y-6 sm:grid-cols-2 lg:grid-cols-3">
-            {parliament.committees.map((c) => (
+            {parliament.committees.map((c, i) => (
               <li
                 key={c}
-                className="border-t border-[var(--color-night-rule)] pt-4 text-[1.0625rem] leading-snug text-[var(--color-on-night)]"
+                className="border-t border-[var(--color-night-rule)] pt-4 text-[1.0625rem] leading-snug text-[var(--color-on-night)] transition-colors duration-200 hover:text-[var(--color-gold)]"
               >
-                {c}
+                <Reveal delay={i * 50}>{c}</Reveal>
               </li>
             ))}
           </ul>
@@ -70,35 +81,40 @@ export default function Parliament() {
           <h2 className="display text-[2.5rem] leading-tight sm:text-[3rem]">
             On the record
           </h2>
-          <p className="meta">{parliament.items.length} items</p>
+            <p className="meta">{parliament.items.length} entries</p>
         </div>
 
         <ol className="mt-12 grid gap-0">
-          {parliament.items.map((it) => (
+          {parliament.items.map((it, i) => (
             <li
               key={it.title}
-              className="grid gap-x-10 gap-y-4 border-t border-[var(--color-rule)] py-9 lg:grid-cols-[10rem_1fr]"
+              className="border-t border-[var(--color-rule)] py-9"
             >
-              <div>
-                <span className="numeral block text-[1.75rem] text-[var(--color-murram)]">
-                  {it.year}
-                </span>
-                <span
-                  className={`mt-3 inline-block rounded-sm px-2.5 py-1 text-[0.625rem] font-bold uppercase tracking-[0.11em] ${
-                    tagTone[it.tag] ?? tagTone.Convening
-                  }`}
-                >
-                  {it.tag}
-                </span>
-              </div>
-              <div>
-                <h3 className="display text-[1.75rem] leading-tight">
-                  {it.title}
-                </h3>
-                <p className="mt-3 max-w-[62ch] leading-relaxed text-[var(--color-soft)]">
-                  {it.body}
-                </p>
-              </div>
+              <Reveal
+                delay={i * 50}
+                className="grid gap-x-10 gap-y-4 lg:grid-cols-[10rem_1fr]"
+              >
+                <div>
+                  <span className="numeral block text-[1.75rem] text-[var(--color-murram)]">
+                    {it.year}
+                  </span>
+                  <span
+                    className={`mt-3 inline-block rounded-sm px-2.5 py-1 text-[0.625rem] font-bold uppercase tracking-[0.11em] ${
+                      tagTone[it.tag] ?? tagTone.Convening
+                    }`}
+                  >
+                    {it.tag}
+                  </span>
+                </div>
+                <div>
+                  <h3 className="display text-[1.75rem] leading-tight">
+                    {it.title}
+                  </h3>
+                  <p className="mt-3 max-w-[62ch] leading-relaxed text-[var(--color-soft)]">
+                    {it.body}
+                  </p>
+                </div>
+              </Reveal>
             </li>
           ))}
         </ol>
@@ -108,18 +124,19 @@ export default function Parliament() {
         </div>
       </section>
 
-      <section className="night">
-        <div className="mx-auto max-w-7xl px-6 py-20">
+      <section className="night relative isolate overflow-hidden">
+        <NetField />
+        <div className="relative mx-auto max-w-7xl px-6 py-20">
           <div className="grid gap-14 lg:grid-cols-[1fr_1.1fr] lg:items-center">
             <NightHead
               eyebrow="Elected"
-              title="Two assemblies, ten years."
+              title="From Kilibwoni Ward to Parliament."
               lead="A ward seat in the County Assembly at twenty-four, running as an independent, then the county's Woman Representative seat in the National Assembly."
             />
             <dl className="grid gap-y-12 sm:grid-cols-3">
-              <Stat scale="sm" value="2017" label="County Assembly" />
-              <Stat scale="sm" value="2022" label="National Assembly" />
-              <Stat scale="sm" value="275,500" label="Votes in 2022" />
+              <Stat scale="sm" value="2017" label="County Assembly" source={parliament.source} />
+              <Stat scale="sm" value="2022" label="National Assembly" source={parliament.source} />
+              <Stat scale="sm" value="275,500" label="Votes in 2022" source={parliament.source} />
             </dl>
           </div>
           <Link

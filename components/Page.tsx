@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Parallax, Reveal } from "@/components/Motion";
 
 /** Split hero: text left, photograph right with the murram offset block. */
 export function SplitHero({
@@ -20,26 +21,39 @@ export function SplitHero({
 }) {
   return (
     <section className="night relative isolate flex min-h-[26rem] items-end overflow-hidden lg:min-h-[32rem]">
-      <Image
-        src={img}
-        alt={alt}
-        fill
-        priority
-        sizes="100vw"
-        className="-z-10 object-cover"
-        style={{ objectPosition: pos }}
-      />
+      <Parallax className="absolute inset-0 -z-10" speed={0.1}>
+        <Image
+          src={img}
+          alt={alt}
+          fill
+          priority
+          sizes="100vw"
+          className="kenburns object-cover"
+          style={{ objectPosition: pos }}
+        />
+      </Parallax>
       <div
         aria-hidden
         className="absolute inset-0 -z-10 bg-gradient-to-t from-[#0C1420] via-[#0C1420]/84 to-[#0C1420]/45"
       />
       <div className="mx-auto w-full max-w-7xl px-6 pb-14 pt-28">
-        <p className="label text-[var(--color-gold)]">{eyebrow}</p>
-        <h1 className="display mt-6 max-w-[14ch] text-[3rem] leading-[0.96] text-white sm:text-[4rem] lg:text-[4.75rem]">
+        <p
+          className="label rise text-[var(--color-gold)]"
+          style={{ animationDelay: "120ms" }}
+        >
+          {eyebrow}
+        </p>
+        <h1
+          className="display rise mt-6 max-w-[14ch] text-[3rem] leading-[0.96] text-white sm:text-[4rem] lg:text-[4.75rem]"
+          style={{ animationDelay: "200ms" }}
+        >
           {title}
         </h1>
         {lead && (
-          <p className="mt-6 max-w-[46ch] text-[1.125rem] leading-relaxed text-[var(--color-on-night-soft)]">
+          <p
+            className="rise mt-6 max-w-[46ch] text-[1.125rem] leading-relaxed text-[var(--color-on-night-soft)]"
+            style={{ animationDelay: "300ms" }}
+          >
             {lead}
           </p>
         )}
@@ -67,26 +81,37 @@ export function ImageBand({
 }) {
   return (
     <section className="relative isolate overflow-hidden">
-      <Image
-        src={img}
-        alt=""
-        fill
-        sizes="100vw"
-        className="-z-10 object-cover"
-        style={{ objectPosition: pos }}
-      />
+      <Parallax className="absolute inset-0 -z-10" speed={0.08}>
+        <Image
+          src={img}
+          alt=""
+          fill
+          sizes="100vw"
+          className="kenburns object-cover"
+          style={{ objectPosition: pos }}
+        />
+      </Parallax>
       <div aria-hidden className="absolute inset-0 -z-10 bg-[#141A16]/80" />
       <div className="mx-auto max-w-6xl px-6 py-20">
         {eyebrow && (
-          <p className="text-[0.6875rem] font-bold uppercase tracking-[0.16em] text-[#E9906F]">
+          <p
+            className="rise text-[0.6875rem] font-bold uppercase tracking-[0.16em] text-[#E9906F]"
+            style={{ animationDelay: "120ms" }}
+          >
             {eyebrow}
           </p>
         )}
-        <h2 className="display mt-5 max-w-[18ch] text-[2.5rem] leading-[1.05] text-white sm:text-[3.25rem]">
+        <h2
+          className="display rise mt-5 max-w-[18ch] text-[2.5rem] leading-[1.05] text-white sm:text-[3.25rem]"
+          style={{ animationDelay: "200ms" }}
+        >
           {title}
         </h2>
         {body && (
-          <p className="mt-5 max-w-[58ch] text-[1.0625rem] leading-relaxed text-[#D3DCD6]">
+          <p
+            className="rise mt-5 max-w-[58ch] text-[1.0625rem] leading-relaxed text-[#D3DCD6]"
+            style={{ animationDelay: "300ms" }}
+          >
             {body}
           </p>
         )}
@@ -111,9 +136,9 @@ export function Plate({
   pos?: string;
 }) {
   return (
-    <figure>
+    <Reveal as="figure">
       <div
-        className="relative overflow-hidden rounded-sm bg-[var(--color-sunk)]"
+        className="group relative overflow-hidden rounded-sm bg-[var(--color-sunk)] transition-transform duration-500 ease-out group-hover:scale-[1.02]"
         style={{ aspectRatio: ratio }}
       >
         <Image
@@ -121,11 +146,11 @@ export function Plate({
           alt={alt}
           fill
           sizes="(max-width: 1024px) 100vw, 60vw"
-          className="object-cover"
+          className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05]"
           style={{ objectPosition: pos }}
         />
       </div>
       {caption && <figcaption className="meta mt-3">{caption}</figcaption>}
-    </figure>
+    </Reveal>
   );
 }

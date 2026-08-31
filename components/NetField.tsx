@@ -3,119 +3,110 @@
 import { useEffect, useRef } from "react";
 
 /**
- * A constellation net behind a dark section: points drift slowly, join to
- * their nearest neighbours, and lean towards the cursor when it is over the
- * section. Drawn on a canvas so the whole thing is one composited layer
- * rather than dozens of animated nodes.
+ * Version two, and a different idea from the first.
  *
- * It is decorative: it pauses when scrolled out of view, does not run at all
- * under reduced motion or on coarse pointers, and sits behind the content.
+ * Instead of a drifting constellation, this is an ordered lattice: a regular
+ * grid of points, at rest, that the cursor pushes aside and lights up as it
+ * passes. Order disturbed and recovering suits a section of counted figures
+ * better than a random scatter, and the recovery is what carries the motion,
+ * so nothing moves at all until the pointer is over it.
+ *
+ * One canvas, paused off-screen, and inert under reduced motion or a coarse
+ * pointer, where there is no cursor to disturb anything.
  */
-export function NetField({ density = 46 }: { density?: number }) {
+export function NetField({ spacing = 34 }: { spacing?: number }) {
   const ref = useRef<HTMLCanvasElement | null>(null);
 
   useEffect(() => {
     const canvas = ref.current;
     if (!canvas) return;
     if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    // a net that follows the cursor has nothing to follow on touch
     if (!matchMedia("(pointer: fine)").matches) return;
 
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
+    type Dot = { hx: number; hy: number; x: number; y: number; vx: number; vy: number };
+    let dots: Dot[] = [];
     let w = 0;
     let h = 0;
-    let dpr = 1;
-    const pointer = { x: -9999, y: -9999, on: false };
-    let nodes: { x: number; y: number; vx: number; vy: number }[] = [];
+    let cols = 0;
+    const pointer = { x: -9999, y: -9999 };
 
-    const resize = () => {
+    const build = () => {
       const r = canvas.getBoundingClientRect();
-      dpr = Math.min(2, window.devicePixelRatio || 1);
+      const dpr = Math.min(2, window.devicePixelRatio || 1);
       w = r.width;
       h = r.height;
       canvas.width = Math.round(w * dpr);
       canvas.height = Math.round(h * dpr);
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
-      // scale the count to the area so density reads the same at any width
-      const target = Math.round((density * (w * h)) / (1280 * 520));
-      nodes = Array.from({ length: Math.max(18, Math.min(90, target)) }, () => ({
-        x: Math.random() * w,
-        y: Math.random() * h,
-        vx: (Math.random() - 0.5) * 0.22,
-        vy: (Math.random() - 0.5) * 0.22,
-      }));
+      cols = Math.ceil(w / spacing) + 1;
+      const rows = Math.ceil(h / spacing) + 1;
+      dots = [];
+      for (let j = 0; j < rows; j++) {
+        for (let i = 0; i < cols; i++) {
+          // stagger alternate rows, so the lattice reads as woven not square
+          const hx = i * spacing + (j % 2 ? spacing / 2 : 0);
+          const hy = j * spacing;
+          dots.push({ hx, hy, x: hx, y: hy, vx: 0, vy: 0 });
+        }
+      }
     };
 
     const onMove = (e: PointerEvent) => {
       const r = canvas.getBoundingClientRect();
       pointer.x = e.clientX - r.left;
       pointer.y = e.clientY - r.top;
-      pointer.on =
-        pointer.x >= 0 && pointer.x <= r.width && pointer.y >= 0 && pointer.y <= r.height;
     };
     const onLeave = () => {
-      pointer.on = false;
+      pointer.x = -9999;
+      pointer.y = -9999;
     };
 
-    const LINK = 132;
-    const REACH = 190;
+    const REACH = 160;
+    const PUSH = 26;
 
     const draw = () => {
       ctx.clearRect(0, 0, w, h);
 
-      for (const n of nodes) {
-        n.x += n.vx;
-        n.y += n.vy;
-        // wrap, so the field never empties at an edge
-        if (n.x < -20) n.x = w + 20;
-        if (n.x > w + 20) n.x = -20;
-        if (n.y < -20) n.y = h + 20;
-        if (n.y > h + 20) n.y = -20;
-      }
+      for (const d of dots) {
+        const dx = d.x - pointer.x;
+        const dy = d.y - pointer.y;
+        const dist = Math.hypot(dx, dy);
 
-      // links between neighbours, fading with distance
-      for (let i = 0; i < nodes.length; i++) {
-        for (let j = i + 1; j < nodes.length; j++) {
-          const dx = nodes[i].x - nodes[j].x;
-          const dy = nodes[i].y - nodes[j].y;
-          const d = Math.hypot(dx, dy);
-          if (d > LINK) continue;
-          ctx.strokeStyle = `rgba(216,164,60,${0.16 * (1 - d / LINK)})`;
-          ctx.lineWidth = 1;
-          ctx.beginPath();
-          ctx.moveTo(nodes[i].x, nodes[i].y);
-          ctx.lineTo(nodes[j].x, nodes[j].y);
-          ctx.stroke();
+        // pushed away from the cursor, then pulled home by a spring
+        let tx = d.hx;
+        let ty = d.hy;
+        let lit = 0;
+        if (dist < REACH && dist > 0.01) {
+          lit = 1 - dist / REACH;
+          const push = PUSH * lit * lit;
+          tx = d.hx + (dx / dist) * push;
+          ty = d.hy + (dy / dist) * push;
         }
-      }
 
-      // the cursor pulls in the nodes near it, brighter as it closes
-      if (pointer.on) {
-        for (const n of nodes) {
-          const dx = pointer.x - n.x;
-          const dy = pointer.y - n.y;
-          const d = Math.hypot(dx, dy);
-          if (d > REACH) continue;
-          const k = 1 - d / REACH;
-          n.x += dx * 0.006 * k;
-          n.y += dy * 0.006 * k;
-          ctx.strokeStyle = `rgba(216,164,60,${0.3 * k})`;
-          ctx.lineWidth = 1;
-          ctx.beginPath();
-          ctx.moveTo(n.x, n.y);
-          ctx.lineTo(pointer.x, pointer.y);
-          ctx.stroke();
-        }
-      }
+        d.vx = (d.vx + (tx - d.x) * 0.14) * 0.72;
+        d.vy = (d.vy + (ty - d.y) * 0.14) * 0.72;
+        d.x += d.vx;
+        d.y += d.vy;
 
-      for (const n of nodes) {
-        ctx.fillStyle = "rgba(216,164,60,0.42)";
+        const size = 1 + lit * 1.9;
+        ctx.fillStyle = `rgba(216,164,60,${0.14 + lit * 0.62})`;
         ctx.beginPath();
-        ctx.arc(n.x, n.y, 1.4, 0, Math.PI * 2);
+        ctx.arc(d.x, d.y, size, 0, Math.PI * 2);
         ctx.fill();
+
+        // a short leader back to where the dot belongs, only while displaced
+        if (lit > 0.18) {
+          ctx.strokeStyle = `rgba(216,164,60,${lit * 0.22})`;
+          ctx.lineWidth = 1;
+          ctx.beginPath();
+          ctx.moveTo(d.hx, d.hy);
+          ctx.lineTo(d.x, d.y);
+          ctx.stroke();
+        }
       }
     };
 
@@ -135,11 +126,9 @@ export function NetField({ density = 46 }: { density?: number }) {
       cancelAnimationFrame(raf);
     };
 
-    resize();
-    const ro = new ResizeObserver(resize);
+    build();
+    const ro = new ResizeObserver(build);
     ro.observe(canvas);
-
-    // only animate while the section is on screen
     const io = new IntersectionObserver(
       ([e]) => (e.isIntersecting ? start() : stop()),
       { threshold: 0 },
@@ -156,7 +145,7 @@ export function NetField({ density = 46 }: { density?: number }) {
       window.removeEventListener("pointermove", onMove);
       canvas.removeEventListener("pointerleave", onLeave);
     };
-  }, [density]);
+  }, [spacing]);
 
   return (
     <canvas

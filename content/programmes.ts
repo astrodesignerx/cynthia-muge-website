@@ -66,6 +66,12 @@ const NGAAF_GRAPHIC: Source = {
   date: "Undated",
 };
 
+export const BOSO_REPORT: Source = {
+  label: "BOSO Football Tournament report",
+  publisher: "Nandi Updates",
+  date: "August 2026",
+};
+
 export const programmes: Programme[] = [
   {
     slug: "kahawa-na-mama",
@@ -101,6 +107,21 @@ export const programmes: Programme[] = [
         src: "/img/coffee-handover-b.jpg",
         alt: "A distribution point in Nandi County",
         pos: "50% 45%",
+      },
+      {
+        src: "/img/coffee-crowd.jpg",
+        alt: "Women hold up their seedlings at a distribution point",
+        pos: "50% 45%",
+      },
+      {
+        src: "/img/coffee-planting.jpg",
+        alt: "A planting ceremony on a farm in Nandi",
+        pos: "50% 60%",
+      },
+      {
+        src: "/img/coffee-planting-field.jpg",
+        alt: "Planting a coffee seedling on the farm",
+        pos: "50% 55%",
       },
     ],
     name: "Kahawa na Mama",
@@ -179,9 +200,9 @@ export const programmes: Programme[] = [
     coverageNote:
       "Counted figures for the remaining sub-counties are being compiled from the beneficiary register.",
     distinctive: {
-      title: "A tent lasts five years. A coffee tree pays for forty.",
+      title: "A long-term coffee asset for women.",
       body:
-        "Her own case for the programme: a 100-seater tent costs KSh 150,000 and wears out within five years, while the same sum in an acre of coffee can generate millions over decades. The programme moves affirmative action money from consumption to production. The trees are also registered in both spouses' names, so a woman who does the work on the farm is named on the asset and on the payment.",
+        "The programme places certified coffee seedlings with women and persons with disability, supports training and registration, and follows the trees from planting to harvest. Its joint-registration approach puts both spouses on the coffee asset and payment record.",
     },
     partners: [
       { name: "NGAAF", role: "National Government Affirmative Action Fund: programme funding" },
@@ -191,33 +212,33 @@ export const programmes: Programme[] = [
     ],
     gaps: [
       {
-        title: "650,000 against her own graphic",
+        title: "The programme total and the 2026 plan",
         body:
-          "Her Mama na Kahawa graphic sets out 100,000 in 2024, 500,000 in 2025 and 1,000,000 for 2026, with nearly 4,800 beneficiaries and a projected KSh 500m in annual income once the trees mature. The 650,000 published here is the counted figure carried by news reports. The office should say whether the 2026 million is distributed or planned.",
+          "A Mama na Kahawa graphic describes 100,000 seedlings in 2024, 500,000 in 2025 and 1,000,000 for 2026, with nearly 4,800 beneficiaries and projected income once the trees mature. The published total here is 650,000+; the office can clarify how the 2026 figure relates to the distribution programme.",
         tag: "Unconfirmed",
       },
       {
         title: "Seedling survival rate",
         body:
-          "No count of how many distributed trees are alive. A figure of 90% circulates publicly. It is an estimate, not a survey.",
+          "A survival count will show how many of the distributed trees are growing. The 90% figure circulating publicly is not yet a survey result.",
         tag: "Not measured",
       },
       {
         title: "Cherry volume and price",
         body:
-          "The first beneficiaries began harvesting cherries in 2026. How much was delivered, and what the cooperatives paid for it, has not been collected.",
+          "The first beneficiaries began harvesting cherries in 2026. The next update will include the volume delivered and the price paid by cooperatives.",
         tag: "Not measured",
       },
       {
         title: "Joint registrations completed",
         body:
-          "The number of households that have signed is not yet recorded.",
+          "The next update will record households that have completed the joint registration.",
         tag: "Not measured",
       },
       {
         title: "Market and processing capacity",
         body:
-          "Whether Nandi has the factory capacity and buyers to absorb the volume these trees will produce at maturity.",
+          "The next update will describe the processing capacity and buyers available as the trees mature.",
         tag: "Open question",
       },
     ],
@@ -267,7 +288,7 @@ export const programmes: Programme[] = [
     ],
     name: "Elimu Ni Mwangaza",
     oneLine:
-      "Full scholarships for students from families who could not otherwise keep them in school.",
+      "Full scholarships that help students stay in school and plan for what comes next.",
     started: "2023",
     status: "Pioneer cohort sitting KCSE",
     lastUpdated: "29 August 2026",
@@ -288,7 +309,7 @@ export const programmes: Programme[] = [
         label: "Students on full scholarship, all cohorts",
         source: HER_PAGE,
         note:
-          "The 206 above are the pioneer cohort. The rest sit KCSE in later years.",
+          "The 206 are the pioneer cohort. The remaining students sit KCSE in later years.",
       },
       {
         status: "verified",
@@ -296,13 +317,13 @@ export const programmes: Programme[] = [
         label: "Stated target, or 120 per ward",
         source: HER_PAGE,
         note:
-          "A target for an expanded mandate, not a figure reached.",
+          "An expansion target for a larger mandate.",
       },
       {
         status: "unconfirmed",
         label: "Launch year",
         note:
-          "Sources give both 2022 and 2023. The pioneer cohort entered Form One in 2023, which the office should confirm as the programme start.",
+          "Public sources give 2022 and 2023. The office can confirm the programme start alongside the pioneer cohort's 2023 entry into Form One.",
       },
     ],
     phases: [
@@ -324,9 +345,9 @@ export const programmes: Programme[] = [
       { area: "Chesumei", value: 63, display: "63" },
     ],
     coverageNote:
-      "From the programme's published breakdown, which sums to 411. That breakdown predates the current total of 449.",
+      "The published breakdown sums to 411. The current total is 449; the remaining 38 students will be assigned in a future update.",
     distinctive: {
-      title: "It is not only school fees.",
+      title: "A four-year commitment to each scholar.",
       body:
         "The commitment runs across four years: walking alongside students, tracking academic growth, and giving them the peace of mind required to excel.",
     },
@@ -337,13 +358,13 @@ export const programmes: Programme[] = [
       {
         title: "The sub-county split for the current 449",
         body:
-          "The published breakdown sums to 411 and is undated. The 38 students added since have not been assigned to a sub-county here.",
+          "The published breakdown sums to 411 and is undated. The 38 students added since will be assigned to a sub-county in a future update.",
         tag: "Unconfirmed",
       },
       {
         title: "Completion and results",
         body:
-          "The pioneer cohort has not yet sat KCSE. Outcomes will be published when results are released.",
+          "The pioneer cohort sits KCSE in 2026. Results will be added when they are released.",
         tag: "Not measured",
       },
     ],
@@ -375,16 +396,6 @@ export const programmes: Programme[] = [
         pos: "50% 35%",
       },
       {
-        src: "/img/boso-stats.jpg",
-        alt: "Tournament progress by constituency",
-        pos: "50% 20%",
-      },
-      {
-        src: "/img/boso-fixtures.jpg",
-        alt: "Ward fixtures, men's and women's competitions",
-        pos: "50% 25%",
-      },
-      {
         src: "/img/boso-speaking.jpg",
         alt: "Cynthia Muge at a ward round",
         pos: "50% 35%",
@@ -408,6 +419,11 @@ export const programmes: Programme[] = [
         src: "/img/boso-quarter.jpg",
         alt: "A quarter final in play",
         pos: "50% 45%",
+      },
+      {
+        src: "/img/boso-arrival.jpg",
+        alt: "Arriving at a ward final",
+        pos: "50% 30%",
       },
     ],
     name: "BOSO Supercup",
@@ -462,10 +478,10 @@ export const programmes: Programme[] = [
       {
         name: "Sports kitting",
         period: "2024",
-        quantity: "Gear, not fixtures",
+        quantity: "Team kit and equipment",
         beneficiaries: "Named teams",
         detail:
-          "Playing kit and equipment handed to active teams, including Kabirer volleyball and football. The office was in sport two years before the tournament.",
+          "Playing kit and equipment handed to active teams, including Kabirer volleyball and football, before the wider tournament programme.",
       },
       {
         name: "Ward stage, mid-point",
@@ -499,16 +515,16 @@ export const programmes: Programme[] = [
     ],
     coverage: [],
     distinctive: {
-      title: "A team was disqualified, and it was announced.",
+      title: "Rules applied at the ward stage.",
       body:
-        "Seroi FC was disqualified from the Chepkunyuk ward round for fielding an ineligible player. Every match it had played was nullified, the affected teams were each awarded three points, and the decision was published alongside the results. A competition that enforces its own rules in public is doing something harder than staging matches.",
+        "At Chepkunyuk, Seroi FC was disqualified for fielding an ineligible player. The matches were nullified, the affected teams received three points each, and the decision was published alongside the results.",
     },
     partners: [],
     gaps: [
       {
         title: "Livelihoods after the whistle",
         body:
-          "No data yet on how many players find sustained income after the tournament.",
+          "Future updates will follow the opportunities and income that grow around the tournament.",
         tag: "Open question",
       },
       {
@@ -573,6 +589,21 @@ export const programmes: Programme[] = [
         alt: "The two facilities on the national development estimates",
         pos: "50% 20%",
       },
+      {
+        src: "/img/ambulance-team.jpg",
+        alt: "The ambulance crew at Kabiemit Health Centre",
+        pos: "50% 40%",
+      },
+      {
+        src: "/img/health-equipment.jpg",
+        alt: "New diagnostic equipment delivered for Kabiemit",
+        pos: "50% 45%",
+      },
+      {
+        src: "/img/handover-gathering.jpg",
+        alt: "Residents gather for a project handover",
+        pos: "50% 45%",
+      },
     ],
     name: "Health and Infrastructure",
     oneLine:
@@ -615,7 +646,7 @@ export const programmes: Programme[] = [
         label: "Health facilities funded for construction",
         source: HER_PAGE_DELIVERY,
         note:
-          "Chebirir in Aldai, then Kipkaren Salient in Mosop. Funding secured, not buildings opened.",
+          "Chebirir in Aldai, then Kipkaren Salient in Mosop. Funding has been secured; construction dates will be added as they are published.",
       },
       {
         status: "verified",
@@ -629,15 +660,15 @@ export const programmes: Programme[] = [
         status: "unmeasured",
         label: "Patients carried by the ambulance",
         note:
-          "The facility keeps a log. It has not yet been compiled.",
+          "The facility keeps a patient log. A summary can be added in a future update.",
       },
     ],
     phases: [],
     coverage: [],
     distinctive: {
-      title: "The equipment came from a proposal, not a request.",
+      title: "A proposal brought diagnostic equipment to Kabiemit.",
       body:
-        "The diagnostic and maternity equipment at Kabiemit was funded by the Government of Japan after the office wrote a proposal for it. An Embassy Second Secretary visited the facility to verify delivery.",
+        "The office wrote the proposal that brought diagnostic and maternity equipment to Kabiemit through the Government of Japan. An Embassy Second Secretary visited the facility to verify the delivery.",
     },
     partners: [
       { name: "NGAAF", role: "National Government Affirmative Action Fund" },
@@ -654,13 +685,13 @@ export const programmes: Programme[] = [
       {
         title: "Water tanks and sanitary towels",
         body:
-          "Supporters list school water tanks and sanitary towel distribution among her delivery. Neither appears in any post from the office, so neither is published here until the office documents them.",
+          "The office can add school water tanks and sanitary towel distribution when the delivery details are available.",
         tag: "Unconfirmed",
       },
       {
-        title: "Two shade locations that do not match",
+        title: "The full shade location list",
         body:
-          "An earlier office record names Ndalat Centre and Kapkilel. Neither is among the four she has named publicly. Whether they are additional shades or superseded entries has not been checked.",
+          "The public list names Lelmokwo, Lessos, Chebarbar and Soy-Sitet. An earlier office record also names Ndalat Centre and Kapkilel. The office can confirm whether those are additional locations.",
         tag: "Unconfirmed",
       },
       {
@@ -672,7 +703,7 @@ export const programmes: Programme[] = [
       {
         title: "Usage and maintenance",
         body:
-          "No data yet on utilisation of the ambulance or the condition of the boreholes over time.",
+          "Future updates will follow ambulance use and the condition of the boreholes over time.",
         tag: "Not measured",
       },
     ],
@@ -707,6 +738,11 @@ export const programmes: Programme[] = [
         alt: "Cynthia Muge at the cooperative",
         pos: "50% 30%",
       },
+      {
+        src: "/img/milk-coolers.jpg",
+        alt: "Milk coolers delivered for the dairy cooperative",
+        pos: "50% 50%",
+      },
     ],
     name: "Dairy Value Chain",
     oneLine:
@@ -736,7 +772,7 @@ export const programmes: Programme[] = [
         status: "unconfirmed",
         label: "Cooperatives in the first tranche",
         note:
-          "Five earlier coolers complete the ten. The recipients have not been named publicly.",
+          "Five earlier coolers complete the ten. The first five cooperative names will be added when the office confirms them.",
       },
       {
         status: "unmeasured",
@@ -764,9 +800,9 @@ export const programmes: Programme[] = [
     ],
     coverage: [],
     distinctive: {
-      title: "This one is national money, not hers.",
+      title: "A county allocation for dairy cooperatives.",
       body:
-        "The coolers come from the State Department for Livestock Development under the Livestock Value Chain Support Project. Her role was securing the county allocation and holding the delivery to its date, which she had announced ten weeks earlier.",
+        "The coolers came through the State Department for Livestock Development under the Livestock Value Chain Support Project. The office secured the county allocation and followed the delivery it had announced ten weeks earlier.",
     },
     partners: [
       {
@@ -788,7 +824,7 @@ export const programmes: Programme[] = [
       {
         title: "Farmer earnings",
         body:
-          "Whether cooling raised the price paid to farmers, and by how much, has not been measured.",
+          "The next update will follow whether cooling changes the price paid to farmers.",
         tag: "Not measured",
       },
     ],
@@ -818,6 +854,11 @@ export const programmes: Programme[] = [
         src: "/img/empowerment-meeting.jpg",
         alt: "A group representative speaking at Chepkemel",
         pos: "50% 25%",
+      },
+      {
+        src: "/img/empowerment-group.jpg",
+        alt: "A community group meeting under the tent",
+        pos: "50% 40%",
       },
     ],
     name: "Group Empowerment",
@@ -900,9 +941,9 @@ export const programmes: Programme[] = [
     ],
     coverage: [],
     distinctive: {
-      title: "It is paid to the group, not the individual.",
+      title: "Support reaches registered groups through their own accounts.",
       body:
-        "The cheque goes to a registered group with its own officials and account. Women, young people and persons with disability reach it through a body that has to keep records and answer to its own members.",
+        "The cheque goes to a registered group with its own officials and account. Women, young people and persons with disability receive support through organisations that keep records and answer to their members.",
     },
     partners: [
       { name: "NGAAF", role: "National Government Affirmative Action Fund" },
@@ -911,13 +952,13 @@ export const programmes: Programme[] = [
       {
         title: "How many groups, and where",
         body:
-          "Eighteen groups in four wards are on the public record. The total, and the spread across the thirty wards, is not published.",
+          "Eighteen groups in four wards are named so far. The office can add the wider total and ward distribution as the register is compiled.",
         tag: "Unconfirmed",
       },
       {
         title: "What the money did",
         body:
-          "No record yet of what the grants bought or whether the enterprises are still running.",
+          "The next update will follow what the grants bought and which enterprises are still operating.",
         tag: "Not measured",
       },
     ],
@@ -928,6 +969,34 @@ export const programmes: Programme[] = [
 export function getProgramme(slug: string): Programme | undefined {
   return programmes.find((p) => p.slug === slug);
 }
+
+/** Source-backed figures used on the homepage. Keep them in content, not JSX. */
+export const homeStats = [
+  {
+    value: "650,000+",
+    label: "Certified coffee seedlings",
+    note: "Distributed across all six sub-counties.",
+    source: KNA,
+  },
+  {
+    value: "449",
+    label: "Students on full scholarship",
+    note: "All cohorts. 206 sit KCSE this year.",
+    source: HER_PAGE,
+  },
+  {
+    value: "30 / 30",
+    label: "Wards reached by BOSO",
+    note: "846 matches in three months.",
+    source: BOSO_REPORT,
+  },
+  {
+    value: "KSh 2.7m",
+    label: "Ward-level prize money",
+    note: "Men's and women's competitions.",
+    source: BOSO_REPORT,
+  },
+];
 
 /** County finance, used in the /record explainer. */
 export const countyFinance = {
@@ -951,11 +1020,12 @@ export const pillars = [
     body:
       "Access between the wards, the markets and the tea and coffee collection points.",
     detail:
-      "A coffee tree is only worth what a farmer can get to a factory, and a dairy cooperative is only worth what a cooler can be reached from. Roads are the pillar the other five depend on, which is why she lists it first.",
+      "Good roads connect homes, markets, collection points, and the services that keep local enterprise moving. She lists the road network first because every other priority depends on that connection.",
     already:
       "Boda boda shades at Lelmokwo, Lessos, Chebarbar and Soy-Sitet, for the riders who carry most of that traffic.",
     question:
-      "Which roads, in what order, and at what cost per kilometre.",
+      "A costed sequence of roads: routes, order, and cost per kilometre.",
+    source: HER_PAGE_DELIVERY,
   },
   {
     n: "02",
@@ -963,11 +1033,12 @@ export const pillars = [
     body:
       "Scholarships, the schools that hold the students already sponsored, and foundational literacy at ECDE.",
     detail:
-      "Her stated target is 4,000 students on full scholarship, or a minimum of 120 per ward, against the 449 supported now. She has also argued that early childhood literacy is “a non-negotiable imperative”, which matters because ECDE is a county function rather than a national one.",
+      "Her stated target is 4,000 students on full scholarship, or a minimum of 120 per ward. She has also called foundational literacy in ECDE a non-negotiable priority for Nandi's children.",
     already:
       "449 students on full scholarship across all cohorts, 206 of them sitting KCSE this year.",
     question:
-      "What an expanded resource envelope actually is, and where it comes from.",
+      "How an expanded resource envelope can support the stated target.",
+    source: HER_PAGE,
   },
   {
     n: "03",
@@ -975,22 +1046,24 @@ export const pillars = [
     body:
       "Facilities within reach of the townships that have none, and the equipment to make them work.",
     detail:
-      "Her test is distance: Kipkaren Salient had no public health facility within five kilometres. A building without diagnostic equipment is not a facility, which is why the Kabiemit proposal covered both.",
+      "Kipkaren Salient had no public health facility within five kilometres. The Kabiemit proposal pairs facilities with diagnostic equipment so care can begin with the tools staff need.",
     already:
       "Two facilities carried on the national development estimates at KSh 20m each, an ambulance and eight units of diagnostic and maternity equipment at Kabiemit.",
     question:
-      "Staffing and running costs, which are county obligations rather than national ones.",
+      "The staffing and running costs that keep facilities open.",
+    source: HER_PAGE_DELIVERY,
   },
   {
     n: "04",
     name: "Water",
     body: "Boreholes, storage and supply across the six sub-counties.",
     detail:
-      "Water is where the county's own performance is most visible to a household, and where a borehole that stops working is as conspicuous as one that never came.",
+      "Reliable water is part of the daily rhythm of a household, a school, and a market. The priority is to extend supply and keep each point working over time.",
     already:
       "Boreholes at Tulwo Girls High and Kabolebo Primary, the second with Lake Basin Development Authority, serving the school, the community and Maraba Market.",
     question:
-      "Whether the boreholes already drilled are still yielding, which nobody has published.",
+      "The yield and upkeep of the existing boreholes.",
+    source: HER_PAGE_DELIVERY,
   },
   {
     n: "05",
@@ -998,22 +1071,24 @@ export const pillars = [
     body:
       "Coffee, dairy, tea and the enterprises run by women, young people and persons with disability.",
     detail:
-      "Her argument is that affirmative action money should buy production rather than consumption. A tent costs KSh 150,000 and wears out in five years; the same sum in an acre of coffee pays for forty. Tea is the gap in her published record, and it is the county's largest crop.",
+      "Her approach links coffee, dairy, tea, and group enterprise to household income over time. Tea remains an important future priority for the county's farming communities.",
     already:
       "650,000 coffee seedlings, the first harvest in 2026, ten milk coolers, and eighteen groups funded at KSh 100,000 each.",
     question:
-      "Tea. Nothing in the record so far addresses the crop most of Nandi actually grows.",
+      "A county-wide approach to tea, the crop at the centre of many Nandi households.",
+    source: HER_PAGE_DELIVERY,
   },
   {
     n: "06",
     name: "Governance",
     body: "How the county budget is set, spent and accounted for.",
     detail:
-      "Nandi spent KSh 10.2bn in FY 2024/25 at 98% absorption, but two thirds of it ran the county and one third built anything. Recurrent spending came in at 102% of budget while development reached 90%, which is the shape of the problem.",
+      "Nandi spent KSh 10.2bn in FY 2024/25 at 98% absorption. The next responsibility is to understand how the county can protect essential services while growing development investment.",
     already:
-      "Public participation forums before the budget year, and a tournament that disqualified a team under its own published rules and said so.",
+      "Public participation forums before the budget year, and a tournament that applied its published rules and shared the result.",
     question:
-      "Whether the development share can be moved, and what is cut to move it.",
+      "How the development share can grow while essential county services remain strong.",
+    source: COB,
   },
 ];
 
@@ -1075,8 +1150,8 @@ export const healthVote = {
 
 /**
  * Work in the National Assembly, and positions taken on public questions.
- * Sourced from her own posts. The site had none of this: it presented her
- * only as someone who delivers programmes, not as a legislator.
+ * Sourced from her own posts. The site includes both her programme work and
+ * her service as a legislator.
  */
 export const parliament = {
   committees: [
@@ -1089,7 +1164,7 @@ export const parliament = {
       title: "Social Health Insurance Fund tariffs",
       year: "2024",
       body:
-        "A review of the tariffs and benefit package at the National Assembly's Health Committee, covering primary healthcare, maternity, emergency care, critical care and chronic disease. She put the question to constituents while the legislation was still being drafted: \u201cWe ask for your views as the ministry prepares to submit the legislation to Parliament. What is your say?\u201d",
+        "At the National Assembly's Health Committee, she took part in reviewing the Social Health Insurance Fund tariffs and benefit package, including primary healthcare, maternity, emergency care, critical care and chronic disease. She invited constituents to share their views while the legislation was being drafted.",
       tag: "Committee",
     },
     {
@@ -1103,14 +1178,14 @@ export const parliament = {
       title: "Koitalel Samoei University and Samoei Boys High School",
       year: "2024",
       body:
-        "A commitment to put the legal instruments in place so the school and the university can each operate without conflict over the same site, following a public conversation in Nandi Hills town.",
+        "Following a public conversation in Nandi Hills town, she committed to helping put the legal instruments in place for Koitalel Samoei University and Samoei Boys High School to operate well together.",
       tag: "Commitment",
     },
     {
       title: "Early childhood literacy",
       year: "2026",
       body:
-        "After reading compositions by two grade 7 pupils: \u201cinvestment in foundational literacy at ECDE is a non-negotiable imperative.\u201d Early childhood education is a devolved county function, which places this under the Education pillar rather than her current seat.",
+        "After reading compositions by two grade 7 pupils, she described investment in foundational literacy at ECDE as a non-negotiable priority. Early childhood education is part of the county's Education responsibility.",
       tag: "Position",
     },
     {

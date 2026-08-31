@@ -2,12 +2,14 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { countyFinance, programmes } from "@/content/programmes";
-import { NightHead, Stat } from "@/components/Viz";
+import { NightHead } from "@/components/Viz";
+import { NetField } from "@/components/NetField";
+import { Reveal } from "@/components/Motion";
 
 export const metadata: Metadata = {
   title: "The record",
   description:
-    "Kahawa na Mama, Elimu Ni Mwangaza, the BOSO Supercup, dairy, group empowerment, and health and water projects across Nandi County.",
+    "The work across Nandi County: coffee, scholarships, sport, health, dairy, and support for local groups.",
 };
 
 const art: Record<string, { img: string; pos: string; tag: string }> = {
@@ -19,23 +21,7 @@ const art: Record<string, { img: string; pos: string; tag: string }> = {
   "group-empowerment": { img: "/img/empowerment-meeting.jpg", pos: "50% 25%", tag: "Enterprise" },
 };
 
-/** Counts the evidence state of every figure on the site. */
-function tally() {
-  let verified = 0;
-  let open = 0;
-  for (const p of programmes) {
-    for (const f of p.figures) {
-      if (f.status === "verified") verified++;
-      else open++;
-    }
-    open += p.gaps.length;
-  }
-  return { verified, open };
-}
-
 export default function RecordPage() {
-  const { verified, open } = tally();
-
   return (
     <>
       <section className="night relative isolate overflow-hidden">
@@ -45,7 +31,7 @@ export default function RecordPage() {
           fill
           priority
           sizes="100vw"
-          className="-z-10 object-cover opacity-40"
+          className="-z-10 kenburns object-cover opacity-40"
           style={{ objectPosition: "50% 45%" }}
         />
         <div aria-hidden className="absolute inset-0 -z-10 bg-[#0C1420]/78" />
@@ -53,29 +39,23 @@ export default function RecordPage() {
           <NightHead
             eyebrow="Office of the Woman Representative"
             title="The record"
-            lead="Six programmes, where each one reached, and what is still being counted."
-            split
+            lead="Six programmes across Nandi, and the work taking shape in each one."
           />
-          <dl className="mt-16 grid gap-y-12 sm:grid-cols-3 lg:gap-x-12">
-            <Stat scale="sm" value={String(programmes.length)} label="Programmes" />
-            <Stat scale="sm" value={String(verified)} label="Figures with a named source" />
-            <Stat
-              scale="sm"
-              value={String(open)}
-              label="Still unconfirmed or uncounted"
-              tone="ember"
-            />
-          </dl>
         </div>
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-16 lg:py-24">
-        <ul className="grid gap-6 lg:grid-cols-2">
-          {programmes.map((p) => {
+        <ul className="grid gap-6 lg:grid-cols-2 lg:auto-rows-fr">
+          {programmes.map((p, i) => {
             const a = art[p.slug];
             const headline = p.figures.find((f) => f.status === "verified");
             return (
-              <li key={p.slug}>
+              <li key={p.slug} className="h-full">
+                <Reveal
+                  delay={(i % 2) * 90}
+                  from={i % 2 ? "right" : "left"}
+                  className="h-full"
+                >
                 <Link
                   href={`/record/${p.slug}`}
                   className="group flex h-full flex-col overflow-hidden rounded-sm border border-[var(--color-rule)] transition-colors duration-200 hover:border-[var(--color-murram)]"
@@ -108,12 +88,19 @@ export default function RecordPage() {
 
                     {headline && headline.status === "verified" && (
                       <div className="mt-7 flex items-baseline gap-4 border-t border-[var(--color-rule)] pt-6">
-                        <span className="numeral text-[2.5rem] text-[var(--color-murram)]">
-                          {headline.value}
-                        </span>
-                        <span className="text-[0.875rem] leading-snug text-[var(--color-soft)]">
-                          {headline.label}
-                        </span>
+                        <div>
+                          <div className="flex items-baseline gap-4">
+                            <span className="numeral text-[2.5rem] text-[var(--color-murram)]">
+                              {headline.value}
+                            </span>
+                            <span className="text-[0.875rem] leading-snug text-[var(--color-soft)]">
+                              {headline.label}
+                            </span>
+                          </div>
+                          <p className="meta mt-3 border-t border-[var(--color-rule)] pt-2">
+                            Source: {headline.source.publisher}, {headline.source.date}
+                          </p>
+                        </div>
                       </div>
                     )}
 
@@ -123,18 +110,21 @@ export default function RecordPage() {
                     </p>
                   </div>
                 </Link>
+                </Reveal>
               </li>
             );
           })}
         </ul>
       </section>
 
-      <section className="night">
-        <div className="mx-auto max-w-7xl px-6 py-20 lg:py-24">
+      <section className="night relative isolate overflow-hidden">
+        <NetField />
+          <div className="relative mx-auto max-w-7xl px-6 py-20 lg:py-24">
+          <Reveal delay={80}>
           <div className="grid gap-14 lg:grid-cols-[1fr_1.2fr] lg:items-end">
             <NightHead
-              eyebrow="Context"
-              title="Where Nandi County money goes."
+              eyebrow="The county"
+              title="Understanding the budget behind the work."
               lead={`${countyFinance.total} in ${countyFinance.year}, at ${countyFinance.absorption} absorption.`}
             />
             <div>
@@ -171,6 +161,7 @@ export default function RecordPage() {
               </p>
             </div>
           </div>
+          </Reveal>
         </div>
       </section>
     </>

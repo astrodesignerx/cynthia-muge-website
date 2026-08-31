@@ -11,6 +11,7 @@ import {
   SourceList,
   Section,
 } from "@/components/Figures";
+import { NetField } from "@/components/NetField";
 
 export function generateStaticParams() {
   return programmes.map((p) => ({ slug: p.slug }));
@@ -149,14 +150,17 @@ export default async function ProgrammePage({
       )}
 
       {p.distinctive && (
-        <Section title="What makes it different">
-          <div className="rounded-sm bg-[var(--color-leaf)] px-9 py-10">
-            <h3 className="display text-[2rem] leading-tight text-white">
-              {p.distinctive.title}
-            </h3>
-            <p className="mt-4 max-w-[58ch] leading-relaxed text-[#D6E6DC]">
-              {p.distinctive.body}
-            </p>
+        <Section title="How the work takes shape">
+          <div className="relative isolate overflow-hidden rounded-sm bg-[var(--color-leaf)]">
+            <NetField />
+            <div className="relative px-9 py-10">
+              <h3 className="display text-[2rem] leading-tight text-white">
+                {p.distinctive.title}
+              </h3>
+              <p className="mt-4 max-w-[58ch] leading-relaxed text-[#D6E6DC]">
+                {p.distinctive.body}
+              </p>
+            </div>
           </div>
         </Section>
       )}
@@ -218,11 +222,11 @@ export default async function ProgrammePage({
 
       <div className="mx-auto max-w-7xl px-6">
 
-      <Section title="Still to be counted">
+      <Section title="What we are following next">
         <GapCards gaps={p.gaps} />
       </Section>
 
-      <Section title="Sources">
+      <Section title="Sources" className="pb-14">
         <SourceList sources={p.sources} />
       </Section>
       </div>

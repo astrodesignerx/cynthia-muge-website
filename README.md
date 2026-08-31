@@ -57,8 +57,9 @@ Then update `lastUpdated` on that programme.
 
 **To publish a figure that is currently unconfirmed**, change its `status` to
 `"verified"` and add both `value` and `source`. Until you do, it stays a dash.
-That is intentional — see `elimu-ni-mwangaza`, where the scholarship total
-appears publicly as both 409 and 449 and so is not published here at all.
+That is intentional — see the open ward breakdown on `elimu-ni-mwangaza`. The
+current total of 449 is published from the official page, while the older
+sub-county breakdown still sums to 411 and remains clearly marked as incomplete.
 
 **To record something nobody has counted**, add it to that programme's `gaps`.
 
@@ -72,17 +73,25 @@ app/
   record/page.tsx          All programmes + county finance explainer
   record/[slug]/page.tsx   THE core template — figures, phases, coverage,
                            partners, what has not been measured, sources
+  stories/                 Field notes organised by person and place
   about/                   Biography, timeline, education
   boso/                    Tournament + football and volleyball registration
-  media/                   Speech and video archive (in production)
+  media/                   Linked speech and video archive
   contact/
 components/Figures.tsx     Figure, coverage, gap and source rendering
+components/StoryCard.tsx   Person, place and proof field-note card
 content/programmes.ts      ALL content and figures
+content/stories.ts         Documented field notes and their sources
 lib/types.ts               The evidence contract
 ```
 
-`/projects` and `/empowerment` redirect to `/record`. The old
-`/volleyball/rules` and `/football/rules` redirect into `/boso`.
+`/projects`, `/empowerment`, and `/about/festival` redirect to their new
+destinations. The old `/volleyball/rules`, `/football/rules`, and `/register/*`
+routes redirect into `/boso` so links from existing posts continue to work.
+
+Verified-page image candidates are staged in `public/img/facebook/`. Their
+intended uses and publication checks are recorded in
+`FACEBOOK-IMAGE-REGISTER.md`.
 
 ---
 
@@ -112,7 +121,8 @@ Full rationale in `BUILD-BRIEF.md`.
 
 ## Before this goes live
 
-- [ ] Confirm the Elimu Ni Mwangaza total (409 vs 449) and the launch year
+- [ ] Confirm the Elimu Ni Mwangaza ward breakdown and launch year
 - [ ] Add real office contact details to `/contact`
 - [ ] Replace placeholder imagery with the campaign's own photography
 - [ ] Compile beneficiary counts per sub-county for the coverage charts
+- [ ] Attach post context, rights, credits, consent, and alt text to staged Facebook images

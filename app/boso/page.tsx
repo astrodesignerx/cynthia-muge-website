@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { bosoFunnel, wards } from "@/content/programmes";
+import { BOSO_REPORT, bosoFunnel, wards } from "@/content/programmes";
 import { Funnel, NightHead, PhotoStrip, Stat, WardGrid } from "@/components/Viz";
+import { NetField } from "@/components/NetField";
+import { Reveal } from "@/components/Motion";
 
 export const metadata: Metadata = {
   title: "BOSO Supercup",
@@ -34,11 +36,9 @@ const prizes = [
 ];
 
 const strip = [
-  { src: "/img/boso-action.jpg", alt: "A ward match in play", pos: "50% 45%" },
   { src: "/img/boso-prize-b.jpg", alt: "A men's champion collecting prize money", pos: "50% 40%" },
   { src: "/img/boso-women-prize.jpg", alt: "A women's champion collecting the same prize", pos: "50% 35%" },
-  { src: "/img/boso-prize-a.jpg", alt: "Prize money settled at the close of a ward round", pos: "50% 40%" },
-  { src: "/img/boso-crowd.jpg", alt: "A crowd gathered for the ward stage", pos: "50% 45%" },
+  { src: "/img/boso-action.jpg", alt: "A ward match in play", pos: "50% 45%" },
 ];
 
 export default function Boso() {
@@ -51,7 +51,7 @@ export default function Boso() {
           fill
           priority
           sizes="100vw"
-          className="-z-10 object-cover"
+          className="-z-10 kenburns object-cover"
           style={{ objectPosition: "50% 42%" }}
         />
         <div
@@ -59,11 +59,22 @@ export default function Boso() {
           className="absolute inset-0 -z-10 bg-gradient-to-t from-[#0C1420] via-[#0C1420]/82 to-[#0C1420]/40"
         />
         <div className="mx-auto w-full max-w-7xl px-6 pb-16 pt-28">
-          <p className="label text-[var(--color-gold)]">Nandi County</p>
-          <h1 className="display mt-6 max-w-[10ch] text-[3.5rem] leading-[0.92] text-white sm:text-[5rem] lg:text-[6rem]">
+          <p
+            className="label rise text-[var(--color-gold)]"
+            style={{ animationDelay: "120ms" }}
+          >
+            Nandi County
+          </p>
+          <h1
+            className="display rise mt-6 max-w-[10ch] text-[3.5rem] leading-[0.92] text-white sm:text-[5rem] lg:text-[6rem]"
+            style={{ animationDelay: "200ms" }}
+          >
             BOSO Supercup
           </h1>
-          <p className="mt-7 max-w-[44ch] text-[1.125rem] leading-relaxed text-[var(--color-on-night-soft)]">
+          <p
+            className="rise mt-7 max-w-[44ch] text-[1.125rem] leading-relaxed text-[var(--color-on-night-soft)]"
+            style={{ animationDelay: "300ms" }}
+          >
             Football and volleyball in every ward of Nandi. Registration is free
             and open.
           </p>
@@ -72,9 +83,9 @@ export default function Boso() {
 
       {/* The two competitions */}
       <section className="grid sm:grid-cols-2">
-        {comps.map((c) => (
+        {comps.map((c, i) => (
+          <Reveal key={c.href} delay={i * 90}>
           <Link
-            key={c.href}
             href={c.href}
             className="group relative isolate flex min-h-[26rem] items-end overflow-hidden p-9 lg:min-h-[32rem]"
           >
@@ -102,6 +113,7 @@ export default function Boso() {
               </p>
             </div>
           </Link>
+          </Reveal>
         ))}
       </section>
 
@@ -109,12 +121,12 @@ export default function Boso() {
       <section className="night">
         <div className="mx-auto max-w-7xl px-6 py-20 lg:py-28">
           <div className="grid gap-16 lg:grid-cols-[1fr_1.1fr] lg:gap-20">
-            <NightHead
-              eyebrow="The ward stage, closed"
-              title="Thirty wards, at the same time."
-              lead="The first time a talent competition ran simultaneously in every ward of Nandi. Prize money was settled at the close of each ward round rather than held to the end."
+              <NightHead
+                eyebrow="The ward stage"
+                title="Thirty wards, at the same time."
+                lead="Players, organisers, fields, and supporters carried the competition through every ward of Nandi. Prize money was settled at the close of each ward round."
             />
-            <Funnel steps={bosoFunnel} caption="April to August 2026" />
+            <Funnel steps={bosoFunnel} caption="April to August 2026" source={BOSO_REPORT} />
           </div>
 
           <div className="mt-20">
@@ -138,6 +150,7 @@ export default function Boso() {
             </p>
           </div>
 
+          <Reveal delay={60}>
           <div className="overflow-x-auto rounded-sm border border-[var(--color-rule)]">
             <table className="w-full min-w-[26rem] border-collapse text-[0.9375rem]">
               <thead>
@@ -155,7 +168,10 @@ export default function Boso() {
               </thead>
               <tbody>
                 {prizes.map((r) => (
-                  <tr key={r.place} className="border-b border-[var(--color-rule)] last:border-0">
+                  <tr
+                    key={r.place}
+                    className="border-b border-[var(--color-rule)] transition-colors duration-200 last:border-0 hover:bg-[var(--color-sunk)]/70"
+                  >
                     <th scope="row" className="px-5 py-4 text-left font-bold">
                       {r.place}
                     </th>
@@ -170,29 +186,34 @@ export default function Boso() {
               </tbody>
             </table>
           </div>
+          <p className="label mt-5 text-[var(--color-faint)]">
+            Source: {BOSO_REPORT.publisher}, {BOSO_REPORT.date}
+          </p>
+          </Reveal>
         </div>
       </section>
 
       {/* Photographs */}
       <section className="pb-8">
         <div className="mx-auto max-w-7xl px-6">
-          <PhotoStrip images={strip} height="20rem" />
+          <PhotoStrip images={strip} height="20rem" fit />
         </div>
       </section>
 
       {/* Next stage */}
-      <section className="night">
-        <div className="mx-auto max-w-7xl px-6 py-20">
-          <NightHead
-            eyebrow="Next"
-            title="Sub-county rounds, from September"
-            lead="120 teams carry their wards into the sub-county stage. The county final is in December 2026."
+      <section className="night relative isolate overflow-hidden">
+        <NetField />
+        <div className="relative mx-auto max-w-7xl px-6 py-20">
+            <NightHead
+              eyebrow="The next stage"
+              title="Sub-county rounds, from September"
+              lead="120 teams carry their wards into the sub-county stage. The county final is planned for December 2026."
             split
           />
           <dl className="mt-14 grid gap-y-12 sm:grid-cols-3 lg:gap-x-12">
-            <Stat scale="sm" value="120" label="Teams through" />
-            <Stat scale="sm" value="6" label="Sub-county rounds" />
-            <Stat scale="sm" value="Dec 2026" label="County final" />
+            <Stat scale="sm" value="120" label="Teams through" source={BOSO_REPORT} />
+            <Stat scale="sm" value="6" label="Sub-county rounds" source={BOSO_REPORT} />
+            <Stat scale="sm" value="Dec 2026" label="County final" source={BOSO_REPORT} />
           </dl>
           <Link
             href="/record/boso-supercup"
