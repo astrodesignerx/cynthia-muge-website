@@ -14,14 +14,12 @@ export function FooterWordmark() {
   const play = useCallback(() => setAccent((n) => n + 1), []);
 
   return (
-    <button
-      type="button"
+    <span
       aria-hidden
-      tabIndex={-1}
       onMouseEnter={play}
-      className="shrink-0 cursor-default"
+      className="inline-flex shrink-0 cursor-default"
     >
       <Wordmark size="lg" accentKey={accent} />
-    </button>
+    </span>
   );
 }
