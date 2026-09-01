@@ -3,5 +3,5 @@
   text{font-family:'Anton',sans-serif;font-weight:400;}
   rect{fill:#0c1420}</style>
   <rect width="64" height="64"/>
-  <text x="32" y="46" fill="#d8a43c" font-size="32" letter-spacing="1" text-anchor="middle">CM</text>
+  <text x="32" y="46" fill="#facc15" font-size="32" letter-spacing="1" text-anchor="middle">CM</text>
 </svg>

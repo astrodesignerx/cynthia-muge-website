@@ -186,10 +186,12 @@ export default function Home() {
                 count
                 label={stat.label}
                 note={stat.note}
-                source={stat.source}
               />
             ))}
           </dl>
+          <p className="label mt-10 max-w-[60ch] leading-relaxed text-[var(--color-on-night-soft)]">
+            Sources: Kenya News Agency, 15 Jun 2025; Nandi Updates, Aug 2026; Official Facebook, Aug 2026. See each programme page for full detail.
+          </p>
         </div>
       </section>
 
@@ -297,11 +299,7 @@ export default function Home() {
                 Rules and registration
               </Link>
             </div>
-            <Funnel
-              steps={bosoFunnel}
-              caption="Ward stage, April to August 2026"
-              source={BOSO_REPORT}
-            />
+            <Funnel steps={bosoFunnel} caption="Ward stage, April to August 2026" />
           </div>
 
           <div className="mt-20">

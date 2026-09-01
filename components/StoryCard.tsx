@@ -21,9 +21,6 @@ export function StoryCard({ story }: { story: FieldNote }) {
           <Link href={`/stories/${story.slug}`}>{story.title}</Link>
         </h3>
         <p className="mt-3 leading-relaxed text-[var(--color-soft)]">{story.lede}</p>
-        <p className="meta mt-auto border-t border-[var(--color-rule)] pt-5">
-          Source: {story.source.publisher}, {story.source.date}
-        </p>
       </div>
     </article>
   );

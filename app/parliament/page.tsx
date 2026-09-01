@@ -134,10 +134,13 @@ export default function Parliament() {
               lead="A ward seat in the County Assembly at twenty-four, running as an independent, then the county's Woman Representative seat in the National Assembly."
             />
             <dl className="grid gap-y-12 sm:grid-cols-3">
-              <Stat scale="sm" value="2017" label="County Assembly" source={parliament.source} />
-              <Stat scale="sm" value="2022" label="National Assembly" source={parliament.source} />
-              <Stat scale="sm" value="275,500" label="Votes in 2022" source={parliament.source} />
+              <Stat scale="sm" value="2017" label="County Assembly" />
+              <Stat scale="sm" value="2022" label="National Assembly" />
+              <Stat scale="sm" value="275,500" label="Votes in 2022" />
             </dl>
+            <p className="label mt-8 max-w-[60ch] leading-relaxed text-[var(--color-on-night-soft)]">
+              Sources: IEBC and Office of the Woman Representative, 2017–2026. Full citations on the programme pages.
+            </p>
           </div>
           <Link
             href="/pillars"

@@ -109,15 +109,12 @@ export default function Pillars() {
 
                 <dl className="mt-8 max-w-[52ch] border-t border-[var(--color-rule)]">
                   <div className="grid gap-1 border-b border-[var(--color-rule)] py-4 sm:grid-cols-[9rem_1fr] sm:gap-5">
-                     <dt className="label text-[var(--color-leaf)]">
-                       Already underway
+                    <dt className="label text-[var(--color-leaf)]">
+                      Already underway
                     </dt>
-                   <dd className="text-[0.9375rem] leading-relaxed text-[var(--color-soft)]">
-                     {p.already}
-                   </dd>
-                   <dd className="meta mt-2 sm:col-start-2">
-                     Source: {p.source.publisher}, {p.source.date}
-                   </dd>
+                    <dd className="text-[0.9375rem] leading-relaxed text-[var(--color-soft)]">
+                      {p.already}
+                    </dd>
                   </div>
                   <div className="grid gap-1 border-b border-[var(--color-rule)] py-4 sm:grid-cols-[9rem_1fr] sm:gap-5">
                     <dt className="label text-[var(--color-amber)]">

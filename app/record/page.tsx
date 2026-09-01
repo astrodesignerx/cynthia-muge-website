@@ -88,19 +88,12 @@ export default function RecordPage() {
 
                     {headline && headline.status === "verified" && (
                       <div className="mt-7 flex items-baseline gap-4 border-t border-[var(--color-rule)] pt-6">
-                        <div>
-                          <div className="flex items-baseline gap-4">
-                            <span className="numeral text-[2.5rem] text-[var(--color-murram)]">
-                              {headline.value}
-                            </span>
-                            <span className="text-[0.875rem] leading-snug text-[var(--color-soft)]">
-                              {headline.label}
-                            </span>
-                          </div>
-                          <p className="meta mt-3 border-t border-[var(--color-rule)] pt-2">
-                            Source: {headline.source.publisher}, {headline.source.date}
-                          </p>
-                        </div>
+                        <span className="numeral text-[2.5rem] text-[var(--color-murram)]">
+                          {headline.value}
+                        </span>
+                        <span className="text-[0.875rem] leading-snug text-[var(--color-soft)]">
+                          {headline.label}
+                        </span>
                       </div>
                     )}
 

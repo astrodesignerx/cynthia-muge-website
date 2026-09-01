@@ -47,7 +47,8 @@ export default async function ProgrammePage({
             fill
             priority
             sizes="100vw"
-            className="-z-10 object-cover object-top"
+            className="-z-10 object-cover"
+            style={{ objectPosition: p.heroPos ?? "50% 0%" }}
           />
         )}
         <div

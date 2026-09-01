@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Anton, Instrument_Serif, Manrope, JetBrains_Mono } from "next/font/google";
 import Link from "next/link";
 import { MainNav } from "@/components/Nav";
+import { Search } from "@/components/Search";
 import { FooterWordmark } from "@/components/FooterWordmark";
 import { NavWordmark } from "@/components/NavWordmark";
 import { ScrollProgress } from "@/components/Motion";
@@ -96,9 +97,12 @@ export default function RootLayout({
         </a>
 
         <header className="night sticky top-0 z-40 border-b border-[var(--color-night-rule)]/70 backdrop-blur-sm">
-          <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 py-3">
+          <div className="mx-auto flex max-w-7xl items-center gap-6 px-6 py-3">
             <NavWordmark />
-            <MainNav nav={nav} />
+            <div className="ml-auto flex items-center gap-3">
+              <MainNav nav={nav} />
+              <Search nav={nav} />
+            </div>
           </div>
           <ScrollProgress />
         </header>

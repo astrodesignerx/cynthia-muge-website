@@ -135,31 +135,33 @@ export default function About() {
       {/* Family */}
       <section className="mx-auto max-w-7xl px-6 py-20">
         <h2 className="display text-[2.5rem]">Family</h2>
-        <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:max-w-4xl">
-          <Reveal as="figure" className="relative aspect-[4/5] overflow-hidden rounded-sm bg-[var(--color-sunk)]">
+        <div className="mt-8 grid gap-10 lg:grid-cols-[1.2fr_1fr] lg:items-center">
+          <Reveal as="figure" className="relative min-h-[24rem] overflow-hidden rounded-sm bg-[var(--color-sunk)] lg:h-full">
             <Image
               src="/img/family-compound.jpg"
               alt="Cynthia Muge with her two sons at home"
               fill
-              sizes="(max-width: 640px) 100vw, 50vw"
+              sizes="(max-width: 1024px) 100vw, 60vw"
               className="object-cover object-top"
             />
           </Reveal>
-          <Reveal as="figure" delay={80} className="relative aspect-[3/4] overflow-hidden rounded-sm bg-[var(--color-sunk)]">
-            <Image
-              src="/img/family-portrait.jpg"
-              alt="A family studio portrait with Mr Mathew Rotich and their two sons"
-              fill
-              sizes="(max-width: 640px) 100vw, 50vw"
-              className="object-cover object-top"
-            />
-          </Reveal>
+          <div>
+            <Reveal>
+              <p className="mt-4 max-w-[52ch] text-[1.1875rem] leading-relaxed text-[var(--color-soft)]">
+                Married to Mr Mathew Rotich. With two sons.
+              </p>
+            </Reveal>
+            <Reveal as="figure" delay={80} className="relative mt-8 aspect-[3/4] overflow-hidden rounded-sm bg-[var(--color-sunk)]">
+              <Image
+                src="/img/family-portrait.jpg"
+                alt="A family studio portrait with Mr Mathew Rotich and their two sons"
+                fill
+                sizes="(max-width: 1024px) 100vw, 40vw"
+                className="object-cover object-top"
+              />
+            </Reveal>
+          </div>
         </div>
-        <Reveal>
-          <p className="mt-6 max-w-[52ch] text-[1.1875rem] leading-relaxed text-[var(--color-soft)]">
-            Married to Mr Mathew Rotich. With two sons.
-          </p>
-        </Reveal>
       </section>
 
       <ImageBand

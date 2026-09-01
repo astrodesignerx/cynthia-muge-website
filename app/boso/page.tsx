@@ -186,9 +186,6 @@ export default function Boso() {
               </tbody>
             </table>
           </div>
-          <p className="label mt-5 text-[var(--color-faint)]">
-            Source: {BOSO_REPORT.publisher}, {BOSO_REPORT.date}
-          </p>
           </Reveal>
         </div>
       </section>
@@ -211,9 +208,9 @@ export default function Boso() {
             split
           />
           <dl className="mt-14 grid gap-y-12 sm:grid-cols-3 lg:gap-x-12">
-            <Stat scale="sm" value="120" label="Teams through" source={BOSO_REPORT} />
-            <Stat scale="sm" value="6" label="Sub-county rounds" source={BOSO_REPORT} />
-            <Stat scale="sm" value="Dec 2026" label="County final" source={BOSO_REPORT} />
+            <Stat scale="sm" value="120" label="Teams through" />
+            <Stat scale="sm" value="6" label="Sub-county rounds" />
+            <Stat scale="sm" value="Dec 2026" label="County final" />
           </dl>
           <Link
             href="/record/boso-supercup"

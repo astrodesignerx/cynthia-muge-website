@@ -75,8 +75,9 @@ export const BOSO_REPORT: Source = {
 export const programmes: Programme[] = [
   {
     slug: "kahawa-na-mama",
-    hero: "/img/coffee-planting-hand.jpg",
-    heroAlt: "Cynthia Muge planting a coffee seedling by hand in Nandi County",
+    hero: "/img/coffee-seedling-landscape-wide.jpg",
+    heroAlt: "Hands holding a bagged coffee seedling in a Nandi nursery",
+    heroPos: "50% 28%",
     gallery: [
       {
         src: "/img/coffee-seedling-wide.jpg",
