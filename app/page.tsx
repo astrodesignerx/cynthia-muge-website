@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   BOSO_REPORT,
-  bosoFunnel,
+  bosoWardStats,
   countyFinance,
   declaration,
   healthVote,
@@ -14,11 +14,11 @@ import {
 import { fieldNotes } from "@/content/stories";
 import {
   EvidencePlate,
-  Funnel,
   NightHead,
   Stat,
   WardGrid,
 } from "@/components/Viz";
+import { ProgressRing } from "@/components/ProgressRing";
 import { FloatingPillars, Parallax, Reveal } from "@/components/Motion";
 import { NetField } from "@/components/NetField";
 import { ScrollQuote } from "@/components/ScrollQuote";
@@ -299,7 +299,31 @@ export default function Home() {
                 Rules and registration
               </Link>
             </div>
-            <Funnel steps={bosoFunnel} caption="Ward stage, April to August 2026" />
+            <div>
+              <div className="flex flex-col gap-10 sm:flex-row sm:items-center sm:gap-12">
+                <ProgressRing
+                  value={30}
+                  total={30}
+                  label="wards reached"
+                  className="h-44 w-44 shrink-0 self-center sm:h-52 sm:w-52"
+                />
+                <dl className="grid flex-1 gap-x-8 gap-y-10 sm:grid-cols-2">
+                  {bosoWardStats.map((s) => (
+                    <Stat
+                      key={s.label}
+                      scale="sm"
+                      value={s.value}
+                      label={s.label}
+                      count
+                    />
+                  ))}
+                </dl>
+              </div>
+              <p className="label mt-8 text-[var(--color-on-night-soft)]">
+                Ward stage, April to August 2026. Source: {BOSO_REPORT.publisher},{" "}
+                {BOSO_REPORT.date}.
+              </p>
+            </div>
           </div>
 
           <div className="mt-20">

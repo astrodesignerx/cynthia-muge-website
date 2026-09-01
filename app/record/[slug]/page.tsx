@@ -61,7 +61,7 @@ export default async function ProgrammePage({
               href="/record"
               className="label text-[var(--color-on-night-soft)] transition-colors duration-200 hover:text-[var(--color-gold)]"
             >
-              &larr; The record
+              &larr; The Record
             </Link>
           </nav>
           <h1 className="display mt-10 max-w-[16ch] text-[3rem] leading-[0.97] text-white sm:text-[4rem] lg:text-[4.75rem]">

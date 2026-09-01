@@ -11,7 +11,7 @@ export function MainNav({ nav }: { nav: { href: string; label: string }[] }) {
     href === "/" ? path === "/" : path === href || path.startsWith(href + "/");
 
   return (
-    <nav aria-label="Main" className="no-scrollbar -mx-2 overflow-x-auto px-2">
+    <nav aria-label="Main" className="no-scrollbar -mx-2 hidden min-w-0 flex-1 overflow-x-auto px-2 md:flex">
       <ul className="flex items-center gap-x-6 whitespace-nowrap">
         {nav.map((item) => {
           const current = isCurrent(item.href);

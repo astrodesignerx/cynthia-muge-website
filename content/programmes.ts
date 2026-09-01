@@ -1129,6 +1129,14 @@ export const bosoFunnel = [
   { value: 6, display: "6", label: "Constituencies" },
 ];
 
+/** Headline figures for the ward-stage ring on the homepage. */
+export const bosoWardStats = [
+  { value: "846", label: "Matches played" },
+  { value: "499", label: "Teams registered" },
+  { value: "83", label: "Playing fields used" },
+  { value: "KSh 2.7m", label: "Ward-level prize money" },
+];
+
 /**
  * Health facilities carried in the national development estimates.
  * Read off the printed vote she published.

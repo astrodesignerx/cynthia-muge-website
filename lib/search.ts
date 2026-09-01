@@ -58,7 +58,7 @@ function buildDocs(): SearchDoc[] {
     },
     {
       id: "page-record",
-      title: "The record",
+      title: "The Record",
       href: "/record",
       excerpt: "Six programmes across Nandi, and the work taking shape in each one.",
       body: "Record programmes Kahawa na Mama Elimu Ni Mwangaza BOSO Supercup Health and Infrastructure Dairy Value Chain Group Empowerment NGAAF figures",

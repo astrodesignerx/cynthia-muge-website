@@ -3,6 +3,7 @@ import { Anton, Instrument_Serif, Manrope, JetBrains_Mono } from "next/font/goog
 import Link from "next/link";
 import { MainNav } from "@/components/Nav";
 import { Search } from "@/components/Search";
+import { MobileMenu } from "@/components/MobileMenu";
 import { FooterWordmark } from "@/components/FooterWordmark";
 import { NavWordmark } from "@/components/NavWordmark";
 import { ScrollProgress } from "@/components/Motion";
@@ -60,14 +61,15 @@ export const metadata: Metadata = {
 };
 
 const nav = [
-  { href: "/about", label: "About" },
+  { href: "/", label: "Home" },
   { href: "/stories", label: "Stories" },
   { href: "/pillars", label: "Pillars" },
-  { href: "/record", label: "The record" },
+  { href: "/record", label: "The Record" },
   { href: "/parliament", label: "Parliament" },
   { href: "/boso", label: "BOSO" },
   { href: "/media", label: "Media" },
-  { href: "/contact", label: "Contact" },
+  { href: "/about", label: "About" },
+  { href: "/contact", label: "Contacts" },
 ];
 
 export default function RootLayout({
@@ -97,11 +99,12 @@ export default function RootLayout({
         </a>
 
         <header className="night sticky top-0 z-40 border-b border-[var(--color-night-rule)]/70 backdrop-blur-sm">
-          <div className="mx-auto flex max-w-7xl items-center gap-6 px-6 py-3">
+          <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 py-3">
             <NavWordmark />
-            <div className="ml-auto flex items-center gap-3">
+            <div className="ml-auto flex min-w-0 items-center gap-3">
               <MainNav nav={nav} />
               <Search nav={nav} />
+              <MobileMenu nav={nav} />
             </div>
           </div>
           <ScrollProgress />

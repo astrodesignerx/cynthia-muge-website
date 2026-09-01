@@ -11,7 +11,7 @@ import Link from "next/link";
  * ------------------------------------------------------------------ */
 
 /** True once the element has been scrolled into view. Never flips back. */
-function useInView<T extends HTMLElement>(rootMargin = "0px 0px -12% 0px") {
+export function useInView<T extends HTMLElement>(rootMargin = "0px 0px -12% 0px") {
   const ref = useRef<T | null>(null);
   const [seen, setSeen] = useState(false);
 

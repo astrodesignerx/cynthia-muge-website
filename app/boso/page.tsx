@@ -150,7 +150,7 @@ export default function Boso() {
             </p>
           </div>
 
-          <Reveal delay={60}>
+          <Reveal delay={60} className="min-w-0">
           <div className="overflow-x-auto rounded-sm border border-[var(--color-rule)]">
             <table className="w-full min-w-[26rem] border-collapse text-[0.9375rem]">
               <thead>

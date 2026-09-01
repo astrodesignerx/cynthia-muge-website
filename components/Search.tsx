@@ -170,7 +170,7 @@ export function Search({ nav }: { nav: NavItem[] }) {
         aria-expanded={open}
         aria-haspopup="dialog"
         onClick={() => (open ? requestClose() : doOpen())}
-        className="inline-flex h-9 w-9 items-center justify-center rounded-sm border border-[var(--color-night-rule)] bg-[rgba(255,255,255,0.06)] text-[var(--color-on-night-soft)] backdrop-blur-sm transition-colors duration-150 hover:border-[var(--color-gold)]/50 hover:bg-[rgba(255,255,255,0.10)] hover:text-[var(--color-gold)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-gold)]"
+        className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-sm border border-[var(--color-night-rule)] bg-[rgba(255,255,255,0.06)] text-[var(--color-on-night-soft)] backdrop-blur-sm transition-colors duration-150 hover:border-[var(--color-gold)]/50 hover:bg-[rgba(255,255,255,0.10)] hover:text-[var(--color-gold)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-gold)]"
       >
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden>
           <circle cx="6.8" cy="6.8" r="4.4" stroke="currentColor" strokeWidth="1.5" />
@@ -183,7 +183,7 @@ export function Search({ nav }: { nav: NavItem[] }) {
         <div
           aria-hidden
           onClick={requestClose}
-          className={`fixed inset-x-0 bottom-0 top-[56px] z-30 bg-[#0C1420]/60 backdrop-blur-[8px] transition-opacity duration-200 ease-out sm:top-[60px] ${visible ? "opacity-100" : "opacity-0"}`}
+          className={`fixed inset-x-0 bottom-0 top-[69px] z-30 bg-[#0C1420]/60 backdrop-blur-[8px] transition-opacity duration-200 ease-out ${visible ? "opacity-100" : "opacity-0"}`}
           style={{ animation: visible ? "search-backdrop-in 180ms ease-out both" : undefined }}
         />
       )}
@@ -195,7 +195,7 @@ export function Search({ nav }: { nav: NavItem[] }) {
           role="dialog"
           aria-modal="true"
           aria-label="Site search"
-          className={`no-scrollbar fixed inset-x-0 top-[56px] z-50 max-h-[min(72vh,640px)] overflow-auto overscroll-contain border-y border-[var(--color-night-rule)]/60 bg-[var(--color-night)] shadow-sm transition-all duration-200 ease-out sm:top-[60px] ${visible ? "opacity-100 translate-y-0" : "pointer-events-none opacity-0 -translate-y-2"}`}
+          className={`no-scrollbar fixed inset-x-0 top-[69px] z-50 max-h-[min(72vh,640px)] overflow-auto overscroll-contain border-y border-[var(--color-night-rule)]/60 bg-[var(--color-night)] shadow-sm transition-all duration-200 ease-out ${visible ? "opacity-100 translate-y-0" : "pointer-events-none opacity-0 -translate-y-2"}`}
           style={{ animation: visible ? "search-panel-in 220ms cubic-bezier(0.16,0.84,0.44,1) both" : undefined }}
         >
           <div className="mx-auto max-w-7xl px-6 py-6 sm:py-7">
@@ -212,7 +212,7 @@ export function Search({ nav }: { nav: NavItem[] }) {
                 <span
                   key={ghostIdx}
                   aria-hidden
-                  className="search-ghost pointer-events-none absolute inset-y-0 left-11 right-20 flex items-center truncate font-mono text-[0.9375rem] text-[var(--color-on-night-soft)]/55 sm:right-24"
+                  className="search-ghost pointer-events-none absolute inset-y-0 left-11 right-24 flex items-center truncate font-mono text-[0.9375rem] text-[var(--color-on-night-soft)]/55"
                 >
                   {ghostText}
                 </span>
@@ -228,14 +228,14 @@ export function Search({ nav }: { nav: NavItem[] }) {
                 aria-expanded={results.length > 0}
                 aria-controls="search-results"
                 aria-activedescendant={results.length ? `result-${active}` : undefined}
-                className="relative h-12 w-full rounded-sm border border-[var(--color-night-rule)] bg-[rgba(255,255,255,0.06)] py-3 pl-11 pr-20 text-[0.9375rem] text-[var(--color-on-night)] placeholder:text-transparent focus:border-[var(--color-on-night-soft)]/40 focus:outline-none focus-visible:outline-none focus-visible:ring-0 focus:ring-0 sm:pr-24"
+                className="relative h-12 w-full rounded-sm border border-[var(--color-night-rule)] bg-[rgba(255,255,255,0.06)] py-3 pl-11 pr-24 text-[0.9375rem] text-[var(--color-on-night)] placeholder:text-transparent focus:border-[var(--color-gold)] focus:outline-none focus-visible:outline-none focus-visible:ring-0 focus:ring-0"
               />
               {/* ESC pill — same style as trigger */}
               <button
                 type="button"
                 onClick={requestClose}
                 aria-label="Close search"
-                className="absolute right-2 top-1/2 hidden -translate-y-1/2 items-center justify-center rounded-sm border border-[var(--color-night-rule)] bg-[rgba(255,255,255,0.06)] px-2.5 py-1.5 font-mono text-[0.625rem] font-medium leading-none text-[var(--color-on-night-soft)] backdrop-blur-sm transition-colors duration-150 hover:border-[var(--color-gold)]/50 hover:bg-[rgba(255,255,255,0.10)] hover:text-[var(--color-gold)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-gold)] sm:inline-flex"
+                className="absolute right-2 top-1/2 inline-flex -translate-y-1/2 items-center justify-center rounded-sm border border-[var(--color-night-rule)] bg-[rgba(255,255,255,0.06)] px-2.5 py-1.5 font-mono text-[0.625rem] font-medium leading-none text-[var(--color-on-night-soft)] backdrop-blur-sm transition-colors duration-150 hover:border-[var(--color-gold)]/50 hover:bg-[rgba(255,255,255,0.10)] hover:text-[var(--color-gold)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-gold)]"
               >
                 ESC
               </button>
@@ -244,7 +244,7 @@ export function Search({ nav }: { nav: NavItem[] }) {
                   type="button"
                   onClick={() => setQuery("")}
                   aria-label="Clear search"
-                  className="absolute right-[4.5rem] top-1/2 hidden -translate-y-1/2 rounded-sm px-2 py-1 text-[0.75rem] font-medium text-[var(--color-on-night-soft)]/70 hover:bg-[rgba(255,255,255,0.08)] hover:text-[var(--color-on-night)] sm:inline-flex"
+                  className="absolute right-[4.5rem] top-1/2 inline-flex -translate-y-1/2 rounded-sm px-2 py-1 text-[0.75rem] font-medium text-[var(--color-on-night-soft)]/70 hover:bg-[rgba(255,255,255,0.08)] hover:text-[var(--color-on-night)]"
                 >
                   Clear
                 </button>
@@ -262,9 +262,9 @@ export function Search({ nav }: { nav: NavItem[] }) {
                         <Link
                           href={doc.href}
                           onClick={closeFromLink}
-                          className={`group flex items-start gap-4 rounded-sm border px-4 py-3.5 transition-colors duration-150 ${
+                          className={`group flex items-start gap-4 rounded-sm border px-4 py-3.5 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-0 ${
                             isActive
-                              ? "border-[var(--color-gold)]/40 bg-[rgba(216,164,60,0.12)]"
+                              ? "border-[var(--color-gold)] bg-[rgba(216,164,60,0.12)]"
                               : "border-[var(--color-night-rule)]/50 bg-[var(--color-night-2)] hover:border-[var(--color-gold)]/30 hover:bg-[rgba(255,255,255,0.06)]"
                           }`}
                         >

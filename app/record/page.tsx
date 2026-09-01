@@ -7,7 +7,7 @@ import { NetField } from "@/components/NetField";
 import { Reveal } from "@/components/Motion";
 
 export const metadata: Metadata = {
-  title: "The record",
+  title: "The Record",
   description:
     "The work across Nandi County: coffee, scholarships, sport, health, dairy, and support for local groups.",
 };
@@ -38,7 +38,7 @@ export default function RecordPage() {
         <div className="mx-auto max-w-7xl px-6 py-20 lg:py-28">
           <NightHead
             eyebrow="Office of the Woman Representative"
-            title="The record"
+            title="The Record"
             lead="Six programmes across Nandi, and the work taking shape in each one."
           />
         </div>
