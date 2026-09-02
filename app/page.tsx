@@ -189,9 +189,7 @@ export default function Home() {
               />
             ))}
           </dl>
-          <p className="label mt-10 max-w-[60ch] leading-relaxed text-[var(--color-on-night-soft)]">
-            Sources: Kenya News Agency, 15 Jun 2025; Nandi Updates, Aug 2026; Official Facebook, Aug 2026. See each programme page for full detail.
-          </p>
+
         </div>
       </section>
 
