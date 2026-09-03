@@ -14,3 +14,6 @@ tsconfig.tsbuildinfo
 
 # Source art for the image pipeline, not shipped
 Images/
+
+# Browser tool scratch output
+.playwright-mcp/
