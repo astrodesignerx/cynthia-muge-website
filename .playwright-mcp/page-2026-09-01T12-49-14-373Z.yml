@@ -1,0 +1,155 @@
+- generic [active] [ref=f6e1]:
+  - link "Skip to content" [ref=f6e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=f6e3]:
+    - generic [ref=f6e4]:
+      - link "Cynthia Muge, home" [ref=f6e5] [cursor=pointer]:
+        - /url: /
+        - generic [ref=f6e6]:
+          - generic [ref=f6e7]:
+            - generic [ref=f6e8]: HON.
+            - generic [ref=f6e10]: CYNTHIA MUGE
+          - generic [ref=f6e12]: Keeping the Promise
+      - generic [ref=f6e18]:
+        - navigation "Main" [ref=f6e19]:
+          - list [ref=f6e20]:
+            - listitem [ref=f6e21]:
+              - link "About" [ref=f6e22] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=f6e24]:
+              - link "Stories" [ref=f6e25] [cursor=pointer]:
+                - /url: /stories
+            - listitem [ref=f6e26]:
+              - link "Pillars" [ref=f6e27] [cursor=pointer]:
+                - /url: /pillars
+            - listitem [ref=f6e28]:
+              - link "The record" [ref=f6e29] [cursor=pointer]:
+                - /url: /record
+            - listitem [ref=f6e30]:
+              - link "Parliament" [ref=f6e31] [cursor=pointer]:
+                - /url: /parliament
+            - listitem [ref=f6e32]:
+              - link "BOSO" [ref=f6e33] [cursor=pointer]:
+                - /url: /boso
+            - listitem [ref=f6e34]:
+              - link "Media" [ref=f6e35] [cursor=pointer]:
+                - /url: /media
+            - listitem [ref=f6e36]:
+              - link "Contact" [ref=f6e37] [cursor=pointer]:
+                - /url: /contact
+        - button "Search" [ref=f6e38]
+  - main [ref=f6e42]:
+    - generic [ref=f6e43]:
+      - img "Hon. Cynthia Muge" [ref=f6e45]
+      - generic [ref=f6e47]:
+        - paragraph [ref=f6e48]: Woman Representative, Nandi County
+        - heading "Hon. Cynthia Jepkosgei Muge" [level=1] [ref=f6e49]: Hon. CynthiaJepkosgei Muge
+        - paragraph [ref=f6e50]: Born in 1993 in Kipsirichoi village, Kilibwoni Ward, Emgwen Constituency. The eldest of six.
+    - generic [ref=f6e51]:
+      - heading "The journey" [level=2] [ref=f6e52]
+      - list [ref=f6e53]:
+        - listitem [ref=f6e54]:
+          - generic [ref=f6e55]:
+            - paragraph [ref=f6e56]: "2017"
+            - heading "Elected at twenty-four, as an independent" [level=3] [ref=f6e57]
+            - paragraph [ref=f6e58]: Won the Kilibwoni Ward seat in the County Assembly as an independent.
+        - listitem [ref=f6e59]:
+          - generic [ref=f6e60]:
+            - paragraph [ref=f6e61]: 2017 – 22
+            - heading "Committee leadership" [level=3] [ref=f6e62]
+            - paragraph [ref=f6e63]: Chaired the Sports, Youth and Social Welfare Committee. Served on Trade and Investments, Appointments, Liaison, and Public Investments and Accounts.
+        - listitem [ref=f6e64]:
+          - generic [ref=f6e65]:
+            - paragraph [ref=f6e66]: "2022"
+            - heading "Woman Representative, Nandi County" [level=3] [ref=f6e67]
+            - paragraph [ref=f6e68]: Elected with 275,500 votes. Sits on the Committee on Implementation and the Health Committee.
+    - generic [ref=f6e72]:
+      - paragraph [ref=f6e73]: Across the county
+      - heading "Six sub-counties, thirty wards." [level=2] [ref=f6e74]
+      - paragraph [ref=f6e75]: Nandi Hills, Aldai, Mosop, Chesumei, Emgwen and Tinderet.
+    - generic [ref=f6e76]:
+      - heading "Education" [level=2] [ref=f6e77]
+      - generic [ref=f6e78]:
+        - figure [ref=f6e79]:
+          - img "Cynthia Muge" [ref=f6e80]
+        - list [ref=f6e81]:
+          - listitem [ref=f6e82]:
+            - generic [ref=f6e83]:
+              - text: Primary
+              - generic [ref=f6e84]:
+                - generic [ref=f6e85]: Kapchemoiywo Primary School
+                - generic [ref=f6e86]: KCPE
+                - generic [ref=f6e87]: 1998 – 2007
+          - listitem [ref=f6e88]:
+            - generic [ref=f6e89]:
+              - text: Secondary
+              - generic [ref=f6e90]:
+                - generic [ref=f6e91]: Moi Girls Isinya
+                - generic [ref=f6e92]: KCSE
+                - generic [ref=f6e93]: 2008 – 2011
+          - listitem [ref=f6e94]:
+            - generic [ref=f6e95]:
+              - text: Bachelor's
+              - generic [ref=f6e96]:
+                - generic [ref=f6e97]: Urban and Regional Planning
+                - generic [ref=f6e98]: University of Nairobi
+                - generic [ref=f6e99]: 2012 – 2016
+          - listitem [ref=f6e100]:
+            - generic [ref=f6e101]:
+              - text: Master's
+              - generic [ref=f6e102]:
+                - generic [ref=f6e103]: Project Planning and Management
+                - generic [ref=f6e104]: University of Nairobi
+                - generic [ref=f6e105]: 2018 – 2020
+    - generic [ref=f6e106]:
+      - heading "Family" [level=2] [ref=f6e107]
+      - generic [ref=f6e108]:
+        - figure [ref=f6e109]:
+          - img "Cynthia Muge with her two sons at home" [ref=f6e110]
+        - generic [ref=f6e111]:
+          - paragraph [ref=f6e113]: Married to Mr Mathew Rotich. With two sons.
+          - figure [ref=f6e114]:
+            - img "A family studio portrait with Mr Mathew Rotich and their two sons" [ref=f6e115]
+    - generic [ref=f6e119]:
+      - paragraph [ref=f6e120]: Kilibwoni Ward, Emgwen
+      - heading "Where the work is." [level=2] [ref=f6e121]
+  - contentinfo [ref=f6e122]:
+    - generic [ref=f6e123]:
+      - generic [ref=f6e124]:
+        - generic [ref=f6e125]:
+          - generic [ref=f6e127]:
+            - generic [ref=f6e128]:
+              - generic [ref=f6e129]: HON.
+              - generic [ref=f6e131]: CYNTHIA MUGE
+            - generic [ref=f6e133]: Keeping the Promise
+          - paragraph [ref=f6e139]: Woman Representative, Nandi County. Working with the people and communities of Nandi.
+          - paragraph [ref=f6e140]: "#FormNiMama"
+        - navigation "Footer" [ref=f6e141]:
+          - list [ref=f6e142]:
+            - listitem [ref=f6e143]:
+              - link "About" [ref=f6e144] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=f6e145]:
+              - link "Stories" [ref=f6e146] [cursor=pointer]:
+                - /url: /stories
+            - listitem [ref=f6e147]:
+              - link "Pillars" [ref=f6e148] [cursor=pointer]:
+                - /url: /pillars
+            - listitem [ref=f6e149]:
+              - link "The record" [ref=f6e150] [cursor=pointer]:
+                - /url: /record
+            - listitem [ref=f6e151]:
+              - link "Parliament" [ref=f6e152] [cursor=pointer]:
+                - /url: /parliament
+            - listitem [ref=f6e153]:
+              - link "BOSO" [ref=f6e154] [cursor=pointer]:
+                - /url: /boso
+            - listitem [ref=f6e155]:
+              - link "Media" [ref=f6e156] [cursor=pointer]:
+                - /url: /media
+            - listitem [ref=f6e157]:
+              - link "Contact" [ref=f6e158] [cursor=pointer]:
+                - /url: /contact
+      - paragraph [ref=f6e159]: Office of the Woman Representative, Nandi County. Last reviewed 30 August 2026. This site follows the work across Nandi and updates the record as information arrives.
+  - button "Open Next.js Dev Tools" [ref=f6e165] [cursor=pointer]
+  - alert [ref=f6e169]

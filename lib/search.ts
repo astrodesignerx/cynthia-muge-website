@@ -1,4 +1,4 @@
-import { programmes, pillars, parliament, wards } from "@/content/programmes";
+import { programmes, pillars, parliament, oversight, wards } from "@/content/programmes";
 import { fieldNotes } from "@/content/stories";
 import Fuse from "fuse.js";
 
@@ -69,8 +69,8 @@ function buildDocs(): SearchDoc[] {
       id: "page-parliament",
       title: "In Parliament",
       href: "/parliament",
-      excerpt: "Committee work, public positions, and the questions carried from Nandi into Parliament.",
-      body: "Parliament National Assembly Implementation Health committee Sports Youth Social Welfare SHIF tariffs Karebe Goldmine Koitalel Samoei University ECDE literacy Mashujaa Day",
+      excerpt: "Committee oversight, public positions, and the questions carried from Nandi into Parliament.",
+      body: "Parliament National Assembly Implementation Health committee oversight Social Health Authority SHA Duale hospitals Rivatex police brutality ethnic profiling Sports Youth Social Welfare SHIF tariffs Karebe Goldmine Koitalel Samoei University ECDE literacy Mashujaa Day bills sponsored floor record Mzalendo",
       kind: "page",
       kindLabel: "Page",
     },
@@ -165,6 +165,34 @@ function buildDocs(): SearchDoc[] {
       body: [item.title, item.body, item.tag, item.year].join(" "),
       kind: "parliament",
       kindLabel: "Parliament",
+    });
+  }
+
+  // Oversight: the committee work and the interventions
+  docs.push({
+    id: "oversight-sha",
+    title: oversight.headline.title,
+    href: "/parliament",
+    excerpt: oversight.headline.body.slice(0, 140),
+    body: [
+      oversight.headline.title,
+      oversight.headline.body,
+      oversight.headline.body2,
+      "oversight Social Health Authority SHA Duale Cabinet Secretary health committee hospitals reimbursements claims",
+    ].join(" "),
+    kind: "parliament",
+    kindLabel: "Oversight",
+  });
+
+  for (const item of oversight.items) {
+    docs.push({
+      id: `oversight-${slugify(item.title)}`,
+      title: item.title,
+      href: "/parliament",
+      excerpt: item.body.slice(0, 140),
+      body: [item.title, item.body, item.year, "oversight"].join(" "),
+      kind: "parliament",
+      kindLabel: "Oversight",
     });
   }
 

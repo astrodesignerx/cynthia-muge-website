@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { elected, parliament } from "@/content/programmes";
+import { elected, oversight, parliament } from "@/content/programmes";
 import { NightHead, Stat } from "@/components/Viz";
 import { SourceLine } from "@/components/Figures";
 import { NetField } from "@/components/NetField";
@@ -10,7 +10,7 @@ import { Reveal } from "@/components/Motion";
 export const metadata: Metadata = {
   title: "In Parliament",
   description:
-    "Cynthia Muge's committee work, public positions, and service to Nandi in Parliament.",
+    "Committee oversight, public positions, and the questions Cynthia Muge has carried from Nandi into Parliament.",
 };
 
 const tagTone: Record<string, string> = {
@@ -54,8 +54,8 @@ export default function Parliament() {
             className="rise mt-6 max-w-[52ch] text-[1.125rem] leading-relaxed text-[var(--color-on-night-soft)]"
             style={{ animationDelay: "300ms" }}
           >
-            Committee work, public positions, and the questions she has carried
-            from Nandi into Parliament.
+            Committee oversight, public positions, and the questions she has
+            carried from Nandi into Parliament.
           </p>
         </div>
       </section>
@@ -76,7 +76,127 @@ export default function Parliament() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-20 lg:py-24">
+      {/* Oversight. The other half of the job, and the strongest block here. */}
+      <section className="mx-auto max-w-7xl px-6 py-20 lg:py-28">
+        <div className="grid gap-x-16 gap-y-6 lg:grid-cols-[1fr_1.15fr] lg:items-end">
+          <div>
+            <p className="eyebrow">Oversight</p>
+            <h2 className="display mt-4 max-w-[13ch] text-[2.5rem] leading-[1.02] sm:text-[3.25rem]">
+              Asking the government what it did with the money.
+            </h2>
+          </div>
+          <p className="max-w-[52ch] text-[1.0625rem] leading-relaxed text-[var(--color-soft)]">
+            {oversight.lead}
+          </p>
+        </div>
+
+        {/* The SHA case */}
+        <Reveal>
+          <div className="mt-16 grid gap-10 lg:grid-cols-[0.72fr_1fr] lg:gap-16">
+            <div className="relative aspect-[3/4] overflow-hidden rounded-sm bg-[var(--color-sunk)] lg:sticky lg:top-28 lg:self-start">
+              <Image
+                src="/img/portrait-studio.jpg"
+                alt="Cynthia Muge, Woman Representative for Nandi County"
+                fill
+                sizes="(max-width: 1024px) 100vw, 34vw"
+                className="object-cover"
+                style={{ objectPosition: "50% 22%" }}
+              />
+            </div>
+
+            <div>
+              <span className="inline-block rounded-sm bg-[var(--color-leaf-wash)] px-2.5 py-1 text-[0.625rem] font-bold uppercase tracking-[0.11em] text-[var(--color-leaf)]">
+                Committee on Health
+              </span>
+              <h3 className="display mt-5 max-w-[20ch] text-[2rem] leading-[1.08] sm:text-[2.375rem]">
+                {oversight.headline.title}
+              </h3>
+              <p className="mt-6 max-w-[58ch] leading-relaxed text-[var(--color-soft)]">
+                {oversight.headline.body}
+              </p>
+
+              <p className="display my-9 max-w-[24ch] border-l-2 border-[var(--color-murram)] pl-6 text-[1.5rem] leading-[1.24] sm:text-[1.75rem]">
+                {oversight.headline.pull}
+              </p>
+
+              <p className="max-w-[58ch] leading-relaxed text-[var(--color-soft)]">
+                {oversight.headline.body2}
+              </p>
+              <SourceLine source={oversight.headline.source} />
+            </div>
+          </div>
+        </Reveal>
+
+        {/* The floor record, unflattering parts included */}
+        <div className="mt-20 border-t-2 border-[var(--color-ink)] pt-10">
+          <p className="eyebrow">The floor record</p>
+          <dl className="mt-8 grid gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
+            {oversight.floor.map((f, i) => (
+              <Reveal key={f.label} delay={i * 60}>
+                <div
+                  className={
+                    f.gap
+                      ? "border-l-2 border-[var(--color-ember)] pl-5"
+                      : "border-l-2 border-[var(--color-rule-firm)] pl-5"
+                  }
+                >
+                  <dd
+                    className={`numeral text-[2.5rem] sm:text-[3rem] ${
+                      f.gap
+                        ? "text-[var(--color-ember)]"
+                        : "text-[var(--color-murram)]"
+                    }`}
+                  >
+                    {f.value}
+                  </dd>
+                  <dt className="label mt-3 max-w-[22ch] leading-relaxed text-[var(--color-faint)]">
+                    {f.label}
+                  </dt>
+                </div>
+              </Reveal>
+            ))}
+          </dl>
+          <p className="mt-10 max-w-[68ch] leading-relaxed text-[var(--color-soft)]">
+            {oversight.floorNote}
+          </p>
+          <SourceLine source={oversight.floorSource} />
+        </div>
+
+        {/* Shorter interventions */}
+        <div className="mt-20">
+          <p className="eyebrow">Also raised</p>
+          <ul className="mt-8 grid gap-px bg-[var(--color-rule)] sm:grid-cols-2">
+            {oversight.items.map((it, i) => (
+              <li key={it.title} className="bg-[var(--color-paper)] p-7">
+                <Reveal delay={i * 50}>
+                  <span className="numeral text-[1.25rem] text-[var(--color-murram)]">
+                    {it.year}
+                  </span>
+                  <h3 className="display mt-2 text-[1.375rem] leading-tight">
+                    {it.title}
+                  </h3>
+                  <p className="mt-3 max-w-[46ch] text-[0.9375rem] leading-relaxed text-[var(--color-soft)]">
+                    {it.body}
+                  </p>
+                </Reveal>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* The honest note about imagery */}
+        <div className="mt-12 rounded-sm border border-dashed border-[var(--color-rule-firm)] p-8">
+          <span className="inline-block rounded-sm bg-[var(--color-amber-wash)] px-2.5 py-1 text-[0.625rem] font-bold uppercase tracking-[0.11em] text-[var(--color-amber)]">
+            Gap
+          </span>
+          <h3 className="display mt-4 text-[1.5rem]">{oversight.gap.title}</h3>
+          <p className="mt-3 max-w-[60ch] leading-relaxed text-[var(--color-soft)]">
+            {oversight.gap.body}
+          </p>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 pb-20 lg:pb-24">
         <div className="flex flex-wrap items-baseline justify-between gap-4">
           <h2 className="display text-[2.5rem] leading-tight sm:text-[3rem]">
             On the record

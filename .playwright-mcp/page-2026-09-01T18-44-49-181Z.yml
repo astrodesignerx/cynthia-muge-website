@@ -1,0 +1,144 @@
+- generic [active] [ref=f1e1]:
+  - link "Skip to content" [ref=f1e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=f1e3]:
+    - generic [ref=f1e4]:
+      - link "Cynthia Muge, home" [ref=f1e5] [cursor=pointer]:
+        - /url: /
+        - generic [ref=f1e6]:
+          - generic [ref=f1e7]:
+            - generic [ref=f1e8]: HON.
+            - generic [ref=f1e10]: CYNTHIA MUGE
+          - generic [ref=f1e12]: Keeping the Promise
+      - generic [ref=f1e18]:
+        - button "Search" [ref=f1e19]
+        - button "Open menu" [ref=f1e23]
+  - main [ref=f1e25]:
+    - generic [ref=f1e29]:
+      - paragraph [ref=f1e30]: Office of the Woman Representative
+      - heading "The Record" [level=2] [ref=f1e31]
+      - paragraph [ref=f1e32]: Six programmes across Nandi, and the work taking shape in each one.
+    - list [ref=f1e34]:
+      - listitem [ref=f1e35]:
+        - link "Agriculture Kahawa na Mama Putting coffee trees, and the income from them, into the hands of Nandi women, and registering those trees in their own names. 650,000+ Certified seedlings distributed to date 2023 – present Phase III running" [ref=f1e37] [cursor=pointer]:
+          - /url: /record/kahawa-na-mama
+          - generic [ref=f1e38]: Agriculture
+          - generic [ref=f1e40]:
+            - heading "Kahawa na Mama" [level=2] [ref=f1e41]
+            - paragraph [ref=f1e42]: Putting coffee trees, and the income from them, into the hands of Nandi women, and registering those trees in their own names.
+            - generic [ref=f1e43]:
+              - generic [ref=f1e44]: 650,000+
+              - generic [ref=f1e45]: Certified seedlings distributed to date
+            - paragraph [ref=f1e46]: 2023 – present Phase III running
+      - listitem [ref=f1e48]:
+        - link "Education Elimu Ni Mwangaza Full scholarships that help students stay in school and plan for what comes next. 206 Candidates dedicated ahead of KCSE 2026 2023 – present Pioneer cohort sitting KCSE" [ref=f1e50] [cursor=pointer]:
+          - /url: /record/elimu-ni-mwangaza
+          - generic [ref=f1e51]: Education
+          - generic [ref=f1e53]:
+            - heading "Elimu Ni Mwangaza" [level=2] [ref=f1e54]
+            - paragraph [ref=f1e55]: Full scholarships that help students stay in school and plan for what comes next.
+            - generic [ref=f1e56]:
+              - generic [ref=f1e57]: "206"
+              - generic [ref=f1e58]: Candidates dedicated ahead of KCSE 2026
+            - paragraph [ref=f1e59]: 2023 – present Pioneer cohort sitting KCSE
+      - listitem [ref=f1e61]:
+        - link "Youth and sport BOSO Supercup A football and volleyball league that reached every ward in Nandi in three months. 30 / 30 Wards reached 2026 – present Sub-county stage; county final December 2026" [ref=f1e63] [cursor=pointer]:
+          - /url: /record/boso-supercup
+          - generic [ref=f1e64]: Youth and sport
+          - generic [ref=f1e66]:
+            - heading "BOSO Supercup" [level=2] [ref=f1e67]
+            - paragraph [ref=f1e68]: A football and volleyball league that reached every ward in Nandi in three months.
+            - generic [ref=f1e69]:
+              - generic [ref=f1e70]: 30 / 30
+              - generic [ref=f1e71]: Wards reached
+            - paragraph [ref=f1e72]: 2026 – present Sub-county stage; county final December 2026
+      - listitem [ref=f1e74]:
+        - link "Health and water Health and Infrastructure Equipment, water and workspaces delivered to named facilities and centres. 1 Fully kitted ambulance, Kabiemit Health Centre, Ndalat Ward 2022 – present Ongoing" [ref=f1e76] [cursor=pointer]:
+          - /url: /record/health-and-infrastructure
+          - generic [ref=f1e77]: Health and water
+          - generic [ref=f1e79]:
+            - heading "Health and Infrastructure" [level=2] [ref=f1e80]
+            - paragraph [ref=f1e81]: Equipment, water and workspaces delivered to named facilities and centres.
+            - generic [ref=f1e82]:
+              - generic [ref=f1e83]: "1"
+              - generic [ref=f1e84]: Fully kitted ambulance, Kabiemit Health Centre, Ndalat Ward
+            - paragraph [ref=f1e85]: 2022 – present Ongoing
+      - listitem [ref=f1e87]:
+        - link "Agriculture Dairy Value Chain Ten solar-powered bulk milk coolers placed with named Nandi cooperatives. 10 Bulk milk coolers allocated to Nandi County 2026 – 2026 All ten delivered" [ref=f1e89] [cursor=pointer]:
+          - /url: /record/dairy-value-chain
+          - generic [ref=f1e90]: Agriculture
+          - generic [ref=f1e92]:
+            - heading "Dairy Value Chain" [level=2] [ref=f1e93]
+            - paragraph [ref=f1e94]: Ten solar-powered bulk milk coolers placed with named Nandi cooperatives.
+            - generic [ref=f1e95]:
+              - generic [ref=f1e96]: "10"
+              - generic [ref=f1e97]: Bulk milk coolers allocated to Nandi County
+            - paragraph [ref=f1e98]: 2026 – 2026 All ten delivered
+      - listitem [ref=f1e100]:
+        - link "Enterprise Group Empowerment Cash grants to registered women and youth groups, paid at ward level. 100,000 Shillings per group cheque 2023 – present Ongoing" [ref=f1e102] [cursor=pointer]:
+          - /url: /record/group-empowerment
+          - generic [ref=f1e103]: Enterprise
+          - generic [ref=f1e105]:
+            - heading "Group Empowerment" [level=2] [ref=f1e106]
+            - paragraph [ref=f1e107]: Cash grants to registered women and youth groups, paid at ward level.
+            - generic [ref=f1e108]:
+              - generic [ref=f1e109]: 100,000
+              - generic [ref=f1e110]: Shillings per group cheque
+            - paragraph [ref=f1e111]: 2023 – present Ongoing
+    - generic [ref=f1e116]:
+      - generic [ref=f1e117]:
+        - paragraph [ref=f1e118]: The county
+        - heading "Understanding the budget behind the work." [level=2] [ref=f1e119]
+        - paragraph [ref=f1e120]: KSh 10.2bn in FY 2024/25, at 98% absorption.
+      - generic [ref=f1e121]:
+        - generic [ref=f1e122]:
+          - generic [ref=f1e123]:
+            - paragraph [ref=f1e124]: KSh 6.6bn
+            - paragraph [ref=f1e125]: Recurrent102% of budget
+          - generic [ref=f1e127]:
+            - paragraph [ref=f1e128]: KSh 3.3bn
+            - paragraph [ref=f1e129]: Development90%
+        - paragraph [ref=f1e131]: Controller of Budget, FY 2024/25
+  - contentinfo [ref=f1e132]:
+    - generic [ref=f1e133]:
+      - generic [ref=f1e134]:
+        - generic [ref=f1e135]:
+          - generic [ref=f1e137]:
+            - generic [ref=f1e138]:
+              - generic [ref=f1e139]: HON.
+              - generic [ref=f1e141]: CYNTHIA MUGE
+            - generic [ref=f1e143]: Keeping the Promise
+          - paragraph [ref=f1e149]: Woman Representative, Nandi County. Working with the people and communities of Nandi.
+          - paragraph [ref=f1e150]: "#FormNiMama"
+        - navigation "Footer" [ref=f1e151]:
+          - list [ref=f1e152]:
+            - listitem [ref=f1e153]:
+              - link "Home" [ref=f1e154] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=f1e155]:
+              - link "Stories" [ref=f1e156] [cursor=pointer]:
+                - /url: /stories
+            - listitem [ref=f1e157]:
+              - link "Pillars" [ref=f1e158] [cursor=pointer]:
+                - /url: /pillars
+            - listitem [ref=f1e159]:
+              - link "The Record" [ref=f1e160] [cursor=pointer]:
+                - /url: /record
+            - listitem [ref=f1e161]:
+              - link "Parliament" [ref=f1e162] [cursor=pointer]:
+                - /url: /parliament
+            - listitem [ref=f1e163]:
+              - link "BOSO" [ref=f1e164] [cursor=pointer]:
+                - /url: /boso
+            - listitem [ref=f1e165]:
+              - link "Media" [ref=f1e166] [cursor=pointer]:
+                - /url: /media
+            - listitem [ref=f1e167]:
+              - link "About" [ref=f1e168] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=f1e169]:
+              - link "Contacts" [ref=f1e170] [cursor=pointer]:
+                - /url: /contact
+      - paragraph [ref=f1e171]: Office of the Woman Representative, Nandi County. Last reviewed 30 August 2026. This site follows the work across Nandi and updates the record as information arrives.
+  - button "Open Next.js Dev Tools" [ref=f1e177] [cursor=pointer]
+  - alert [ref=f1e181]

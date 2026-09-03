@@ -1,0 +1,268 @@
+- generic [active] [ref=f3e1]:
+  - link "Skip to content" [ref=f3e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=f3e3]:
+    - generic [ref=f3e4]:
+      - link "Cynthia Muge, home" [ref=f3e5] [cursor=pointer]:
+        - /url: /
+        - generic [ref=f3e6]:
+          - generic [ref=f3e7]:
+            - generic [ref=f3e8]: HON.
+            - generic [ref=f3e10]: CYNTHIA MUGE
+          - generic [ref=f3e12]: Keeping the Promise
+      - generic [ref=f3e18]:
+        - navigation "Main" [ref=f3e19]:
+          - list [ref=f3e20]:
+            - listitem [ref=f3e21]:
+              - link "About" [ref=f3e22] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=f3e23]:
+              - link "Stories" [ref=f3e24] [cursor=pointer]:
+                - /url: /stories
+            - listitem [ref=f3e25]:
+              - link "Pillars" [ref=f3e26] [cursor=pointer]:
+                - /url: /pillars
+            - listitem [ref=f3e27]:
+              - link "The record" [ref=f3e28] [cursor=pointer]:
+                - /url: /record
+            - listitem [ref=f3e29]:
+              - link "Parliament" [ref=f3e30] [cursor=pointer]:
+                - /url: /parliament
+            - listitem [ref=f3e31]:
+              - link "BOSO" [ref=f3e32] [cursor=pointer]:
+                - /url: /boso
+            - listitem [ref=f3e34]:
+              - link "Media" [ref=f3e35] [cursor=pointer]:
+                - /url: /media
+            - listitem [ref=f3e36]:
+              - link "Contact" [ref=f3e37] [cursor=pointer]:
+                - /url: /contact
+        - button "Search" [ref=f3e38]
+  - main [ref=f3e42]:
+    - generic [ref=f3e45]:
+      - paragraph [ref=f3e46]: Nandi County
+      - heading "BOSO Supercup" [level=1] [ref=f3e47]
+      - paragraph [ref=f3e48]: Football and volleyball in every ward of Nandi. Registration is free and open.
+    - generic [ref=f3e49]:
+      - link [ref=f3e51] [cursor=pointer]:
+        - /url: /boso/football
+        - generic [ref=f3e53]:
+          - heading "Football" [level=2] [ref=f3e54]
+          - paragraph [ref=f3e55]: Ward, sub-county and county rounds.
+          - paragraph [ref=f3e56]: Rules and registration →
+      - link [ref=f3e58] [cursor=pointer]:
+        - /url: /boso/volleyball
+        - generic [ref=f3e60]:
+          - heading "Volleyball" [level=2] [ref=f3e61]
+          - paragraph [ref=f3e62]: County championships.
+          - paragraph [ref=f3e63]: Rules and registration →
+    - generic [ref=f3e65]:
+      - generic [ref=f3e66]:
+        - generic [ref=f3e67]:
+          - paragraph [ref=f3e68]: The ward stage
+          - heading "Thirty wards, at the same time." [level=2] [ref=f3e69]
+          - paragraph [ref=f3e70]: Players, organisers, fields, and supporters carried the competition through every ward of Nandi. Prize money was settled at the close of each ward round.
+        - figure "April to August 2026" [ref=f3e71]:
+          - list [ref=f3e72]:
+            - listitem [ref=f3e73]:
+              - generic [ref=f3e74]:
+                - generic [ref=f3e75]: Matches played
+                - generic [ref=f3e76]: "846"
+            - listitem [ref=f3e78]:
+              - generic [ref=f3e79]:
+                - generic [ref=f3e80]: Teams registered
+                - generic [ref=f3e81]: "499"
+            - listitem [ref=f3e83]:
+              - generic [ref=f3e84]:
+                - generic [ref=f3e85]: Teams through to sub-county
+                - generic [ref=f3e86]: "120"
+            - listitem [ref=f3e88]:
+              - generic [ref=f3e89]:
+                - generic [ref=f3e90]: Playing fields used
+                - generic [ref=f3e91]: "83"
+            - listitem [ref=f3e93]:
+              - generic [ref=f3e94]:
+                - generic [ref=f3e95]: Wards reached
+                - generic [ref=f3e96]: "30"
+            - listitem [ref=f3e98]:
+              - generic [ref=f3e99]:
+                - generic [ref=f3e100]: Constituencies
+                - generic [ref=f3e101]: "6"
+          - paragraph [ref=f3e104]: "Source: Nandi Updates, August 2026"
+      - figure "Every ward reached" [ref=f3e106]:
+        - list [ref=f3e107]:
+          - listitem [ref=f3e108]:
+            - generic [ref=f3e109]: "01"
+            - generic [ref=f3e110]: Kabiyet
+          - listitem [ref=f3e111]:
+            - generic [ref=f3e112]: "02"
+            - generic [ref=f3e113]: Kabisaga
+          - listitem [ref=f3e114]:
+            - generic [ref=f3e115]: "03"
+            - generic [ref=f3e116]: Chepterwai
+          - listitem [ref=f3e117]:
+            - generic [ref=f3e118]: "04"
+            - generic [ref=f3e119]: Kipkaren
+          - listitem [ref=f3e120]:
+            - generic [ref=f3e121]: "05"
+            - generic [ref=f3e122]: Kurgung/Surungai
+          - listitem [ref=f3e123]:
+            - generic [ref=f3e124]: "06"
+            - generic [ref=f3e125]: Ndalat
+          - listitem [ref=f3e126]:
+            - generic [ref=f3e127]: "07"
+            - generic [ref=f3e128]: Sang'alo/Kebulonik
+          - listitem [ref=f3e129]:
+            - generic [ref=f3e130]: "08"
+            - generic [ref=f3e131]: Chemundu/Kapng'etuny
+          - listitem [ref=f3e132]:
+            - generic [ref=f3e133]: "09"
+            - generic [ref=f3e134]: Kosirai
+          - listitem [ref=f3e135]:
+            - generic [ref=f3e136]: "10"
+            - generic [ref=f3e137]: Lelmokwo/Ngechek
+          - listitem [ref=f3e138]:
+            - generic [ref=f3e139]: "11"
+            - generic [ref=f3e140]: Kaptel/Kamoiywo
+          - listitem [ref=f3e141]:
+            - generic [ref=f3e142]: "12"
+            - generic [ref=f3e143]: Kiptuya
+          - listitem [ref=f3e144]:
+            - generic [ref=f3e145]: "13"
+            - generic [ref=f3e146]: Kilibwoni
+          - listitem [ref=f3e147]:
+            - generic [ref=f3e148]: "14"
+            - generic [ref=f3e149]: Kapkangani
+          - listitem [ref=f3e150]:
+            - generic [ref=f3e151]: "15"
+            - generic [ref=f3e152]: Chepkumia
+          - listitem [ref=f3e153]:
+            - generic [ref=f3e154]: "16"
+            - generic [ref=f3e155]: Kapsabet
+          - listitem [ref=f3e156]:
+            - generic [ref=f3e157]: "17"
+            - generic [ref=f3e158]: Tinderet
+          - listitem [ref=f3e159]:
+            - generic [ref=f3e160]: "18"
+            - generic [ref=f3e161]: Songhor/Soba
+          - listitem [ref=f3e162]:
+            - generic [ref=f3e163]: "19"
+            - generic [ref=f3e164]: Chemelil/Chemase
+          - listitem [ref=f3e165]:
+            - generic [ref=f3e166]: "20"
+            - generic [ref=f3e167]: Kapsimotwo
+          - listitem [ref=f3e168]:
+            - generic [ref=f3e169]: "21"
+            - generic [ref=f3e170]: Nandi Hills
+          - listitem [ref=f3e171]:
+            - generic [ref=f3e172]: "22"
+            - generic [ref=f3e173]: Chepkunyuk
+          - listitem [ref=f3e174]:
+            - generic [ref=f3e175]: "23"
+            - generic [ref=f3e176]: Ol'lessos
+          - listitem [ref=f3e177]:
+            - generic [ref=f3e178]: "24"
+            - generic [ref=f3e179]: Kapchorua
+          - listitem [ref=f3e180]:
+            - generic [ref=f3e181]: "25"
+            - generic [ref=f3e182]: Kabwareng
+          - listitem [ref=f3e183]:
+            - generic [ref=f3e184]: "26"
+            - generic [ref=f3e185]: Terik
+          - listitem [ref=f3e186]:
+            - generic [ref=f3e187]: "27"
+            - generic [ref=f3e188]: Kemeloi/Maraba
+          - listitem [ref=f3e189]:
+            - generic [ref=f3e190]: "28"
+            - generic [ref=f3e191]: Kobujoi
+          - listitem [ref=f3e192]:
+            - generic [ref=f3e193]: "29"
+            - generic [ref=f3e194]: Kaptumo/Kaboi
+          - listitem [ref=f3e195]:
+            - generic [ref=f3e196]: "30"
+            - generic [ref=f3e197]: Koyo/Ndurio
+    - generic [ref=f3e200]:
+      - generic [ref=f3e201]:
+        - paragraph [ref=f3e202]: Per ward
+        - heading "The same prize, either competition." [level=2] [ref=f3e203]: The same prize,either competition.
+        - paragraph [ref=f3e204]: Positions one and two go through to the sub-county round.
+      - table [ref=f3e207]:
+        - rowgroup [ref=f3e208]:
+          - row [ref=f3e209]:
+            - columnheader "Position" [ref=f3e210]
+            - columnheader "Men" [ref=f3e211]
+            - columnheader "Women" [ref=f3e212]
+        - rowgroup [ref=f3e213]:
+          - row [ref=f3e214]:
+            - rowheader "1st" [ref=f3e215]
+            - cell "KSh 20,000" [ref=f3e216]
+            - cell "KSh 20,000" [ref=f3e217]
+          - row [ref=f3e218]:
+            - rowheader "2nd" [ref=f3e219]
+            - cell "KSh 15,000" [ref=f3e220]
+            - cell "KSh 15,000" [ref=f3e221]
+          - row [ref=f3e222]:
+            - rowheader "3rd" [ref=f3e223]
+            - cell "KSh 10,000" [ref=f3e224]
+            - cell "KSh 10,000" [ref=f3e225]
+    - generic [ref=f3e228]:
+      - img "A men's champion collecting prize money" [ref=f3e230]
+      - img "A women's champion collecting the same prize" [ref=f3e232]
+      - img "A ward match in play" [ref=f3e234]
+    - generic [ref=f3e236]:
+      - generic [ref=f3e237]:
+        - generic [ref=f3e238]:
+          - paragraph [ref=f3e239]: The next stage
+          - heading "Sub-county rounds, from September" [level=2] [ref=f3e240]
+        - paragraph [ref=f3e241]: 120 teams carry their wards into the sub-county stage. The county final is planned for December 2026.
+      - generic [ref=f3e242]:
+        - generic [ref=f3e243]:
+          - paragraph [ref=f3e244]: "120"
+          - paragraph [ref=f3e245]: Teams through
+        - generic [ref=f3e246]:
+          - paragraph [ref=f3e247]: "6"
+          - paragraph [ref=f3e248]: Sub-county rounds
+        - generic [ref=f3e249]:
+          - paragraph [ref=f3e250]: Dec 2026
+          - paragraph [ref=f3e251]: County final
+      - link "The full BOSO record" [ref=f3e252] [cursor=pointer]:
+        - /url: /record/boso-supercup
+  - contentinfo [ref=f3e253]:
+    - generic [ref=f3e254]:
+      - generic [ref=f3e255]:
+        - generic [ref=f3e256]:
+          - generic [ref=f3e258]:
+            - generic [ref=f3e259]:
+              - generic [ref=f3e260]: HON.
+              - generic [ref=f3e262]: CYNTHIA MUGE
+            - generic [ref=f3e264]: Keeping the Promise
+          - paragraph [ref=f3e270]: Woman Representative, Nandi County. Working with the people and communities of Nandi.
+          - paragraph [ref=f3e271]: "#FormNiMama"
+        - navigation "Footer" [ref=f3e272]:
+          - list [ref=f3e273]:
+            - listitem [ref=f3e274]:
+              - link "About" [ref=f3e275] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=f3e276]:
+              - link "Stories" [ref=f3e277] [cursor=pointer]:
+                - /url: /stories
+            - listitem [ref=f3e278]:
+              - link "Pillars" [ref=f3e279] [cursor=pointer]:
+                - /url: /pillars
+            - listitem [ref=f3e280]:
+              - link "The record" [ref=f3e281] [cursor=pointer]:
+                - /url: /record
+            - listitem [ref=f3e282]:
+              - link "Parliament" [ref=f3e283] [cursor=pointer]:
+                - /url: /parliament
+            - listitem [ref=f3e284]:
+              - link "BOSO" [ref=f3e285] [cursor=pointer]:
+                - /url: /boso
+            - listitem [ref=f3e286]:
+              - link "Media" [ref=f3e287] [cursor=pointer]:
+                - /url: /media
+            - listitem [ref=f3e288]:
+              - link "Contact" [ref=f3e289] [cursor=pointer]:
+                - /url: /contact
+      - paragraph [ref=f3e290]: Office of the Woman Representative, Nandi County. Last reviewed 30 August 2026. This site follows the work across Nandi and updates the record as information arrives.
+  - button "Open Next.js Dev Tools" [ref=f3e296] [cursor=pointer]

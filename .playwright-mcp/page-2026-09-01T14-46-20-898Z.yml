@@ -1,0 +1,479 @@
+- generic [active] [ref=f14e1]:
+  - link "Skip to content" [ref=f14e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=f14e3]:
+    - generic [ref=f14e4]:
+      - link "Cynthia Muge, home" [ref=f14e5] [cursor=pointer]:
+        - /url: /
+        - generic [ref=f14e6]:
+          - generic [ref=f14e7]:
+            - generic [ref=f14e8]: HON.
+            - generic [ref=f14e10]: CYNTHIA MUGE
+          - generic [ref=f14e12]: Keeping the Promise
+      - generic [ref=f14e18]:
+        - navigation "Main" [ref=f14e19]:
+          - list [ref=f14e20]:
+            - listitem [ref=f14e21]:
+              - link "About" [ref=f14e22] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=f14e23]:
+              - link "Stories" [ref=f14e24] [cursor=pointer]:
+                - /url: /stories
+            - listitem [ref=f14e25]:
+              - link "Pillars" [ref=f14e26] [cursor=pointer]:
+                - /url: /pillars
+            - listitem [ref=f14e27]:
+              - link "The record" [ref=f14e28] [cursor=pointer]:
+                - /url: /record
+            - listitem [ref=f14e29]:
+              - link "Parliament" [ref=f14e30] [cursor=pointer]:
+                - /url: /parliament
+            - listitem [ref=f14e31]:
+              - link "BOSO" [ref=f14e32] [cursor=pointer]:
+                - /url: /boso
+            - listitem [ref=f14e33]:
+              - link "Media" [ref=f14e34] [cursor=pointer]:
+                - /url: /media
+            - listitem [ref=f14e35]:
+              - link "Contact" [ref=f14e36] [cursor=pointer]:
+                - /url: /contact
+        - button "Search" [ref=f14e37]
+  - main [ref=f14e41]:
+    - generic [ref=f14e45]:
+      - generic [ref=f14e46]:
+        - paragraph [ref=f14e47]: Woman Representative, Nandi County
+        - heading "For the women and young people of Nandi." [level=1] [ref=f14e48]:
+          - text: For the women and young people of
+          - generic [ref=f14e49]: Nandi.
+        - paragraph [ref=f14e50]: A record of the people, places, and work that have shaped her service.
+        - generic [ref=f14e51]:
+          - link "Explore the work" [ref=f14e52] [cursor=pointer]:
+            - /url: /record
+          - link "The six pillars" [ref=f14e53] [cursor=pointer]:
+            - /url: /pillars
+      - img "Cynthia Muge speaking" [ref=f14e59]
+    - generic [ref=f14e61]:
+      - generic [ref=f14e62]:
+        - generic [ref=f14e63]:
+          - paragraph [ref=f14e64]: Across Nandi
+          - heading "Work that begins close to home." [level=2] [ref=f14e65]
+        - paragraph [ref=f14e66]: A few figures offer a starting point. Each programme page brings the people, places, and detail around them.
+      - generic [ref=f14e67]:
+        - generic [ref=f14e68]:
+          - paragraph [ref=f14e69]: 0+
+          - paragraph [ref=f14e70]: Certified coffee seedlings
+          - paragraph [ref=f14e71]: Distributed across all six sub-counties.
+        - generic [ref=f14e72]:
+          - paragraph [ref=f14e73]: "0"
+          - paragraph [ref=f14e74]: Students on full scholarship
+          - paragraph [ref=f14e75]: All cohorts. 206 sit KCSE this year.
+        - generic [ref=f14e76]:
+          - paragraph [ref=f14e77]: 0 / 0
+          - paragraph [ref=f14e78]: Wards reached by BOSO
+          - paragraph [ref=f14e79]: 846 matches in three months.
+        - generic [ref=f14e80]:
+          - paragraph [ref=f14e81]: KSh 0.0m
+          - paragraph [ref=f14e82]: Ward-level prize money
+          - paragraph [ref=f14e83]: Men's and women's competitions.
+      - paragraph [ref=f14e84]: "Sources: Kenya News Agency, 15 Jun 2025; Nandi Updates, Aug 2026; Official Facebook, Aug 2026. See each programme page for full detail."
+    - generic [ref=f14e85]:
+      - generic [ref=f14e86]:
+        - generic [ref=f14e87]:
+          - paragraph [ref=f14e88]: The work
+          - heading "Six programmes, rooted in Nandi." [level=2] [ref=f14e89]
+        - link "All six, in full" [ref=f14e90] [cursor=pointer]:
+          - /url: /record
+      - list [ref=f14e91]:
+        - listitem [ref=f14e92]:
+          - link [ref=f14e94] [cursor=pointer]:
+            - /url: /record/kahawa-na-mama
+            - heading "Kahawa na Mama" [level=3] [ref=f14e96]
+            - paragraph [ref=f14e97]: Putting coffee trees, and the income from them, into the hands of Nandi women, and registering those trees in their own names.
+            - paragraph [ref=f14e98]: 2023 – present
+        - listitem [ref=f14e99]:
+          - link [ref=f14e101] [cursor=pointer]:
+            - /url: /record/elimu-ni-mwangaza
+            - heading "Elimu Ni Mwangaza" [level=3] [ref=f14e103]
+            - paragraph [ref=f14e104]: Full scholarships that help students stay in school and plan for what comes next.
+            - paragraph [ref=f14e105]: 2023 – present
+        - listitem [ref=f14e106]:
+          - link [ref=f14e108] [cursor=pointer]:
+            - /url: /record/boso-supercup
+            - heading "BOSO Supercup" [level=3] [ref=f14e110]
+            - paragraph [ref=f14e111]: A football and volleyball league that reached every ward in Nandi in three months.
+            - paragraph [ref=f14e112]: 2026 – present
+        - listitem [ref=f14e113]:
+          - link [ref=f14e115] [cursor=pointer]:
+            - /url: /record/health-and-infrastructure
+            - heading "Health and Infrastructure" [level=3] [ref=f14e117]
+            - paragraph [ref=f14e118]: Equipment, water and workspaces delivered to named facilities and centres.
+            - paragraph [ref=f14e119]: 2022 – present
+        - listitem [ref=f14e120]:
+          - link [ref=f14e122] [cursor=pointer]:
+            - /url: /record/dairy-value-chain
+            - heading "Dairy Value Chain" [level=3] [ref=f14e124]
+            - paragraph [ref=f14e125]: Ten solar-powered bulk milk coolers placed with named Nandi cooperatives.
+            - paragraph [ref=f14e126]: 2026 – 2026
+        - listitem [ref=f14e127]:
+          - link [ref=f14e129] [cursor=pointer]:
+            - /url: /record/group-empowerment
+            - heading "Group Empowerment" [level=3] [ref=f14e131]
+            - paragraph [ref=f14e132]: Cash grants to registered women and youth groups, paid at ward level.
+            - paragraph [ref=f14e133]: 2023 – present
+    - generic [ref=f14e135]:
+      - generic [ref=f14e136]:
+        - generic [ref=f14e137]:
+          - paragraph [ref=f14e138]: From the wards
+          - heading "The people and places around the work." [level=2] [ref=f14e139]
+        - link "More from the wards" [ref=f14e140] [cursor=pointer]:
+          - /url: /stories
+      - paragraph [ref=f14e141]: Start with a place and follow the work from there.
+      - list [ref=f14e142]:
+        - listitem [ref=f14e143]:
+          - article [ref=f14e144]:
+            - link [ref=f14e145] [cursor=pointer]:
+              - /url: /stories/chepkemel-groups
+              - img "A women and youth group handover at Chepkemel" [ref=f14e146]
+            - generic [ref=f14e147]:
+              - paragraph [ref=f14e148]: Group Empowerment
+              - paragraph [ref=f14e149]: Chepkemel DIP Grounds · Tindiret Ward
+              - heading [level=3] [ref=f14e150]:
+                - link "Two groups, one handover" [ref=f14e151] [cursor=pointer]:
+                  - /url: /stories/chepkemel-groups
+              - paragraph [ref=f14e152]: At Chepkemel, local groups received support to put their plans to work.
+        - listitem [ref=f14e153]:
+          - article [ref=f14e154]:
+            - link [ref=f14e155] [cursor=pointer]:
+              - /url: /stories/lelmokwo-shade
+              - img "A completed boda boda shade at Lelmokwo Centre" [ref=f14e156]
+            - generic [ref=f14e157]:
+              - paragraph [ref=f14e158]: Health and Infrastructure
+              - paragraph [ref=f14e159]: Lelmokwo Centre · Nandi County
+              - heading [level=3] [ref=f14e160]:
+                - link "A place to wait out the weather" [ref=f14e161] [cursor=pointer]:
+                  - /url: /stories/lelmokwo-shade
+              - paragraph [ref=f14e162]: At Lelmokwo Centre, riders have a place to wait and work through the weather.
+        - listitem [ref=f14e163]:
+          - article [ref=f14e164]:
+            - link [ref=f14e165] [cursor=pointer]:
+              - /url: /stories/koilot-seedlings
+              - img "Coffee seedlings ready for distribution in Nandi County" [ref=f14e166]
+            - generic [ref=f14e167]:
+              - paragraph [ref=f14e168]: Kahawa na Mama
+              - paragraph [ref=f14e169]: Koilot ACC · Ol'lessos Ward, Nandi Hills
+              - heading [level=3] [ref=f14e170]:
+                - link "Twenty-two thousand seedlings at Koilot" [ref=f14e171] [cursor=pointer]:
+                  - /url: /stories/koilot-seedlings
+              - paragraph [ref=f14e172]: At Koilot, coffee seedlings began their journey into the hands of farmers.
+    - generic [ref=f14e174]:
+      - generic [ref=f14e175]:
+        - generic [ref=f14e176]:
+          - generic [ref=f14e177]:
+            - paragraph [ref=f14e178]: BOSO Supercup, ward stage
+            - heading "A season that brought every ward into play." [level=2] [ref=f14e179]
+            - paragraph [ref=f14e180]: Players, organisers, fields, and supporters carried the competition from the ward stage towards the county final.
+          - link "Rules and registration" [ref=f14e181] [cursor=pointer]:
+            - /url: /boso
+        - figure "Ward stage, April to August 2026" [ref=f14e182]:
+          - list [ref=f14e183]:
+            - listitem [ref=f14e184]:
+              - generic [ref=f14e185]:
+                - generic [ref=f14e186]: Matches played
+                - generic [ref=f14e187]: "846"
+            - listitem [ref=f14e189]:
+              - generic [ref=f14e190]:
+                - generic [ref=f14e191]: Teams registered
+                - generic [ref=f14e192]: "499"
+            - listitem [ref=f14e194]:
+              - generic [ref=f14e195]:
+                - generic [ref=f14e196]: Teams through to sub-county
+                - generic [ref=f14e197]: "120"
+            - listitem [ref=f14e199]:
+              - generic [ref=f14e200]:
+                - generic [ref=f14e201]: Playing fields used
+                - generic [ref=f14e202]: "83"
+            - listitem [ref=f14e204]:
+              - generic [ref=f14e205]:
+                - generic [ref=f14e206]: Wards reached
+                - generic [ref=f14e207]: "30"
+            - listitem [ref=f14e209]:
+              - generic [ref=f14e210]:
+                - generic [ref=f14e211]: Constituencies
+                - generic [ref=f14e212]: "6"
+      - figure "All thirty wards, in the order the office listed them" [ref=f14e216]:
+        - list [ref=f14e217]:
+          - listitem [ref=f14e218]:
+            - generic [ref=f14e219]: "01"
+            - generic [ref=f14e220]: Kabiyet
+          - listitem [ref=f14e221]:
+            - generic [ref=f14e222]: "02"
+            - generic [ref=f14e223]: Kabisaga
+          - listitem [ref=f14e224]:
+            - generic [ref=f14e225]: "03"
+            - generic [ref=f14e226]: Chepterwai
+          - listitem [ref=f14e227]:
+            - generic [ref=f14e228]: "04"
+            - generic [ref=f14e229]: Kipkaren
+          - listitem [ref=f14e230]:
+            - generic [ref=f14e231]: "05"
+            - generic [ref=f14e232]: Kurgung/Surungai
+          - listitem [ref=f14e233]:
+            - generic [ref=f14e234]: "06"
+            - generic [ref=f14e235]: Ndalat
+          - listitem [ref=f14e236]:
+            - generic [ref=f14e237]: "07"
+            - generic [ref=f14e238]: Sang'alo/Kebulonik
+          - listitem [ref=f14e239]:
+            - generic [ref=f14e240]: "08"
+            - generic [ref=f14e241]: Chemundu/Kapng'etuny
+          - listitem [ref=f14e242]:
+            - generic [ref=f14e243]: "09"
+            - generic [ref=f14e244]: Kosirai
+          - listitem [ref=f14e245]:
+            - generic [ref=f14e246]: "10"
+            - generic [ref=f14e247]: Lelmokwo/Ngechek
+          - listitem [ref=f14e248]:
+            - generic [ref=f14e249]: "11"
+            - generic [ref=f14e250]: Kaptel/Kamoiywo
+          - listitem [ref=f14e251]:
+            - generic [ref=f14e252]: "12"
+            - generic [ref=f14e253]: Kiptuya
+          - listitem [ref=f14e254]:
+            - generic [ref=f14e255]: "13"
+            - generic [ref=f14e256]: Kilibwoni
+          - listitem [ref=f14e257]:
+            - generic [ref=f14e258]: "14"
+            - generic [ref=f14e259]: Kapkangani
+          - listitem [ref=f14e260]:
+            - generic [ref=f14e261]: "15"
+            - generic [ref=f14e262]: Chepkumia
+          - listitem [ref=f14e263]:
+            - generic [ref=f14e264]: "16"
+            - generic [ref=f14e265]: Kapsabet
+          - listitem [ref=f14e266]:
+            - generic [ref=f14e267]: "17"
+            - generic [ref=f14e268]: Tinderet
+          - listitem [ref=f14e269]:
+            - generic [ref=f14e270]: "18"
+            - generic [ref=f14e271]: Songhor/Soba
+          - listitem [ref=f14e272]:
+            - generic [ref=f14e273]: "19"
+            - generic [ref=f14e274]: Chemelil/Chemase
+          - listitem [ref=f14e275]:
+            - generic [ref=f14e276]: "20"
+            - generic [ref=f14e277]: Kapsimotwo
+          - listitem [ref=f14e278]:
+            - generic [ref=f14e279]: "21"
+            - generic [ref=f14e280]: Nandi Hills
+          - listitem [ref=f14e281]:
+            - generic [ref=f14e282]: "22"
+            - generic [ref=f14e283]: Chepkunyuk
+          - listitem [ref=f14e284]:
+            - generic [ref=f14e285]: "23"
+            - generic [ref=f14e286]: Ol'lessos
+          - listitem [ref=f14e287]:
+            - generic [ref=f14e288]: "24"
+            - generic [ref=f14e289]: Kapchorua
+          - listitem [ref=f14e290]:
+            - generic [ref=f14e291]: "25"
+            - generic [ref=f14e292]: Kabwareng
+          - listitem [ref=f14e293]:
+            - generic [ref=f14e294]: "26"
+            - generic [ref=f14e295]: Terik
+          - listitem [ref=f14e296]:
+            - generic [ref=f14e297]: "27"
+            - generic [ref=f14e298]: Kemeloi/Maraba
+          - listitem [ref=f14e299]:
+            - generic [ref=f14e300]: "28"
+            - generic [ref=f14e301]: Kobujoi
+          - listitem [ref=f14e302]:
+            - generic [ref=f14e303]: "29"
+            - generic [ref=f14e304]: Kaptumo/Kaboi
+          - listitem [ref=f14e305]:
+            - generic [ref=f14e306]: "30"
+            - generic [ref=f14e307]: Koyo/Ndurio
+    - generic [ref=f14e309]:
+      - paragraph [ref=f14e310]: Across the county
+      - list [ref=f14e311]:
+        - listitem [ref=f14e312]:
+          - link [ref=f14e314] [cursor=pointer]:
+            - /url: /pillars
+            - paragraph [ref=f14e316]: Governance
+            - paragraph [ref=f14e317]: The Kaburwo Council of Elders
+        - listitem [ref=f14e318]:
+          - link [ref=f14e320] [cursor=pointer]:
+            - /url: /parliament
+            - paragraph [ref=f14e322]: In Parliament
+            - paragraph [ref=f14e323]: Committee work and positions
+        - listitem [ref=f14e324]:
+          - link [ref=f14e326] [cursor=pointer]:
+            - /url: /record/kahawa-na-mama
+            - paragraph [ref=f14e328]: Kahawa na Mama
+            - paragraph [ref=f14e329]: Trees in both spouses' names
+        - listitem [ref=f14e330]:
+          - link [ref=f14e332] [cursor=pointer]:
+            - /url: /record/elimu-ni-mwangaza
+            - paragraph [ref=f14e334]: Elimu Ni Mwangaza
+            - paragraph [ref=f14e335]: 449 students on scholarship
+        - listitem [ref=f14e336]:
+          - link [ref=f14e338] [cursor=pointer]:
+            - /url: /record/health-and-infrastructure
+            - paragraph [ref=f14e340]: Health and Infrastructure
+            - paragraph [ref=f14e341]: Shades, boreholes, equipment
+        - listitem [ref=f14e342]:
+          - link [ref=f14e344] [cursor=pointer]:
+            - /url: /contact
+            - paragraph [ref=f14e346]: Contact
+            - paragraph [ref=f14e347]: Six sub-counties, thirty wards
+    - generic [ref=f14e349]:
+      - paragraph [ref=f14e350]: Health and public investment
+      - heading "Plans that reach the page." [level=2] [ref=f14e351]
+      - paragraph [ref=f14e352]: Two health facilities for Nandi appear as named line items in the national development estimates, with a named amount beside each one.
+      - generic [ref=f14e354]:
+        - figure [ref=f14e355]:
+          - img "Vote 1082 development expenditure estimates showing the two Nandi health facilities" [ref=f14e356]
+        - generic [ref=f14e357]:
+          - heading "Development Expenditure Estimates 2026/2027" [level=3] [ref=f14e358]
+          - generic [ref=f14e359]:
+            - generic [ref=f14e360]:
+              - term [ref=f14e361]: Kapsengre Dispensary, approved 2025/26
+              - definition [ref=f14e362]: KSh 20m
+            - generic [ref=f14e363]:
+              - term [ref=f14e364]: Salient Kipkaren Health Centre, approved 2025/26
+              - definition [ref=f14e365]: KSh 20m
+            - generic [ref=f14e366]:
+              - term [ref=f14e367]: Salient Kipkaren Health Centre, 2026/27
+              - definition [ref=f14e368]: KSh 20m
+          - paragraph [ref=f14e369]: Cynthia Muge, official Facebook page, August 2026
+    - generic [ref=f14e370]:
+      - generic [ref=f14e371]:
+        - generic [ref=f14e372]:
+          - paragraph [ref=f14e373]: Looking ahead
+          - heading "Six priorities for Nandi." [level=2] [ref=f14e374]
+        - link "What each one covers" [ref=f14e375] [cursor=pointer]:
+          - /url: /pillars
+      - list [ref=f14e376]:
+        - listitem [ref=f14e377]:
+          - text: "01"
+          - heading "Road Network" [level=3] [ref=f14e378]
+          - paragraph [ref=f14e379]: Access between the wards, the markets and the tea and coffee collection points.
+        - listitem [ref=f14e380]:
+          - text: "02"
+          - heading "Education" [level=3] [ref=f14e381]
+          - paragraph [ref=f14e382]: Scholarships, the schools that hold the students already sponsored, and foundational literacy at ECDE.
+        - listitem [ref=f14e383]:
+          - text: "03"
+          - heading "Health" [level=3] [ref=f14e384]
+          - paragraph [ref=f14e385]: Facilities within reach of the townships that have none, and the equipment to make them work.
+        - listitem [ref=f14e386]:
+          - text: "04"
+          - heading "Water" [level=3] [ref=f14e387]
+          - paragraph [ref=f14e388]: Boreholes, storage and supply across the six sub-counties.
+        - listitem [ref=f14e389]:
+          - text: "05"
+          - heading "Wealth Creation" [level=3] [ref=f14e390]
+          - paragraph [ref=f14e391]: Coffee, dairy, tea and the enterprises run by women, young people and persons with disability.
+        - listitem [ref=f14e392]:
+          - text: "06"
+          - heading "Governance" [level=3] [ref=f14e393]
+          - paragraph [ref=f14e394]: How the county budget is set, spent and accounted for.
+    - generic [ref=f14e398]:
+      - generic [ref=f14e399]:
+        - paragraph [ref=f14e400]: Context
+        - heading "Where Nandi County money goes." [level=2] [ref=f14e401]
+        - paragraph [ref=f14e402]: KSh 10.2bn in FY 2024/25, at 98% absorption.
+      - generic [ref=f14e403]:
+        - generic [ref=f14e404]:
+          - generic [ref=f14e405]:
+            - paragraph [ref=f14e406]: KSh 6.6bn
+            - paragraph [ref=f14e407]: Recurrent
+          - generic [ref=f14e408]:
+            - paragraph [ref=f14e409]: KSh 3.3bn
+            - paragraph [ref=f14e410]: Development
+        - paragraph [ref=f14e411]: Controller of Budget, FY 2024/25
+    - generic [ref=f14e415]:
+      - figure "Cynthia Muge, official Facebook page, August 2026" [ref=f14e416]:
+        - paragraph [ref=f14e417]: Her own words
+        - blockquote [ref=f14e418]:
+          - paragraph [ref=f14e419]:
+            - generic [aria-hidden] [ref=f14e420]: “The
+            - generic [aria-hidden] [ref=f14e421]: race
+            - generic [aria-hidden] [ref=f14e422]: for
+            - generic [aria-hidden] [ref=f14e423]: the
+            - generic [aria-hidden] [ref=f14e424]: county's
+            - generic [aria-hidden] [ref=f14e425]: top
+            - generic [aria-hidden] [ref=f14e426]: seat
+            - generic [aria-hidden] [ref=f14e427]: is
+            - generic [aria-hidden] [ref=f14e428]: demanding,
+            - generic [aria-hidden] [ref=f14e429]: but
+            - generic [aria-hidden] [ref=f14e430]: when
+            - generic [aria-hidden] [ref=f14e431]: I
+            - generic [aria-hidden] [ref=f14e432]: look
+            - generic [aria-hidden] [ref=f14e433]: at
+            - generic [aria-hidden] [ref=f14e434]: "15"
+            - generic [aria-hidden] [ref=f14e435]: years
+            - generic [aria-hidden] [ref=f14e436]: of
+            - generic [aria-hidden] [ref=f14e437]: devolution
+            - generic [aria-hidden] [ref=f14e438]: and
+            - generic [aria-hidden] [ref=f14e439]: the
+            - generic [aria-hidden] [ref=f14e440]: many
+            - generic [aria-hidden] [ref=f14e441]: unmet
+            - generic [aria-hidden] [ref=f14e442]: needs
+            - generic [aria-hidden] [ref=f14e443]: across
+            - generic [aria-hidden] [ref=f14e444]: Nandi,
+            - generic [aria-hidden] [ref=f14e445]: I
+            - generic [aria-hidden] [ref=f14e446]: know
+            - generic [aria-hidden] [ref=f14e447]: fear
+            - generic [aria-hidden] [ref=f14e448]: is
+            - generic [aria-hidden] [ref=f14e449]: a
+            - generic [aria-hidden] [ref=f14e450]: luxury
+            - generic [aria-hidden] [ref=f14e451]: we
+            - generic [aria-hidden] [ref=f14e452]: cannot
+            - generic [aria-hidden] [ref=f14e453]: afford.
+            - generic [aria-hidden] [ref=f14e454]: Nandi
+            - generic [aria-hidden] [ref=f14e455]: deserves
+            - generic [aria-hidden] [ref=f14e456]: empathetic,
+            - generic [aria-hidden] [ref=f14e457]: disciplined
+            - generic [aria-hidden] [ref=f14e458]: and
+            - generic [aria-hidden] [ref=f14e459]: foresighted
+            - generic [aria-hidden] [ref=f14e460]: leadership.”
+      - img "Cynthia Muge speaking" [ref=f14e463]
+  - contentinfo [ref=f14e464]:
+    - generic [ref=f14e465]:
+      - generic [ref=f14e466]:
+        - generic [ref=f14e467]:
+          - generic [ref=f14e469]:
+            - generic [ref=f14e470]:
+              - generic [ref=f14e471]: HON.
+              - generic [ref=f14e473]: CYNTHIA MUGE
+            - generic [ref=f14e475]: Keeping the Promise
+          - paragraph [ref=f14e481]: Woman Representative, Nandi County. Working with the people and communities of Nandi.
+          - paragraph [ref=f14e482]: "#FormNiMama"
+        - navigation "Footer" [ref=f14e483]:
+          - list [ref=f14e484]:
+            - listitem [ref=f14e485]:
+              - link "About" [ref=f14e486] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=f14e487]:
+              - link "Stories" [ref=f14e488] [cursor=pointer]:
+                - /url: /stories
+            - listitem [ref=f14e489]:
+              - link "Pillars" [ref=f14e490] [cursor=pointer]:
+                - /url: /pillars
+            - listitem [ref=f14e491]:
+              - link "The record" [ref=f14e492] [cursor=pointer]:
+                - /url: /record
+            - listitem [ref=f14e493]:
+              - link "Parliament" [ref=f14e494] [cursor=pointer]:
+                - /url: /parliament
+            - listitem [ref=f14e495]:
+              - link "BOSO" [ref=f14e496] [cursor=pointer]:
+                - /url: /boso
+            - listitem [ref=f14e497]:
+              - link "Media" [ref=f14e498] [cursor=pointer]:
+                - /url: /media
+            - listitem [ref=f14e499]:
+              - link "Contact" [ref=f14e500] [cursor=pointer]:
+                - /url: /contact
+      - paragraph [ref=f14e501]: Office of the Woman Representative, Nandi County. Last reviewed 30 August 2026. This site follows the work across Nandi and updates the record as information arrives.
+  - button "Open Next.js Dev Tools" [ref=f14e507] [cursor=pointer]

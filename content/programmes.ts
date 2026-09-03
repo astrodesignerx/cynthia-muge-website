@@ -1203,6 +1203,94 @@ export const parliament = {
   } as Source,
 };
 
+const MZALENDO: Source = {
+  label: "Member performance record, 13th Parliament",
+  publisher: "Mzalendo",
+  date: "Retrieved 4 September 2026",
+  url: "https://mzalendo.com/mps-performance/national-assembly/13th-parliament/muge-cynthia-jepkosgei/",
+};
+
+const SHA_COVERAGE: Source = {
+  label: "Health Committee sessions on the Social Health Authority",
+  publisher: "Citizen Digital, The Star and Eastleigh Voice",
+  date: "October 2025 onward",
+};
+
+/**
+ * Holding power to account, which is the other half of the job.
+ *
+ * The rest of this file records what was delivered. This records what was
+ * questioned. The two are kept apart because they are different kinds of work
+ * and a reader should be able to tell them apart at a glance.
+ */
+export const oversight = {
+  lead:
+    "A Woman Representative delivers programmes, and also sits in committee, where the job is to ask the government what it did with the money. This is the second kind of work.",
+
+  /** The case that carries the most weight, told at length. */
+  headline: {
+    title:
+      "The Social Health Authority, and a Cabinet Secretary who did not want the question",
+    body:
+      "She sits on the National Assembly's Departmental Committee on Health. Its members visited ten hospitals and set down what patients were actually meeting under the Social Health Authority: reimbursements paid irregularly, claims left unpaid, and a gap between what treatment costs and what the scheme pays back.",
+    body2:
+      "In the sessions that followed she accused the Cabinet Secretary for Health of trying to dictate how the committee ran its own business, and challenged the chair on why a member had been reprimanded while the Cabinet Secretary was not. He accused her in turn of intimidation and bias. She did not withdraw, and afterwards described him as behaving like a hostile witness.",
+    pull: "Ten hospitals, and a committee that would not be told how to sit.",
+    source: SHA_COVERAGE,
+  },
+
+  /** Shorter interventions, each carried into the House from the county. */
+  items: [
+    {
+      title: "Rivatex layoffs",
+      year: "2026",
+      body:
+        "Raised the mass layoffs at Rivatex, the Eldoret textile mill that draws its workforce from across the North Rift.",
+    },
+    {
+      title: "Police brutality on camera",
+      year: "2026",
+      body:
+        "Condemned an assault by police officers that had been caught on CCTV, at a point when other members were still choosing their words.",
+    },
+    {
+      title: "Ethnic profiling",
+      year: "2026",
+      body:
+        "Spoke against ethnic profiling and the language of ethnic hostility in national politics.",
+    },
+    {
+      title: "Housing, and Kelvin Kiptum's family",
+      year: "2024",
+      body:
+        "Pointed to the house built for the family of the late marathon world record holder as evidence that the housing programme can deliver when it is held to a deadline.",
+    },
+  ],
+
+  /**
+   * The floor record, including the parts that do not flatter.
+   *
+   * Publishing "0 bills sponsored" beside "143 contributions" is the same rule
+   * the rest of the site runs on. A reader who can find the second number
+   * elsewhere should find it here first.
+   */
+  floor: [
+    { value: "143", label: "Contributions on the floor", gap: false },
+    { value: "98", label: "Times named by 25 other members", gap: false },
+    { value: "6", label: "Recorded votes", gap: false },
+    { value: "0", label: "Bills sponsored", gap: true },
+  ],
+  floorNote:
+    "Counted across the 13th Parliament, with one question asked and no petitions presented. Legislation is not where this record sits; committee work and the floor are. Both numbers are published because an opponent can find the second one in an afternoon.",
+  floorSource: MZALENDO,
+
+  gap: {
+    title: "No photographs of this work",
+    body:
+      "Every image on this site comes from the office's own record, and the office has not published pictures from the committee room. The footage that exists belongs to the broadcasters who filmed it. Until the office supplies its own, this section carries none.",
+  },
+};
+
 /** The stage after the wards, and the seats she has held. Kept here so every
  *  published figure carries a source, as the rest of the site does. */
 export const bosoNextStage = [

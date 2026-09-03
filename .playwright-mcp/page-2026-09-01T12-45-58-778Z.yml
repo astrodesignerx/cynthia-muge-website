@@ -1,0 +1,226 @@
+- generic [active] [ref=f2e1]:
+  - link "Skip to content" [ref=f2e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=f2e3]:
+    - generic [ref=f2e4]:
+      - link "Cynthia Muge, home" [ref=f2e5] [cursor=pointer]:
+        - /url: /
+        - generic [ref=f2e6]:
+          - generic [ref=f2e7]:
+            - generic [ref=f2e8]: HON.
+            - generic [ref=f2e10]: CYNTHIA MUGE
+          - generic [ref=f2e12]: Keeping the Promise
+      - generic [ref=f2e18]:
+        - navigation "Main" [ref=f2e19]:
+          - list [ref=f2e20]:
+            - listitem [ref=f2e21]:
+              - link "About" [ref=f2e22] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=f2e23]:
+              - link "Stories" [ref=f2e24] [cursor=pointer]:
+                - /url: /stories
+            - listitem [ref=f2e25]:
+              - link "Pillars" [ref=f2e26] [cursor=pointer]:
+                - /url: /pillars
+            - listitem [ref=f2e28]:
+              - link "The record" [ref=f2e29] [cursor=pointer]:
+                - /url: /record
+            - listitem [ref=f2e30]:
+              - link "Parliament" [ref=f2e31] [cursor=pointer]:
+                - /url: /parliament
+            - listitem [ref=f2e32]:
+              - link "BOSO" [ref=f2e33] [cursor=pointer]:
+                - /url: /boso
+            - listitem [ref=f2e34]:
+              - link "Media" [ref=f2e35] [cursor=pointer]:
+                - /url: /media
+            - listitem [ref=f2e36]:
+              - link "Contact" [ref=f2e37] [cursor=pointer]:
+                - /url: /contact
+        - button "Search" [ref=f2e38]
+  - main [ref=f2e42]:
+    - generic [ref=f2e45]:
+      - paragraph [ref=f2e46]: Nandi County, 2027
+      - heading "The six pillars" [level=1] [ref=f2e47]
+      - paragraph [ref=f2e48]: Road Network. Education. Health. Water. Wealth Creation. Governance.
+    - generic [ref=f2e51]:
+      - generic [ref=f2e52]:
+        - text: "01"
+        - heading "Road Network" [level=2] [ref=f2e53]
+        - paragraph [ref=f2e54]: Access between the wards, the markets and the tea and coffee collection points.
+        - paragraph [ref=f2e55]: Good roads connect homes, markets, collection points, and the services that keep local enterprise moving. She lists the road network first because every other priority depends on that connection.
+        - generic [ref=f2e56]:
+          - generic [ref=f2e57]:
+            - term [ref=f2e58]: Already underway
+            - definition [ref=f2e59]: Boda boda shades at Lelmokwo, Lessos, Chebarbar and Soy-Sitet, for the riders who carry most of that traffic.
+          - generic [ref=f2e60]:
+            - term [ref=f2e61]: The next responsibility
+            - definition [ref=f2e62]: "A costed sequence of roads: routes, order, and cost per kilometre."
+      - figure [ref=f2e63]
+    - generic [ref=f2e66]:
+      - generic [ref=f2e67]:
+        - text: "02"
+        - heading "Education" [level=2] [ref=f2e68]
+        - paragraph [ref=f2e69]: Scholarships, the schools that hold the students already sponsored, and foundational literacy at ECDE.
+        - paragraph [ref=f2e70]: Her stated target is 4,000 students on full scholarship, or a minimum of 120 per ward. She has also called foundational literacy in ECDE a non-negotiable priority for Nandi's children.
+        - generic [ref=f2e71]:
+          - generic [ref=f2e72]:
+            - term [ref=f2e73]: Already underway
+            - definition [ref=f2e74]: 449 students on full scholarship across all cohorts, 206 of them sitting KCSE this year.
+          - generic [ref=f2e75]:
+            - term [ref=f2e76]: The next responsibility
+            - definition [ref=f2e77]: How an expanded resource envelope can support the stated target.
+      - figure [ref=f2e78]
+    - generic [ref=f2e81]:
+      - generic [ref=f2e82]:
+        - text: "03"
+        - heading "Health" [level=2] [ref=f2e83]
+        - paragraph [ref=f2e84]: Facilities within reach of the townships that have none, and the equipment to make them work.
+        - paragraph [ref=f2e85]: Kipkaren Salient had no public health facility within five kilometres. The Kabiemit proposal pairs facilities with diagnostic equipment so care can begin with the tools staff need.
+        - generic [ref=f2e86]:
+          - generic [ref=f2e87]:
+            - term [ref=f2e88]: Already underway
+            - definition [ref=f2e89]: Two facilities carried on the national development estimates at KSh 20m each, an ambulance and eight units of diagnostic and maternity equipment at Kabiemit.
+          - generic [ref=f2e90]:
+            - term [ref=f2e91]: The next responsibility
+            - definition [ref=f2e92]: The staffing and running costs that keep facilities open.
+      - figure [ref=f2e93]
+    - generic [ref=f2e96]:
+      - generic [ref=f2e97]:
+        - text: "04"
+        - heading "Water" [level=2] [ref=f2e98]
+        - paragraph [ref=f2e99]: Boreholes, storage and supply across the six sub-counties.
+        - paragraph [ref=f2e100]: Reliable water is part of the daily rhythm of a household, a school, and a market. The priority is to extend supply and keep each point working over time.
+        - generic [ref=f2e101]:
+          - generic [ref=f2e102]:
+            - term [ref=f2e103]: Already underway
+            - definition [ref=f2e104]: Boreholes at Tulwo Girls High and Kabolebo Primary, the second with Lake Basin Development Authority, serving the school, the community and Maraba Market.
+          - generic [ref=f2e105]:
+            - term [ref=f2e106]: The next responsibility
+            - definition [ref=f2e107]: The yield and upkeep of the existing boreholes.
+      - generic [ref=f2e108]:
+        - figure [ref=f2e109]:
+          - img "A borehole under construction" [ref=f2e110]
+        - figure [ref=f2e111]:
+          - img "Drilling at a school compound" [ref=f2e112]
+        - figure [ref=f2e113]:
+          - img "A completed borehole head" [ref=f2e114]
+        - figure [ref=f2e115]:
+          - img "Water drawn at the point of supply" [ref=f2e116]
+    - generic [ref=f2e119]:
+      - generic [ref=f2e120]:
+        - text: "05"
+        - heading "Wealth Creation" [level=2] [ref=f2e121]
+        - paragraph [ref=f2e122]: Coffee, dairy, tea and the enterprises run by women, young people and persons with disability.
+        - paragraph [ref=f2e123]: Her approach links coffee, dairy, tea, and group enterprise to household income over time. Tea remains an important future priority for the county's farming communities.
+        - generic [ref=f2e124]:
+          - generic [ref=f2e125]:
+            - term [ref=f2e126]: Already underway
+            - definition [ref=f2e127]: 650,000 coffee seedlings, the first harvest in 2026, ten milk coolers, and eighteen groups funded at KSh 100,000 each.
+          - generic [ref=f2e128]:
+            - term [ref=f2e129]: The next responsibility
+            - definition [ref=f2e130]: A county-wide approach to tea, the crop at the centre of many Nandi households.
+      - figure [ref=f2e131]
+    - generic [ref=f2e134]:
+      - generic [ref=f2e135]:
+        - text: "06"
+        - heading "Governance" [level=2] [ref=f2e136]
+        - paragraph [ref=f2e137]: How the county budget is set, spent and accounted for.
+        - paragraph [ref=f2e138]: Nandi spent KSh 10.2bn in FY 2024/25 at 98% absorption. The next responsibility is to understand how the county can protect essential services while growing development investment.
+        - generic [ref=f2e139]:
+          - generic [ref=f2e140]:
+            - term [ref=f2e141]: Already underway
+            - definition [ref=f2e142]: Public participation forums before the budget year, and a tournament that applied its published rules and shared the result.
+          - generic [ref=f2e143]:
+            - term [ref=f2e144]: The next responsibility
+            - definition [ref=f2e145]: How the development share can grow while essential county services remain strong.
+      - figure [ref=f2e146]
+    - generic [ref=f2e149]:
+      - generic [ref=f2e150]:
+        - paragraph [ref=f2e151]: In her words
+        - heading "A practical agenda for Nandi." [level=2] [ref=f2e152]
+      - blockquote [ref=f2e153]:
+        - paragraph [ref=f2e154]:
+          - generic [aria-hidden] [ref=f2e155]: “The
+          - generic [aria-hidden] [ref=f2e156]: race
+          - generic [aria-hidden] [ref=f2e157]: for
+          - generic [aria-hidden] [ref=f2e158]: the
+          - generic [aria-hidden] [ref=f2e159]: county's
+          - generic [aria-hidden] [ref=f2e160]: top
+          - generic [aria-hidden] [ref=f2e161]: seat
+          - generic [aria-hidden] [ref=f2e162]: is
+          - generic [aria-hidden] [ref=f2e163]: demanding,
+          - generic [aria-hidden] [ref=f2e164]: but
+          - generic [aria-hidden] [ref=f2e165]: when
+          - generic [aria-hidden] [ref=f2e166]: I
+          - generic [aria-hidden] [ref=f2e167]: look
+          - generic [aria-hidden] [ref=f2e168]: at
+          - generic [aria-hidden] [ref=f2e169]: "15"
+          - generic [aria-hidden] [ref=f2e170]: years
+          - generic [aria-hidden] [ref=f2e171]: of
+          - generic [aria-hidden] [ref=f2e172]: devolution
+          - generic [aria-hidden] [ref=f2e173]: and
+          - generic [aria-hidden] [ref=f2e174]: the
+          - generic [aria-hidden] [ref=f2e175]: many
+          - generic [aria-hidden] [ref=f2e176]: unmet
+          - generic [aria-hidden] [ref=f2e177]: needs
+          - generic [aria-hidden] [ref=f2e178]: across
+          - generic [aria-hidden] [ref=f2e179]: Nandi,
+          - generic [aria-hidden] [ref=f2e180]: I
+          - generic [aria-hidden] [ref=f2e181]: know
+          - generic [aria-hidden] [ref=f2e182]: fear
+          - generic [aria-hidden] [ref=f2e183]: is
+          - generic [aria-hidden] [ref=f2e184]: a
+          - generic [aria-hidden] [ref=f2e185]: luxury
+          - generic [aria-hidden] [ref=f2e186]: we
+          - generic [aria-hidden] [ref=f2e187]: cannot
+          - generic [aria-hidden] [ref=f2e188]: afford.
+          - generic [aria-hidden] [ref=f2e189]: Nandi
+          - generic [aria-hidden] [ref=f2e190]: deserves
+          - generic [aria-hidden] [ref=f2e191]: empathetic,
+          - generic [aria-hidden] [ref=f2e192]: disciplined
+          - generic [aria-hidden] [ref=f2e193]: and
+          - generic [aria-hidden] [ref=f2e194]: foresighted
+          - generic [aria-hidden] [ref=f2e195]: leadership.”
+      - paragraph [ref=f2e196]: Cynthia Muge, official Facebook page, August 2026
+      - link "See the work so far" [ref=f2e197] [cursor=pointer]:
+        - /url: /record
+  - contentinfo [ref=f2e198]:
+    - generic [ref=f2e199]:
+      - generic [ref=f2e200]:
+        - generic [ref=f2e201]:
+          - generic [ref=f2e203]:
+            - generic [ref=f2e204]:
+              - generic [ref=f2e205]: HON.
+              - generic [ref=f2e207]: CYNTHIA MUGE
+            - generic [ref=f2e209]: Keeping the Promise
+          - paragraph [ref=f2e215]: Woman Representative, Nandi County. Working with the people and communities of Nandi.
+          - paragraph [ref=f2e216]: "#FormNiMama"
+        - navigation "Footer" [ref=f2e217]:
+          - list [ref=f2e218]:
+            - listitem [ref=f2e219]:
+              - link "About" [ref=f2e220] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=f2e221]:
+              - link "Stories" [ref=f2e222] [cursor=pointer]:
+                - /url: /stories
+            - listitem [ref=f2e223]:
+              - link "Pillars" [ref=f2e224] [cursor=pointer]:
+                - /url: /pillars
+            - listitem [ref=f2e225]:
+              - link "The record" [ref=f2e226] [cursor=pointer]:
+                - /url: /record
+            - listitem [ref=f2e227]:
+              - link "Parliament" [ref=f2e228] [cursor=pointer]:
+                - /url: /parliament
+            - listitem [ref=f2e229]:
+              - link "BOSO" [ref=f2e230] [cursor=pointer]:
+                - /url: /boso
+            - listitem [ref=f2e231]:
+              - link "Media" [ref=f2e232] [cursor=pointer]:
+                - /url: /media
+            - listitem [ref=f2e233]:
+              - link "Contact" [ref=f2e234] [cursor=pointer]:
+                - /url: /contact
+      - paragraph [ref=f2e235]: Office of the Woman Representative, Nandi County. Last reviewed 30 August 2026. This site follows the work across Nandi and updates the record as information arrives.
+  - button "Open Next.js Dev Tools" [ref=f2e241] [cursor=pointer]

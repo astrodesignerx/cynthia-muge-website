@@ -1,0 +1,137 @@
+- generic [active] [ref=f4e1]:
+  - link "Skip to content" [ref=f4e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=f4e3]:
+    - generic [ref=f4e4]:
+      - link "Cynthia Muge, home" [ref=f4e5] [cursor=pointer]:
+        - /url: /
+        - generic [ref=f4e6]:
+          - generic [ref=f4e7]:
+            - generic [ref=f4e8]: HON.
+            - generic [ref=f4e10]: CYNTHIA MUGE
+          - generic [ref=f4e12]: Keeping the Promise
+      - generic [ref=f4e18]:
+        - navigation "Main" [ref=f4e19]:
+          - list [ref=f4e20]:
+            - listitem [ref=f4e21]:
+              - link "About" [ref=f4e22] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=f4e23]:
+              - link "Stories" [ref=f4e24] [cursor=pointer]:
+                - /url: /stories
+            - listitem [ref=f4e25]:
+              - link "Pillars" [ref=f4e26] [cursor=pointer]:
+                - /url: /pillars
+            - listitem [ref=f4e27]:
+              - link "The record" [ref=f4e28] [cursor=pointer]:
+                - /url: /record
+            - listitem [ref=f4e29]:
+              - link "Parliament" [ref=f4e30] [cursor=pointer]:
+                - /url: /parliament
+            - listitem [ref=f4e31]:
+              - link "BOSO" [ref=f4e32] [cursor=pointer]:
+                - /url: /boso
+            - listitem [ref=f4e33]:
+              - link "Media" [ref=f4e34] [cursor=pointer]:
+                - /url: /media
+            - listitem [ref=f4e35]:
+              - link "Contact" [ref=f4e36] [cursor=pointer]:
+                - /url: /contact
+        - button "Search" [ref=f4e37]
+  - main [ref=f4e41]:
+    - generic [ref=f4e42]:
+      - img "A Kahawa na Mama distribution point in Nandi County" [ref=f4e44]
+      - generic [ref=f4e46]:
+        - paragraph [ref=f4e47]: Get in touch
+        - heading "Contact" [level=1] [ref=f4e48]
+        - paragraph [ref=f4e49]: Six sub-counties. Thirty wards.
+    - generic [ref=f4e51]:
+      - generic [ref=f4e52]:
+        - generic [ref=f4e53]:
+          - term [ref=f4e54]: Office
+          - definition [ref=f4e55]: Office of the Woman Representative, Nandi County. Kapsabet.
+        - generic [ref=f4e56]:
+          - term [ref=f4e57]: BOSO registration
+          - definition [ref=f4e58]: Team registration runs through the ward coordinator.
+        - generic [ref=f4e59]:
+          - term [ref=f4e60]: Programmes
+          - definition [ref=f4e61]: Kahawa na Mama, Elimu Ni Mwangaza, and empowerment groups.
+        - generic [ref=f4e62]:
+          - term [ref=f4e63]: Press
+          - definition [ref=f4e64]: Media enquiries go to the office.
+      - generic [ref=f4e65]:
+        - paragraph [ref=f4e66]: Sub-counties
+        - list [ref=f4e67]:
+          - listitem [ref=f4e68]: Nandi Hills
+          - listitem [ref=f4e70]: Aldai
+          - listitem [ref=f4e72]: Mosop
+          - listitem [ref=f4e74]: Chesumei
+          - listitem [ref=f4e76]: Emgwen
+          - listitem [ref=f4e78]: Tinderet
+    - generic [ref=f4e81]:
+      - paragraph [ref=f4e82]: Find the office online
+      - heading "Stay close to the work." [level=2] [ref=f4e83]
+      - list [ref=f4e84]:
+        - listitem [ref=f4e85]:
+          - link "Facebook Official Facebook page Follow →" [ref=f4e86] [cursor=pointer]:
+            - /url: https://www.facebook.com/profile.php?id=100083334182719
+            - generic [ref=f4e90]:
+              - generic [ref=f4e91]: Facebook
+              - generic [ref=f4e92]: Official Facebook page
+            - generic [ref=f4e93]: Follow →
+        - listitem [ref=f4e94]:
+          - link "TikTok @hon_cynthia_muge Follow →" [ref=f4e95] [cursor=pointer]:
+            - /url: https://www.tiktok.com/@hon_cynthia_muge
+            - generic [ref=f4e99]:
+              - generic [ref=f4e100]: TikTok
+              - generic [ref=f4e101]: "@hon_cynthia_muge"
+            - generic [ref=f4e102]: Follow →
+        - listitem [ref=f4e103]:
+          - link "X @Muge_Cynthia Follow →" [ref=f4e104] [cursor=pointer]:
+            - /url: https://x.com/Muge_Cynthia
+            - generic [ref=f4e108]:
+              - generic [ref=f4e109]: X
+              - generic [ref=f4e110]: "@Muge_Cynthia"
+            - generic [ref=f4e111]: Follow →
+    - generic [ref=f4e115]:
+      - paragraph [ref=f4e116]: Nandi County
+      - heading "Kapsabet, and every ward beyond it." [level=2] [ref=f4e117]
+  - contentinfo [ref=f4e118]:
+    - generic [ref=f4e119]:
+      - generic [ref=f4e120]:
+        - generic [ref=f4e121]:
+          - generic [ref=f4e123]:
+            - generic [ref=f4e124]:
+              - generic [ref=f4e125]: HON.
+              - generic [ref=f4e127]: CYNTHIA MUGE
+            - generic [ref=f4e129]: Keeping the Promise
+          - paragraph [ref=f4e135]: Woman Representative, Nandi County. Working with the people and communities of Nandi.
+          - paragraph [ref=f4e136]: "#FormNiMama"
+        - navigation "Footer" [ref=f4e137]:
+          - list [ref=f4e138]:
+            - listitem [ref=f4e139]:
+              - link "About" [ref=f4e140] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=f4e141]:
+              - link "Stories" [ref=f4e142] [cursor=pointer]:
+                - /url: /stories
+            - listitem [ref=f4e143]:
+              - link "Pillars" [ref=f4e144] [cursor=pointer]:
+                - /url: /pillars
+            - listitem [ref=f4e145]:
+              - link "The record" [ref=f4e146] [cursor=pointer]:
+                - /url: /record
+            - listitem [ref=f4e147]:
+              - link "Parliament" [ref=f4e148] [cursor=pointer]:
+                - /url: /parliament
+            - listitem [ref=f4e149]:
+              - link "BOSO" [ref=f4e150] [cursor=pointer]:
+                - /url: /boso
+            - listitem [ref=f4e151]:
+              - link "Media" [ref=f4e152] [cursor=pointer]:
+                - /url: /media
+            - listitem [ref=f4e153]:
+              - link "Contact" [ref=f4e154] [cursor=pointer]:
+                - /url: /contact
+      - paragraph [ref=f4e155]: Office of the Woman Representative, Nandi County. Last reviewed 30 August 2026. This site follows the work across Nandi and updates the record as information arrives.
+  - button "Open Next.js Dev Tools" [ref=f4e161] [cursor=pointer]
