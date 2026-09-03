@@ -1,5 +1,33 @@
 import type { Figure, Source, Coverage, Gap } from "@/lib/types";
 
+/** Sources are identified by publisher and date, which is what the list shows. */
+export function sourceKey(s: Source) {
+  return `${s.publisher}|${s.date}`;
+}
+
+/** Position of a figure's source in the page's Sources list, 1-based. */
+function refIndex(source: Source, sources?: Source[]) {
+  if (!sources) return 0;
+  const i = sources.findIndex((s) => sourceKey(s) === sourceKey(source));
+  return i < 0 ? 0 : i + 1;
+}
+
+/**
+ * The superscript that ties a figure to its source. Small enough to leave the
+ * card clean, and a link so the source is one click rather than a hunt.
+ */
+function SourceRef({ n }: { n: number }) {
+  return (
+    <a
+      href={`#source-${n}`}
+      className="ml-1.5 align-super font-mono text-[0.625rem] font-medium text-[var(--color-murram)] underline decoration-transparent underline-offset-2 transition-colors duration-150 hover:decoration-[var(--color-murram)]"
+      aria-label={`Source ${n}`}
+    >
+      {String(n).padStart(2, "0")}
+    </a>
+  );
+}
+
 export function SourceLine({ source }: { source: Source }) {
   const text = `${source.publisher}, ${source.date}`;
   return (
@@ -25,12 +53,21 @@ export function SourceLine({ source }: { source: Source }) {
  * A figure renders one of three ways. There is no fourth path. A value
  * without a source cannot be constructed (see lib/types.ts).
  */
-export function FigureCard({ figure, hideSource = false }: { figure: Figure; hideSource?: boolean }) {
+export function FigureCard({
+  figure,
+  sources,
+}: {
+  figure: Figure;
+  /** When given, the card shows a reference number instead of a full source line. */
+  sources?: Source[];
+}) {
   if (figure.status === "verified") {
+    const ref = refIndex(figure.source, sources);
     return (
       <div className="bg-[var(--color-paper)] p-6">
         <p className="display text-[2.875rem] leading-none tabular-nums text-[var(--color-murram)]">
           {figure.value}
+          {ref > 0 && <SourceRef n={ref} />}
         </p>
         <p className="mt-3 text-[0.875rem] leading-snug text-[var(--color-soft)]">
           {figure.label}
@@ -40,7 +77,7 @@ export function FigureCard({ figure, hideSource = false }: { figure: Figure; hid
             {figure.note}
           </p>
         )}
-        {!hideSource && <SourceLine source={figure.source} />}
+        {!sources && <SourceLine source={figure.source} />}
       </div>
     );
   }
@@ -70,7 +107,13 @@ export function FigureCard({ figure, hideSource = false }: { figure: Figure; hid
   );
 }
 
-export function FigureGrid({ figures, hideSource = false }: { figures: Figure[]; hideSource?: boolean }) {
+export function FigureGrid({
+  figures,
+  sources,
+}: {
+  figures: Figure[];
+  sources?: Source[];
+}) {
   if (!figures.length) return null;
   const n = figures.length;
   // Widest column count that divides evenly, so the last row is usually full.
@@ -84,7 +127,7 @@ export function FigureGrid({ figures, hideSource = false }: { figures: Figure[];
       className={`grid gap-px border border-[var(--color-rule)] bg-[var(--color-rule)] sm:grid-cols-2 ${cols}`}
     >
       {figures.map((f) => (
-        <FigureCard key={f.label} figure={f} hideSource={hideSource} />
+        <FigureCard key={f.label} figure={f} sources={sources} />
       ))}
       {Array.from({ length: fill }).map((_, i) => (
         <div key={`fill-${i}`} aria-hidden className="hidden bg-[var(--color-paper)] lg:block" />
@@ -188,7 +231,8 @@ export function SourceList({ sources }: { sources: Source[] }) {
       {sources.map((s, i) => (
         <li
           key={`${s.publisher}-${i}`}
-          className="grid grid-cols-[1.75rem_1fr] gap-4 border-b border-[var(--color-rule)] py-3.5"
+          id={`source-${i + 1}`}
+          className="grid scroll-mt-28 grid-cols-[1.75rem_1fr] gap-4 border-b border-[var(--color-rule)] py-3.5"
         >
           <span className="font-mono text-[0.75rem] font-medium tabular-nums text-[var(--color-murram)]">
             {String(i + 1).padStart(2, "0")}

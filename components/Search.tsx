@@ -3,21 +3,24 @@
 import { useEffect, useRef, useState, useMemo } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { searchDocs, type SearchDoc } from "@/lib/search";
+import type { SearchDoc } from "@/lib/search";
+
+/** Loaded on first open: pulls in the content index and Fuse. */
+type SearchFn = (q: string, limit?: number) => SearchDoc[];
 
 type NavItem = { href: string; label: string };
 
-// Ghosts — random site information + generic tip (tip is part of rotation)
+// Ghosts: random site information + generic tip (tip is part of rotation)
 const GHOSTS: string[] = [
-  "Search Kahawa na Mama — 650,000+ seedlings…",
-  "Search Elimu Ni Mwangaza — 449 scholars…",
-  "Search BOSO — 846 matches, 30 wards…",
-  "Search Health — ambulance at Kabiemit…",
-  "Search Dairy — 10 milk coolers…",
-  "Search a ward — e.g. Kilibwoni, Kabiyet…",
+  "Search Kahawa na Mama: 650,000+ seedlings…",
+  "Search Elimu Ni Mwangaza: 449 scholars…",
+  "Search BOSO: 846 matches, 30 wards…",
+  "Search Health: the ambulance at Kabiemit…",
+  "Search Dairy: 10 milk coolers…",
+  "Search a ward, such as Kilibwoni or Kabiyet…",
   "Search Karebe Goldmine, ECDE literacy…",
   "Search Chepkemel, Lelmokwo, Koilot…",
-  "Type to search — all text is indexed",
+  "Type to search. All text is indexed",
 ];
 
 export function Search({ nav }: { nav: NavItem[] }) {
@@ -39,12 +42,25 @@ export function Search({ nav }: { nav: NavItem[] }) {
     return () => clearTimeout(t);
   }, [query]);
 
-  const results: SearchDoc[] = useMemo(() => {
-    if (!debounced.trim()) return [];
-    return searchDocs(debounced, 8);
-  }, [debounced]);
+  // The index is fetched once, the first time the panel is opened.
+  const [search, setSearch] = useState<{ fn: SearchFn } | null>(null);
+  useEffect(() => {
+    if (!open || search) return;
+    let live = true;
+    import("@/lib/search").then((m) => {
+      if (live) setSearch({ fn: m.searchDocs });
+    });
+    return () => {
+      live = false;
+    };
+  }, [open, search]);
 
-  // Ghost rotation — only when empty and visible
+  const results: SearchDoc[] = useMemo(() => {
+    if (!debounced.trim() || !search) return [];
+    return search.fn(debounced, 8);
+  }, [debounced, search]);
+
+  // Ghost rotation, only when empty and visible
   useEffect(() => {
     if (!mounted || !visible || query.trim()) return;
     const id = setInterval(() => setGhostIdx((i) => (i + 1) % GHOSTS.length), 3200);

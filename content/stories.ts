@@ -26,7 +26,7 @@ export const fieldNotes: FieldNote[] = [
     slug: "chepkemel-groups",
     title: "Two groups, one handover",
     programme: "Group Empowerment",
-    place: "Chepkemel DIP Grounds · Tindiret Ward",
+    place: "Chepkemel DIP Grounds, Tindiret Ward",
     lede: "At Chepkemel, local groups received support to put their plans to work.",
     body:
       "In August 2026, Baraka 112 Women Group and Chepkemel Youth Group each received a KSh 100,000 cheque. The next update will follow what the groups put the grants towards.",
@@ -44,7 +44,7 @@ export const fieldNotes: FieldNote[] = [
     slug: "lelmokwo-shade",
     title: "A place to wait out the weather",
     programme: "Health and Infrastructure",
-    place: "Lelmokwo Centre · Nandi County",
+    place: "Lelmokwo Centre, Nandi County",
     lede: "At Lelmokwo Centre, riders have a place to wait and work through the weather.",
     body:
       "The completed boda boda shade at Lelmokwo Centre carries the NGAAF and office attribution. The next update will follow how riders use and maintain the space.",
@@ -61,7 +61,7 @@ export const fieldNotes: FieldNote[] = [
     slug: "koilot-seedlings",
     title: "Twenty-two thousand seedlings at Koilot",
     programme: "Kahawa na Mama",
-    place: "Koilot ACC · Ol'lessos Ward, Nandi Hills",
+    place: "Koilot ACC, Ol'lessos Ward, Nandi Hills",
     lede: "At Koilot, coffee seedlings began their journey into the hands of farmers.",
     body:
       "Phase III distributed 22,000 coffee seedlings at Koilot ACC. Future updates will follow the trees into their first harvest and the farmers who care for them.",

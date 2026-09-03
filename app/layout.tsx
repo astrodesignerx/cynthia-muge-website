@@ -69,7 +69,7 @@ const nav = [
   { href: "/boso", label: "BOSO" },
   { href: "/media", label: "Media" },
   { href: "/about", label: "About" },
-  { href: "/contact", label: "Contacts" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export default function RootLayout({

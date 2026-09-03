@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { countyFinance, programmes } from "@/content/programmes";
-import { NightHead } from "@/components/Viz";
+import { NightHead, Stat } from "@/components/Viz";
 import { NetField } from "@/components/NetField";
 import { Reveal } from "@/components/Motion";
 
@@ -21,7 +21,22 @@ const art: Record<string, { img: string; pos: string; tag: string }> = {
   "group-empowerment": { img: "/img/empowerment-meeting.jpg", pos: "50% 25%", tag: "Enterprise" },
 };
 
+/** The site's own evidence state, counted from the content rather than typed. */
+function tally() {
+  let verified = 0;
+  let open = 0;
+  for (const p of programmes) {
+    for (const f of p.figures) {
+      if (f.status === "verified") verified++;
+      else open++;
+    }
+    open += p.gaps.length;
+  }
+  return { verified, open };
+}
+
 export default function RecordPage() {
+  const { verified, open } = tally();
   return (
     <>
       <section className="night relative isolate overflow-hidden">
@@ -37,10 +52,25 @@ export default function RecordPage() {
         <div aria-hidden className="absolute inset-0 -z-10 bg-[#0C1420]/78" />
         <div className="mx-auto max-w-7xl px-6 py-20 lg:py-28">
           <NightHead
+            as="h1"
             eyebrow="Office of the Woman Representative"
             title="The Record"
             lead="Six programmes across Nandi, and the work taking shape in each one."
           />
+          <dl className="mt-14 grid gap-y-10 sm:grid-cols-3 lg:gap-x-12">
+            <Stat scale="sm" value={String(programmes.length)} label="Programmes" />
+            <Stat
+              scale="sm"
+              value={String(verified)}
+              label="Figures with a named source"
+            />
+            <Stat
+              scale="sm"
+              value={String(open)}
+              label="Still unconfirmed or uncounted"
+              tone="ember"
+            />
+          </dl>
         </div>
       </section>
 

@@ -186,6 +186,7 @@ export default function Home() {
                 count
                 label={stat.label}
                 note={stat.note}
+                source={stat.source}
               />
             ))}
           </dl>
@@ -312,6 +313,7 @@ export default function Home() {
                       scale="sm"
                       value={s.value}
                       label={s.label}
+                      source={s.source}
                       count
                     />
                   ))}
@@ -381,7 +383,7 @@ export default function Home() {
           </p>
           <Reveal delay={60} className="mt-14">
             <EvidencePlate
-              img="/img/budget-line.png"
+              img="/img/budget-line.jpg"
               alt="Vote 1082 development expenditure estimates showing the two Nandi health facilities"
               title={healthVote.table}
               rows={healthVote.rows}

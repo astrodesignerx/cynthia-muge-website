@@ -90,7 +90,7 @@ export default async function ProgrammePage({
       <div className="mx-auto max-w-7xl px-6">
 
       <Section title="The figures">
-        <FigureGrid figures={p.figures} hideSource />
+        <FigureGrid figures={p.figures} sources={p.sources} />
       </Section>
 
       {p.phases.length > 0 && (

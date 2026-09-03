@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { BOSO_REPORT, bosoFunnel, wards } from "@/content/programmes";
+import { BOSO_REPORT, bosoFunnel, bosoNextStage, wards } from "@/content/programmes";
 import { Funnel, NightHead, PhotoStrip, Stat, WardGrid } from "@/components/Viz";
 import { NetField } from "@/components/NetField";
 import { Reveal } from "@/components/Motion";
@@ -208,9 +208,15 @@ export default function Boso() {
             split
           />
           <dl className="mt-14 grid gap-y-12 sm:grid-cols-3 lg:gap-x-12">
-            <Stat scale="sm" value="120" label="Teams through" />
-            <Stat scale="sm" value="6" label="Sub-county rounds" />
-            <Stat scale="sm" value="Dec 2026" label="County final" />
+            {bosoNextStage.map((s) => (
+              <Stat
+                key={s.label}
+                scale="sm"
+                value={s.value}
+                label={s.label}
+                source={s.source}
+              />
+            ))}
           </dl>
           <Link
             href="/record/boso-supercup"

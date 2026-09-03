@@ -44,9 +44,12 @@ export function PhotoMarquee({
   }, [apply]);
 
   useEffect(() => {
+    const el = trackRef.current;
+    if (!el) return;
     const reduced = matchMedia("(prefers-reduced-motion: reduce)");
     let raf = 0;
     let last = performance.now();
+
     const tick = (now: number) => {
       raf = requestAnimationFrame(tick);
       if (copyRef.current && !draggingRef.current && !reduced.matches) {
@@ -56,8 +59,32 @@ export function PhotoMarquee({
       }
       last = now;
     };
-    raf = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(raf);
+    const start = () => {
+      if (raf) return;
+      last = performance.now();
+      raf = requestAnimationFrame(tick);
+    };
+    const stop = () => {
+      cancelAnimationFrame(raf);
+      raf = 0;
+    };
+
+    // No point scrolling a strip nobody can see.
+    const io = new IntersectionObserver(
+      ([e]) => (e.isIntersecting ? start() : stop()),
+      { threshold: 0 },
+    );
+    io.observe(el);
+    // A backgrounded tab should not keep it running either.
+    const onVisibility = () =>
+      document.hidden ? stop() : el.getBoundingClientRect().top < window.innerHeight && start();
+    document.addEventListener("visibilitychange", onVisibility);
+
+    return () => {
+      stop();
+      io.disconnect();
+      document.removeEventListener("visibilitychange", onVisibility);
+    };
   }, [apply]);
 
   const onDown = (e: React.PointerEvent<HTMLDivElement>) => {

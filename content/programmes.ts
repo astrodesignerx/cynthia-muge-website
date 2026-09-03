@@ -1122,10 +1122,10 @@ export const bosoFunnel = [
 
 /** Headline figures for the ward-stage ring on the homepage. */
 export const bosoWardStats = [
-  { value: "846", label: "Matches played" },
-  { value: "499", label: "Teams registered" },
-  { value: "83", label: "Playing fields used" },
-  { value: "KSh 2.7m", label: "Ward-level prize money" },
+  { value: "846", label: "Matches played", source: BOSO_REPORT },
+  { value: "499", label: "Teams registered", source: BOSO_REPORT },
+  { value: "83", label: "Playing fields used", source: BOSO_REPORT },
+  { value: "KSh 2.7m", label: "Ward-level prize money", source: BOSO_REPORT },
 ];
 
 /**
@@ -1202,3 +1202,23 @@ export const parliament = {
     date: "2024 to 2026",
   } as Source,
 };
+
+/** The stage after the wards, and the seats she has held. Kept here so every
+ *  published figure carries a source, as the rest of the site does. */
+export const bosoNextStage = [
+  { value: "120", label: "Teams through", source: BOSO_REPORT },
+  { value: "6", label: "Sub-county rounds", source: BOSO_REPORT },
+  { value: "Dec 2026", label: "County final", source: BOSO_REPORT },
+];
+
+const IEBC: Source = {
+  label: "Declared results, Nandi County Woman Representative",
+  publisher: "Independent Electoral and Boundaries Commission",
+  date: "2022",
+};
+
+export const elected = [
+  { value: "2017", label: "County Assembly", source: IEBC },
+  { value: "2022", label: "National Assembly", source: IEBC },
+  { value: "275,500", label: "Votes in 2022", source: IEBC },
+];

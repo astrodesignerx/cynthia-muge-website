@@ -202,55 +202,24 @@ export function GrowBar({
 }
 
 /**
- * Counts a figure up when its section is reached.
- * The value is a display string, so the digits animate while everything
- * around them, currency, separators and slashes, stays exactly as written.
+ * Reveals a figure when its section is reached.
+ *
+ * It deliberately does not interpolate the digits. Counting up paints values
+ * that were never true, and "30 / 30" animated as two independent numbers
+ * reads as "23 / 23" on the way, which is a complete and false claim. The
+ * figure is shown whole; only its opacity and position are animated, so it
+ * arrives without ever asserting something wrong.
  */
-export function Counter({ value, ms = 1100 }: { value: string; ms?: number }) {
+export function Counter({ value }: { value: string; ms?: number }) {
   const { ref, seen } = useInView<HTMLSpanElement>();
-  const [t, setT] = useState(0);
-
-  useEffect(() => {
-    if (!seen) return;
-    if (
-      typeof matchMedia !== "undefined" &&
-      matchMedia("(prefers-reduced-motion: reduce)").matches
-    ) {
-      setT(1);
-      return;
-    }
-    let raf = 0;
-    const start = performance.now();
-    const tick = (now: number) => {
-      const p = Math.min(1, (now - start) / ms);
-      // ease out, so it settles rather than stops
-      setT(1 - Math.pow(1 - p, 3));
-      if (p < 1) raf = requestAnimationFrame(tick);
-    };
-    raf = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(raf);
-  }, [seen, ms]);
-
-  // Split into runs of digits and everything else, and only count the digits.
-  const parts = value.split(/(\d[\d,.]*)/);
-  const shown = parts
-    .map((part) => {
-      if (!/^\d/.test(part)) return part;
-      const decimals = part.includes(".") ? part.split(".")[1].length : 0;
-      const target = Number(part.replace(/,/g, ""));
-      const at = target * t;
-      const out =
-        decimals > 0 ? at.toFixed(decimals) : String(Math.round(at));
-      // put the thousands separators back where the source had them
-      return part.includes(",")
-        ? Number(out).toLocaleString("en-US")
-        : out;
-    })
-    .join("");
-
   return (
-    <span ref={ref} className="tabular-nums">
-      {shown}
+    <span
+      ref={ref}
+      data-reveal="up"
+      data-seen={seen ? "true" : "false"}
+      className="inline-block tabular-nums"
+    >
+      {value}
     </span>
   );
 }

@@ -31,7 +31,7 @@ function buildDocs(): SearchDoc[] {
   const pages: SearchDoc[] = [
     {
       id: "page-about",
-      title: "About — Cynthia Muge",
+      title: "About Cynthia Muge",
       href: "/about",
       excerpt: "Life in Nandi, from Kilibwoni to Parliament, and a site rooted in the record.",
       body: "About Cynthia Muge biography Kilibwoni Ward County Assembly independent Woman Representative Nandi life story family education parliament",
@@ -174,7 +174,7 @@ function buildDocs(): SearchDoc[] {
       id: `ward-${slugify(w)}`,
       title: w,
       href: "/boso",
-      excerpt: `Ward in Nandi County — BOSO reached all 30 wards`,
+      excerpt: `Ward in Nandi County. BOSO reached all 30 wards`,
       body: `${w} ward Nandi BOSO constituency Kapsabet Tinderet`,
       kind: "ward",
       kindLabel: "Ward",

@@ -253,20 +253,23 @@ export function NightHead({
   title,
   lead,
   split = false,
+  as: H = "h2",
 }: {
   eyebrow: string;
   title: string;
   lead?: string;
   split?: boolean;
+  /** A page that uses this as its own title should pass "h1". */
+  as?: "h1" | "h2";
 }) {
   if (split && lead) {
     return (
       <Reveal as="header" className="grid gap-8 lg:grid-cols-[1.1fr_1fr] lg:items-end lg:gap-20">
         <div>
           <p className="label text-[var(--color-gold)]">{eyebrow}</p>
-          <h2 className="display mt-5 max-w-[15ch] text-[2.5rem] leading-[1.02] text-[var(--color-on-night)] sm:text-[3.25rem]">
+          <H className="display mt-5 max-w-[15ch] text-[2.5rem] leading-[1.02] text-[var(--color-on-night)] sm:text-[3.25rem]">
             {title}
-          </h2>
+          </H>
         </div>
         <p className="max-w-[54ch] text-[1.0625rem] leading-relaxed text-[var(--color-on-night-soft)] lg:ml-auto lg:pb-2 lg:text-right">
           {lead}
@@ -277,9 +280,9 @@ export function NightHead({
   return (
     <Reveal as="header" className="max-w-[34ch]">
       <p className="label text-[var(--color-gold)]">{eyebrow}</p>
-      <h2 className="display mt-5 text-[2.5rem] leading-[1.02] text-[var(--color-on-night)] sm:text-[3.25rem]">
+      <H className="display mt-5 text-[2.5rem] leading-[1.02] text-[var(--color-on-night)] sm:text-[3.25rem]">
         {title}
-      </h2>
+      </H>
       {lead && (
         <p className="mt-5 max-w-[52ch] text-[1.0625rem] leading-relaxed text-[var(--color-on-night-soft)]">
           {lead}
