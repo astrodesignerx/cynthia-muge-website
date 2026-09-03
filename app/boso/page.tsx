@@ -36,7 +36,7 @@ const prizes = [
 ];
 
 const strip = [
-  { src: "/img/boso-prize-b.jpg", alt: "A men's champion collecting prize money", pos: "50% 40%" },
+  { src: "/img/boso-prize-a.jpg", alt: "A men's champion collecting prize money", pos: "50% 40%" },
   { src: "/img/boso-women-prize.jpg", alt: "A women's champion collecting the same prize", pos: "50% 35%" },
   { src: "/img/boso-action.jpg", alt: "A ward match in play", pos: "50% 45%" },
 ];

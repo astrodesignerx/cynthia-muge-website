@@ -63,9 +63,9 @@ export default function Contact() {
         eyebrow="Get in touch"
         title="Contact"
         lead="Six sub-counties. Thirty wards."
-        img="/img/coffee-handover-b.jpg"
-        alt="A Kahawa na Mama distribution point in Nandi County"
-        pos="50% 45%"
+        img="/img/facebook/boso-supercup-2026-football-edition-5-2048x1366.jpg"
+        alt="Supporters at the BOSO Supercup football edition in Nandi County"
+        pos="50% 35%"
       />
 
       <section className="mx-auto max-w-7xl px-6 py-20">

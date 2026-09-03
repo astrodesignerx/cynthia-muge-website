@@ -243,7 +243,7 @@ export const programmes: Programme[] = [
         tag: "Open question",
       },
     ],
-    sources: [KNA, MYGOV, REGISTER],
+    sources: [KNA, MYGOV, HER_PAGE_DELIVERY, REGISTER],
   },
 
   {
@@ -259,11 +259,6 @@ export const programmes: Programme[] = [
       {
         src: "/img/elimu-candidates.jpg",
         alt: "Candidates at the dedication service",
-        pos: "50% 35%",
-      },
-      {
-        src: "/img/elimu-service-b.jpg",
-        alt: "Students at the commitment service",
         pos: "50% 35%",
       },
       {
@@ -392,11 +387,6 @@ export const programmes: Programme[] = [
         pos: "50% 35%",
       },
       {
-        src: "/img/boso-women-champions.jpg",
-        alt: "Women champions at a ward final",
-        pos: "50% 35%",
-      },
-      {
         src: "/img/boso-speaking.jpg",
         alt: "Cynthia Muge at a ward round",
         pos: "50% 35%",
@@ -415,11 +405,6 @@ export const programmes: Programme[] = [
         src: "/img/boso-seated.jpg",
         alt: "Spectators seated for a ward final",
         pos: "50% 50%",
-      },
-      {
-        src: "/img/boso-quarter.jpg",
-        alt: "A quarter final in play",
-        pos: "50% 45%",
       },
       {
         src: "/img/boso-arrival.jpg",
@@ -712,6 +697,11 @@ export const programmes: Programme[] = [
       HER_PAGE_DELIVERY,
       LEGACY_PAGE,
       {
+        label: "Constituency delivery record",
+        publisher: "Office of the Woman Representative",
+        date: "2026",
+      },
+      {
         label: "Empowerment Programs",
         publisher: "cynthiamuge.com",
         date: "2026",
@@ -719,6 +709,7 @@ export const programmes: Programme[] = [
       },
     ],
   },
+
   {
     slug: "dairy-value-chain",
     hero: "/img/milk-coolers.jpg",

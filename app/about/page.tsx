@@ -95,13 +95,13 @@ export default function About() {
       <section className="mx-auto max-w-7xl px-6 py-20">
         <h2 className="display text-[2.5rem]">Education</h2>
         <div className="mt-8 grid gap-14 lg:grid-cols-[1fr_1.1fr] lg:items-stretch">
-          <Reveal as="figure" className="relative min-h-[24rem] overflow-hidden rounded-sm bg-[var(--color-sunk)] lg:h-full">
+          <Reveal as="figure" className="group relative min-h-[24rem] overflow-hidden rounded-sm bg-[var(--color-sunk)] lg:h-full">
             <Image
               src="/img/mhesh-cutout.png"
               alt="Cynthia Muge"
               fill
               sizes="(max-width: 1024px) 100vw, 60vw"
-              className="object-cover object-top"
+              className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.05]"
             />
           </Reveal>
           <ol className="grid content-start gap-0">
@@ -136,13 +136,13 @@ export default function About() {
       <section className="mx-auto max-w-7xl px-6 py-20">
         <h2 className="display text-[2.5rem]">Family</h2>
         <div className="mt-8 grid gap-10 lg:grid-cols-[1.2fr_1fr] lg:items-center">
-          <Reveal as="figure" className="relative min-h-[24rem] overflow-hidden rounded-sm bg-[var(--color-sunk)] lg:h-full">
+          <Reveal as="figure" className="group relative min-h-[24rem] overflow-hidden rounded-sm bg-[var(--color-sunk)] lg:h-full">
             <Image
               src="/img/family-compound.jpg"
               alt="Cynthia Muge with her two sons at home"
               fill
               sizes="(max-width: 1024px) 100vw, 60vw"
-              className="object-cover object-top"
+              className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.05]"
             />
           </Reveal>
           <div>
@@ -151,13 +151,13 @@ export default function About() {
                 Married to Mr Mathew Rotich. With two sons.
               </p>
             </Reveal>
-            <Reveal as="figure" delay={80} className="relative mt-8 aspect-[3/4] overflow-hidden rounded-sm bg-[var(--color-sunk)]">
+            <Reveal as="figure" delay={80} className="group relative mt-8 aspect-[3/4] overflow-hidden rounded-sm bg-[var(--color-sunk)]">
               <Image
                 src="/img/family-portrait.jpg"
                 alt="A family studio portrait with Mr Mathew Rotich and their two sons"
                 fill
                 sizes="(max-width: 1024px) 100vw, 40vw"
-                className="object-cover object-top"
+                className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.05]"
               />
             </Reveal>
           </div>

@@ -25,7 +25,7 @@ export function SourceLine({ source }: { source: Source }) {
  * A figure renders one of three ways. There is no fourth path. A value
  * without a source cannot be constructed (see lib/types.ts).
  */
-export function FigureCard({ figure }: { figure: Figure }) {
+export function FigureCard({ figure, hideSource = false }: { figure: Figure; hideSource?: boolean }) {
   if (figure.status === "verified") {
     return (
       <div className="bg-[var(--color-paper)] p-6">
@@ -35,7 +35,12 @@ export function FigureCard({ figure }: { figure: Figure }) {
         <p className="mt-3 text-[0.875rem] leading-snug text-[var(--color-soft)]">
           {figure.label}
         </p>
-        <SourceLine source={figure.source} />
+        {figure.note && (
+          <p className="mt-2 text-[0.8125rem] leading-relaxed text-[var(--color-faint)]">
+            {figure.note}
+          </p>
+        )}
+        {!hideSource && <SourceLine source={figure.source} />}
       </div>
     );
   }
@@ -65,7 +70,7 @@ export function FigureCard({ figure }: { figure: Figure }) {
   );
 }
 
-export function FigureGrid({ figures }: { figures: Figure[] }) {
+export function FigureGrid({ figures, hideSource = false }: { figures: Figure[]; hideSource?: boolean }) {
   if (!figures.length) return null;
   const n = figures.length;
   // Widest column count that divides evenly, so the last row is usually full.
@@ -79,7 +84,7 @@ export function FigureGrid({ figures }: { figures: Figure[] }) {
       className={`grid gap-px border border-[var(--color-rule)] bg-[var(--color-rule)] sm:grid-cols-2 ${cols}`}
     >
       {figures.map((f) => (
-        <FigureCard key={f.label} figure={f} />
+        <FigureCard key={f.label} figure={f} hideSource={hideSource} />
       ))}
       {Array.from({ length: fill }).map((_, i) => (
         <div key={`fill-${i}`} aria-hidden className="hidden bg-[var(--color-paper)] lg:block" />

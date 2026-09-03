@@ -122,8 +122,8 @@ export default function Media() {
       </section>
 
       <ImageBand
-        img="/img/boso-match.jpg"
-        pos="50% 45%"
+        img="/img/boso-celebration.jpg"
+        pos="50% 40%"
         eyebrow="Hear the work"
         title="The moments that bring people together."
       />
